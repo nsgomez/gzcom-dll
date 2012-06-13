@@ -3,7 +3,9 @@ Like the Extra Cheats DLL, this DLL is intended to be a GZCOM-compatible library
 
 
 # To-Do
-As of the last commit, GZDllGetGZCOMDirector is callable by SimCity 4. However, after attempting to get the GZCOM Director from the DLL twice, the DLL is dismounted.
+As of the last commit, GZDllGetGZCOMDirector is callable by SimCity 4. However, after attempting to get the GZCOM Director from the DLL twice, the DLL is dismounted. On top of that, once the DLL becomes fully functional, it has to be tested to make sure the game does not crash from using it and that everything works as intended.
+
+Multiple data types that Maxis defined are currently unknown and being researched, so some functions are using void pointers instead of proper classes, which may be causing the above issue as well.
 
 
 Known Issues
