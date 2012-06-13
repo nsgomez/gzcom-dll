@@ -9,4 +9,4 @@ As of the last commit, GZDllGetGZCOMDirector is callable by SimCity 4. However, 
 Known Issues
 =========
  * **When the DLL is dismounted,** SimCity 4 appears to close out/crash.
-  ** This is intended functionality while the DLL is being debugged to avoid going through the hassle of having to wait to close SC4. Go into dllmain.cpp and remove the ExitProcess line to avoid this.
+  * This is intended functionality while the DLL is being debugged to avoid going through the hassle of having to wait to close SC4. Go into dllmain.cpp and remove the ExitProcess line to avoid this.
