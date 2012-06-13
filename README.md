@@ -1,4 +1,16 @@
-gzcom-dll
-=========
+# GZCOM-Dll
+Like the Extra Cheats DLL, this DLL is intended to be a GZCOM-compatible library which SimCity 4 loads and provides C++-fluent modders with an interface to control game functions. These game functions have yet to be discovered, though the first step would be getting this DLL to work.
 
-A GZCOM-compatible DLL for use with SimCity 4
+
+# To-Do
+As of late, the following functions have been completed:
+* GZDllGetGZCOMDirector is callable by SimCity 4
+
+However...
+* After attempting to get the GZCOM Director from the DLL twice, the DLL is dismounted.
+
+
+Known Issues
+=========
+* **When the DLL is dismounted,** SimCity 4 appears to close out/crash.
+** This is intended functionality while the DLL is being debugged to avoid going through the hassle of having to wait to close SC4. Go into dllmain.cpp and remove the ExitProcess line to avoid this.
