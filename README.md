@@ -1,4 +1,4 @@
-# GZCOM-Dll
+# SimCity GZCOM DLL
 Like the Extra Cheats DLL, this DLL is intended to be a GZCOM-compatible library which SimCity 4 loads and provides C++-fluent modders with an interface to control game functions. These game functions have yet to be discovered, though the first step would be getting this DLL to work.
 
 
