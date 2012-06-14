@@ -31,6 +31,7 @@ class cGZSimmasterDllDirector : public cRZCOMDllDirector
 			//     type.
 
 			// Instead, we'll just get the hell out of here.
+			MessageBoxA( NULL, "z1.", "GZCOM DLL", MB_OK | MB_ICONEXCLAMATION );
 			return true;
 		}
 
@@ -45,9 +46,15 @@ class cGZSimmasterDllDirector : public cRZCOMDllDirector
 // Get the DLL director.
 cRZCOMDllDirector * RZGetCOMDllDirector()
 {
-	MessageBoxA( NULL, "Oh man", "GZCOM DLL", MB_OK | MB_ICONINFORMATION );
+	DebugMessageBox
+	(
+		"SimCity 4 -> cRZCOMDllDirector * RZGetCOMDllDirector().\n"
+		"\n"
+		"Getting static cGZSimmasterDllDirector instance"
+	);
+
 	static cGZSimmasterDllDirector sDirector;
 	return &sDirector;
 }
 
-extern "C" EXPORTED cRZCOMDllDirector * GZDllGetGZCOMDirector() { MessageBoxA( NULL, "Oh man", "GZCOM DLL", MB_OK | MB_ICONINFORMATION ); return RZGetCOMDllDirector(); }
+extern "C" EXPORTED cRZCOMDllDirector * GZDllGetGZCOMDirector() { return RZGetCOMDllDirector(); }

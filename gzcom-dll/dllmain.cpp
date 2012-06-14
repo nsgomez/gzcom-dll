@@ -11,10 +11,14 @@ BOOL APIENTRY DllMain( HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpRese
 		break;
 
 	case DLL_PROCESS_DETACH:
-		MessageBoxA( NULL, "Dismounted.", "GZCOM DLL", MB_OK | MB_ICONEXCLAMATION );
+		DebugMessageBox( "Dismounted." );
 
-		// Let's just get this over with
-		ExitProcess( 0x8675309 );
+		#ifdef DEBUG
+		{
+			// Let's just get this over with
+			ExitProcess( 0x8675309 );
+		}
+		#endif
 
 		break;
 	}
