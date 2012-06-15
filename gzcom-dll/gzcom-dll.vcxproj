@@ -72,11 +72,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Framework.h" />
+    <ClInclude Include="FrameworkHooks.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="gzcom-dll.h" />
+    <ClInclude Include="IGZCOM.h" />
     <ClInclude Include="RZCOM.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Unknown.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Debug.cpp" />
@@ -89,11 +93,13 @@
       </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="gzcom-dll.cpp" />
+    <ClCompile Include="IGZCOM.cpp" />
     <ClCompile Include="RZCOM.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Unknown.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

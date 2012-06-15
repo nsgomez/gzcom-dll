@@ -1,7 +1,6 @@
 #include "stdafx.h"
-#ifndef RZCOM_H
-	#include "RZCOM.h"
-#endif
+#include "gzcom-dll.h"
+#include "RZCOM.h"
 
 cRZCOMDllDirector::cRZCOMDllDirector()
 	: mnRefCount(0),
@@ -12,19 +11,19 @@ cRZCOMDllDirector::cRZCOMDllDirector()
 	  mChildDirectorArray(),
 	  mClassObjectMap()
 {
-	DebugMessageBox( "z0" );
+	DebugMessageBox( "cRZCOMDllDirector spawn" );
 	// Empty
 }
 
 cRZCOMDllDirector::~cRZCOMDllDirector()
 {
-	DebugMessageBox( "z-1" );
+	DebugMessageBox( "cRZCOMDllDirector destroy" );
 	// Empty
 }
 
 bool cRZCOMDllDirector::QueryInterface( DWORD riid, void** ppvObj )
 {
-	DebugMessageBox( "z3" );
+	DebugMessageBox( "cRZCOMDllDirector::QueryInterface" );
 	switch( riid )
 	{
 		// need to get back to this
@@ -34,83 +33,108 @@ bool cRZCOMDllDirector::QueryInterface( DWORD riid, void** ppvObj )
 	}
 
 	char buf[64];
-	sprintf( buf, "QueryInterface -- %i", riid );
+	sprintf_s( buf, 64, "QueryInterface -- %i", riid );
 	DebugMessageBox( buf );
 
 	return false;
 }
 
-// unknown: cIGZFrameWork*, replaced with void*
-void* cRZCOMDllDirector::FrameWork()
+cIGZFrameWork* cRZCOMDllDirector::FrameWork()
 {
-	DebugMessageBox( "z1" );
+	DebugMessageBox( "cRZCOMDllDirector::FrameWork" );
 	return mpFrameWork;
 }
 
-DWORD cRZCOMDllDirector::AddRef()
+uint32_t cRZCOMDllDirector::AddRef()
 {
-	DebugMessageBox( "z2a" );
+	DebugMessageBox( "cRZCOMDllDirector::AddRef" );
 	++mnRefCount;
 
 	char buf[64];
-	sprintf( buf, "z2b -- mnRefCount = %i", mnRefCount );
+	sprintf_s( buf, 64, "mnRefCount = %i", mnRefCount );
 	DebugMessageBox( buf );
 
 	return mnRefCount;
 }
 
-DWORD cRZCOMDllDirector::Release()
+uint32_t cRZCOMDllDirector::Release()
 {
-	DebugMessageBox( "z4" );
+	DebugMessageBox( "cRZCOMDllDirector::Release" );
 	return RemoveRef();
 }
 
-DWORD cRZCOMDllDirector::RemoveRef()
+uint32_t cRZCOMDllDirector::RemoveRef()
 {
-	DebugMessageBox( "z5a" );
+	DebugMessageBox( "cRZCOMDllDirector::RemoveRef" );
 	if( mnRefCount > 0 )
 		--mnRefCount;
 
-	DebugMessageBox( "z5b" );
+	char buf[64];
+	sprintf_s( buf, 64, "mnRefCount = %i", mnRefCount );
+	DebugMessageBox( buf );
+
 	return mnRefCount;
 }
 
-DWORD cRZCOMDllDirector::RefCount()
+uint32_t cRZCOMDllDirector::RefCount()
 {
-	DebugMessageBox( "z6" );
+	DebugMessageBox( "cRZCOMDllDirector::RefCount" );
+
+	char buf[64];
+	sprintf_s( buf, 64, "mnRefCount = %i", mnRefCount );
+	DebugMessageBox( buf );
+
 	return mnRefCount;
 }
 
 bool cRZCOMDllDirector::InitializeCOM(cIGZCOM* pCOM, const std::string& sLibraryPath)
 {
-	DebugMessageBox( "CRITICAL HIT." );
+	DebugMessageBox( "cRZCOMDllDirector::InitializeCOM" );
 	if(pCOM)
 	{
-		mpCOM			= pCOM;
-		mpFrameWork	= /*pCOM->FrameWork()*/ NULL;
+		DebugMessageBox
+		(
+			"cRZCOMDllDirector::InitializeCOM\n"
+			"\n"
+			"pCOM exists."
+		);
+
+		mpCOM         = pCOM;
+		mpFrameWork	  = pCOM->FrameWork();
 		msLibraryPath = sLibraryPath;
 
-		for(ChildDirectorArray::iterator it = mChildDirectorArray.begin(); it != mChildDirectorArray.end(); ++it){
+		DebugMessageBox
+		(
+			"cRZCOMDllDirector::InitializeCOM\n"
+			"\n"
+			"Faked our way out of pCOM->FrameWork()"
+		);
+
+		for(ChildDirectorArray::iterator it = mChildDirectorArray.begin(); it != mChildDirectorArray.end(); ++it)
+		{
 			// Recursively call InitializeCOM for every director that is a child of this director.
 			cRZCOMDllDirector* const pDirector = *it;
 			pDirector->InitializeCOM(pCOM, sLibraryPath);
 		}
 
+		DebugMessageBox( "cRZCOMDllDirector::InitializeCOM had a happy ending." );
 		return true;
 	}
 
+	DebugMessageBox( "cRZCOMDllDirector::InitializeCOM passed an empty pCom" );
 	return false;
 }
 
 bool cRZCOMDllDirector::OnStart(cIGZCOM* pCOM)
 {
-	DebugMessageBox( "z7" );
+	DebugMessageBox( "cRZCOMDllDirector::OnStart" );
 	return true;
 }
 
 bool cRZCOMDllDirector::GetClassObject(DWORD clsid, DWORD iid, void** ppvObj)
 {
-	DebugMessageBox( "z8a" );
+	DebugMessageBox( "cRZCOMDllDirector::GetClassObject (start)" );
+
 	 // Check to see if it's in one of our list of directors (recursive / linear)
 	for(ChildDirectorArray::iterator it(mChildDirectorArray.begin()); it != mChildDirectorArray.end(); ++it)
 	{
@@ -119,15 +143,19 @@ bool cRZCOMDllDirector::GetClassObject(DWORD clsid, DWORD iid, void** ppvObj)
 		// Recursively call GetClassObject for every director that
 		// is a child of this director
 		if(pDirector->GetClassObject(clsid, iid, ppvObj))
+		{
+			DebugMessageBox( "cRZCOMDllDirector::GetClassObject found object, done." );
 			return true; // successfully created the object!
+		}
 	}
-	DebugMessageBox( "z8b" );
+
+	DebugMessageBox( "cRZCOMDllDirector::GetClassObject no class object" );
 
 	// Check to see if the class is in this director.
 	ClassObjectMap::iterator it2 = mClassObjectMap.find(clsid);
 	if(it2 != mClassObjectMap.end())
 	{
-		DebugMessageBox( "z8c, failure anticipated" );
+		DebugMessageBox( "cRZCOMDllDirector::GetClassObject expecting a show, failure anticipated" );
 		FactoryFuncRecord& ffr = (*it2).second;
 
 		switch(ffr.second)
@@ -135,41 +163,48 @@ bool cRZCOMDllDirector::GetClassObject(DWORD clsid, DWORD iid, void** ppvObj)
 			case kFactorFunctionType1:
 			{
 				FactoryFunctionPtr1 const ffp1 = (FactoryFunctionPtr1)ffr.first;
-
-				// unknown: cIGZUnknown*, replaced with void*
-				DebugMessageBox( "z8d1 nulled" );
-				void* const pObj = ffp1(); // call the create method
+				DebugMessageBox( "cRZCOMDllDirector::GetClassObject calling for cIGZUnknown" );
+				cIGZUnknown * const pObj = ffp1(); // call the create method
+				DebugMessageBox( "cRZCOMDllDirector::GetClassObject looked for cIGZUnknown" );
 
 				// obtain the requested interface
-				/*if(pObj->QueryInterface(iid, ppvObj))
+				if(pObj->QueryInterface(iid, ppvObj))
+				{
+					DebugMessageBox( "cRZCOMDllDirector::GetClassObject found interface a" );
 					return true;
+				}
+
+				DebugMessageBox( "cRZCOMDllDirector::GetClassObject failed pObj->QueryInterface" );
 
 				// Interface not found, release and return
-				pObj->AddRef();	// this ref. Adding a ref, so the release should
-				pObj->Release();  // delete the object.*/
+				pObj->AddRef();	  // this ref. Adding a ref, so the release should
+				pObj->Release();  // delete the object.
+
+				DebugMessageBox( "cRZCOMDllDirector::GetClassObject released interface a" );
 				break;
 			}
 
 			case kFactorFunctionType2:
 			{
-				DebugMessageBox( "z8d2 unknown outcome" );
+				DebugMessageBox( "cRZCOMDllDirector::GetClassObject calling for FactoryFunctionPtr2" );
 				FactoryFunctionPtr2 ffp2 = (FactoryFunctionPtr2)ffr.first;
 				return ffp2(iid, ppvObj);
 			}
 
 			default:
-				DebugMessageBox( "z8d3 unknown outcome" );
-				assert(false);
+				DebugMessageBox( "cRZCOMDllDirector::GetClassObject -- wait, where the hell are we?" );
+				break;
 		 }
 	}
-	DebugMessageBox( "z8e" );
+
+	DebugMessageBox( "cRZCOMDllDirector::GetClassObject ending empty-handed" );
 	return false;
 }
 
-// unknown: ClassObjectEnumerationCallback in pCallback, replaced with void*
-void cRZCOMDllDirector::EnumClassObjects(void* pCallback, void* pContext)
+void cRZCOMDllDirector::EnumClassObjects(ClassObjectEnumerationCallback pCallback, void* pContext)
 {
-	DebugMessageBox( "z9" );
+	DebugMessageBox( "cRZCOMDllDirector::EnumClassObjects" );
+
 	// Register our list of directors
 	for(ChildDirectorArray::iterator it(mChildDirectorArray.begin()); it != mChildDirectorArray.end(); ++it)
 	{
@@ -178,62 +213,82 @@ void cRZCOMDllDirector::EnumClassObjects(void* pCallback, void* pContext)
 		//Recursively call EnumClassObjects for every director that is a child of this director.
 		pDirector->EnumClassObjects(pCallback, pContext);
 	}
-	DebugMessageBox( "z10" );
+
+	DebugMessageBox( "cRZCOMDllDirector::EnumClassObjects done registering." );
 
 	// Register classes in this director
 	for(ClassObjectMap::iterator it2(mClassObjectMap.begin()); it2 != mClassObjectMap.end(); ++it2)
 	{
 		const DWORD classID = (*it2).first;
-		//pCallback(classID, 0, pContext);
+
+		DebugMessageBox( "cRZCOMDllDirector::EnumClassObjects attempting ClassObjectEnumerationCallback" );
+		pCallback(classID, 0, pContext);
 	}
 
-	DebugMessageBox( "z11" );
+	DebugMessageBox( "cRZCOMDllDirector::EnumClassObjects done" );
 }
 
 bool cRZCOMDllDirector::GetLibraryPath(std::string& sLibraryPath)
 {
 	// Well, nothing to do here
-	DebugMessageBox( "z12 anticipated failure" );
+	DebugMessageBox
+	(
+		"cRZCOMDllDirector::GetLibraryPath expected to fail.\n"
+		"No implementation of SC4's string class exists.\n"
+		"\n"
+		"Returning true without doing anything..."
+	);
+
 	return true;
 }
 
 void cRZCOMDllDirector::AddDirector(cRZCOMDllDirector* pCOMDirector)
 {
-	DebugMessageBox( "z13a" );
+	DebugMessageBox( "cRZCOMDllDirector::AddDirector" );
+
 	// Initialize the New director's COM parameters
 	pCOMDirector->InitializeCOM(GZCOM(), msLibraryPath);
-	DebugMessageBox( "z13b" );
+	DebugMessageBox( "cRZCOMDllDirector::AddDirector attempted pCOMDirector->InitializeCOM" );
 
 	// First, add all of the DLL director's directors
-	for(ChildDirectorArray::iterator it(pCOMDirector->mChildDirectorArray.begin()); it != pCOMDirector->mChildDirectorArray.end(); ++it){
+	for(ChildDirectorArray::iterator it(pCOMDirector->mChildDirectorArray.begin()); it != pCOMDirector->mChildDirectorArray.end(); ++it)
+	{
 		cRZCOMDllDirector* const pCOMDirectorTemp = *it;
 
-		//Recursively call AddDirector for every director that is a child of the given director.
+		// Recursively call AddDirector for every director that is a child of the given director.
 		AddDirector(pCOMDirectorTemp);
 	}
 
-	DebugMessageBox( "z13c" );
+	DebugMessageBox( "cRZCOMDllDirector::AddDirector done iterating." );
+
 	// Now, add the DLL director
 	mChildDirectorArray.push_back(pCOMDirector);
-	DebugMessageBox( "z13d" );
+	DebugMessageBox( "cRZCOMDllDirector::AddDirector adding DLL director. Done." );
 }
 
 bool cRZCOMDllDirector::CanUnloadNow()
 {
-	DebugMessageBox( "z14a" );
-	if(mnRefCount == 0){ //If we can unload...
+	DebugMessageBox( "cRZCOMDllDirector::CanUnloadNow" );
+
+	//If we can unload...
+	if(mnRefCount == 0)
+	{
 		// Recursively call CanUnloadNow for every director that is
 		// a child of this director. As soon as a false result is
 		// reported, we cannot unload.
-		for(ChildDirectorArray::iterator it(mChildDirectorArray.begin()); it != mChildDirectorArray.end(); ++it){
-			DebugMessageBox( "z14b-it" );
+		for(ChildDirectorArray::iterator it(mChildDirectorArray.begin()); it != mChildDirectorArray.end(); ++it)
+		{
+			DebugMessageBox( "cRZCOMDllDirector::CanUnloadNow iterator call" );
 			cRZCOMDllDirector* const pCOMDirectorTemp = *it;
 			if(!pCOMDirectorTemp->CanUnloadNow())
+			{
+				DebugMessageBox( "cRZCOMDllDirector::CanUnloadNow denying unload" );
 				return false;
+			}
 		}
 	}
-	DebugMessageBox( "z14c" );
 
+	DebugMessageBox( "cRZCOMDllDirector::CanUnloadNow permitting unload" );
 	return true;
 }
 
@@ -256,45 +311,47 @@ DWORD cRZCOMDllDirector::GetHeapAllocatedSize()
 	//
 	//	  Please consult your doctor before using GetHeapAllocatedSize()
 
-	DebugMessageBox( "z15 anticipated failure" );
+	DebugMessageBox( "cRZCOMDllDirector::GetHeapAllocatedSize not implemented. Returning -1..." );
 	return -1;
 }
 
 void cRZCOMDllDirector::AddCls( DWORD clsid, cRZCOMDllDirector::FactoryFunctionPtr1 pff1)
 {
-	DebugMessageBox( "z16a" );
+	DebugMessageBox( "cRZCOMDllDirector::AddCls(1) executed." );
+	
 	ClassObjectMap::iterator it(mClassObjectMap.find(clsid));
-	assert(it == mClassObjectMap.end());
-	DebugMessageBox( "z16b" );
+	DebugMessageBox( "cRZCOMDllDirector::AddCls(1) obtained iterator handle." );
 
 	const ClassObjectMap::value_type entry(clsid, FactoryFuncRecord(DummyFunctionPtr(pff1), kFactorFunctionType1));
 	mClassObjectMap.insert(entry);
-	DebugMessageBox( "z16c" );
+	
+	DebugMessageBox( "cRZCOMDllDirector::AddCls(1) added instance." );
 }
 
 void cRZCOMDllDirector::AddCls( DWORD clsid, cRZCOMDllDirector::FactoryFunctionPtr2 pff2)
 {
-	DebugMessageBox( "z17a" );
+	DebugMessageBox( "cRZCOMDllDirector::AddCls(2) executed." );
+
 	ClassObjectMap::iterator it(mClassObjectMap.find(clsid));
-	assert(it == mClassObjectMap.end());
-	DebugMessageBox( "z17b" );
+	DebugMessageBox( "cRZCOMDllDirector::AddCls(2) obtained iterator handle." );
 
 	const ClassObjectMap::value_type entry(clsid, FactoryFuncRecord(DummyFunctionPtr(pff2), kFactorFunctionType2));
 	mClassObjectMap.insert(entry);
-	DebugMessageBox( "z17c" );
+
+	DebugMessageBox( "cRZCOMDllDirector::AddCls(2) added instance." );
 }
 
 cIGZCOM* cRZCOMDllDirector::GZCOM()
 {
-	DebugMessageBox( "z18 anticipated failure" );
+	DebugMessageBox( "cRZCOMDllDirector::GZCOM has no known implementation. Cross your fingers." );
 	return mpCOM;
 }
 
-bool cRZCOMDllDirector::PreFrameWorkInit()          { return true; }
-bool cRZCOMDllDirector::PreAppInit()                { return true; }
-bool cRZCOMDllDirector::PostAppInit()               { return true; }
-bool cRZCOMDllDirector::PreAppShutdown()            { return true; }
-bool cRZCOMDllDirector::PostAppShutdown()           { return true; }
-bool cRZCOMDllDirector::PostSystemServiceShutdown() { return true; }
-bool cRZCOMDllDirector::AbortiveQuit()              { return true; }
-bool cRZCOMDllDirector::OnInstall()	                { return true; }
+bool cRZCOMDllDirector::PreFrameWorkInit()          { DebugMessageBox( "cRZCOMDllDirector::PreFrameWorkInit" ); return true; }
+bool cRZCOMDllDirector::PreAppInit()                { DebugMessageBox( "cRZCOMDllDirector::PreAppInit" ); return true; }
+bool cRZCOMDllDirector::PostAppInit()               { DebugMessageBox( "cRZCOMDllDirector::PostAppInit" ); return true; }
+bool cRZCOMDllDirector::PreAppShutdown()            { DebugMessageBox( "cRZCOMDllDirector::PreAppShutdown" ); return true; }
+bool cRZCOMDllDirector::PostAppShutdown()           { DebugMessageBox( "cRZCOMDllDirector::PostAppShutdown" ); return true; }
+bool cRZCOMDllDirector::PostSystemServiceShutdown() { DebugMessageBox( "cRZCOMDllDirector::PostSystemServiceShutdown" ); return true; }
+bool cRZCOMDllDirector::AbortiveQuit()              { DebugMessageBox( "cRZCOMDllDirector::AbortiveQuit" ); return true; }
+bool cRZCOMDllDirector::OnInstall()	                { DebugMessageBox( "cRZCOMDllDirector::OnInstall" ); return true; }

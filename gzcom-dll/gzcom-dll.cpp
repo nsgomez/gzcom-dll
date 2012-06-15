@@ -1,9 +1,6 @@
 #include "stdafx.h"
 #include "gzcom-dll.h"
-
-#ifndef RZCOM_H
-	#include "RZCOM.h"
-#endif
+#include "RZCOM.h"
 
 // Declares a (hopefully) GZCOM-compatible class.
 class cGZSimmasterDllDirector : public cRZCOMDllDirector
@@ -13,25 +10,43 @@ class cGZSimmasterDllDirector : public cRZCOMDllDirector
 		{
 			// We won't concern ourselves with the AddCls call
 			//     that was here. (for now)
+			DebugMessageBox( "cGZSimmasterDllDirector spawn." );
 		}
 
 		virtual ~cGZSimmasterDllDirector()
 		{
 			// God knows what we're supposed to do with this.
+			DebugMessageBox( "cGZSimmasterDllDirector destroy." );
 		}
 
 		// Returns the constant director ID we set earlier.
 		DWORD GetDirectorID() const { return kEmptyPluginCOMDirectorDirectorID; }
 
 		// Does something when we get called
-		bool OnStart( void* pCOM )
+		bool OnStart( cIGZCOM* pCOM )
 		{
 			// pCOM is currently a void pointer because we do
 			//     not have a prototype for cIGZCOM*, the original
 			//     type.
 
 			// Instead, we'll just get the hell out of here.
-			MessageBoxA( NULL, "z1.", "GZCOM DLL", MB_OK | MB_ICONEXCLAMATION );
+			DebugMessageBox( "cGZSimmasterDllDirector::OnStart." );
+			return true;
+		}
+
+		// <todo>
+		//     For some reason this is called automatically and the
+		//     game crashes.
+		bool PreAppShutdown()
+		{
+			DebugMessageBox
+			(
+				"cGZSimmasterDllDirector::PreAppShutdown\n"
+				"\n"
+				"If you are getting this message immediately, something\n"
+				"is VERY WRONG."
+			);
+
 			return true;
 		}
 

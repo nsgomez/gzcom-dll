@@ -6,22 +6,23 @@ BOOL APIENTRY DllMain( HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpRese
 {
 	switch (ul_reason_for_call)
 	{
-	case DLL_PROCESS_ATTACH:
-		DisableThreadLibraryCalls( hModule );
-		break;
+		case DLL_PROCESS_ATTACH:
+			DisableThreadLibraryCalls( hModule );
+			break;
 
-	case DLL_PROCESS_DETACH:
-		DebugMessageBox( "Dismounted." );
+		case DLL_PROCESS_DETACH:
+			DebugMessageBox( "Dismounted." );
 
-		#ifdef DEBUG
-		{
-			// Let's just get this over with
-			ExitProcess( 0x8675309 );
-		}
-		#endif
+			#ifdef DEBUG
+			{
+				// Let's just get this over with
+				ExitProcess( 0x8675309 );
+			}
+			#endif
 
-		break;
+			break;
 	}
+	
 	return TRUE;
 }
 
