@@ -10,3 +10,15 @@
 *.lai
 *.la
 *.a
+
+# Visual Studio stuff
+*.suo
+*.dll
+*.exp
+*.ilk
+*.ipch
+*.lib
+*.pdb
+*.sdb
+*.sdf
+*.user
