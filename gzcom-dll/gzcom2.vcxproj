@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\cGZCOMLibrary.h" />
+    <ClInclude Include="include\cIGZApp.h" />
     <ClInclude Include="include\cIGZCOM.h" />
     <ClInclude Include="include\cIGZCOMDirector.h" />
     <ClInclude Include="include\cIGZCOMLibrary.h" />
@@ -137,11 +138,13 @@
     <ClInclude Include="include\cIGZString.h" />
     <ClInclude Include="include\cIGZSystemService.h" />
     <ClInclude Include="include\cIGZUnknown.h" />
+    <ClInclude Include="include\cISC4App.h" />
     <ClInclude Include="include\cRZCOMDllDirector.h" />
     <ClInclude Include="include\cRZDummyString.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cGZExampleDllDirector.cpp" />
+    <ClCompile Include="src\cGZExtraCheatsDllDirector.cpp" />
     <ClCompile Include="src\cRZCOMDllDirector.cpp" />
     <ClCompile Include="src\cGZCustomDllDirector.cpp" />
   </ItemGroup>

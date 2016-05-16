@@ -2,6 +2,7 @@
 #include "cIGZUnknown.h"
 #include <list>
 
+class cIGZApp;
 class cIGZFrameWorkHooks;
 class cIGZSystemService;
 
@@ -10,6 +11,16 @@ class cIGZSystemService;
 class cIGZFrameWork : public cIGZUnknown
 {
 	public:
+		enum FrameworkState
+		{
+			kStatePreFrameWorkInit = 1,
+			kStatePreAppInit = 3,
+			kStatePostAppInit = 6,
+			kStatePreAppShutdown = 10,
+			kStatePostAppShutdown = 11,
+			kStatePostSystemServiceShutdown = 12
+		};
+
 		virtual bool AddSystemService(cIGZSystemService* pService) = 0;
 		virtual bool RemoveSystemService(cIGZSystemService* pService) = 0;
 		virtual void* GetSystemService(uint32_t dwUnknown1, uint32_t dwUnknown2, void** ppUnknown3) = 0; // ???
@@ -56,8 +67,8 @@ class cIGZFrameWork : public cIGZUnknown
 		virtual void* GetStream(void) = 0; // unknown ret type
 		virtual bool SetStream(int32_t nUnknown, cIGZUnknown* pUnknown) = 0; // ???
 
-		virtual bool SetApplication(void* pIGZApp) = 0; // is actually cIGZApp*
-		virtual void* Application(void) = 0; // Is actually an mpApp
+		virtual bool SetApplication(cIGZApp* const pIGZApp) = 0;
+		virtual cIGZApp* const Application(void) = 0;
 
 		virtual void ReportException(char const* szExcText) = 0;
 		virtual void* ExceptionNotificationObj(void) = 0; // actual return type unknown
