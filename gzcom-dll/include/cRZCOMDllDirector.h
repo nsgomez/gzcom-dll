@@ -6,7 +6,6 @@
 // TODO: use EASTL instead, esp. since VS2015 is deprecating this
 #include <hash_map>
 #include <vector>
-#include <Windows.h>
 
 // This class is derived from Paul Pedriana's released code and should be perfect.
 class cRZCOMDllDirector : public cIGZCOMDirector, public cIGZFrameWorkHooks

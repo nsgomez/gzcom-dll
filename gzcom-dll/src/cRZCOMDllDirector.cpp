@@ -2,7 +2,6 @@
 #include "../include/cIGZString.h"
 #include "../include/cRZCOMDllDirector.h"
 #include <assert.h>
-#include <Windows.h>
 
 extern "C" __declspec(dllexport) cIGZCOMDirector* GZDllGetGZCOMDirector(void) {
 	return static_cast<cIGZCOMDirector*>(RZGetCOMDllDirector());
@@ -29,7 +28,6 @@ cRZCOMDllDirector::~cRZCOMDllDirector(void) {
 }
 
 bool cRZCOMDllDirector::QueryInterface(uint32_t riid, void** ppvObj) {
-	MessageBoxA(NULL, "Director: QueryInterface()", NULL, MB_OK);
 	switch (riid) {
 		case kGZIID_cIGZCOMDirector:
 			*ppvObj = static_cast<cIGZCOMDirector*>(this);
@@ -51,28 +49,18 @@ bool cRZCOMDllDirector::QueryInterface(uint32_t riid, void** ppvObj) {
 }
 
 cIGZFrameWork* cRZCOMDllDirector::FrameWork() {
-	MessageBoxA(NULL, "Director: FrameWork()", NULL, MB_OK);
 	return mpFrameWork;
 }
 
 uint32_t cRZCOMDllDirector::AddRef() {
-	MessageBoxA(NULL, "Director: AddRef()", NULL, MB_OK);
 	return ++mnRefCount;
 }
 
 uint32_t cRZCOMDllDirector::Release() {
-	MessageBoxA(NULL, "Director: Release()", NULL, MB_OK);
-//	return RemoveRef();
-	assert(mnRefCount > 0);
-	if (mnRefCount > 0) {
-		--mnRefCount;
-	}
-
-	return mnRefCount;
+	return RemoveRef();
 }
 
 uint32_t cRZCOMDllDirector::RemoveRef() {
-	MessageBoxA(NULL, "Director: RemoveRef()", NULL, MB_OK);
 	assert(mnRefCount > 0);
 	if (mnRefCount > 0) {
 		--mnRefCount;
@@ -82,7 +70,6 @@ uint32_t cRZCOMDllDirector::RemoveRef() {
 }
 
 uint32_t cRZCOMDllDirector::RefCount() {
-	MessageBoxA(NULL, "Director: RefCount()", NULL, MB_OK);
 	return mnRefCount;
 }
 
@@ -91,10 +78,6 @@ bool cRZCOMDllDirector::InitializeCOM(cIGZCOM* pCOM, const cIGZString& sLibraryP
 		mpCOM = pCOM;
 		mpFrameWork = pCOM->FrameWork();
 		msLibraryPath = sLibraryPath;
-
-		char test[64];
-		sprintf_s(test, "%08X", mpFrameWork);
-		//MessageBoxA(NULL, test, NULL, MB_OK);
 
 		for (ChildDirectorArray::iterator it = mChildDirectorArray.begin(); it != mChildDirectorArray.end(); ++it) {
 			cRZCOMDllDirector* const pDirector = *it;
@@ -112,7 +95,6 @@ bool cRZCOMDllDirector::OnStart(cIGZCOM* pCOM) {
 }
 
 bool cRZCOMDllDirector::GetClassObject(uint32_t clsid, uint32_t iid, void** ppvObj) {
-	MessageBoxA(NULL, "Director: GetClassObject()", NULL, MB_OK);
 	for (ChildDirectorArray::iterator it(mChildDirectorArray.begin()); it != mChildDirectorArray.end(); ++it) {
 		cRZCOMDllDirector* const pDirector = *it;
 		if (pDirector->GetClassObject(clsid, iid, ppvObj)) {
@@ -150,7 +132,6 @@ bool cRZCOMDllDirector::GetClassObject(uint32_t clsid, uint32_t iid, void** ppvO
 }
 
 void cRZCOMDllDirector::EnumClassObjects(ClassObjectEnumerationCallback pCallback, void* pContext) {
-	MessageBoxA(NULL, "Director: EnumClassObjects()", NULL, MB_OK);
 	for (ChildDirectorArray::iterator it(mChildDirectorArray.begin()); it != mChildDirectorArray.end(); ++it) {
 		cRZCOMDllDirector* const pDirector = *it;
 		pDirector->EnumClassObjects(pCallback, pContext);
@@ -163,13 +144,11 @@ void cRZCOMDllDirector::EnumClassObjects(ClassObjectEnumerationCallback pCallbac
 }
 
 bool cRZCOMDllDirector::GetLibraryPath(cIGZString& sLibraryPath) {
-	MessageBoxA(NULL, "Director: GetLibraryPath()", NULL, MB_OK);
 	sLibraryPath = msLibraryPath;
 	return true;
 }
 
 void cRZCOMDllDirector::AddDirector(cRZCOMDllDirector* pCOMDirector) {
-	MessageBoxA(NULL, "Director: AddDirector()", NULL, MB_OK);
 	pCOMDirector->InitializeCOM(GZCOM(), msLibraryPath);
 	for (ChildDirectorArray::iterator it(pCOMDirector->mChildDirectorArray.begin()); it != pCOMDirector->mChildDirectorArray.end(); ++it) {
 		cRZCOMDllDirector* const pCOMDirectorTemp = *it;
@@ -180,7 +159,6 @@ void cRZCOMDllDirector::AddDirector(cRZCOMDllDirector* pCOMDirector) {
 }
 
 bool cRZCOMDllDirector::CanUnloadNow() {
-	MessageBoxA(NULL, "Director: CanUnloadNow()", NULL, MB_OK);
 	if (mnRefCount == 0) {
 		for (ChildDirectorArray::iterator it(mChildDirectorArray.begin()); it != mChildDirectorArray.end(); ++it) {
 			cRZCOMDllDirector* const pCOMDirectorTemp = *it;
@@ -194,13 +172,10 @@ bool cRZCOMDllDirector::CanUnloadNow() {
 }
 
 uint32_t cRZCOMDllDirector::GetHeapAllocatedSize(void) {
-	// TODO
-	MessageBoxA(NULL, "Director: GetHeapAllocatedSize()", NULL, MB_OK);
 	return 0;
 }
 
 void cRZCOMDllDirector::AddCls(uint32_t clsid, cRZCOMDllDirector::FactoryFunctionPtr1 pff1) {
-	MessageBoxA(NULL, "Director: AddCls(pff1)", NULL, MB_OK);
 	ClassObjectMap::iterator it(mClassObjectMap.find(clsid));
 	assert(it == mClassObjectMap.end());
 
@@ -209,7 +184,6 @@ void cRZCOMDllDirector::AddCls(uint32_t clsid, cRZCOMDllDirector::FactoryFunctio
 }
 
 void cRZCOMDllDirector::AddCls(uint32_t clsid, cRZCOMDllDirector::FactoryFunctionPtr2 pff2) {
-	MessageBoxA(NULL, "Director: AddCls(pff2)", NULL, MB_OK);
 	ClassObjectMap::iterator it(mClassObjectMap.find(clsid));
 	assert(it == mClassObjectMap.end());
 
@@ -218,7 +192,6 @@ void cRZCOMDllDirector::AddCls(uint32_t clsid, cRZCOMDllDirector::FactoryFunctio
 }
 
 cIGZCOM* cRZCOMDllDirector::GZCOM() {
-	MessageBoxA(NULL, "Director: GZCOM()", NULL, MB_OK);
 	return mpCOM;
 }
 
