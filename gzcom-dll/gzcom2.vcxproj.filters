@@ -53,7 +53,7 @@
     <ClCompile Include="src\cRZCOMDllDirector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\main.cpp">
+    <ClCompile Include="src\cGZCustomDllDirector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
