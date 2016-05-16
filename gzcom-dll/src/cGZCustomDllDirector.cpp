@@ -2,9 +2,17 @@
 #include "../include/cIGZFrameWork.h"
 #include "../include/cRZCOMDllDirector.h"
 
+// This must be unique for every plugin. Generate a random 32-bit integer and use it.
+// DO NOT REUSE DIRECTOR IDS EVER.
 static const uint32_t kCustomCOMDirectorDirectorID = 0x06dcbef1;
+
+// Objects provided by plugins must also have their own unique class IDs.
 static const uint32_t kGZCLSID_cSomeObject = 0x46dcc1fc;
 
+// This is a bare-bones example of a class that can be loaded into the game.
+// Any DLLs you make should be derived off this example, as the other example
+// (cGZExampleDllDirector) overrides basically every method just to demonstrate
+// the functionality for no useful reason.
 class cGZCustomDllDirector : public cRZCOMDllDirector
 {
 	public:
@@ -51,8 +59,3 @@ class cGZCustomDllDirector : public cRZCOMDllDirector
 		bool AbortiveQuit(void) { return true; }
 		bool OnInstall(void) { return true; }
 };
-
-cRZCOMDllDirector* RZGetCOMDllDirector() {
-	static cGZCustomDllDirector sDirector;
-	return &sDirector;
-}

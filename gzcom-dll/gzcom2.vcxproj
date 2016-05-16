@@ -141,6 +141,7 @@
     <ClInclude Include="include\cRZDummyString.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\cGZExampleDllDirector.cpp" />
     <ClCompile Include="src\cRZCOMDllDirector.cpp" />
     <ClCompile Include="src\cGZCustomDllDirector.cpp" />
   </ItemGroup>
