@@ -22,19 +22,7 @@ class cSC4ExtraCheatsPluginCOMDirector : public cRZCOMDllDirector
 				if (pApp) {
 					cISC4App* pISC4App;
 					if (pApp->QueryInterface(kGZIID_cISC4App, (void**)&pISC4App)) {
-						MessageBoxA(NULL, "o shit waddup!", NULL, MB_OK);
-
-						char test[64];
-						sprintf_s(test, "%08X", pISC4App);
-						MessageBoxA(NULL, test, NULL, MB_OK);
-
-						sprintf_s(test, "%d", pISC4App->GetDebugFunctionalityEnabled());
-						MessageBoxA(NULL, test, NULL, MB_OK);
-
 						pISC4App->SetDebugFunctionalityEnabled(true);
-					}
-					else {
-						MessageBoxA(NULL, "dat boi not found", NULL, MB_OK);
 					}
 				}
 			}
