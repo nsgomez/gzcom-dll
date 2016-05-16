@@ -1,7 +1,7 @@
 #pragma once
 #include "cIGZUnknown.h"
 
-// Mostly guessed as to what this interface includes. Not tested or reliable.
+// Reverse engineered from the Mac vtable
 class cIGZSystemService : public cIGZUnknown
 {
 	public:
@@ -12,7 +12,9 @@ class cIGZSystemService : public cIGZUnknown
 		virtual bool IsServiceRunning(void) = 0;
 		virtual cIGZSystemService* SetServiceRunning(bool bRunning) = 0;
 
-		virtual bool OnIdle(void) = 0;
+		virtual bool Init(void) = 0;
+		virtual bool Shutdown(void) = 0;
+		
 		virtual bool OnTick(void) = 0;
-		virtual int32_t GetServiceTickPriority(void) = 0;
+		virtual bool OnIdle(void) = 0;
 };
