@@ -10,10 +10,11 @@ into game functions including enabling debugging functionality (i.e. the extra
 cheats DLL). The COM director instance is entirely functional, and is able to
 subscribe to hook events like PreFrameWorkInit, PostAppInit, and the rest.
 
-cRZDummyString and cIGZString are still highly broken and could use a working
-implementation.
+Since most of the core work is done, the rest of the effort is focused on
+finding other classes and interfaces to add and fixing poorly documented
+methods with unknown parameters.
 
 
 Known Issues
 =========
-* cIGZString and cRZDummyString are unusable.
+* None so far
