@@ -76,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>./include/</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -89,6 +90,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>./include/</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -104,6 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>./include/</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -120,6 +123,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>./include/</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -145,12 +149,13 @@
     <ClInclude Include="include\cISC4Nation.h" />
     <ClInclude Include="include\cISC4Region.h" />
     <ClInclude Include="include\cISC4RenderProperties.h" />
+    <ClInclude Include="include\cRZBaseString.h" />
     <ClInclude Include="include\cRZCOMDllDirector.h" />
-    <ClInclude Include="include\cRZDummyString.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cGZExampleDllDirector.cpp" />
     <ClCompile Include="src\cGZExtraCheatsDllDirector.cpp" />
+    <ClCompile Include="src\cRZBaseString.cpp" />
     <ClCompile Include="src\cRZCOMDllDirector.cpp" />
     <ClCompile Include="src\cGZCustomDllDirector.cpp" />
   </ItemGroup>

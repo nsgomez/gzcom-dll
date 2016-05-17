@@ -1,7 +1,7 @@
 #pragma once
 #include "cIGZCOMDirector.h"
 #include "cIGZFrameWorkHooks.h"
-#include "cRZDummyString.h"
+#include "cRZBaseString.h"
 
 // TODO: use EASTL instead, esp. since VS2015 is deprecating this
 #include <hash_map>
@@ -59,7 +59,6 @@ class cRZCOMDllDirector : public cIGZCOMDirector, public cIGZFrameWorkHooks
 		};
 
 		enum GZIIDList {
-			GZIID_cIGZUnknown =	1,
 			GZIID_cIGZFrameWorkHooks = 0x03FA40BF,
 			kGZIID_cIGZCOMDirector = 0xA21EE941
 		};
@@ -70,7 +69,7 @@ class cRZCOMDllDirector : public cIGZCOMDirector, public cIGZFrameWorkHooks
 	protected:
 		uint32_t mnRefCount;
 		uint32_t mDirectorID;
-		cRZDummyString msLibraryPath;
+		cRZBaseString msLibraryPath;
 		cIGZCOM* mpCOM;
 		cIGZFrameWork* mpFrameWork;
 

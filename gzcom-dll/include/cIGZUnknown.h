@@ -1,6 +1,8 @@
 #pragma once
 #include <stdint.h>
 
+static const uint32_t GZIID_cIGZUnknown = 1;
+
 // This class is derived from Paul Pedriana's released code and should be perfect.
 class cIGZUnknown
 {

@@ -1,12 +1,12 @@
 #pragma once
-#include <cIGZCOMLibrary.h>
-#include <cRZDummyString.h>
+#include "cIGZCOMLibrary.h"
+#include "cRZBaseString.h"
 #include <string>
 
 class cIGZCOMDirector;
 
 // This class is derived from Paul Pedriana's released code and should be perfect
-// aside from the cRZDummyString substitution made in place for cRZString.
+// aside from the cRZBaseString substitution made in place for cRZString.
 class cGZCOMLibrary : public cIGZCOMLibrary
 {
 	public:
@@ -43,6 +43,6 @@ class cGZCOMLibrary : public cIGZCOMLibrary
 		bool mbLoaded;
 		uint32_t mnRefCount;
 		cIGZCOMDirector* mpDirector;
-		cRZDummyString msLibraryPath;
+		cRZBaseString msLibraryPath;
 		GZLibraryHandle mHandle;
 };
