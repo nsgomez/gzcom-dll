@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClInclude Include="include\cGZCOMLibrary.h" />
     <ClInclude Include="include\cIGZApp.h" />
+    <ClInclude Include="include\cIGZCheatCodeManager.h" />
     <ClInclude Include="include\cIGZCOM.h" />
     <ClInclude Include="include\cIGZCOMDirector.h" />
     <ClInclude Include="include\cIGZCOMLibrary.h" />
@@ -139,6 +140,11 @@
     <ClInclude Include="include\cIGZSystemService.h" />
     <ClInclude Include="include\cIGZUnknown.h" />
     <ClInclude Include="include\cISC4App.h" />
+    <ClInclude Include="include\cISC4City.h" />
+    <ClInclude Include="include\cISC4FeatureManager.h" />
+    <ClInclude Include="include\cISC4Nation.h" />
+    <ClInclude Include="include\cISC4Region.h" />
+    <ClInclude Include="include\cISC4RenderProperties.h" />
     <ClInclude Include="include\cRZCOMDllDirector.h" />
     <ClInclude Include="include\cRZDummyString.h" />
   </ItemGroup>

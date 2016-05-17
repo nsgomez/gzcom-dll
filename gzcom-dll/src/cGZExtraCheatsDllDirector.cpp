@@ -2,8 +2,6 @@
 #include "../include/cIGZFrameWork.h"
 #include "../include/cISC4App.h"
 #include "../include/cRZCOMDllDirector.h"
-#include <stdio.h>
-#include <Windows.h>
 
 static const uint32_t kExtraCheatsPluginCOMDirectorID = 0x8bbd9623;
 static const uint32_t kGZIID_cISC4App = 0x26ce01c0;

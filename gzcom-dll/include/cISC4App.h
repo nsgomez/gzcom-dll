@@ -2,11 +2,16 @@
 #include "cIGZUnknown.h"
 
 class cGZMessage;
+class cIGZCheatCodeManager;
 class cIGZMessage;
 class cIGZString;
 class cIGZWin;
-class cISC4RegionalCity;
-class SC4VideoPreferences;
+class cISC4City;
+class cISC4FeatureManager;
+class cISC4Nation;
+class cISC4Preferences;
+class cISC4Region;
+class cISC4RenderProperties;
 
 // Taken from the Mac vtable
 class cISC4App : public cIGZUnknown
@@ -16,7 +21,7 @@ class cISC4App : public cIGZUnknown
 		virtual bool FullGamePause(bool bPause) = 0;
 		virtual bool GainLoseFocus(bool bFocus) = 0;
 		
-		virtual bool RequestNewCity(cISC4RegionalCity* pCity) = 0; // Actually an AutoRefCount
+		virtual bool RequestNewCity(intptr_t pCity) = 0; // Actually an AutoRefCount<cISC4RegionalCity>
 		virtual bool RequestLoadCity(void) = 0;
 		virtual bool RequestCloseCity(bool bShowConfirmPrompt) = 0;
 		virtual bool RequestSaveCity(bool bShowNotif, bool bUnknown) = 0;
@@ -25,14 +30,14 @@ class cISC4App : public cIGZUnknown
 		virtual bool RequestGoToRegionView(bool bShowDialog) = 0;
 		
 		virtual bool NewCity(void) = 0;
-		virtual bool LoadCity(cIGZString& szString, cISC4RegionalCity* pCityOut) = 0; // Actually an AutoRefCount
+		virtual bool LoadCity(cIGZString& szString, intptr_t pCityOut) = 0; // Actually an AutoRefCount<cISC4RegionalCity>
 		virtual bool CloseCity(void) = 0;
 		virtual bool SaveCity(bool bUnknown) = 0;
 		virtual bool SaveCity(cIGZString const& szName, bool bUnknown) = 0;
 		virtual bool Quit(void) = 0;
 
-		virtual bool ApplyVideoPreferences(SC4VideoPreferences const& sPreferences) = 0;
-		virtual bool GetAutoVideoPreferences(SC4VideoPreferences* pPreferencesOut) = 0;
+		virtual bool ApplyVideoPreferences(intptr_t const sPreferences) = 0; // Actually takes SC4VideoPreferences const&
+		virtual bool GetAutoVideoPreferences(intptr_t pPreferencesOut) = 0; // Actually takes SC4VideoPreferences&
 
 		virtual bool GetDebugFunctionalityEnabled(void) = 0;
 		virtual cISC4App* SetDebugFunctionalityEnabled(bool bEnabled) = 0;
@@ -45,22 +50,22 @@ class cISC4App : public cIGZUnknown
 		virtual int32_t GetAppState(void) = 0;
 		virtual bool GetAppName(cIGZString& szNameOut) = 0;
 		virtual intptr_t GetMainWindow(void) = 0;
-		virtual intptr_t GetFeatureManager(void) = 0;
-		virtual intptr_t GetCheatCodeManager(void) = 0;
-		virtual intptr_t GetNation(void) = 0;
-		virtual intptr_t GetRegion(void) = 0;
-		virtual intptr_t GetRegionalCity(void) = 0;
-		virtual intptr_t GetCity(void) = 0;
-		virtual intptr_t GetPreferences(void) = 0;
-		virtual intptr_t GetNewCitySpecification(void) = 0;
+		virtual cISC4FeatureManager* GetFeatureManager(void) = 0;
+		virtual cIGZCheatCodeManager* GetCheatCodeManager(void) = 0;
+		virtual cISC4Nation* GetNation(void) = 0;
+		virtual cISC4Region* GetRegion(void) = 0;
+		virtual intptr_t GetRegionalCity(void) = 0; // Returns a cISC4RegionalCity*
+		virtual cISC4City* GetCity(void) = 0;
+		virtual intptr_t GetPreferences(void) = 0; // Returns a cISC4Preferences*
+		virtual intptr_t GetNewCitySpecification(void) = 0; // Returns a SC4NewCitySpecification*
 		virtual intptr_t GetDebugConsole(void) = 0;
-		virtual intptr_t GetGimexFactory(void) = 0;
-		virtual intptr_t GetStringDetokenizer(void) = 0;
-		virtual intptr_t GetWinLocationSaver(void) = 0;
-		virtual intptr_t GetRenderProperties(void) = 0;
-		virtual intptr_t GetGlyphTextureManager(void) = 0;
-		virtual intptr_t GetLuaInterpreter(void) = 0;
-		virtual intptr_t GetTutorialRegistry(void) = 0;
+		virtual intptr_t GetGimexFactory(void) = 0; // Returns a cIGZGimexFactory*
+		virtual intptr_t GetStringDetokenizer(void) = 0; // Returns a cISCStringDetokenizer*
+		virtual intptr_t GetWinLocationSaver(void) = 0; // Returns a cISLWinLocationSaver*
+		virtual cISC4RenderProperties* GetRenderProperties(void) = 0;
+		virtual intptr_t GetGlyphTextureManager(void) = 0; // Returns a cISC4GlyphTextureManager*
+		virtual intptr_t GetLuaInterpreter(void) = 0; // Returns a cIGZLua5*
+		virtual intptr_t GetTutorialRegistry(void) = 0; // Returns cSC4TutorialRegistry*
 
 		virtual bool IsRunFirstTimeAfterInstall(void) = 0;
 		virtual bool GetAppDirectory(cIGZString& szPathOut) = 0;
