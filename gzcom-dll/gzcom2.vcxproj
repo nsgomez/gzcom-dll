@@ -140,6 +140,11 @@
     <ClInclude Include="include\cIGZCOMLibrary.h" />
     <ClInclude Include="include\cIGZFrameWork.h" />
     <ClInclude Include="include\cIGZFrameWorkHooks.h" />
+    <ClInclude Include="include\cIGZIStream.h" />
+    <ClInclude Include="include\cIGZOStream.h" />
+    <ClInclude Include="include\cISC4DBSegmentIStream.h" />
+    <ClInclude Include="include\cISC4DBSegmentOStream.h" />
+    <ClInclude Include="include\cIGZSerializable.h" />
     <ClInclude Include="include\cIGZString.h" />
     <ClInclude Include="include\cIGZSystemService.h" />
     <ClInclude Include="include\cIGZUnknown.h" />

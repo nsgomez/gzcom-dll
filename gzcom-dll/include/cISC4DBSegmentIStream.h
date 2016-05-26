@@ -1,12 +1,12 @@
 #pragma once
-#include "cIGZOStream.h"
+#include "cIGZIStream.h"
 
 class cGZPersistResourceKey;
 class cIGZSerializable;
 class cIGZVariant;
 class cISC4DBSegment;
 
-class cISC4DBSegmentOStream : public cIGZOStream
+class cISC4DBSegmentOStream : public cIGZIStream
 {
 	public:
 		virtual bool Open(cISC4DBSegment* pSegment, cGZPersistResourceKey const& sKey, bool bUnknown) = 0;
@@ -17,7 +17,7 @@ class cISC4DBSegmentOStream : public cIGZOStream
 		virtual int32_t GetRecord(void) = 0;
 		virtual int32_t GetSegment(void) = 0;
 		
-		virtual bool WriteGZSerializable(cIGZSerializable const* pSegment) = 0;
-		virtual bool WriteResKey(cGZPersistResourceKey const& sKey) = 0;
-		virtual bool WriteVariant(cIGZVariant const& sVariant) = 0;
+		virtual bool ReadGZSerializable(cIGZSerializable** ppSegmentOut) = 0;
+		virtual bool ReadResKey(cGZPersistResourceKey& sKeyOut) = 0;
+		virtual bool ReadVariant(cIGZVariant& sVariantOut) = 0;
 };

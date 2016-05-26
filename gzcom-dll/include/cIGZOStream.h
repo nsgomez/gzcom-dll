@@ -1,6 +1,7 @@
 #pragma once
 #include "cIGZUnknown.h"
 
+class cIGZSerializable;
 class cIGZString;
 
 class cIGZOStream : public cIGZUnknown
