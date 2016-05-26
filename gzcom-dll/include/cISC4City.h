@@ -3,6 +3,7 @@
 
 class cIGZPersistDBSegment;
 class cIGZString;
+class cISC424HourClock;
 
 class cISC4City : public cIGZUnknown
 {
@@ -106,7 +107,7 @@ class cISC4City : public cIGZUnknown
 
 		virtual intptr_t GetEffectsManager(void) = 0;
 		
-		virtual int32_t Get24HourClock(void) = 0;
+		virtual cISC424HourClock* Get24HourClock(void) = 0;
 		
 		virtual uint32_t GetCitySizeType(void) = 0;
 		virtual bool SetSize(float fX, float fZ) = 0;

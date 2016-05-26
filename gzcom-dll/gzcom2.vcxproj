@@ -148,6 +148,7 @@
     <ClInclude Include="include\cIGZString.h" />
     <ClInclude Include="include\cIGZSystemService.h" />
     <ClInclude Include="include\cIGZUnknown.h" />
+    <ClInclude Include="include\cISC424HourClock.h" />
     <ClInclude Include="include\cISC4App.h" />
     <ClInclude Include="include\cISC4City.h" />
     <ClInclude Include="include\cISC4FeatureManager.h" />

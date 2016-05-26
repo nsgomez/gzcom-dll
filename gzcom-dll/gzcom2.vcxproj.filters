@@ -72,6 +72,9 @@
     <ClInclude Include="include\cRZBaseString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC424HourClock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\cIGZSerializable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
