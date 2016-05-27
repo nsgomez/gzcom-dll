@@ -11,11 +11,11 @@ class cIGZCheatCodeManager : public cIGZUnknown
 		virtual bool RegisterCheatCode(uint32_t clsid, cIGZString const& szCheatName) = 0;
 		virtual bool UnregisterCheatCode(uint32_t clsid) = 0;
 		
-		virtual bool AddNotification(cIGZMessageTarget* pMessage, uint32_t dwUnknown) = 0;
-		virtual bool RemoveNotification(cIGZMessageTarget* pMessage, uint32_t dwUnknown) = 0;
+		virtual bool AddNotification(cIGZMessageTarget* pTarget, uint32_t dwMessageID) = 0;
+		virtual bool RemoveNotification(cIGZMessageTarget* pTarget, uint32_t dwMessageID) = 0;
 
-		virtual bool AddNotification2(cIGZMessageTarget2* pMessage, uint32_t dwUnknown) = 0;
-		virtual bool RemoveNotification2(cIGZMessageTarget2* pMessage, uint32_t dwUnknown) = 0;
+		virtual bool AddNotification2(cIGZMessageTarget2* pTarget, uint32_t dwMessageID) = 0;
+		virtual bool RemoveNotification2(cIGZMessageTarget2* pTarget, uint32_t dwMessageID) = 0;
 
 		virtual cIGZCheatCodeManager* EnableCheatCodeHistory(bool bEnable) = 0;
 		virtual bool ClearCheatCodeHistory(void* pUnknown, uint32_t& dwSizeOut) = 0;
