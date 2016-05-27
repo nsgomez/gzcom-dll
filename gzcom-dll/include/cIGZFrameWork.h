@@ -23,7 +23,7 @@ class cIGZFrameWork : public cIGZUnknown
 
 		virtual bool AddSystemService(cIGZSystemService* pService) = 0;
 		virtual bool RemoveSystemService(cIGZSystemService* pService) = 0;
-		virtual void* GetSystemService(uint32_t dwUnknown1, uint32_t dwUnknown2, void** ppUnknown3) = 0; // ???
+		virtual void* GetSystemService(uint32_t srvid, uint32_t riid, void** ppService) = 0;
 		virtual bool EnumSystemServices(void* enumerator, cIGZUnknown* pUnknown, uint32_t dwUnknown) = 0; // ??? - enumerator is a function but what is prototype?
 
 		virtual bool AddHook(cIGZFrameWorkHooks* pHooks) = 0;
@@ -39,10 +39,10 @@ class cIGZFrameWork : public cIGZUnknown
 		virtual bool SetOnIdleInterval(int32_t nInterval) = 0;
 
 		virtual int32_t OnTick(uint32_t dwUnknown) = 0;
-		virtual cIGZFrameWork* OnIdle(void) = 0; // is actually cGZFramework*
+		virtual cIGZFrameWork* OnIdle(void) = 0;
 
 		virtual bool IsTickEnabled(void) = 0;
-		virtual cIGZFrameWork* ToggleTick(bool bTick) = 0; // is actually cGZFramework*
+		virtual cIGZFrameWork* ToggleTick(bool bTick) = 0;
 
 		virtual int32_t Quit(int32_t nUnknown) = 0;
 		virtual void AbortiveQuit(int32_t nUnknown) = 0;
