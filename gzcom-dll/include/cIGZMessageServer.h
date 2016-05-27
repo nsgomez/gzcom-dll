@@ -19,5 +19,5 @@ class cIGZMessageServer : public cIGZUnknown
 		virtual bool OnTick(void) = 0;
 
 		virtual uint32_t GetMessageQueueSize(void) = 0;
-		virtual cIGZMessageServer2* SetAlwaysClearQueueOnTick(bool bToggle) = 0;
+		virtual cIGZMessageServer* SetAlwaysClearQueueOnTick(bool bToggle) = 0;
 };
