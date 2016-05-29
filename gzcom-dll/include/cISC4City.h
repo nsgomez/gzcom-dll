@@ -4,6 +4,7 @@
 class cIGZPersistDBSegment;
 class cIGZString;
 class cISC424HourClock;
+class cISC4HistoryWarehouse;
 class cISC4Simulator;
 
 class cISC4City : public cIGZUnknown
@@ -50,7 +51,7 @@ class cISC4City : public cIGZUnknown
 
 		// intptr_t's are likely class instances
 		virtual intptr_t GetDemolitionUtility(void) = 0;
-		virtual intptr_t GetHistoryWarehouse(void) = 0;
+		virtual cISC4HistoryWarehouse* GetHistoryWarehouse(void) = 0;
 		virtual intptr_t GetLotManager(void) = 0;
 		virtual intptr_t GetOccupantManager(void) = 0;
 		virtual intptr_t GetPropManager(void) = 0;
