@@ -4,6 +4,7 @@
 class cIGZPersistDBSegment;
 class cIGZString;
 class cISC424HourClock;
+class cISC4Simulator;
 
 class cISC4City : public cIGZUnknown
 {
@@ -45,8 +46,9 @@ class cISC4City : public cIGZUnknown
 		virtual float GetWorldBaseElevation(void) = 0;
 		virtual cISC4City* SetWorldBaseElevation(float fElevation) = 0;
 
-		// intptr_t's are likely class instances
 		virtual int32_t GetWorldHemisphere(void) = 0;
+
+		// intptr_t's are likely class instances
 		virtual intptr_t GetDemolitionUtility(void) = 0;
 		virtual intptr_t GetHistoryWarehouse(void) = 0;
 		virtual intptr_t GetLotManager(void) = 0;
@@ -66,7 +68,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetAutomataControllerManager(void) = 0;
 		virtual intptr_t GetAutomataScriptSystem(void) = 0;
 		virtual intptr_t GetCitySituationManager(void) = 0;
-		virtual intptr_t GetSimulator(void) = 0;
+		virtual cISC4Simulator* GetSimulator(void) = 0;
 		virtual intptr_t GetAuraSimulator(void) = 0;
 		virtual intptr_t GetBudgetSimulator(void) = 0;
 		virtual intptr_t GetBuildingDevelopmentSimulator(void) = 0;
