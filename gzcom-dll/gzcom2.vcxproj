@@ -162,16 +162,23 @@
     <ClInclude Include="include\cISC4App.h" />
     <ClInclude Include="include\cISC4City.h" />
     <ClInclude Include="include\cISC4FeatureManager.h" />
+    <ClInclude Include="include\cISC4HistoryWarehouse.h" />
+    <ClInclude Include="include\cISC4LotManager.h" />
     <ClInclude Include="include\cISC4Nation.h" />
+    <ClInclude Include="include\cISC4NetworkManager.h" />
     <ClInclude Include="include\cISC4Region.h" />
     <ClInclude Include="include\cISC4RenderProperties.h" />
+    <ClInclude Include="include\cISC4Simulator.h" />
     <ClInclude Include="include\cRZBaseString.h" />
     <ClInclude Include="include\cRZCOMDllDirector.h" />
     <ClInclude Include="include\cRZPoint.h" />
     <ClInclude Include="include\cRZSysServPtr.h" />
+    <ClInclude Include="include\cS3DVector3.h" />
     <ClInclude Include="include\GZCLSIDDefs.h" />
     <ClInclude Include="include\GZServDecls.h" />
     <ClInclude Include="include\GZServPtrs.h" />
+    <ClInclude Include="include\SC4Point.h" />
+    <ClInclude Include="include\SC4Rect.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cGZExampleDllDirector.cpp" />
@@ -179,6 +186,7 @@
     <ClCompile Include="src\cRZBaseString.cpp" />
     <ClCompile Include="src\cRZCOMDllDirector.cpp" />
     <ClCompile Include="src\cGZCustomDllDirector.cpp" />
+    <ClCompile Include="src\cS3DVector3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,6 +5,8 @@ class cIGZPersistDBSegment;
 class cIGZString;
 class cISC424HourClock;
 class cISC4HistoryWarehouse;
+class cISC4LotManager;
+class cISC4NetworkManager;
 class cISC4Simulator;
 
 class cISC4City : public cIGZUnknown
@@ -57,7 +59,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetPropManager(void) = 0;
 		virtual intptr_t GetZoneManager(void) = 0;
 		virtual intptr_t GetLotConfigurationManager(void) = 0;
-		virtual intptr_t GetNetworkManager(void) = 0;
+		virtual cISC4NetworkManager* GetNetworkManager(void) = 0;
 		virtual intptr_t GetDispatchManager(void) = 0;
 		virtual intptr_t GetTrafficNetwork(void) = 0;
 		virtual intptr_t GetPropDeveloper(void) = 0;
