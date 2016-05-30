@@ -4,6 +4,7 @@
 class cIGZPersistDBSegment;
 class cIGZString;
 class cISC424HourClock;
+class cISC4DisasterLayer;
 class cISC4HistoryWarehouse;
 class cISC4LotManager;
 class cISC4NetworkManager;
@@ -72,6 +73,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetAutomataControllerManager(void) = 0;
 		virtual intptr_t GetAutomataScriptSystem(void) = 0;
 		virtual intptr_t GetCitySituationManager(void) = 0;
+
 		virtual cISC4Simulator* GetSimulator(void) = 0;
 		virtual intptr_t GetAuraSimulator(void) = 0;
 		virtual intptr_t GetBudgetSimulator(void) = 0;
@@ -95,7 +97,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetWeatherSimulator(void) = 0;
 		virtual intptr_t GetMySimAgentSimulator(void) = 0;
 		
-		virtual intptr_t GetDisasterLayer(void) = 0;
+		virtual cISC4DisasterLayer* GetDisasterLayer(void) = 0;
 		virtual intptr_t GetCivicBuildingSimulator(void) = 0;
 		virtual intptr_t GetParkManager(void) = 0;
 		virtual intptr_t GetZoneDeveloper(void) = 0;

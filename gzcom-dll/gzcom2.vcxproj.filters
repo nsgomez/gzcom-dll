@@ -159,6 +159,9 @@
     <ClInclude Include="include\cISC4TutorialSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4DisasterLayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZCOMDllDirector.cpp">

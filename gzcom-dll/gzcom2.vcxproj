@@ -161,6 +161,7 @@
     <ClInclude Include="include\cISC424HourClock.h" />
     <ClInclude Include="include\cISC4App.h" />
     <ClInclude Include="include\cISC4City.h" />
+    <ClInclude Include="include\cISC4DisasterLayer.h" />
     <ClInclude Include="include\cISC4FeatureManager.h" />
     <ClInclude Include="include\cISC4HistoryWarehouse.h" />
     <ClInclude Include="include\cISC4LotManager.h" />
