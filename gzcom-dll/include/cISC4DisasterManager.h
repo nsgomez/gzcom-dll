@@ -7,6 +7,9 @@ class cISC4DisasterInstance;
 class cISC4DisasterManager : public cIGZUnknown
 {
 	public:
+		virtual bool Init(void) = 0;
+		virtual bool Shutdown(void) = 0;
+
 		virtual uint32_t GetID(void) = 0;
 		
 		virtual cISC4DisasterInstance* AttemptDisasterStart(void) = 0;

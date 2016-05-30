@@ -8,6 +8,9 @@ class cISC4WinCatalogView;
 class cISC4TutorialSystem : public cIGZUnknown
 {
 	public:
+		virtual bool Init(void) = 0;
+		virtual bool Shutdown(void) = 0;
+
 		virtual bool startTutorial(void) = 0;
 		virtual bool endTutorial(bool bEndTutorialRegistry) = 0;
 

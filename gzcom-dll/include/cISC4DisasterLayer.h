@@ -8,6 +8,9 @@ class cISC4Occupant;
 class cISC4DisasterLayer : public cIGZUnknown
 {
 	public:
+		virtual bool Init(void) = 0;
+		virtual bool Shutdown(void) = 0;
+
 		virtual bool EnableDisasters(bool bToggle) = 0;
 		virtual bool DisastersEnabled(void) = 0;
 

@@ -14,6 +14,9 @@ class cISC4TutorialSystem;
 class cISC4City : public cIGZUnknown
 {
 	public:
+		virtual bool Init(void) = 0;
+		virtual bool Shutdown(void) = 0;
+
 		virtual uint32_t GetCitySerialNumber(void) = 0;
 		virtual cISC4City* SetCitySerialNumber(uint32_t dwSerial) = 0;
 		virtual uint32_t GetNewOccupantSerialNumber(void) = 0;

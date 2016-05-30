@@ -7,6 +7,9 @@ class cISC4Region;
 class cISC4Nation : public cIGZUnknown
 {
 	public:
+		virtual bool Init(void) = 0;
+		virtual bool Shutdown(void) = 0;
+
 		virtual void* GetRegionDirectory(void) = 0;
 		virtual int GetRegionCount(void) = 0;
 		

@@ -4,6 +4,9 @@
 class cISC424HourClock : public cIGZUnknown
 {
 	public:
+		virtual bool Init(void) = 0;
+		virtual bool Shutdown(void) = 0;
+
 		virtual int32_t SetVisualTimeMode(int32_t nTimeMode) = 0;
 		virtual int32_t GetVisualTimeMode(void) = 0;
 

@@ -11,6 +11,9 @@ class cS3DVector3;
 class cISC4LotManager : public cIGZUnknown
 {
 	public:
+		virtual bool Init(void) = 0;
+		virtual bool Shutdown(void) = 0;
+
 		virtual bool GetLot(int32_t nCellX, int32_t nCellY, bool bUnknown) = 0;
 		virtual bool GetLot(cS3DVector3 const& sPoint) = 0;
 

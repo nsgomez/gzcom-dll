@@ -6,6 +6,9 @@ class cIGZDate;
 class cISC4HistoryWarehouse : public cIGZUnknown
 {
 	public:
+		virtual bool Init(void) = 0;
+		virtual bool Shutdown(void) = 0;
+
 		virtual bool GetCount(uint32_t dwHistoryType, cIGZDate const& sStartDate, cIGZDate const& sEndDate, float& fUnknown) = 0;
 		virtual bool GetTrend(uint32_t dwHistoryType, cIGZDate const& sStartDate, cIGZDate const& sEndDate, float& fM, float& fB) = 0;
 		virtual bool GetMinMaxAverage(uint32_t dwHistoryType, cIGZDate const& sStartDate, cIGZDate const& sEndDate, float& fMin, float& fMax, float& fAvg) = 0;

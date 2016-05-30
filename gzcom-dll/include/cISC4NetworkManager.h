@@ -13,6 +13,9 @@ class cISC4OccupantManager;
 class cISC4NetworkManager : public cIGZUnknown
 {
 	public:
+		virtual bool Init(void) = 0;
+		virtual bool Shutdown(void) = 0;
+
 		virtual cISC4NetworkTool* GetNetworkTool(int32_t nNetworkType, bool bCreateUnique) = 0;
 
 		virtual bool DestroyNetworkOccupants(std::list<cISC4Occupant*> const& sOccupants) = 0;

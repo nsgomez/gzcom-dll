@@ -9,6 +9,9 @@ class cIGZString;
 class cISC4Simulator : public cIGZUnknown
 {
 	public:
+		virtual bool Init(void) = 0;
+		virtual bool Shutdown(void) = 0;
+
 		virtual bool GetSimStartDate(cIGZDate& sDate) = 0;
 		
 		virtual cIGZDate* GetSimDate(void) = 0;

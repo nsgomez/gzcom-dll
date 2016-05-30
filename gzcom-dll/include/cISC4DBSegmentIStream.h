@@ -6,7 +6,7 @@ class cIGZSerializable;
 class cIGZVariant;
 class cISC4DBSegment;
 
-class cISC4DBSegmentOStream : public cIGZIStream
+class cISC4DBSegmentIStream : public cIGZIStream
 {
 	public:
 		virtual bool Open(cISC4DBSegment* pSegment, cGZPersistResourceKey const& sKey, bool bUnknown) = 0;
