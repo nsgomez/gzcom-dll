@@ -165,6 +165,9 @@
     <ClInclude Include="include\cISC4DisasterInstanceFire.h" />
     <ClInclude Include="include\cISC4DisasterInstanceVolcano.h" />
     <ClInclude Include="include\cISC4DisasterLayer.h" />
+    <ClInclude Include="include\cISC4DisasterManager.h" />
+    <ClInclude Include="include\cISC4DisasterManagerFire.h" />
+    <ClInclude Include="include\cISC4DisasterManagerVolcano.h" />
     <ClInclude Include="include\cISC4FeatureManager.h" />
     <ClInclude Include="include\cISC4HistoryWarehouse.h" />
     <ClInclude Include="include\cISC4LotManager.h" />
