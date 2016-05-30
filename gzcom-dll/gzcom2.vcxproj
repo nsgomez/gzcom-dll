@@ -169,6 +169,7 @@
     <ClInclude Include="include\cISC4Region.h" />
     <ClInclude Include="include\cISC4RenderProperties.h" />
     <ClInclude Include="include\cISC4Simulator.h" />
+    <ClInclude Include="include\cISC4TutorialSystem.h" />
     <ClInclude Include="include\cRZBaseString.h" />
     <ClInclude Include="include\cRZCOMDllDirector.h" />
     <ClInclude Include="include\cRZPoint.h" />

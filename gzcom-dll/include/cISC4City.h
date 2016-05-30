@@ -8,6 +8,7 @@ class cISC4HistoryWarehouse;
 class cISC4LotManager;
 class cISC4NetworkManager;
 class cISC4Simulator;
+class cISC4TutorialSystem;
 
 class cISC4City : public cIGZUnknown
 {
@@ -105,7 +106,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetTractDeveloper(void) = 0;
 
 		virtual intptr_t GetAdvisorSystem(void) = 0;
-		virtual intptr_t GetTutorialSystem(void) = 0;
+		virtual cISC4TutorialSystem* GetTutorialSystem(void) = 0;
 
 		virtual intptr_t GetSurfaceWater(void) = 0;
 		virtual intptr_t GetTerrain(void) = 0;
