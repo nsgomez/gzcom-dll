@@ -173,6 +173,7 @@
     <ClInclude Include="include\cISC4LotManager.h" />
     <ClInclude Include="include\cISC4Nation.h" />
     <ClInclude Include="include\cISC4NetworkManager.h" />
+    <ClInclude Include="include\cISC4Occupant.h" />
     <ClInclude Include="include\cISC4Region.h" />
     <ClInclude Include="include\cISC4RenderProperties.h" />
     <ClInclude Include="include\cISC4Simulator.h" />
