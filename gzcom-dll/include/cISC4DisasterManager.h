@@ -13,7 +13,7 @@ class cISC4DisasterManager : public cIGZUnknown
 		virtual uint32_t GetID(void) = 0;
 		
 		virtual cISC4DisasterInstance* AttemptDisasterStart(void) = 0;
-		virtual cISC4DisasterInstance* AttemptDisasterStart(int32_t nCellX, int32_t nCellY) = 0;
+		virtual cISC4DisasterInstance* AttemptDisasterStart(int32_t nCellX, int32_t nCellZ) = 0;
 
 		virtual bool AddInstanceToList(cISC4DisasterInstance* pInstance) = 0;
 		virtual bool RemoveInstanceFromList(cISC4DisasterInstance* pInstance) = 0;
