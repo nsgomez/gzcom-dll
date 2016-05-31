@@ -3,6 +3,7 @@
 #include <list>
 
 class cIGZApp;
+class cIGZCOM;
 class cIGZFrameWorkHooks;
 class cIGZSystemService;
 
@@ -23,7 +24,7 @@ class cIGZFrameWork : public cIGZUnknown
 
 		virtual bool AddSystemService(cIGZSystemService* pService) = 0;
 		virtual bool RemoveSystemService(cIGZSystemService* pService) = 0;
-		virtual void* GetSystemService(uint32_t srvid, uint32_t riid, void** ppService) = 0;
+		virtual bool GetSystemService(uint32_t srvid, uint32_t riid, void** ppService) = 0;
 		virtual bool EnumSystemServices(void* enumerator, cIGZUnknown* pUnknown, uint32_t dwUnknown) = 0; // ??? - enumerator is a function but what is prototype?
 
 		virtual bool AddHook(cIGZFrameWorkHooks* pHooks) = 0;
@@ -50,7 +51,7 @@ class cIGZFrameWork : public cIGZUnknown
 		virtual char* CommandLine(void) = 0;
 		virtual bool IsInstall(void) = 0;
 
-		virtual char* GetCOMObject(void) = 0;
+		virtual cIGZCOM* GetCOMObject(void) = 0;
 		virtual int32_t GetState(void) = 0;
 
 		virtual void* GetDebugStream(void) = 0; // unknown ret type
