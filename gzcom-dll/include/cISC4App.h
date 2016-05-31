@@ -11,6 +11,7 @@ class cISC4FeatureManager;
 class cISC4Nation;
 class cISC4Preferences;
 class cISC4Region;
+class cISC4RegionalCity;
 class cISC4RenderProperties;
 
 // Taken from the Mac vtable
@@ -62,7 +63,7 @@ class cISC4App : public cIGZUnknown
 		virtual cIGZCheatCodeManager* GetCheatCodeManager(void) = 0;
 		virtual cISC4Nation* GetNation(void) = 0;
 		virtual cISC4Region* GetRegion(void) = 0;
-		virtual intptr_t GetRegionalCity(void) = 0; // Returns a cISC4RegionalCity*
+		virtual cISC4RegionalCity* GetRegionalCity(void) = 0;
 		virtual cISC4City* GetCity(void) = 0;
 		virtual intptr_t GetPreferences(void) = 0; // Returns a cISC4Preferences*
 		virtual intptr_t GetNewCitySpecification(void) = 0; // Returns a SC4NewCitySpecification*
