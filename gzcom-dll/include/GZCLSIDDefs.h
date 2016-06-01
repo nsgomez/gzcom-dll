@@ -51,6 +51,7 @@ class GZCLSID
 		static const int32_t kcGZWinTextTicker = 0xe32f0b31;
 		static const int32_t kcGZWinTreeView = 0x3ae8bae1;
 		static const int32_t kcHitList = 0x7b1acfcd;
+		static const int32_t kcIGZCanvasMessage = 0xda1062fa;
 		static const int32_t kcRZMessage2Standard = 0x46DF45E7;
 		static const int32_t kcS3DCamera = 0x0E9C6262A;
 		static const int32_t kcS3DFSHTextureFactory = 0x3AB50E2A;

@@ -138,6 +138,9 @@
     <ClInclude Include="include\cISC4Simulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\GZMSGIDDefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\cISC4HistoryWarehouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>

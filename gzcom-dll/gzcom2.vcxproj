@@ -185,6 +185,7 @@
     <ClInclude Include="include\cRZSysServPtr.h" />
     <ClInclude Include="include\cS3DVector3.h" />
     <ClInclude Include="include\GZCLSIDDefs.h" />
+    <ClInclude Include="include\GZMSGIDDefs.h" />
     <ClInclude Include="include\GZServDecls.h" />
     <ClInclude Include="include\GZServPtrs.h" />
     <ClInclude Include="include\SC4Point.h" />
