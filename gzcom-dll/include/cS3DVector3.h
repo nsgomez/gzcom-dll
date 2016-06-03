@@ -9,6 +9,18 @@ class cS3DVector3
 			fZ = 0.0f;
 		}
 
+		cS3DVector3(float fValue) {
+			fX = fValue;
+			fY = fValue;
+			fZ = fValue;
+		}
+
+		cS3DVector3(float fX, float fY, float fZ) {
+			this->fX = fX;
+			this->fY = fY;
+			this->fZ = fZ;
+		}
+
 		float Length(void);
 		cS3DVector3* Normalize(void);
 		cS3DVector3* SetLength(float fNewLength);
