@@ -8,6 +8,7 @@ class cISC4DisasterLayer;
 class cISC4HistoryWarehouse;
 class cISC4LotManager;
 class cISC4NetworkManager;
+class cISC4PollutionSimulator;
 class cISC4ResidentialSimulator;
 class cISC4Simulator;
 class cISC4TutorialSystem;
@@ -94,7 +95,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetOrdinanceSimulator(void) = 0;
 		virtual intptr_t GetPlumbingSimulator(void) = 0;
 		virtual intptr_t GetPoliceSimulator(void) = 0;
-		virtual intptr_t GetPollutionSimulator(void) = 0;
+		virtual cISC4PollutionSimulator* GetPollutionSimulator(void) = 0;
 		virtual intptr_t GetPowerSimulator(void) = 0;
 		virtual cISC4ResidentialSimulator* GetResidentialSimulator(void) = 0;
 		virtual intptr_t GetTrafficSimulator(void) = 0;
