@@ -31,7 +31,7 @@ class cIGZCheatCodeManager : public cIGZUnknown
 		virtual bool SetStateShouldBeSaved(uint32_t clsid, bool bToggle) = 0;
 		virtual bool ClearAllEnabledCheatStates(void) = 0;
 
-		virtual bool SendCheatNotifications(cIGZString const& szUnknownOut, uint32_t dwUnknown) = 0;
+		virtual bool SendCheatNotifications(cIGZString const& szCheatString, uint32_t dwCheatID) = 0;
 		
 		virtual bool DoesCheatCodeMatch(cIGZString const& szCheatName, uint32_t& dwUnknownOut) = 0;
 		virtual bool DoDefaultCheatCodeProcessing(cIGZString const& szUnknown, uint32_t& dwUnknown) = 0;
