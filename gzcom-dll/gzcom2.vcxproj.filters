@@ -192,6 +192,9 @@
     <ClInclude Include="include\cIGZDate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4PollutionSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZCOMDllDirector.cpp">
