@@ -53,6 +53,7 @@ class GZCLSID
 		static const int32_t kcHitList = 0x7b1acfcd;
 		static const int32_t kcIGZCanvasMessage = 0xda1062fa;
 		static const int32_t kcIGZMessage2Standard = 0x65297976;
+		static const int32_t kcIGZMessageTarget2 = 0x452294aa;
 		static const int32_t kcISC4City = 0x66ba4db5;
 		static const int32_t kcRZMessage2Standard = 0x46DF45E7;
 		static const int32_t kcS3DCamera = 0x0E9C6262A;
