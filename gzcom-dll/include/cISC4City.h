@@ -4,6 +4,7 @@
 class cIGZPersistDBSegment;
 class cIGZString;
 class cISC424HourClock;
+class cISC4BudgetSimulator;
 class cISC4DisasterLayer;
 class cISC4HistoryWarehouse;
 class cISC4LotManager;
@@ -82,7 +83,7 @@ class cISC4City : public cIGZUnknown
 
 		virtual cISC4Simulator* GetSimulator(void) = 0;
 		virtual intptr_t GetAuraSimulator(void) = 0;
-		virtual intptr_t GetBudgetSimulator(void) = 0;
+		virtual cISC4BudgetSimulator* GetBudgetSimulator(void) = 0;
 		virtual intptr_t GetBuildingDevelopmentSimulator(void) = 0;
 		virtual intptr_t GetCommercialSimulator(void) = 0;
 		virtual intptr_t GetCrimeSimulator(void) = 0;
