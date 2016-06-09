@@ -15,7 +15,7 @@ class cISC4PoliceSimulator : public cIGZUnknown
 
 		virtual cISC4SimGrid<short>* GetPolicePowerGrid(void) = 0;
 
-		virtual uint32_t GetDepartmentBudget(void) = 0;
+		virtual intptr_t GetDepartmentBudget(void) = 0;
 		
 		virtual bool GetStationFunding(cISC4Occupant* pStation, int32_t& nFunding, SC4Percentage& sFundingPercent) = 0;
 		virtual bool SetStationFunding(cISC4Occupant* pStation, SC4Percentage const& sFundingPercentage) = 0;
