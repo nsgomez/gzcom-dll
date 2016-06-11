@@ -35,7 +35,7 @@ class cISC4Region : public cIGZUnknown
 		virtual int GetBaseTerrainHeight(void) = 0;
 		virtual int32_t GetWaterPrefs(uint8_t& cUnknown1, uint8_t& cUnknown2) = 0;
 
-		virtual bool ResetTutorialCity(int32_t nUnknown) = 0;
+		virtual bool ResetTutorialCity(uint32_t dwTutorialCityID) = 0;
 		
 		virtual bool GetCityLocations(intptr_t pVector) = 0;
 		virtual int32_t GetBoundingRect(intptr_t pRectLongs) = 0;
