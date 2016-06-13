@@ -8,6 +8,8 @@ class cISC4LotConfiguration;
 class cISC4Occupant;
 class cS3DVector3;
 
+template<typename T> class cISC4SimGrid;
+
 class cISC4LotManager : public cIGZUnknown
 {
 	public:
@@ -44,5 +46,5 @@ class cISC4LotManager : public cIGZUnknown
 
 		virtual bool GetLotVertexAltitudeAdjustmentRange(int32_t nCellX, int32_t nCellZ, float& fRangeX, float& fRangeY) = 0;
 		
-		virtual intptr_t GetMaximumCapacityGrid(void) = 0;
+		virtual cISC4SimGrid<short>* GetMaximumCapacityGrid(void) = 0;
 };
