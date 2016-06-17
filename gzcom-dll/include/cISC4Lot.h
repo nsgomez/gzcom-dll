@@ -1,6 +1,7 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include <list>
+#include <map>
 
 class cISCPropertyHolder;
 class cISC4BusinessUnit;
@@ -8,6 +9,7 @@ class cISC4LotConfiguration;
 class cISC4LotConfigurationObject;
 class cISC4Occupant;
 class cISC4TrafficSource;
+class SC4Percentage;
 
 template<typename T> class SC4Rect;
 
@@ -87,4 +89,27 @@ class cISC4Lot : public cIGZUnknown
 		virtual uint32_t GetCapacity(uint32_t dwDeveloperType, bool bForceCalculation) = 0;
 		virtual uint32_t GetAvailableCapacity(uint32_t dwDeveloperType, bool bForceCalculation) = 0;
 
+		virtual uint32_t GetPopulation(uint32_t dwDeveloperType) = 0;
+		virtual uint32_t GetPopulations(void) = 0;
+		virtual bool SetPopulation(uint32_t dwDeveloperType, uint16_t wPopulation) = 0;
+
+		virtual uint32_t GetTravelPopulation(uint32_t dwDeveloperType) = 0;
+		virtual bool ResetTravelPopulation(void) = 0;
+		virtual bool AddTravelPopulation(cISC4Lot* pLot) = 0;
+		
+		virtual cISC4Lot* GetTravelDesignate(void) = 0;
+		virtual bool SetTravelDesignate(cISC4Lot* pDesignate) = 0;
+
+		virtual float GetOccupancy(void) = 0;
+		virtual bool GetOccupancyByType(std::map<uint32_t, SC4Percentage>& sOccupancies) = 0;
+
+		virtual float GetTravelJobs(uint32_t dwWealthType) = 0;
+		virtual bool GetJobs(float fJobs[]) = 0; // An array of four floats it seems
+
+		virtual bool GetNeedsPower(void) = 0;
+		virtual bool GetHasPower(void) = 0;
+		virtual bool SetHasPower(bool bHasPower) = 0;
+
+		virtual bool GetVerticesAreLocked(void) = 0;
+		virtual bool SetVerticesAreLocked(bool bLocked) = 0;
 };
