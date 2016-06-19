@@ -233,5 +233,8 @@
     <ClCompile Include="src\cGZExtraExtraCheatsDllDirector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\cGZCityHallUpgradeDllDirector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

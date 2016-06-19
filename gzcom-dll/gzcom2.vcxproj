@@ -199,6 +199,7 @@
     <ClInclude Include="include\SC4Rect.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\cGZCityHallUpgradeDllDirector.cpp" />
     <ClCompile Include="src\cGZExampleDllDirector.cpp" />
     <ClCompile Include="src\cGZExtraCheatsDllDirector.cpp" />
     <ClCompile Include="src\cGZExtraExtraCheatsDllDirector.cpp" />
