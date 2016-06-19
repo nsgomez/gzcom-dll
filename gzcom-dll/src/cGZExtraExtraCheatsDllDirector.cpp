@@ -8,7 +8,7 @@
 #include "../include/cISC4App.h"
 #include "../include/cISC4City.h"
 #include "../include/cISC4PollutionSimulator.h"
-#include "../include/cISC4RenderProperties.h"
+#include "../include/cISC4SimGrid.h"
 #include "../include/cRZAutoRefCount.h"
 #include "../include/cRZBaseString.h"
 #include "../include/cRZCOMDllDirector.h"
@@ -22,10 +22,10 @@ static const uint32_t kGZIID_cIGZCheatCodeManager = 0xa1085722;
 static const uint32_t kGZIID_cISC4App = 0x26ce01c0;
 static const uint32_t kGZMSG_CheatIssued = 0x230e27ac;
 
-static const uint32_t kCheatRoentgenBeGone = 0x9e0c0b4d;
+static const uint32_t kCheatSievertBeGone = 0x9e0c0b4d;
 static const uint32_t kCheatChernobyl = 0x606a36f7;
 
-static const char* kszCheatRoentgenBeGone = "RoentgenBeGone";
+static const char* kszCheatSievertBeGone = "SievertBeGone";
 static const char* kszCheatChernobyl = "Chernobyl";
 
 class cGZExtraExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cIGZMessageTarget2
@@ -36,7 +36,14 @@ class cGZExtraExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cI
 		   from cIGZMessageTarget (which are pure abstract) or those from
 		   cRZCOMDllDirector, and the compiler will complain. */
 		bool QueryInterface(uint32_t riid, void** ppvObj) {
-			return cRZCOMDllDirector::QueryInterface(riid, ppvObj);
+			if (riid == GZCLSID::kcIGZMessageTarget2) {
+				*ppvObj = static_cast<cIGZMessageTarget2*>(this);
+				AddRef();
+				return true;
+			}
+			else {
+				return cRZCOMDllDirector::QueryInterface(riid, ppvObj);
+			}
 		}
 
 		uint32_t AddRef(void) {
@@ -53,14 +60,12 @@ class cGZExtraExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cI
 
 		bool DoMessage(cIGZMessage2* pMessage) {
 			if (pMessage->GetType() == kGZMSG_CheatIssued) {
-				cIGZMessage2Standard* pStandardMsg;
-				if (pMessage->QueryInterface(GZCLSID::kcIGZMessage2Standard, (void**)&pStandardMsg)) {
-					uint32_t dwCheatID = pStandardMsg->GetData1();
-					cIGZString* pszCheatData = reinterpret_cast<cIGZString*>(pStandardMsg->GetVoid2());
-					
-					ProcessCheat(dwCheatID, pszCheatData);
-					pMessage->Release();
-				}
+				cIGZMessage2Standard* pStandardMsg = static_cast<cIGZMessage2Standard*>(pMessage);
+
+				uint32_t dwCheatID = pStandardMsg->GetData1();
+				cIGZString* pszCheatData = static_cast<cIGZString*>(pStandardMsg->GetVoid2());
+
+				ProcessCheat(dwCheatID, pszCheatData);
 			}
 
 			return true;
@@ -98,13 +103,18 @@ class cGZExtraExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cI
 					PreAppInit();
 				}
 			}
+		
+			return true;
+		}
+
+		bool AbortiveQuit() {
 			return true;
 		}
 
 	protected:
 		bool ProcessCheat(uint32_t dwCheatID, cIGZString const* szCheatText) {
 			switch (dwCheatID) {
-				case kCheatRoentgenBeGone: return SetAllRadiation(false);
+				case kCheatSievertBeGone: return SetAllRadiation(false);
 				case kCheatChernobyl: return SetAllRadiation(true);
 				default: return false;
 			}
@@ -115,8 +125,8 @@ class cGZExtraExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cI
 			// the rest of the game does.
 			pCheatMgr->AddNotification2(this, 0);
 
-			cRZBaseString szCheatName(kszCheatRoentgenBeGone);
-			pCheatMgr->RegisterCheatCode(kCheatRoentgenBeGone, szCheatName);
+			cRZBaseString szCheatName(kszCheatSievertBeGone);
+			pCheatMgr->RegisterCheatCode(kCheatSievertBeGone, szCheatName);
 
 			szCheatName.FromChar(kszCheatChernobyl);
 			pCheatMgr->RegisterCheatCode(kCheatChernobyl, szCheatName);
