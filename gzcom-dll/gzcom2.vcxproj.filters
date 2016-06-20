@@ -219,6 +219,9 @@
     <ClInclude Include="include\cISC4TrafficSource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4LotConfiguration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZCOMDllDirector.cpp">
