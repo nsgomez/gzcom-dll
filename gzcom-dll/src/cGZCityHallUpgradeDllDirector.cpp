@@ -111,7 +111,7 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZCOMDllDirector, public cIG
 	protected:
 		bool ProcessCheat(uint32_t dwCheatID, cIGZString const* szCheatText) {
 			switch (dwCheatID) {
-				case kCheatUpgradeCityHall: return NonexistentFunction();
+				case kCheatUpgradeCityHall: return true;
 				default: return false;
 			}
 		}
