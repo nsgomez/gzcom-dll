@@ -154,6 +154,7 @@
     <ClInclude Include="include\cIGZMouseMessage.h" />
     <ClInclude Include="include\cIGZOStream.h" />
     <ClInclude Include="include\cISC4BudgetSimulator.h" />
+    <ClInclude Include="include\cISC4BusinessUnit.h" />
     <ClInclude Include="include\cISC4DBSegmentIStream.h" />
     <ClInclude Include="include\cISC4DBSegmentOStream.h" />
     <ClInclude Include="include\cIGZSerializable.h" />
@@ -172,6 +173,7 @@
     <ClInclude Include="include\cISC4DisasterManagerVolcano.h" />
     <ClInclude Include="include\cISC4FeatureManager.h" />
     <ClInclude Include="include\cISC4HistoryWarehouse.h" />
+    <ClInclude Include="include\cISC4Lot.h" />
     <ClInclude Include="include\cISC4LotManager.h" />
     <ClInclude Include="include\cISC4Nation.h" />
     <ClInclude Include="include\cISC4NetworkManager.h" />
