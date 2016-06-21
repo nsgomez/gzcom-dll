@@ -60,7 +60,7 @@ class cISC4City : public cIGZUnknown
 
 		virtual int32_t GetWorldHemisphere(void) = 0;
 
-		// intptr_t's are likely class instances
+		// intptr_t's are class instances that have yet to be discerned
 		virtual intptr_t GetDemolitionUtility(void) = 0;
 		virtual cISC4HistoryWarehouse* GetHistoryWarehouse(void) = 0;
 		virtual cISC4LotManager* GetLotManager(void) = 0;
