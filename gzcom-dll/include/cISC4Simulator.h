@@ -2,7 +2,7 @@
 #include "cIGZUnknown.h"
 #include <vector>
 
-class cIGZDate; // todo
+class cIGZDate;
 class cIGZMessageTarget2;
 class cIGZString;
 
