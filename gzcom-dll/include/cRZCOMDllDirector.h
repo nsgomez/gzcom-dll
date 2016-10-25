@@ -3,8 +3,8 @@
 #include "cIGZFrameWorkHooks.h"
 #include "cRZBaseString.h"
 
-// TODO: use EASTL instead, esp. since VS2015 is deprecating this
-#include <hash_map>
+// TODO: use EASTL instead
+#include <unordered_map>
 #include <vector>
 
 // This class is derived from Paul Pedriana's released code and should be perfect.
@@ -78,7 +78,7 @@ class cRZCOMDllDirector : public cIGZCOMDirector, public cIGZFrameWorkHooks
 
 		typedef uint32_t ClassObjectID;
 		typedef std::pair<DummyFunctionPtr, int32_t> FactoryFuncRecord;
-		typedef std::hash_map<ClassObjectID, FactoryFuncRecord> ClassObjectMap;
+		typedef std::unordered_map<ClassObjectID, FactoryFuncRecord> ClassObjectMap;
 
 		ClassObjectMap mClassObjectMap;
 };
