@@ -159,6 +159,7 @@
     <ClInclude Include="include\cISC4Advisor.h" />
     <ClInclude Include="include\cISC4AdvisorSystem.h" />
     <ClInclude Include="include\cISC4BudgetSimulator.h" />
+    <ClInclude Include="include\cISC4BuildingDevelopmentSimulator.h" />
     <ClInclude Include="include\cISC4BusinessUnit.h" />
     <ClInclude Include="include\cISC4DBSegmentIStream.h" />
     <ClInclude Include="include\cISC4DBSegmentOStream.h" />

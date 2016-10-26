@@ -225,6 +225,9 @@
     <ClInclude Include="include\cISC4LotConfiguration.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4BuildingDevelopmentSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\cISC4LotConfigurationManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
