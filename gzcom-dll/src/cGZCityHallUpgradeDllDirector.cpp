@@ -23,6 +23,8 @@ static const uint32_t kGZMSG_CheatIssued = 0x230e27ac;
 static const uint32_t kGZMSG_MonthPassed = 0x66956816;
 static const uint32_t kGZMSG_OccupantInserted = 0x99ef1142;
 static const uint32_t kGZMSG_OccupantRemoved = 0x99ef1143;
+static const uint32_t kGZMSG_UpgradeCityHall3 = 0xd788e345;
+static const uint32_t kGZMSG_UpgradeCityHall2 = 0xd888e355;
 
 static const uint32_t kSCPROP_ExemplarID = 0x21;
 static const uint32_t kSCPROP_CityExclusionGroup = 0xea2e078b;
@@ -42,6 +44,7 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZCOMDllDirector, public cIG
 	public:
 		cGZCityHallUpgradePluginCOMDirector() {
 			pCityHall = NULL;
+			uCityHallStage = 0;
 		}
 
 		/* Failing to explicitly delegate these methods results in some
@@ -144,7 +147,7 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZCOMDllDirector, public cIG
 		}
 
 	protected:
-		int GetCityHallType(cISC4Occupant* pOccupant) {
+		uint8_t GetCityHallType(cISC4Occupant* pOccupant) {
 			if (pOccupant->GetType() != kOccupantType_Building) {
 				return 0;
 			}
@@ -167,12 +170,13 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZCOMDllDirector, public cIG
 		}
 
 		void DoOccupantInserted(cISC4Occupant* pOccupant) {
-			int nCityHallType = GetCityHallType(pOccupant);
-			if (nCityHallType == 0) {
+			uint8_t uCityHallType = GetCityHallType(pOccupant);
+			if (uCityHallType == 0) {
 				return;
 			}
 
 			pCityHall = pOccupant;
+			uCityHallStage = uCityHallType;
 			
 			char buf[24];
 			sprintf(buf, "spawn %08x", pCityHall);
@@ -182,18 +186,39 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZCOMDllDirector, public cIG
 		void DoOccupantRemoved(cISC4Occupant* pOccupant) {
 			if (pOccupant == pCityHall) {
 				pCityHall = NULL;
+				uCityHallStage = 0;
 				MessageBoxA(NULL, "Removed city hall!", NULL, NULL);
 			}
 		}
 
 		void DoMonthlyTick(void) {
 			cISC4App* pISC4App;
-			if (RZGetFrameWork()->Application()->QueryInterface(kGZIID_cISC4App, (void**)&pISC4App)) {
-				cISC4RegionalCity* pCity = pISC4App->GetRegionalCity();
-				if (pCity) {
-					// ;
-				}
+			if (!RZGetFrameWork()->Application()->QueryInterface(kGZIID_cISC4App, (void**)&pISC4App))
+				return;
+
+			cISC4RegionalCity* pCity = pISC4App->GetRegionalCity();
+			if (!pCity)
+				return;
+			
+			int32_t nPopulation = pCity->GetPopulation();
+			if (nPopulation >= 135000 && uCityHallStage < 3) {
+				SendUpgradeMessage(kGZMSG_UpgradeCityHall3);
 			}
+			else if (nPopulation >= 65000 && uCityHallStage < 2) {
+				SendUpgradeMessage(kGZMSG_UpgradeCityHall2);
+			}
+		}
+
+		void SendUpgradeMessage(uint32_t dwMessageID) {
+			cISC4App* pISC4App;
+			if (!RZGetFrameWork()->Application()->QueryInterface(kGZIID_cISC4App, (void**)&pISC4App))
+				return;
+
+			cISC4City* pCity = pISC4App->GetCity();
+			if (!pCity)
+				return;
+			
+			intptr_t pAdvisory = pCity->GetAdvisorSystem();
 		}
 
 		bool ProcessCheat(uint32_t dwCheatID, cIGZString const* szCheatText) {
@@ -214,6 +239,7 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZCOMDllDirector, public cIG
 
 	protected:
 		cRZAutoRefCount<cISC4Occupant> pCityHall;
+		uint8_t uCityHallStage;
 };
 
 // You need to replace the director returned here for the game and this DLL
