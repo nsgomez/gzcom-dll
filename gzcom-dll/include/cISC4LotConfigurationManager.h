@@ -1,6 +1,6 @@
 #pragma once
 #include "cIGZUnknown.h"
-#include <hash_set>
+#include <unordered_set>
 #include <vector>
 
 class cGZPersistResourceKey;
@@ -20,14 +20,14 @@ class cISC4LotConfigurationManager : public cIGZUnknown
 		virtual bool RemoveLotConfiguration(uint32_t dwConfigID) = 0;
 		
 		virtual cISC4LotConfiguration* GetLotConfiguration(uint32_t dwConfigID) = 0;
-		virtual bool GetLotConfigurationsByFilter(std::hash_set<cISC4LotConfiguration*>& sConfigs, cISC4LotConfigurationFilter* pFilter) = 0;
-		virtual bool GetLotConfigurationsByFamily(std::hash_set<cISC4LotConfiguration*>& sConfigs, uint32_t dwFamily) = 0;
-		virtual bool GetLotConfigurationsBySize(std::hash_set<cISC4LotConfiguration*>& sConfigs, uint32_t sX, uint32_t sZ) = 0;
-		virtual bool ClearLotConfigurationSet(std::hash_set<cISC4LotConfiguration*>& sConfigs) = 0;
+		virtual bool GetLotConfigurationsByFilter(std::unordered_set<cISC4LotConfiguration*>& sConfigs, cISC4LotConfigurationFilter* pFilter) = 0;
+		virtual bool GetLotConfigurationsByFamily(std::unordered_set<cISC4LotConfiguration*>& sConfigs, uint32_t dwFamily) = 0;
+		virtual bool GetLotConfigurationsBySize(std::unordered_set<cISC4LotConfiguration*>& sConfigs, uint32_t sX, uint32_t sZ) = 0;
+		virtual bool ClearLotConfigurationSet(std::unordered_set<cISC4LotConfiguration*>& sConfigs) = 0;
 
-		virtual bool GetLotConfigurationIDsByFilter(std::hash_set<uint32_t>& sConfigs, cISC4LotConfigurationFilter* pFilter) = 0;
-		virtual bool GetLotConfigurationIDsByFamily(std::hash_set<uint32_t>& sConfigs, uint32_t dwFamily) = 0;
-		virtual bool GetLotConfigurationIDsBySize(std::hash_set<uint32_t>& sConfigs, uint32_t sX, uint32_t sZ) = 0;
+		virtual bool GetLotConfigurationIDsByFilter(std::unordered_set<uint32_t>& sConfigs, cISC4LotConfigurationFilter* pFilter) = 0;
+		virtual bool GetLotConfigurationIDsByFamily(std::unordered_set<uint32_t>& sConfigs, uint32_t dwFamily) = 0;
+		virtual bool GetLotConfigurationIDsBySize(std::unordered_set<uint32_t>& sConfigs, uint32_t sX, uint32_t sZ) = 0;
 
 		virtual bool LotConfigurationHasBuildingFamily(cISC4LotConfiguration* pConfig, uint32_t dwFamily, cSC4LotConfigurationObject** ppObj) = 0;
 		virtual bool LotConfigurationHasBuildingType(cISC4LotConfiguration* pConfig, uint32_t dwFamily, cSC4LotConfigurationObject** ppObj) = 0;

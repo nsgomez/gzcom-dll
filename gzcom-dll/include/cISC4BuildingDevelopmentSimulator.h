@@ -1,6 +1,6 @@
 #pragma once
 #include "cIGZUnknown.h"
-#include <hash_set>
+#include <unordered_set>
 #include <vector>
 
 class cGZPersistResourceKey;
@@ -25,7 +25,6 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 		virtual bool AddNewBuildingOccupant(uint32_t dwUnknown, int32_t nUnknown1, int32_t nUnknown2, int32_t nUnknown3) = 0;
 
 		virtual int64_t GetCostOfOccupantDemolition(cISC4BuildingOccupant* pOccupant, uint32_t dwUnknown) = 0;
-		virtual int64_t GetCostOfOccupantDemolition(cISC4FoundationOccupant* pOccupant, uint32_t dwUnknown) = 0;
 
 		virtual size_t GetAllBuildingTypes(uint32_t* pArray, uint32_t& nCount) = 0;
 		virtual size_t GetAllBuildingTypes(std::vector<uint32_t>& sList) = 0;
@@ -36,8 +35,8 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 		virtual bool IsBuildingTypeValid(uint32_t dwType) = 0;
 		virtual bool IsBuildingFamilyTypeValid(uint32_t dwFamilyType) = 0;
 
-		virtual bool GetBuildingTypesByFilter(std::hash_set<uint32_t>& sList, cISC4BuildingTypeFilter* pFilter) = 0;
-		virtual bool GetBuildingTypesByFamily(std::hash_set<uint32_t>& sList, uint32_t dwFamily) = 0;
+		virtual bool GetBuildingTypesByFilter(std::unordered_set<uint32_t>& sList, cISC4BuildingTypeFilter* pFilter) = 0;
+		virtual bool GetBuildingTypesByFamily(std::unordered_set<uint32_t>& sList, uint32_t dwFamily) = 0;
 		virtual bool GetBuildingTypesByFamily(std::vector<uint32_t>& sList, uint32_t dwFamily) = 0;
 
 		virtual bool IsBuildingInFamily(uint32_t dwBuilding, uint32_t dwFamily) = 0;
