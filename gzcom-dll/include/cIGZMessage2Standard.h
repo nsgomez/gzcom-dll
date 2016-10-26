@@ -45,5 +45,5 @@ class cIGZMessage2Standard : public cIGZMessage2
 
 		virtual bool GetHasExtra(void) const = 0;
 		virtual uint32_t GetExtra(uint32_t dwLen, void** ppOut) const = 0;
-		virtual bool SetExtra(cIGZSerializable* pSerializable) const = 0;
+		virtual bool SetExtra(cIGZSerializable* pSerializable) = 0;
 };

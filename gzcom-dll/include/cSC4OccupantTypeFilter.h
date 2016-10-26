@@ -9,6 +9,14 @@ class cISCPropertyHolder;
 class cSC4OccupantTypeFilter : public cISC4OccupantFilter, public cRZUnknown
 {
 	public:
+		bool QueryInterface(uint32_t riid, void** ppvObj) {
+			return cRZUnknown::QueryInterface(riid, ppvObj);
+		}
+
+		uint32_t AddRef(void) { return cRZUnknown::AddRef(); }
+		uint32_t Release(void) { return cRZUnknown::Release(); }
+
+	public:
 		virtual bool IsOccupantIncluded(cISC4Occupant* pOccupant) {
 			return true;
 		}

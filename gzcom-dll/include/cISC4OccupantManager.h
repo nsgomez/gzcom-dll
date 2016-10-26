@@ -53,12 +53,12 @@ class cISC4OccupantManager : public cIGZUnknown
 		virtual bool GetOccupantsByStandardCityCells(std::list<cISC4Occupant*>& sOccupants, int const* fXCells, int const* fZCells, uint32_t dwType, uint32_t dwUnknown) = 0;
 		virtual bool GetOccupantsByStandardCityCells(std::list<cISC4Occupant*>& sOccupants, int const* fXCells, int const* fZCells, cISC4OccupantFilter* pFilter, uint32_t dwUnknown) = 0;
 
-		virtual bool IterateOccupantsByBBox(bool(*pfIterator)(cISC4Occupant*, void*), void* pUnknown, float const* pfUnknown1, float const* pfUnknown2, uint32_t dwUnknown) = 0;
-		virtual bool IterateOccupantsByBBox(bool(*pfIterator)(cISC4Occupant*, void*), void* pUnknown, float const* pfUnknown1, float const* pfUnknown2, cISC4OccupantFilter* pFilter) = 0;
-		virtual bool IterateOccupants(bool(*pfIterator)(cISC4Occupant*, void*), void* pUnknown, int const* pnUnknown1, int const* pnUnknown2, uint32_t dwUnknown) = 0;
-		virtual bool IterateOccupants(bool(*pfIterator)(cISC4Occupant*, void*), void* pUnknown, int const* pnUnknown1, int const* pnUnknown2, cISC4OccupantFilter* pFilter) = 0;
-		virtual bool IterateOccupantsByStandardCityCell(bool(*pfIterator)(cISC4Occupant*, void*), void* pUnknown, int const* pnUnknown1, int const* pnUnknown2, uint32_t dwUnknown) = 0;
-		virtual bool IterateOccupantsByStandardCityCell(bool(*pfIterator)(cISC4Occupant*, void*), void* pUnknown, int const* pnUnknown1, int const* pnUnknown2, cISC4OccupantFilter* pFilter) = 0;
+		virtual bool IterateOccupantsByBBox(bool(*pfIterator)(cISC4Occupant*, void*), void* pData, float const* pfUnknown1, float const* pfUnknown2, uint32_t dwUnknown) = 0;
+		virtual bool IterateOccupantsByBBox(bool(*pfIterator)(cISC4Occupant*, void*), void* pData, float const* pfUnknown1, float const* pfUnknown2, cISC4OccupantFilter* pFilter) = 0;
+		virtual bool IterateOccupants(bool(*pfIterator)(cISC4Occupant*, void*), void* pData, int const* pnUnknown1, int const* pnUnknown2, uint32_t dwUnknown) = 0;
+		virtual bool IterateOccupants(bool(*pfIterator)(cISC4Occupant*, void*), void* pData, int const* pnUnknown1, int const* pnUnknown2, cISC4OccupantFilter* pFilter) = 0;
+		virtual bool IterateOccupantsByStandardCityCell(bool(*pfIterator)(cISC4Occupant*, void*), void* pData, int const* pnUnknown1, int const* pnUnknown2, uint32_t dwUnknown) = 0;
+		virtual bool IterateOccupantsByStandardCityCell(bool(*pfIterator)(cISC4Occupant*, void*), void* pData, int const* pnUnknown1, int const* pnUnknown2, cISC4OccupantFilter* pFilter) = 0;
 
 		virtual bool ReleaseOccupantList(std::list<cISC4Occupant*>& sList) = 0;
 };

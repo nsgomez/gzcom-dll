@@ -3,9 +3,31 @@
 #include "cIGZSerializable.h"
 #include "cRZAutoRefCount.h"
 #include "cRZBaseString.h"
+#include "cRZMessage2.h"
 
-class cRZMessage2Standard : public cIGZMessage2Standard
+class cRZMessage2Standard : public cIGZMessage2Standard, public cRZMessage2
 {
+	public:
+		bool QueryInterface(uint32_t riid, void** ppvObj) {
+			return cRZUnknown::QueryInterface(riid, ppvObj);
+		}
+		uint32_t AddRef(void) { return cRZUnknown::AddRef(); }
+		uint32_t Release(void) { return cRZUnknown::Release(); }
+
+		bool Create(uint32_t dwType, void** ppUnknown) const {
+			return cRZMessage2::Create(dwType, ppUnknown);
+		}
+
+		uint32_t GetType(void) const { return cRZMessage2::GetType(); }
+		uint32_t SetType(uint32_t dwType) { return cRZMessage2::SetType(dwType); }
+
+		bool operator==(cIGZMessage2 const& msgOther) const {
+			return cRZMessage2::operator==(msgOther);
+		}
+		bool operator<(cIGZMessage2 const& msgOther) const {
+			return cRZMessage2::operator<(msgOther);
+		}
+
 	public:
 		cRZMessage2Standard();
 
