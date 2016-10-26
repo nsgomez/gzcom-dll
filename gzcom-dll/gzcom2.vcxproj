@@ -192,8 +192,11 @@
     <ClInclude Include="include\cRZAutoRefCount.h" />
     <ClInclude Include="include\cRZBaseString.h" />
     <ClInclude Include="include\cRZCOMDllDirector.h" />
+    <ClInclude Include="include\cRZMessage2.h" />
+    <ClInclude Include="include\cRZMessage2Standard.h" />
     <ClInclude Include="include\cRZPoint.h" />
     <ClInclude Include="include\cRZSysServPtr.h" />
+    <ClInclude Include="include\cRZUnknown.h" />
     <ClInclude Include="include\cS3DVector3.h" />
     <ClInclude Include="include\GZCLSIDDefs.h" />
     <ClInclude Include="include\GZMSGIDDefs.h" />
@@ -210,6 +213,8 @@
     <ClCompile Include="src\cRZBaseString.cpp" />
     <ClCompile Include="src\cRZCOMDllDirector.cpp" />
     <ClCompile Include="src\cGZCustomDllDirector.cpp" />
+    <ClCompile Include="src\cRZMessage2.cpp" />
+    <ClCompile Include="src\cRZMessage2Standard.cpp" />
     <ClCompile Include="src\cS3DVector3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

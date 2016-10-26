@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Directors">
+      <UniqueIdentifier>{71a7cf7a-570e-4fcb-be8f-57f1d0ccdcb2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\cGZCOMLibrary.h">
@@ -222,30 +225,45 @@
     <ClInclude Include="include\cISC4LotConfiguration.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cRZMessage2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cRZMessage2Standard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cRZUnknown.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\cRZCOMDllDirector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cGZCustomDllDirector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cGZExampleDllDirector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\cRZBaseString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\cS3DVector3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\cGZExtraCheatsDllDirector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cGZExtraExtraCheatsDllDirector.cpp">
+    <ClCompile Include="src\cRZMessage2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\cGZCityHallUpgradeDllDirector.cpp">
+      <Filter>Source Files\Directors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cGZCustomDllDirector.cpp">
+      <Filter>Source Files\Directors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cGZExampleDllDirector.cpp">
+      <Filter>Source Files\Directors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cGZExtraCheatsDllDirector.cpp">
+      <Filter>Source Files\Directors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cGZExtraExtraCheatsDllDirector.cpp">
+      <Filter>Source Files\Directors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cRZCOMDllDirector.cpp">
+      <Filter>Source Files\Directors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cRZMessage2Standard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

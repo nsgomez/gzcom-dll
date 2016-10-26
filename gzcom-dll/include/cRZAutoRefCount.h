@@ -1,5 +1,6 @@
 #pragma once
 #include "cIGZUnknown.h"
+#include <type_traits>
 
 template<class T>
 class cRZAutoRefCount
@@ -25,6 +26,8 @@ class cRZAutoRefCount
 					pOther->AddRef();
 				}
 			}
+
+			return *this;
 		}
 		
 		virtual ~cRZAutoRefCount() {
