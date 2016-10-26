@@ -33,7 +33,7 @@ class cISCPropertyHolder : public cIGZUnknown
 		typedef void (*FunctionPtr1)(cISCProperty*, void*);
 		typedef bool (*FunctionPtr2)(cISCProperty*, void*);
 
-		virtual bool EnumProperties(FunctionPtr1 pFunction1, void* pUnknown) = 0;
+		virtual bool EnumProperties(FunctionPtr1 pFunction1, void* pData) = 0;
 		virtual bool EnumProperties(FunctionPtr2 pFunction2, FunctionPtr1 pFunctionPipe) = 0;
 
 		virtual bool CompactProperties(void) = 0;
