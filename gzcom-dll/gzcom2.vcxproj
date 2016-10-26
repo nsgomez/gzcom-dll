@@ -153,6 +153,10 @@
     <ClInclude Include="include\cIGZMessageTarget2.h" />
     <ClInclude Include="include\cIGZMouseMessage.h" />
     <ClInclude Include="include\cIGZOStream.h" />
+    <ClInclude Include="include\cISC4Advice.h" />
+    <ClInclude Include="include\cISC4AdviceSubject.h" />
+    <ClInclude Include="include\cISC4Advisor.h" />
+    <ClInclude Include="include\cISC4AdvisorSystem.h" />
     <ClInclude Include="include\cISC4BudgetSimulator.h" />
     <ClInclude Include="include\cISC4BusinessUnit.h" />
     <ClInclude Include="include\cISC4DBSegmentIStream.h" />

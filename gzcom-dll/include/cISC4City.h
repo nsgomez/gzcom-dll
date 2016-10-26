@@ -4,6 +4,7 @@
 class cIGZPersistDBSegment;
 class cIGZString;
 class cISC424HourClock;
+class cISC4AdvisorSystem;
 class cISC4BudgetSimulator;
 class cISC4DisasterLayer;
 class cISC4HistoryWarehouse;
@@ -114,7 +115,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetLotDeveloper(void) = 0;
 		virtual intptr_t GetTractDeveloper(void) = 0;
 
-		virtual intptr_t GetAdvisorSystem(void) = 0;
+		virtual cISC4AdvisorSystem* GetAdvisorSystem(void) = 0;
 		virtual cISC4TutorialSystem* GetTutorialSystem(void) = 0;
 
 		virtual intptr_t GetSurfaceWater(void) = 0;
