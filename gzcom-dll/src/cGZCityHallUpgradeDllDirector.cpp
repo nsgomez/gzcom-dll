@@ -7,6 +7,8 @@
 #include "../include/cISC4AdvisorSystem.h"
 #include "../include/cISC4App.h"
 #include "../include/cISC4City.h"
+#include "../include/cISC4LotConfigurationManager.h"
+#include "../include/cISC4LotManager.h"
 #include "../include/cISC4Occupant.h"
 #include "../include/cISC4OccupantManager.h"
 #include "../include/cISC4RegionalCity.h"
