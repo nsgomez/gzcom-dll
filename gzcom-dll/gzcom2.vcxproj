@@ -184,6 +184,7 @@
     <ClInclude Include="include\cISC4NetworkManager.h" />
     <ClInclude Include="include\cISC4Occupant.h" />
     <ClInclude Include="include\cISC4OccupantFilter.h" />
+    <ClInclude Include="include\cISC4OccupantManager.h" />
     <ClInclude Include="include\cISC4PoliceSimulator.h" />
     <ClInclude Include="include\cISC4PollutionSimulator.h" />
     <ClInclude Include="include\cISC4Region.h" />

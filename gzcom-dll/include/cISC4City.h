@@ -10,6 +10,7 @@ class cISC4DisasterLayer;
 class cISC4HistoryWarehouse;
 class cISC4LotManager;
 class cISC4NetworkManager;
+class cISC4OccupantManager;
 class cISC4PoliceSimulator;
 class cISC4PollutionSimulator;
 class cISC4ResidentialSimulator;
@@ -65,7 +66,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetDemolitionUtility(void) = 0;
 		virtual cISC4HistoryWarehouse* GetHistoryWarehouse(void) = 0;
 		virtual cISC4LotManager* GetLotManager(void) = 0;
-		virtual intptr_t GetOccupantManager(void) = 0;
+		virtual cISC4OccupantManager* GetOccupantManager(void) = 0;
 		virtual intptr_t GetPropManager(void) = 0;
 		virtual intptr_t GetZoneManager(void) = 0;
 		virtual intptr_t GetLotConfigurationManager(void) = 0;
