@@ -198,6 +198,7 @@
     <ClInclude Include="include\cRZBaseString.h" />
     <ClInclude Include="include\cRZCOMDllDirector.h" />
     <ClInclude Include="include\cRZMessage2.h" />
+    <ClInclude Include="include\cRZMessage2COMDirector.h" />
     <ClInclude Include="include\cRZMessage2Standard.h" />
     <ClInclude Include="include\cRZPoint.h" />
     <ClInclude Include="include\cRZSysServPtr.h" />

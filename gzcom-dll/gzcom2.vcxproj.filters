@@ -246,6 +246,9 @@
     <ClInclude Include="include\cISC4Advisor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cRZMessage2COMDirector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\cISC4OccupantFilter.h">
       <Filter>Header Files</Filter>
     </ClInclude>

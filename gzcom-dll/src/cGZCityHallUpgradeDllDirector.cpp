@@ -4,15 +4,14 @@
 #include "../include/cIGZMessage2.h"
 #include "../include/cIGZMessageServer2.h"
 #include "../include/cIGZMessage2Standard.h"
-#include "../include/cIGZMessageTarget2.h"
+#include "../include/cISC4AdvisorSystem.h"
 #include "../include/cISC4App.h"
 #include "../include/cISC4City.h"
 #include "../include/cISC4Occupant.h"
 #include "../include/cISC4RegionalCity.h"
 #include "../include/cISCPropertyHolder.h"
 #include "../include/cRZAutoRefCount.h"
-#include "../include/cRZCOMDllDirector.h"
-#include "../include/GZCLSIDDefs.h"
+#include "../include/cRZMessage2COMDirector.h"
 #include "../include/GZServPtrs.h"
 #include <Windows.h>
 
@@ -39,35 +38,12 @@ static const uint32_t kCityHallUpgradePluginCOMDirectorID = 0xb673bd5b;
 static const uint32_t kCheatUpgradeCityHall = 0xb546bad0;
 static const char* kszCheatUpgradeCityHall = "UpgradeCityHall";
 
-class cGZCityHallUpgradePluginCOMDirector : public cRZCOMDllDirector, public cIGZMessageTarget2
+class cGZCityHallUpgradePluginCOMDirector : public cRZMessage2COMDirector
 {
 	public:
 		cGZCityHallUpgradePluginCOMDirector() {
 			pCityHall = NULL;
 			uCityHallStage = 0;
-		}
-
-		/* Failing to explicitly delegate these methods results in some
-		   ambiguity when resolving which virtual methods to use: those
-		   from cIGZMessageTarget (which are pure abstract) or those from
-		   cRZCOMDllDirector, and the compiler will complain. */
-		bool QueryInterface(uint32_t riid, void** ppvObj) {
-			if (riid == GZCLSID::kcIGZMessageTarget2) {
-				*ppvObj = static_cast<cIGZMessageTarget2*>(this);
-				AddRef();
-				return true;
-			}
-			else {
-				return cRZCOMDllDirector::QueryInterface(riid, ppvObj);
-			}
-		}
-
-		uint32_t AddRef(void) {
-			return cRZCOMDllDirector::AddRef();
-		}
-
-		uint32_t Release(void) {
-			return cRZCOMDllDirector::Release();
 		}
 
 		uint32_t GetDirectorID() const {
