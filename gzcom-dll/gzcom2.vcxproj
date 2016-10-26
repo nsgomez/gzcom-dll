@@ -183,6 +183,7 @@
     <ClInclude Include="include\cISC4Nation.h" />
     <ClInclude Include="include\cISC4NetworkManager.h" />
     <ClInclude Include="include\cISC4Occupant.h" />
+    <ClInclude Include="include\cISC4OccupantFilter.h" />
     <ClInclude Include="include\cISC4PoliceSimulator.h" />
     <ClInclude Include="include\cISC4PollutionSimulator.h" />
     <ClInclude Include="include\cISC4Region.h" />
@@ -202,6 +203,7 @@
     <ClInclude Include="include\cRZSysServPtr.h" />
     <ClInclude Include="include\cRZUnknown.h" />
     <ClInclude Include="include\cS3DVector3.h" />
+    <ClInclude Include="include\cSC4OccupantTypeFilter.h" />
     <ClInclude Include="include\GZCLSIDDefs.h" />
     <ClInclude Include="include\GZMSGIDDefs.h" />
     <ClInclude Include="include\GZServDecls.h" />
