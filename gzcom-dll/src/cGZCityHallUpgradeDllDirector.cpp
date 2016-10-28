@@ -314,10 +314,9 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZMessage2COMDirector
 			pDeveloper->StartDemolishLot(pLot);
 			pDeveloper->EndDemolishLot(pLot);
 
-			pLot->Release();
 			pLot = NULL;
 			pCityHall = NULL;
-
+			
 			/**
 			 * When creating the lot and spawning its occupants, the game will
 			 * handle the creation of the new city hall stage automatically.
