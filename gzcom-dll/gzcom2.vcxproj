@@ -182,6 +182,7 @@
     <ClInclude Include="include\cISC4Lot.h" />
     <ClInclude Include="include\cISC4LotConfiguration.h" />
     <ClInclude Include="include\cISC4LotConfigurationManager.h" />
+    <ClInclude Include="include\cISC4LotDeveloper.h" />
     <ClInclude Include="include\cISC4LotManager.h" />
     <ClInclude Include="include\cISC4Nation.h" />
     <ClInclude Include="include\cISC4NetworkManager.h" />
