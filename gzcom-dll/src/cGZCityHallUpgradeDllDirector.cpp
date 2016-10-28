@@ -6,8 +6,12 @@
 #include "../include/cIGZMessage2Standard.h"
 #include "../include/cISC4AdvisorSystem.h"
 #include "../include/cISC4App.h"
+#include "../include/cISC4BuildingDevelopmentSimulator.h"
 #include "../include/cISC4City.h"
+#include "../include/cISC4Lot.h"
+#include "../include/cISC4LotConfiguration.h"
 #include "../include/cISC4LotConfigurationManager.h"
+#include "../include/cISC4LotDeveloper.h"
 #include "../include/cISC4LotManager.h"
 #include "../include/cISC4Occupant.h"
 #include "../include/cISC4OccupantManager.h"
@@ -17,8 +21,8 @@
 #include "../include/cRZMessage2Standard.h"
 #include "../include/cRZBaseString.h"
 #include "../include/GZServPtrs.h"
+#include "../include/SC4Rect.h"
 #include <list>
-#include <Windows.h>
 
 static const uint32_t kCityHall_PopThreshold2 = 45000;
 static const uint32_t kCityHall_PopThreshold3 = 95000;
@@ -250,13 +254,81 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZMessage2COMDirector
 		}
 
 		void UpgradeCityHall(uint8_t uNewStage) {
-			MessageBoxA(NULL, "Called into UpgradeCityHall", NULL, NULL);
-			if (uCityHallStage == 0 || uCityHallStage >= uNewStage)
+			if (uCityHallStage >= uNewStage)
 				return;
+			
+			uint32_t dwLotID = 0;
+			switch (uNewStage) {
+				case 1:
+					dwLotID = 0x6a4bd588;
+					break;
 
-			char buf[48];
-			sprintf_s(buf, "Upgrade city hall to stage %d", uNewStage);
-			MessageBoxA(NULL, buf, NULL, NULL);
+				case 2:
+					dwLotID = 0x6a4bd539;
+					break;
+
+				case 3:
+					dwLotID = 0x4a4bd4fc;
+					break;
+
+				default:
+					return;
+			}
+
+			cISC4App* pISC4App;
+			if (!RZGetFrameWork()->Application()->QueryInterface(kGZIID_cISC4App, (void**)&pISC4App)) return;
+
+			cISC4City* pCity = pISC4App->GetCity();
+			if (!pCity) return;
+
+			cISC4LotManager* pLotManager = pCity->GetLotManager();
+			if (!pLotManager) return;
+
+			cISC4LotConfigurationManager* pConfigManager = pCity->GetLotConfigurationManager();
+			if (!pConfigManager) return;
+
+			cISC4Lot* pLot = pLotManager->GetOccupantLot(pCityHall);
+			if (!pLot) return;
+
+			cISC4BuildingDevelopmentSimulator* pBDevSim = pCity->GetBuildingDevelopmentSimulator();
+			if (!pBDevSim) return;
+
+			cISC4LotDeveloper* pDeveloper = pBDevSim->GetLotDeveloper();
+			if (!pDeveloper) return;
+
+			cISC4LotConfiguration* pConfig = pConfigManager->GetLotConfiguration(dwLotID);
+			if (!pConfig) return;
+
+			SC4Rect<int32_t> sBounds;
+
+			pDeveloper->AddRef();
+
+			int nLotFacing = pLot->GetFacing();
+			pLot->GetBoundingRect(sBounds);
+
+			int x1 = sBounds.topLeftX;
+			int y1 = sBounds.topLeftY;
+			int x2 = sBounds.bottomRightX - x1 + 1;
+			int y2 = sBounds.bottomRightY - y1 + 1;
+
+			pDeveloper->StartDemolishLot(pLot);
+			pDeveloper->EndDemolishLot(pLot);
+
+			pLot->Release();
+			pLot = NULL;
+			pCityHall = NULL;
+
+			/**
+			 * When creating the lot and spawning its occupants, the game will
+			 * handle the creation of the new city hall stage automatically.
+			 */
+			if (pLotManager->CreateLot(x1, y1, x2, y2, nLotFacing, pLot)) {
+				pLot->SetLotConfiguration(pConfig);
+				pLot->UpdateZoneType();
+				pDeveloper->ConstructDefaultLot(pLot, pConfig, 0, true);
+			}
+
+			pDeveloper->Release();
 		}
 
 		bool ProcessCheat(uint32_t dwCheatID, cIGZString const* szCheatText) {

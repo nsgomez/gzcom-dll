@@ -10,6 +10,7 @@ class cISC4BuildingDevelopmentSimulator;
 class cISC4DisasterLayer;
 class cISC4HistoryWarehouse;
 class cISC4LotConfigurationManager;
+class cISC4LotDeveloper;
 class cISC4LotManager;
 class cISC4NetworkManager;
 class cISC4OccupantManager;
@@ -115,7 +116,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetSeaportDeveloper(void) = 0;
 		virtual intptr_t GetAirportDeveloper(void) = 0;
 		virtual intptr_t GetLandfillDeveloper(void) = 0;
-		virtual intptr_t GetLotDeveloper(void) = 0;
+		virtual cISC4LotDeveloper* GetLotDeveloper(void) = 0;
 		virtual intptr_t GetTractDeveloper(void) = 0;
 
 		virtual cISC4AdvisorSystem* GetAdvisorSystem(void) = 0;

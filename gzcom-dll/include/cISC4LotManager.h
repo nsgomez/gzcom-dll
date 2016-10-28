@@ -40,7 +40,7 @@ class cISC4LotManager : public cIGZUnknown
 		virtual bool CanCreatePloppedLot(SC4Rect<long> sBounds, int32_t nUnknown, cISC4LotConfiguration* pConfig) = 0;
 
 		virtual bool CreateLotIfPossible(int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nBottomRightCellX, int32_t nBottomRightCellZ, int32_t nUnknown, bool bZoneNotNeeded, bool bIgnoreConfig, cISC4LotConfiguration* pConfig) = 0;
-		virtual bool CreateLot(int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nBottomRightCellX, int32_t nBottomRightCellZ, int32_t nUnknown, cISC4LotConfiguration* pConfig) = 0;
+		virtual bool CreateLot(int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nBottomRightCellX, int32_t nBottomRightCellZ, int32_t nFacing, cISC4Lot*& pLot) = 0;
 		virtual bool DeleteLot(cISC4Lot* pLot) = 0;
 		virtual bool DeleteLots(int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nBottomRightCellX, int32_t nBottomRightCellZ) = 0;
 

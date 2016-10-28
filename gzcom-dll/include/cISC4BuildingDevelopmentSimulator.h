@@ -80,7 +80,7 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 
 		virtual int32_t GetDayOfLastSuccessfulBuild(int32_t nDeveloperType) = 0;
 		
-		virtual double GetStagePopulationMultiplier(void) = 0;
+		virtual float GetStagePopulationMultiplier(void) = 0;
 		
 		virtual bool CheatIgnorePlumbing(void) = 0;
 		virtual bool CheatIgnorePower(void) = 0;

@@ -32,7 +32,7 @@ class cISC4Lot : public cIGZUnknown
 		virtual uint32_t GetFlags(void) = 0;
 		virtual bool SetFlags(uint32_t dwFlags) = 0;
 
-		virtual bool GetBoundingRect(SC4Rect<long>& sRect) = 0;
+		virtual bool GetBoundingRect(SC4Rect<int32_t>& sRect) = 0;
 		virtual bool GetCenter(float* fCenter) = 0;
 		
 		virtual float GetAltitude(void) = 0;
