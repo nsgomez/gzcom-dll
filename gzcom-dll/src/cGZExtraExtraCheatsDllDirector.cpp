@@ -135,26 +135,23 @@ class cGZExtraExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cI
 	protected:
 		bool SetAllRadiation(bool bSetRadioactive) {
 			cISC4AppPtr pApp;
-			if (!pApp) {
-				return false;
-			}
+			if (!pApp) return false;
 
-			cRZAutoRefCount<cISC4City> pCity(pApp->GetCity());
-			if (!pCity) {
-				return false;
-			}
+			cISC4City* pCity = pApp->GetCity();
+			if (!pCity) return false;
 
-			cRZAutoRefCount<cISC4PollutionSimulator> pPollution(pCity->GetPollutionSimulator());
-			if (!pPollution) {
-				return false;
-			}
+			cISC4PollutionSimulator* pPollution = pCity->GetPollutionSimulator();
+			if (!pPollution) return false;
+
+			cISC4SimGrid<short>* pGrid = pPollution->GetPollutionGrid(3);
+			if (!pGrid) return false;
 
 			for (uint32_t i = 0; i < pCity->CellCountX(); i++) {
 				for (uint32_t j = 0; j < pCity->CellCountZ(); j++) {
 					pPollution->SetIsRadioactive(i, j, bSetRadioactive);
 				}
 			}
-			
+
 			return true;
 		}
 };

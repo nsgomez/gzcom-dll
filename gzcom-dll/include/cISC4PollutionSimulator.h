@@ -7,6 +7,7 @@ class cS3DVector3;
 class SC4Percentage;
 
 template <typename T> class cISC4SimGrid;
+
 class cISC4PollutionSimulator : public cIGZUnknown
 {
 	public:
@@ -22,7 +23,7 @@ class cISC4PollutionSimulator : public cIGZUnknown
 		virtual int32_t GetAverageAirValue(void) = 0;
 		virtual int32_t GetAverageWaterValue(void) = 0;
 		virtual int32_t GetAverageGarbageValue(void) = 0;
-
+		
 		virtual bool IsAirPolluted(uint32_t dwCellX, uint32_t dwCellZ) = 0;
 		virtual bool IsWaterPolluted(uint32_t dwCellX, uint32_t dwCellZ) = 0;
 		virtual bool IsGarbageAccumulated(uint32_t dwCellX, uint32_t dwCellZ) = 0;
