@@ -18,6 +18,7 @@ class cISC4PoliceSimulator;
 class cISC4PollutionSimulator;
 class cISC4ResidentialSimulator;
 class cISC4Simulator;
+class cISC4TractDeveloper;
 class cISC4TutorialSystem;
 
 class cISC4City : public cIGZUnknown
@@ -117,7 +118,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetAirportDeveloper(void) = 0;
 		virtual intptr_t GetLandfillDeveloper(void) = 0;
 		virtual cISC4LotDeveloper* GetLotDeveloper(void) = 0;
-		virtual intptr_t GetTractDeveloper(void) = 0;
+		virtual cISC4TractDeveloper* GetTractDeveloper(void) = 0;
 
 		virtual cISC4AdvisorSystem* GetAdvisorSystem(void) = 0;
 		virtual cISC4TutorialSystem* GetTutorialSystem(void) = 0;

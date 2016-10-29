@@ -279,6 +279,18 @@
     <ClInclude Include="include\cISC4LotDeveloper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cGZAllocatorServiceSTLAllocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cIGZAllocatorService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ilist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cS3DCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">

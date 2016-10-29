@@ -7,26 +7,43 @@
 #include "../include/cIGZMessageTarget2.h"
 #include "../include/cISC4App.h"
 #include "../include/cISC4City.h"
+#include "../include/cISC4DisasterLayer.h"
+#include "../include/cISC4DisasterManager.h"
+#include "../include/cISC4Lot.h"
+#include "../include/cISC4LotManager.h"
+#include "../include/cISC4Occupant.h"
 #include "../include/cISC4PollutionSimulator.h"
 #include "../include/cISC4SimGrid.h"
 #include "../include/cRZAutoRefCount.h"
 #include "../include/cRZBaseString.h"
 #include "../include/cRZCOMDllDirector.h"
+#include "../include/cS3DCamera.h"
 #include "../include/cS3DVector3.h"
 #include "../include/GZCLSIDDefs.h"
 #include "../include/GZServPtrs.h"
+#include <random>
 #include <Windows.h>
 
 static const uint32_t kExtraExtraCheatsPluginCOMDirectorID = 0x5b76862b;
+
+static const uint32_t kDisasterID_Riot = 0xca380b06;
+static const uint32_t kDisasterID_ToxicSpill = 0xebfb0404;
 static const uint32_t kGZIID_cIGZCheatCodeManager = 0xa1085722;
 static const uint32_t kGZIID_cISC4App = 0x26ce01c0;
+static const uint32_t kGZIID_cISC4DisasterInstance = 0x49b43f58;
+static const uint32_t kGZIID_cISC4LotManager = 0x681905bd;
+static const uint32_t kGZIID_cS3DCamera = 0xe9c6262a;
 static const uint32_t kGZMSG_CheatIssued = 0x230e27ac;
 
 static const uint32_t kCheatSievertBeGone = 0x9e0c0b4d;
 static const uint32_t kCheatChernobyl = 0x606a36f7;
+static const uint32_t kCheatUncivilDisobediece = 0x1bb93583;
+static const uint32_t kCheatHazmat = 0x3749433c;
 
 static const char* kszCheatSievertBeGone = "SievertBeGone";
 static const char* kszCheatChernobyl = "Chernobyl";
+static const char* kszCheatUncivilDisobedience = "UncivilDisobedience";
+static const char* kszCheatHazmat = "hazmat";
 
 class cGZExtraExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cIGZMessageTarget2
 {
@@ -116,6 +133,8 @@ class cGZExtraExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cI
 			switch (dwCheatID) {
 				case kCheatSievertBeGone: return SetAllRadiation(false);
 				case kCheatChernobyl: return SetAllRadiation(true);
+				case kCheatUncivilDisobediece: return TryToStartDisasterAtRandomLocation(kDisasterID_Riot);
+				case kCheatHazmat: return TryToStartDisasterAtRandomLocation(kDisasterID_ToxicSpill);
 				default: return false;
 			}
 		}
@@ -124,12 +143,10 @@ class cGZExtraExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cI
 			// The message ID parameter has no effect, so just pass zero like
 			// the rest of the game does.
 			pCheatMgr->AddNotification2(this, 0);
-
-			cRZBaseString szCheatName(kszCheatSievertBeGone);
-			pCheatMgr->RegisterCheatCode(kCheatSievertBeGone, szCheatName);
-
-			szCheatName.FromChar(kszCheatChernobyl);
-			pCheatMgr->RegisterCheatCode(kCheatChernobyl, szCheatName);
+			pCheatMgr->RegisterCheatCode(kCheatSievertBeGone, cRZBaseString(kszCheatSievertBeGone));
+			pCheatMgr->RegisterCheatCode(kCheatChernobyl, cRZBaseString(kszCheatChernobyl));
+			pCheatMgr->RegisterCheatCode(kCheatUncivilDisobediece, cRZBaseString(kszCheatUncivilDisobedience));
+			pCheatMgr->RegisterCheatCode(kCheatHazmat, cRZBaseString(kszCheatHazmat));
 		}
 
 	protected:
@@ -152,6 +169,39 @@ class cGZExtraExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cI
 				}
 			}
 
+			return true;
+		}
+
+		bool TryToStartDisasterAtRandomLocation(uint32_t dwDisasterType) {
+			cISC4AppPtr pApp;
+			if (!pApp) return false;
+
+			cISC4City* pCity = pApp->GetCity();
+			if (!pCity) return false;
+
+			int32_t nX, nZ;
+			if (!GetRandomLotLocation(pCity, nX, nZ)) return false;
+
+			cISC4DisasterLayer* pDisasterLayer = pCity->GetDisasterLayer();
+			if (!pDisasterLayer) return false;
+
+			cISC4DisasterManager* pDisasterManager = pDisasterLayer->GetDisasterManager(dwDisasterType);
+			if (!pDisasterManager) return false;
+
+			pDisasterManager->AttemptDisasterStart(nX, nZ);
+			return true;
+		}
+
+		bool GetRandomLotLocation(cISC4City* pCity, int32_t& nX, int32_t& nZ) {
+			cISC4LotManager* pLotManager = pCity->GetZoneDeveloper();
+			if (!pLotManager) return false;
+			if (!pLotManager->QueryInterface(kGZIID_cISC4LotManager, (void**)&pLotManager)) return false;
+
+			cISC4Lot* pLot = pLotManager->GetRandomLot();
+			if (!pLot) { pLotManager->Release(); return false; }
+			if (!pLot->GetLocation(nX, nZ)) { pLotManager->Release(); return false; }
+
+			pLotManager->Release();
 			return true;
 		}
 };

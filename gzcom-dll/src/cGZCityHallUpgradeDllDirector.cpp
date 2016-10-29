@@ -370,7 +370,7 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZMessage2COMDirector
 // You need to replace the director returned here for the game and this DLL
 // to use the right director. This is the only place that it's necessary to
 // do so.
-cRZCOMDllDirector* RZGetCOMDllDirector() {
+/*cRZCOMDllDirector* RZGetCOMDllDirector() {
 	static cGZCityHallUpgradePluginCOMDirector sDirector;
 	return &sDirector;
-}
+}*/
