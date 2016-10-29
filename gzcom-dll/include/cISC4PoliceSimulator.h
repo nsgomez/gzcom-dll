@@ -53,7 +53,7 @@ class cISC4PoliceSimulator : public cIGZUnknown
 		virtual uint32_t GetJailPopulation(void) = 0;
 		virtual uint32_t GetCriminalCount(void) = 0;
 		
-		virtual bool GetJails(std::list<cISC4Occupant*>& sList) = 0;
+		virtual int32_t GetJails(std::list<cISC4Occupant*>& sList) = 0;
 		virtual bool IsJail(cISC4Occupant* pBuilding) = 0;
 
 		virtual uint32_t GetArrestCount(void) = 0;
