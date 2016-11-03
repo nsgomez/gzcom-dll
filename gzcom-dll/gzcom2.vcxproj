@@ -157,6 +157,7 @@
     <ClInclude Include="include\cIGZOStream.h" />
     <ClInclude Include="include\cIGZUnknownList.h" />
     <ClInclude Include="include\cIGZWinMgr.h" />
+    <ClInclude Include="include\cISC43DRender.h" />
     <ClInclude Include="include\cISC4Advice.h" />
     <ClInclude Include="include\cISC4AdviceSubject.h" />
     <ClInclude Include="include\cISC4Advisor.h" />
