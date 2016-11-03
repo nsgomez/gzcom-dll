@@ -51,7 +51,7 @@ class cISC4App : public cIGZUnknown
 		// All intptr_t types here are actually unspecified class types that have
 		// been omitted for simplicity's sake.
 		virtual int32_t GetAppState(void) = 0;
-		virtual intptr_t GetMainWindow(void) = 0;
+		virtual cIGZUnknown* GetMainWindow(void) = 0; // TODO: needs to be a cIGZWin eventually
 		virtual bool GetAppName(cIGZString& szNameOut) = 0;
 
 		virtual bool GetAppIniFileName(cIGZString& szPathOut) = 0;

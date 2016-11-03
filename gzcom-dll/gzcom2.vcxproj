@@ -156,6 +156,7 @@
     <ClInclude Include="include\cIGZMouseMessage.h" />
     <ClInclude Include="include\cIGZOStream.h" />
     <ClInclude Include="include\cIGZUnknownList.h" />
+    <ClInclude Include="include\cIGZWinMgr.h" />
     <ClInclude Include="include\cISC4Advice.h" />
     <ClInclude Include="include\cISC4AdviceSubject.h" />
     <ClInclude Include="include\cISC4Advisor.h" />
@@ -201,6 +202,7 @@
     <ClInclude Include="include\cISC4TractDeveloper.h" />
     <ClInclude Include="include\cISC4TrafficSource.h" />
     <ClInclude Include="include\cISC4TutorialSystem.h" />
+    <ClInclude Include="include\cISC4View3DWin.h" />
     <ClInclude Include="include\cISCExemplarPropertyHolder.h" />
     <ClInclude Include="include\cISCPropertyHolder.h" />
     <ClInclude Include="include\cISCResExemplar.h" />
