@@ -156,6 +156,7 @@
     <ClInclude Include="include\cIGZMouseMessage.h" />
     <ClInclude Include="include\cIGZOStream.h" />
     <ClInclude Include="include\cIGZUnknownList.h" />
+    <ClInclude Include="include\cIGZWin.h" />
     <ClInclude Include="include\cIGZWinMgr.h" />
     <ClInclude Include="include\cISC43DRender.h" />
     <ClInclude Include="include\cISC4Advice.h" />
