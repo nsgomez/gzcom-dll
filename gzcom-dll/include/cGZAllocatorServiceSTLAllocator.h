@@ -3,6 +3,18 @@
 #include "cRZSysServPtr.h"
 #include <memory>
 
+/**
+ * @brief A STL allocator that uses the game's memory pool 
+ * 
+ * This is an allocator for STL containers like lists and sets which uses the
+ * game's built-in memory allocator, which (presumably) allocates from a pool
+ * that it uses for optimization.
+ *
+ * As of present, there doesn't appear to be a need to actually use this
+ * allocator in custom COM directors, and trying to use it with class methods
+ * that take STL containers will cause compilation errors because, as it turns
+ * out, std::list<T> is different from std::list<T, A>.
+ */
 template<typename T>
 class cGZAllocatorServiceSTLAllocator
 {
