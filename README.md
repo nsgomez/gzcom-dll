@@ -1,20 +1,7 @@
-# SimCity GZCOM DLL
-Like the Extra Cheats DLL, this DLL is intended to be a GZCOM-compatible
-library which SimCity 4 loads and provides C++-fluent modders with an
-interface to control game functions.
+# Original code
+This is simply an archive of the original code Paul Pedriana sent years ago.
+Attempting to compile this verbatim **will not work**, which is why the code
+in the master branch is being used in the first place.
 
-
-# To-Do
-As of the last commit, the DLL is callable by SimCity 4, and the DLL can call
-into game functions including enabling debugging functionality (i.e. the extra
-cheats DLL). The COM director instance is entirely functional, and is able to
-subscribe to hook events like PreFrameWorkInit, PostAppInit, and the rest.
-
-Since most of the core work is done, the rest of the effort is focused on
-finding other classes and interfaces to add and fixing poorly documented
-methods with unknown parameters.
-
-
-Known Issues
-=========
-* None so far
+Since this code is informally released, all rights are reserved to Electronic
+Arts.

@@ -1,2 +1,0 @@
-# Original code
-This is simply an archive of the original code Paul Pedriana sent a year or two ago. Attempting to compile this verbatim **will not work**, which is why the code in ../gzcom-dll/* is being used in the first place.
