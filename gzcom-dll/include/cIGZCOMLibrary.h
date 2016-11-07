@@ -4,7 +4,13 @@
 class cIGZCOMDirector;
 class cIGZString;
 
-// Vtable ordering from Mac version
+/**
+ * @brief The public interface for internally represented COM libraries
+ * @see cGZCOMLibrary
+ *
+ * Unlike cGZCOMLibrary, this virtual interface is supposed to represent the
+ * methods that other directors are allowed to access.
+ */
 class cIGZCOMLibrary : public cIGZUnknown
 {
 	public:

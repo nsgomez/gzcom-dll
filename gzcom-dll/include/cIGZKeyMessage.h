@@ -1,6 +1,9 @@
 #pragma once
 #include "cIGZMessage2.h"
 
+/**
+ * @brief A type of message sent upon a keyboard event (i.e. typing)
+ */
 class cIGZKeyMessage : public cIGZMessage2
 {
 	public:

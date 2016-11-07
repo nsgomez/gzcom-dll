@@ -4,6 +4,9 @@
 class cIGZString;
 class cRZTime;
 
+/**
+ * @brief An interface for objects representing a calendar date
+ */
 class cIGZDate : public cIGZUnknown
 {
 	public:
@@ -25,7 +28,11 @@ class cIGZDate : public cIGZUnknown
 		virtual uint32_t DayOfMonth(void) = 0;
 		virtual uint32_t FirstDayOfMonth(void) = 0;
 		virtual uint32_t FirstDayOfMonth(uint32_t dwMonth) = 0;
-		virtual uint32_t Hash(void) = 0; // i.e. Number of days elapsed
+
+		/**
+		 * @return The number of days elapsed
+		 */
+		virtual uint32_t Hash(void) = 0;
 
 		virtual bool IsValid(void) = 0;
 		virtual bool Leap(void) = 0;
@@ -60,6 +67,10 @@ class cIGZDate : public cIGZUnknown
 		virtual bool DayWithinMonth(uint32_t dwMonth, uint32_t dwDay, uint32_t dwYear) = 0;
 		
 		virtual uint32_t DaysInYear(uint32_t dwYear) = 0;
+
+		/**
+		 * @return Produces an internal integral representation of a datetime
+		 */
 		virtual uint32_t Jday(uint32_t dwMonth, uint32_t dwDay, uint32_t dwYear) = 0;
 		virtual bool LeapYear(uint32_t dwYear) = 0;
 };

@@ -4,6 +4,9 @@
 class cIGZSerializable;
 class cIGZString;
 
+/**
+ * @brief An output type of generic I/O stream
+ */
 class cIGZOStream : public cIGZUnknown
 {
 	public:

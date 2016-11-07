@@ -1,6 +1,9 @@
 #pragma once
 #include "cIGZUnknown.h"
 
+/**
+ * @brief A service that manages allocations via the game's memory pool
+ */
 class cIGZAllocatorService : public cIGZUnknown
 {
 	public:

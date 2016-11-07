@@ -4,6 +4,14 @@
 class cIGZSerializable;
 class cIGZString;
 
+/**
+ * @brief A standardized interface for simple messages
+ *
+ * This interface extends cIGZMessage2 by providing fields for four different
+ * data fields that can be references as integers or void pointers, as well
+ * as for a string, an arbitrary cIGZUnknown implementation, and arbitrary
+ * "extra" data.
+ */
 class cIGZMessage2Standard : public cIGZMessage2
 {
 	public:

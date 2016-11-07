@@ -1,7 +1,9 @@
 #pragma once
 #include "cIGZUnknown.h"
 
-// This class is derived from Paul Pedriana's released code and should be perfect.
+/**
+ * @brief An interface for framework hook event subscribers
+ */
 class cIGZFrameWorkHooks : public cIGZUnknown
 {
 	public:

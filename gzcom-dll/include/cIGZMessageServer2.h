@@ -4,6 +4,11 @@
 class cIGZMessage2;
 class cIGZMessageTarget2;
 
+/**
+ * @see cIGZMessageServer
+ *
+ * A message server for cIGZMessage2 and cIGZMessageTarget2.
+ */
 class cIGZMessageServer2 : public cIGZUnknown
 {
 	public:

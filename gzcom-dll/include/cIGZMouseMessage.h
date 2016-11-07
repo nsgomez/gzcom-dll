@@ -3,6 +3,9 @@
 
 class cRZPoint;
 
+/**
+ * @brief A type of message sent upon mouse events (i.e. movement)
+ */
 class cIGZMouseMessage : public cIGZMessage2
 {
 	public:
