@@ -6,6 +6,7 @@ class cIGZString;
 
 /**
  * @brief An output type of generic I/O stream
+ * @see cIGZSerializable
  */
 class cIGZOStream : public cIGZUnknown
 {
@@ -27,6 +28,10 @@ class cIGZOStream : public cIGZUnknown
 		virtual bool SetGZSerializable(cIGZSerializable const& sData) = 0;
 		virtual bool SetVoid(void const* pData, uint32_t dwSize) = 0;
 
+		/**
+		 * @brief Returns the current error code for the stream
+		 * @return Zero if no error encountered, non-zero value otherwise
+		 */
 		virtual int32_t GetError(void) = 0;
 		virtual int32_t SetUserData(cIGZVariant* pData) = 0;
 		virtual int32_t GetUserData(void) = 0;

@@ -1,7 +1,9 @@
 #pragma once
 #include "cIGZUnknown.h"
 
-// Vtable ordering derived from the Mac version
+/**
+ * @brief An interface for string objects, similar to std::string
+ */
 class cIGZString : public cIGZUnknown
 {
 	public:

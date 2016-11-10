@@ -3,6 +3,9 @@
 
 class cIGZUnknownEnumerator;
 
+/**
+ * @brief An interface for lists of cIGZUnknown and unknown-derived objects
+ */
 class cIGZUnknownList : public cIGZUnknown
 {
 	public:

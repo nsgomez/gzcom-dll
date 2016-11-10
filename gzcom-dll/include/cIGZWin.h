@@ -5,6 +5,9 @@ class cGZMessage;
 class cIGZKeyboard;
 class cIGZWinMgr;
 
+/**
+ * @brief An interface for the game's UI windows
+ */
 class cIGZWin : public cIGZUnknown
 {
 	public:

@@ -7,6 +7,9 @@ class cIGZString;
 class cIGZWin;
 class cIGZWinMessageFilter;
 
+/**
+ * @brief An interface for a window manager for the game UI
+ */
 class cIGZWinMgr : public cIGZUnknown
 {
 	public:
