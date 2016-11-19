@@ -148,8 +148,10 @@ bool cRZCOMDllDirector::GetLibraryPath(cIGZString& sLibraryPath) {
 	return true;
 }
 
-void cRZCOMDllDirector::AddDirector(cRZCOMDllDirector* pCOMDirector) {
+void cRZCOMDllDirector::AddDirector(cIGZCOMDirector* pDirector) {
+	cRZCOMDllDirector* pCOMDirector = reinterpret_cast<cRZCOMDllDirector*>(pDirector);
 	pCOMDirector->InitializeCOM(GZCOM(), msLibraryPath);
+
 	for (ChildDirectorArray::iterator it(pCOMDirector->mChildDirectorArray.begin()); it != pCOMDirector->mChildDirectorArray.end(); ++it) {
 		cRZCOMDllDirector* const pCOMDirectorTemp = *it;
 		AddDirector(pCOMDirectorTemp);

@@ -39,7 +39,7 @@ class cRZCOMDllDirector : public cIGZCOMDirector, public cIGZFrameWorkHooks
 		cIGZCOM* GZCOM(void);
 		void EnumClassObjects(ClassObjectEnumerationCallback pCallback, void* pContext);
 		bool CanUnloadNow(void);
-		void AddDirector(cRZCOMDllDirector* pCOMDirector);
+		void AddDirector(cIGZCOMDirector* pCOMDirector);
 		uint32_t GetHeapAllocatedSize(void);
 
 	public:
