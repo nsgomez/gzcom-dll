@@ -1,6 +1,12 @@
 #pragma once
 #include "cIGZUnknown.h"
 
+/**
+ * @brief An interface for descriptors of advice targets
+ *
+ * Generally used for pointing to places that are affected by a piece of
+ * advice, such as a disaster location or a high-crime tile.
+ */
 class cISC4AdviceSubject : public cIGZUnknown
 {
 	public:

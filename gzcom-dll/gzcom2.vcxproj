@@ -165,7 +165,9 @@
     <ClInclude Include="include\cISC4AdvisorSystem.h" />
     <ClInclude Include="include\cISC4BudgetSimulator.h" />
     <ClInclude Include="include\cISC4BuildingDevelopmentSimulator.h" />
+    <ClInclude Include="include\cISC4BuildingOccupant.h" />
     <ClInclude Include="include\cISC4BusinessUnit.h" />
+    <ClInclude Include="include\cISC4ConstructionOccupant.h" />
     <ClInclude Include="include\cISC4DBSegmentIStream.h" />
     <ClInclude Include="include\cISC4DBSegmentOStream.h" />
     <ClInclude Include="include\cIGZSerializable.h" />
@@ -183,12 +185,18 @@
     <ClInclude Include="include\cISC4DisasterManagerFire.h" />
     <ClInclude Include="include\cISC4DisasterManagerVolcano.h" />
     <ClInclude Include="include\cISC4FeatureManager.h" />
+    <ClInclude Include="include\cISC4FireOccupant.h" />
+    <ClInclude Include="include\cISC4FloraOccupant.h" />
+    <ClInclude Include="include\cISC4FoundationOccupant.h" />
     <ClInclude Include="include\cISC4HistoryWarehouse.h" />
+    <ClInclude Include="include\cISC4LandfillOccupant.h" />
     <ClInclude Include="include\cISC4Lot.h" />
+    <ClInclude Include="include\cISC4LotBaseTextureOccupant.h" />
     <ClInclude Include="include\cISC4LotConfiguration.h" />
     <ClInclude Include="include\cISC4LotConfigurationManager.h" />
     <ClInclude Include="include\cISC4LotDeveloper.h" />
     <ClInclude Include="include\cISC4LotManager.h" />
+    <ClInclude Include="include\cISC4LotRetainingWallOccupant.h" />
     <ClInclude Include="include\cISC4Nation.h" />
     <ClInclude Include="include\cISC4NetworkManager.h" />
     <ClInclude Include="include\cISC4Occupant.h" />
@@ -196,6 +204,7 @@
     <ClInclude Include="include\cISC4OccupantManager.h" />
     <ClInclude Include="include\cISC4PoliceSimulator.h" />
     <ClInclude Include="include\cISC4PollutionSimulator.h" />
+    <ClInclude Include="include\cISC4PowerLineOccupant.h" />
     <ClInclude Include="include\cISC4Region.h" />
     <ClInclude Include="include\cISC4RegionalCity.h" />
     <ClInclude Include="include\cISC4RenderProperties.h" />
