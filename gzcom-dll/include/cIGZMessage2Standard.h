@@ -16,31 +16,31 @@ class cIGZMessage2Standard : public cIGZMessage2
 {
 	public:
 		virtual bool GetHasData1(void) const = 0;
-		virtual int32_t GetData1(void) const = 0;
+		virtual intptr_t GetData1(void) const = 0;
 		virtual void* GetVoid1(void) const = 0;
 
-		virtual cIGZMessage2Standard* SetData1(int32_t ulData) = 0;
+		virtual cIGZMessage2Standard* SetData1(intptr_t ulData) = 0;
 		virtual cIGZMessage2Standard* SetVoid1(void* pData) = 0;
 
 		virtual bool GetHasData2(void) const = 0;
-		virtual int32_t GetData2(void) const = 0;
+		virtual intptr_t GetData2(void) const = 0;
 		virtual void* GetVoid2(void) const = 0;
 
-		virtual cIGZMessage2Standard* SetData2(int32_t ulData) = 0;
+		virtual cIGZMessage2Standard* SetData2(intptr_t ulData) = 0;
 		virtual cIGZMessage2Standard* SetVoid2(void* pData) = 0;
 
 		virtual bool GetHasData3(void) const = 0;
-		virtual int32_t GetData3(void) const = 0;
+		virtual intptr_t GetData3(void) const = 0;
 		virtual void* GetVoid3(void) const = 0;
 
-		virtual cIGZMessage2Standard* SetData3(int32_t ulData) = 0;
+		virtual cIGZMessage2Standard* SetData3(intptr_t ulData) = 0;
 		virtual cIGZMessage2Standard* SetVoid3(void* pData) = 0;
 
 		virtual bool GetHasData4(void) const = 0;
-		virtual int32_t GetData4(void) const = 0;
+		virtual intptr_t GetData4(void) const = 0;
 		virtual void* GetVoid4(void) const = 0;
 
-		virtual cIGZMessage2Standard* SetData4(int32_t ulData) = 0;
+		virtual cIGZMessage2Standard* SetData4(intptr_t ulData) = 0;
 		virtual cIGZMessage2Standard* SetVoid4(void* pData) = 0;
 
 		virtual bool GetHasString(void) const = 0;

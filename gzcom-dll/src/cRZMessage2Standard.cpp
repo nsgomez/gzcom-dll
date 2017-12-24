@@ -19,7 +19,7 @@ bool cRZMessage2Standard::GetHasData1(void) const {
 	return IsDataFieldSet(FIELD_DATA1);
 }
 
-int32_t cRZMessage2Standard::GetData1(void) const {
+intptr_t cRZMessage2Standard::GetData1(void) const {
 	return m_dwData[0];
 }
 
@@ -27,21 +27,21 @@ void* cRZMessage2Standard::GetVoid1(void) const {
 	return (void*)GetData1();
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetData1(int32_t ulData) {
+cIGZMessage2Standard* cRZMessage2Standard::SetData1(intptr_t ulData) {
 	m_dwData[0] = ulData;
 	m_uDataFlags |= FIELD_DATA1;
 	return this;
 }
 
 cIGZMessage2Standard* cRZMessage2Standard::SetVoid1(void* pData) {
-	return SetData1((int32_t)pData);
+	return SetData1((intptr_t)pData);
 }
 
 bool cRZMessage2Standard::GetHasData2(void) const {
 	return IsDataFieldSet(FIELD_DATA2);
 }
 
-int32_t cRZMessage2Standard::GetData2(void) const {
+intptr_t cRZMessage2Standard::GetData2(void) const {
 	return m_dwData[1];
 }
 
@@ -49,21 +49,21 @@ void* cRZMessage2Standard::GetVoid2(void) const {
 	return (void*)GetData2();
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetData2(int32_t ulData) {
+cIGZMessage2Standard* cRZMessage2Standard::SetData2(intptr_t ulData) {
 	m_dwData[1] = ulData;
 	m_uDataFlags |= FIELD_DATA2;
 	return this;
 }
 
 cIGZMessage2Standard* cRZMessage2Standard::SetVoid2(void* pData) {
-	return SetData2((int32_t)pData);
+	return SetData2((intptr_t)pData);
 }
 
 bool cRZMessage2Standard::GetHasData3(void) const {
 	return IsDataFieldSet(FIELD_DATA3);
 }
 
-int32_t cRZMessage2Standard::GetData3(void) const {
+intptr_t cRZMessage2Standard::GetData3(void) const {
 	return m_dwData[2];
 }
 
@@ -71,21 +71,21 @@ void* cRZMessage2Standard::GetVoid3(void) const {
 	return (void*)GetData3();
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetData3(int32_t ulData) {
+cIGZMessage2Standard* cRZMessage2Standard::SetData3(intptr_t ulData) {
 	m_dwData[3] = ulData;
 	m_uDataFlags |= FIELD_DATA3;
 	return this;
 }
 
 cIGZMessage2Standard* cRZMessage2Standard::SetVoid3(void* pData) {
-	return SetData3((int32_t)pData);
+	return SetData3((intptr_t)pData);
 }
 
 bool cRZMessage2Standard::GetHasData4(void) const {
 	return IsDataFieldSet(FIELD_DATA4);
 }
 
-int32_t cRZMessage2Standard::GetData4(void) const {
+intptr_t cRZMessage2Standard::GetData4(void) const {
 	return m_dwData[3];
 }
 
@@ -93,14 +93,14 @@ void* cRZMessage2Standard::GetVoid4(void) const {
 	return (void*)GetData4();
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetData4(int32_t ulData) {
+cIGZMessage2Standard* cRZMessage2Standard::SetData4(intptr_t ulData) {
 	m_dwData[3] = ulData;
 	m_uDataFlags |= FIELD_DATA4;
 	return this;
 }
 
 cIGZMessage2Standard* cRZMessage2Standard::SetVoid4(void* pData) {
-	return SetData4((int32_t)pData);
+	return SetData4((intptr_t)pData);
 }
 
 bool cRZMessage2Standard::GetHasString(void) const {

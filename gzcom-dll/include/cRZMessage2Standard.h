@@ -4,6 +4,7 @@
 #include "cRZAutoRefCount.h"
 #include "cRZBaseString.h"
 #include "cRZMessage2.h"
+#include <stdint.h>
 
 class cRZMessage2Standard : public cIGZMessage2Standard, public cRZMessage2
 {
@@ -32,31 +33,31 @@ class cRZMessage2Standard : public cIGZMessage2Standard, public cRZMessage2
 		cRZMessage2Standard();
 
 		bool GetHasData1(void) const;
-		int32_t GetData1(void) const;
+		intptr_t GetData1(void) const;
 		void* GetVoid1(void) const;
 
-		cIGZMessage2Standard* SetData1(int32_t ulData);
+		cIGZMessage2Standard* SetData1(intptr_t ulData);
 		cIGZMessage2Standard* SetVoid1(void* pData);
 
 		bool GetHasData2(void) const;
-		int32_t GetData2(void) const;
+		intptr_t GetData2(void) const;
 		void* GetVoid2(void) const;
 
-		cIGZMessage2Standard* SetData2(int32_t ulData);
+		cIGZMessage2Standard* SetData2(intptr_t ulData);
 		cIGZMessage2Standard* SetVoid2(void* pData);
 
 		bool GetHasData3(void) const;
-		int32_t GetData3(void) const;
+		intptr_t GetData3(void) const;
 		void* GetVoid3(void) const;
 
-		cIGZMessage2Standard* SetData3(int32_t ulData);
+		cIGZMessage2Standard* SetData3(intptr_t ulData);
 		cIGZMessage2Standard* SetVoid3(void* pData);
 
 		bool GetHasData4(void) const;
-		int32_t GetData4(void) const;
+		intptr_t GetData4(void) const;
 		void* GetVoid4(void) const;
 
-		cIGZMessage2Standard* SetData4(int32_t ulData);
+		cIGZMessage2Standard* SetData4(intptr_t ulData);
 		cIGZMessage2Standard* SetVoid4(void* pData);
 
 		bool GetHasString(void) const;
@@ -77,7 +78,7 @@ class cRZMessage2Standard : public cIGZMessage2Standard, public cRZMessage2
 		}
 
 		uint8_t m_uDataFlags;
-		int32_t m_dwData[4];
+		intptr_t m_dwData[4];
 		cRZBaseString m_szDataString;
 		cRZAutoRefCount<cIGZUnknown> m_pUnknown;
 };
