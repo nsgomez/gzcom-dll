@@ -2,6 +2,8 @@
 #include <algorithm>
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 static const uint32_t kRZBaseStringIID = 0xab13a836;
 

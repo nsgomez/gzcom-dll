@@ -3,7 +3,13 @@
 #include "../include/cRZCOMDllDirector.h"
 #include <assert.h>
 
-extern "C" __declspec(dllexport) cIGZCOMDirector* GZDllGetGZCOMDirector(void) {
+#if defined(WIN32)
+#define EXPORT __declspec(dllexport)
+#elif defined(__APPLE__)
+#define EXPORT __attribute__((visibility("default")))
+#endif
+
+extern "C" EXPORT cIGZCOMDirector* GZDllGetGZCOMDirector(void) {
 	return static_cast<cIGZCOMDirector*>(RZGetCOMDllDirector());
 }
 

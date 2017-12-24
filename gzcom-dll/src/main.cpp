@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <Windows.h>
 #include "../include/cIGZFrameWork.h"
 #include "../include/cRZCOMDllDirector.h"
 
@@ -23,7 +22,6 @@ class cGZCustomDllDirector : public cRZCOMDllDirector
 		}
 
 		uint32_t GetDirectorID() const {
-			MessageBoxA(NULL, "GetDirectorID", NULL, MB_OK);
 			return kCustomCOMDirectorDirectorID;
 		}
 
@@ -33,27 +31,25 @@ class cGZCustomDllDirector : public cRZCOMDllDirector
 			//
 			// Register for callbacks so we can get PreFrameWorkInit,
 			// PreAppInit, and other callbacks.
-			MessageBoxA(NULL, "GZCustom: OnStart", NULL, MB_OK);
 			RZGetFrameWork()->AddHook(static_cast<cIGZFrameWorkHooks*>(this));
 			return true;
 		}
 
 		static cIGZUnknown* CreateSomeObject(void) {
-			MessageBoxA(NULL, "GZCustom: CreateSomeObject", NULL, MB_OK);
 			cIGZUnknown* pUnknown = nullptr;
 			// Initialize an IGZUnknown implementation here.
 
 			return pUnknown;
 		}
 
-		bool PreFrameWorkInit(void) { MessageBoxA(NULL, "GZCustom: PreFrameWorkInit", NULL, MB_OK); return true; }
-		bool PreAppInit(void) { MessageBoxA(NULL, "GZCustom: PreAppInit", NULL, MB_OK); return true; }
-		bool PostAppInit(void) { MessageBoxA(NULL, "GZCustom: PostAppInit", NULL, MB_OK); return true; }
-		bool PreAppShutdown(void) { MessageBoxA(NULL, "GZCustom: PreAppShutdown", NULL, MB_OK); return true; }
-		bool PostAppShutdown(void) { MessageBoxA(NULL, "GZCustom: PostAppShutdown", NULL, MB_OK); return true; }
-		bool PostSystemServiceShutdown(void) { MessageBoxA(NULL, "GZCustom: PostSystemServiceShutdown", NULL, MB_OK); return true; }
-		bool AbortiveQuit(void) { MessageBoxA(NULL, "GZCustom: AbortiveQuit", NULL, MB_OK); return true; }
-		bool OnInstall(void) { MessageBoxA(NULL, "GZCustom: OnInstall", NULL, MB_OK); return true; }
+		bool PreFrameWorkInit(void) { return true; }
+		bool PreAppInit(void) { return true; }
+		bool PostAppInit(void) { return true; }
+		bool PreAppShutdown(void) { return true; }
+		bool PostAppShutdown(void) { return true; }
+		bool PostSystemServiceShutdown(void) { return true; }
+		bool AbortiveQuit(void) { return true; }
+		bool OnInstall(void) { return true; }
 };
 
 cRZCOMDllDirector* RZGetCOMDllDirector() {

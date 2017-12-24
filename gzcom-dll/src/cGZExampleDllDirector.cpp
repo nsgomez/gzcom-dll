@@ -1,9 +1,13 @@
 #include <stdio.h>
-#include <Windows.h>
 #include "../include/cIGZFrameWork.h"
 #include "../include/cRZCOMDllDirector.h"
 
+#ifdef WIN32
+#include <Windows.h>
 #define DEMOMSG(x) MessageBoxA(NULL, x, "cGZExampleDllDirector", MB_OK)
+#else
+#define DEMOMSG(x)
+#endif
 
 // This must be unique for every plugin. Generate a random 32-bit integer and use it.
 // DO NOT REUSE DIRECTOR IDS EVER.

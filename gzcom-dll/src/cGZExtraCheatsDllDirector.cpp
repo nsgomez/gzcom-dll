@@ -7,12 +7,11 @@
 #include "../include/cISC4RenderProperties.h"
 #include "../include/cRZCOMDllDirector.h"
 #include "../include/GZServPtrs.h"
-#include <Windows.h>
 
 static const uint32_t kExtraCheatsPluginCOMDirectorID = 0x8bbd9623;
 static const uint32_t kGZIID_cISC4App = 0x26ce01c0;
 
-class cSC4ExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cIGZMessageTarget2
+class cSC4ExtraCheatsPluginCOMDirector : public cRZCOMDllDirector
 {
 	public:
 		/* Failing to explicitly delegate these methods results in some
@@ -35,14 +34,6 @@ class cSC4ExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cIGZMe
 			return kExtraCheatsPluginCOMDirectorID;
 		}
 
-		bool DoMessage(cIGZMessage2* pMessage) {
-			if (pMessage->GetType() == 0xea8ae29a) {
-				MessageBoxA(NULL, "City finished loading", NULL, NULL);
-			}
-
-			return true;
-		}
-
 		bool PreAppInit() {
 			cIGZFrameWork* const pFramework = RZGetFrameWork();
 			if (pFramework) {
@@ -59,13 +50,6 @@ class cSC4ExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cIGZMe
 		}
 
 		bool PostAppInit() {
-			// The cRZSysServPtr will automatically try to receive the service
-			// pointer for us.
-			cIGZMessageServer2Ptr pMsgServ;
-			if (pMsgServ) {
-				pMsgServ->AddNotification(this, 0xea8ae29a);
-			}
-
 			return true;
 		}
 

@@ -27,7 +27,6 @@
 #include "../include/GZCLSIDDefs.h"
 #include "../include/GZServPtrs.h"
 #include <random>
-#include <Windows.h>
 
 static const uint32_t kExtraExtraCheatsPluginCOMDirectorID = 0x5b76862b;
 
