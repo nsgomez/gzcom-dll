@@ -1,0 +1,748 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52D350F91FEFB44100177E88 /* cGZAllocatorServiceSTLAllocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D3508F1FEFB44100177E88 /* cGZAllocatorServiceSTLAllocator.h */; };
+		52D350FA1FEFB44100177E88 /* cGZCOMLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350901FEFB44100177E88 /* cGZCOMLibrary.h */; };
+		52D350FB1FEFB44100177E88 /* cGZMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350911FEFB44100177E88 /* cGZMessage.h */; };
+		52D350FC1FEFB44100177E88 /* cIGZAllocatorService.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350921FEFB44100177E88 /* cIGZAllocatorService.h */; };
+		52D350FD1FEFB44100177E88 /* cIGZApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350931FEFB44100177E88 /* cIGZApp.h */; };
+		52D350FE1FEFB44100177E88 /* cIGZCanvasMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350941FEFB44100177E88 /* cIGZCanvasMessage.h */; };
+		52D350FF1FEFB44100177E88 /* cIGZCheatCodeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350951FEFB44100177E88 /* cIGZCheatCodeManager.h */; };
+		52D351001FEFB44100177E88 /* cIGZCOM.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350961FEFB44100177E88 /* cIGZCOM.h */; };
+		52D351011FEFB44100177E88 /* cIGZCOMDirector.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350971FEFB44100177E88 /* cIGZCOMDirector.h */; };
+		52D351021FEFB44100177E88 /* cIGZCOMLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350981FEFB44100177E88 /* cIGZCOMLibrary.h */; };
+		52D351031FEFB44100177E88 /* cIGZDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350991FEFB44100177E88 /* cIGZDate.h */; };
+		52D351041FEFB44100177E88 /* cIGZFrameWork.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D3509A1FEFB44100177E88 /* cIGZFrameWork.h */; };
+		52D351051FEFB44100177E88 /* cIGZFrameWorkHooks.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D3509B1FEFB44100177E88 /* cIGZFrameWorkHooks.h */; };
+		52D351061FEFB44100177E88 /* cIGZIStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D3509C1FEFB44100177E88 /* cIGZIStream.h */; };
+		52D351071FEFB44100177E88 /* cIGZKeyMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D3509D1FEFB44100177E88 /* cIGZKeyMessage.h */; };
+		52D351081FEFB44100177E88 /* cIGZMessage2.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D3509E1FEFB44100177E88 /* cIGZMessage2.h */; };
+		52D351091FEFB44100177E88 /* cIGZMessage2Standard.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D3509F1FEFB44100177E88 /* cIGZMessage2Standard.h */; };
+		52D3510A1FEFB44100177E88 /* cIGZMessageServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350A01FEFB44100177E88 /* cIGZMessageServer.h */; };
+		52D3510B1FEFB44100177E88 /* cIGZMessageServer2.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350A11FEFB44100177E88 /* cIGZMessageServer2.h */; };
+		52D3510C1FEFB44100177E88 /* cIGZMessageTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350A21FEFB44100177E88 /* cIGZMessageTarget.h */; };
+		52D3510D1FEFB44200177E88 /* cIGZMessageTarget2.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350A31FEFB44100177E88 /* cIGZMessageTarget2.h */; };
+		52D3510E1FEFB44200177E88 /* cIGZMouseMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350A41FEFB44100177E88 /* cIGZMouseMessage.h */; };
+		52D3510F1FEFB44200177E88 /* cIGZOStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350A51FEFB44100177E88 /* cIGZOStream.h */; };
+		52D351101FEFB44200177E88 /* cIGZRadio.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350A61FEFB44100177E88 /* cIGZRadio.h */; };
+		52D351111FEFB44200177E88 /* cIGZSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350A71FEFB44100177E88 /* cIGZSerializable.h */; };
+		52D351121FEFB44200177E88 /* cIGZString.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350A81FEFB44100177E88 /* cIGZString.h */; };
+		52D351131FEFB44200177E88 /* cIGZSystemService.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350A91FEFB44100177E88 /* cIGZSystemService.h */; };
+		52D351141FEFB44200177E88 /* cIGZUnknown.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350AA1FEFB44100177E88 /* cIGZUnknown.h */; };
+		52D351151FEFB44200177E88 /* cIGZUnknownList.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350AB1FEFB44100177E88 /* cIGZUnknownList.h */; };
+		52D351161FEFB44200177E88 /* cIGZWin.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350AC1FEFB44100177E88 /* cIGZWin.h */; };
+		52D351171FEFB44200177E88 /* cIGZWinMgr.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350AD1FEFB44100177E88 /* cIGZWinMgr.h */; };
+		52D351181FEFB44200177E88 /* cISC4Advice.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350AE1FEFB44100177E88 /* cISC4Advice.h */; };
+		52D351191FEFB44200177E88 /* cISC4AdviceSubject.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350AF1FEFB44100177E88 /* cISC4AdviceSubject.h */; };
+		52D3511A1FEFB44200177E88 /* cISC4Advisor.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350B01FEFB44100177E88 /* cISC4Advisor.h */; };
+		52D3511B1FEFB44200177E88 /* cISC4AdvisorSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350B11FEFB44100177E88 /* cISC4AdvisorSystem.h */; };
+		52D3511C1FEFB44200177E88 /* cISC4App.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350B21FEFB44100177E88 /* cISC4App.h */; };
+		52D3511D1FEFB44200177E88 /* cISC4BudgetSimulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350B31FEFB44100177E88 /* cISC4BudgetSimulator.h */; };
+		52D3511E1FEFB44200177E88 /* cISC4BuildingDevelopmentSimulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350B41FEFB44100177E88 /* cISC4BuildingDevelopmentSimulator.h */; };
+		52D3511F1FEFB44200177E88 /* cISC4BuildingOccupant.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350B51FEFB44100177E88 /* cISC4BuildingOccupant.h */; };
+		52D351201FEFB44200177E88 /* cISC4BusinessUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350B61FEFB44100177E88 /* cISC4BusinessUnit.h */; };
+		52D351211FEFB44200177E88 /* cISC4City.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350B71FEFB44100177E88 /* cISC4City.h */; };
+		52D351221FEFB44200177E88 /* cISC4ConstructionOccupant.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350B81FEFB44100177E88 /* cISC4ConstructionOccupant.h */; };
+		52D351231FEFB44200177E88 /* cISC4DBSegmentIStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350B91FEFB44100177E88 /* cISC4DBSegmentIStream.h */; };
+		52D351241FEFB44200177E88 /* cISC4DBSegmentOStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350BA1FEFB44100177E88 /* cISC4DBSegmentOStream.h */; };
+		52D351251FEFB44200177E88 /* cISC4DisasterInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350BB1FEFB44100177E88 /* cISC4DisasterInstance.h */; };
+		52D351261FEFB44200177E88 /* cISC4DisasterInstanceFire.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350BC1FEFB44100177E88 /* cISC4DisasterInstanceFire.h */; };
+		52D351271FEFB44200177E88 /* cISC4DisasterInstanceVolcano.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350BD1FEFB44100177E88 /* cISC4DisasterInstanceVolcano.h */; };
+		52D351281FEFB44200177E88 /* cISC4DisasterLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350BE1FEFB44100177E88 /* cISC4DisasterLayer.h */; };
+		52D351291FEFB44200177E88 /* cISC4DisasterManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350BF1FEFB44100177E88 /* cISC4DisasterManager.h */; };
+		52D3512A1FEFB44200177E88 /* cISC4DisasterManagerFire.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350C01FEFB44100177E88 /* cISC4DisasterManagerFire.h */; };
+		52D3512B1FEFB44200177E88 /* cISC4DisasterManagerVolcano.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350C11FEFB44100177E88 /* cISC4DisasterManagerVolcano.h */; };
+		52D3512C1FEFB44200177E88 /* cISC4FeatureManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350C21FEFB44100177E88 /* cISC4FeatureManager.h */; };
+		52D3512D1FEFB44200177E88 /* cISC4FireOccupant.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350C31FEFB44100177E88 /* cISC4FireOccupant.h */; };
+		52D3512E1FEFB44200177E88 /* cISC4FloraOccupant.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350C41FEFB44100177E88 /* cISC4FloraOccupant.h */; };
+		52D3512F1FEFB44200177E88 /* cISC4FoundationOccupant.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350C51FEFB44100177E88 /* cISC4FoundationOccupant.h */; };
+		52D351301FEFB44200177E88 /* cISC4HistoryWarehouse.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350C61FEFB44100177E88 /* cISC4HistoryWarehouse.h */; };
+		52D351311FEFB44200177E88 /* cISC4LandfillOccupant.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350C71FEFB44100177E88 /* cISC4LandfillOccupant.h */; };
+		52D351321FEFB44200177E88 /* cISC4Lot.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350C81FEFB44100177E88 /* cISC4Lot.h */; };
+		52D351331FEFB44200177E88 /* cISC4LotBaseTextureOccupant.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350C91FEFB44100177E88 /* cISC4LotBaseTextureOccupant.h */; };
+		52D351341FEFB44200177E88 /* cISC4LotConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350CA1FEFB44100177E88 /* cISC4LotConfiguration.h */; };
+		52D351351FEFB44200177E88 /* cISC4LotConfigurationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350CB1FEFB44100177E88 /* cISC4LotConfigurationManager.h */; };
+		52D351361FEFB44200177E88 /* cISC4LotDeveloper.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350CC1FEFB44100177E88 /* cISC4LotDeveloper.h */; };
+		52D351371FEFB44200177E88 /* cISC4LotManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350CD1FEFB44100177E88 /* cISC4LotManager.h */; };
+		52D351381FEFB44200177E88 /* cISC4LotRetainingWallOccupant.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350CE1FEFB44100177E88 /* cISC4LotRetainingWallOccupant.h */; };
+		52D351391FEFB44200177E88 /* cISC4Nation.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350CF1FEFB44100177E88 /* cISC4Nation.h */; };
+		52D3513A1FEFB44200177E88 /* cISC4NetworkManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350D01FEFB44100177E88 /* cISC4NetworkManager.h */; };
+		52D3513B1FEFB44200177E88 /* cISC4Occupant.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350D11FEFB44100177E88 /* cISC4Occupant.h */; };
+		52D3513C1FEFB44200177E88 /* cISC4OccupantFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350D21FEFB44100177E88 /* cISC4OccupantFilter.h */; };
+		52D3513D1FEFB44200177E88 /* cISC4OccupantManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350D31FEFB44100177E88 /* cISC4OccupantManager.h */; };
+		52D3513E1FEFB44200177E88 /* cISC4PoliceSimulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350D41FEFB44100177E88 /* cISC4PoliceSimulator.h */; };
+		52D3513F1FEFB44200177E88 /* cISC4PollutionSimulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350D51FEFB44100177E88 /* cISC4PollutionSimulator.h */; };
+		52D351401FEFB44200177E88 /* cISC4PowerLineOccupant.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350D61FEFB44100177E88 /* cISC4PowerLineOccupant.h */; };
+		52D351411FEFB44200177E88 /* cISC4Region.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350D71FEFB44100177E88 /* cISC4Region.h */; };
+		52D351421FEFB44200177E88 /* cISC4RegionalCity.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350D81FEFB44100177E88 /* cISC4RegionalCity.h */; };
+		52D351431FEFB44200177E88 /* cISC4RenderProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350D91FEFB44100177E88 /* cISC4RenderProperties.h */; };
+		52D351441FEFB44200177E88 /* cISC4ResidentialSimulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350DA1FEFB44100177E88 /* cISC4ResidentialSimulator.h */; };
+		52D351451FEFB44200177E88 /* cISC4SimGrid.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350DB1FEFB44100177E88 /* cISC4SimGrid.h */; };
+		52D351461FEFB44200177E88 /* cISC4Simulator.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350DC1FEFB44100177E88 /* cISC4Simulator.h */; };
+		52D351471FEFB44200177E88 /* cISC4TractDeveloper.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350DD1FEFB44100177E88 /* cISC4TractDeveloper.h */; };
+		52D351481FEFB44200177E88 /* cISC4TrafficSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350DE1FEFB44100177E88 /* cISC4TrafficSource.h */; };
+		52D351491FEFB44200177E88 /* cISC4TutorialSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350DF1FEFB44100177E88 /* cISC4TutorialSystem.h */; };
+		52D3514A1FEFB44200177E88 /* cISC4View3DWin.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350E01FEFB44100177E88 /* cISC4View3DWin.h */; };
+		52D3514B1FEFB44200177E88 /* cISC43DRender.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350E11FEFB44100177E88 /* cISC43DRender.h */; };
+		52D3514C1FEFB44200177E88 /* cISC424HourClock.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350E21FEFB44100177E88 /* cISC424HourClock.h */; };
+		52D3514D1FEFB44200177E88 /* cISCExemplarPropertyHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350E31FEFB44100177E88 /* cISCExemplarPropertyHolder.h */; };
+		52D3514E1FEFB44200177E88 /* cISCPropertyHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350E41FEFB44100177E88 /* cISCPropertyHolder.h */; };
+		52D3514F1FEFB44200177E88 /* cISCResExemplar.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350E51FEFB44100177E88 /* cISCResExemplar.h */; };
+		52D351501FEFB44200177E88 /* cRZAutoRefCount.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350E61FEFB44100177E88 /* cRZAutoRefCount.h */; };
+		52D351511FEFB44200177E88 /* cRZBaseString.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350E71FEFB44100177E88 /* cRZBaseString.h */; };
+		52D351521FEFB44200177E88 /* cRZCOMDllDirector.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350E81FEFB44100177E88 /* cRZCOMDllDirector.h */; };
+		52D351531FEFB44200177E88 /* cRZMessage2.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350E91FEFB44100177E88 /* cRZMessage2.h */; };
+		52D351541FEFB44200177E88 /* cRZMessage2COMDirector.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350EA1FEFB44100177E88 /* cRZMessage2COMDirector.h */; };
+		52D351551FEFB44200177E88 /* cRZMessage2Standard.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350EB1FEFB44100177E88 /* cRZMessage2Standard.h */; };
+		52D351561FEFB44200177E88 /* cRZPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350EC1FEFB44100177E88 /* cRZPoint.h */; };
+		52D351571FEFB44200177E88 /* cRZSysServPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350ED1FEFB44100177E88 /* cRZSysServPtr.h */; };
+		52D351581FEFB44200177E88 /* cRZUnknown.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350EE1FEFB44100177E88 /* cRZUnknown.h */; };
+		52D351591FEFB44200177E88 /* cS3DCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350EF1FEFB44100177E88 /* cS3DCamera.h */; };
+		52D3515A1FEFB44200177E88 /* cS3DVector3.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350F01FEFB44100177E88 /* cS3DVector3.h */; };
+		52D3515B1FEFB44200177E88 /* cSC4OccupantTypeFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350F11FEFB44100177E88 /* cSC4OccupantTypeFilter.h */; };
+		52D3515C1FEFB44200177E88 /* GZCLSIDDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350F21FEFB44100177E88 /* GZCLSIDDefs.h */; };
+		52D3515D1FEFB44200177E88 /* GZMSGIDDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350F31FEFB44100177E88 /* GZMSGIDDefs.h */; };
+		52D3515E1FEFB44200177E88 /* GZServDecls.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350F41FEFB44100177E88 /* GZServDecls.h */; };
+		52D3515F1FEFB44200177E88 /* GZServPtrs.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350F51FEFB44100177E88 /* GZServPtrs.h */; };
+		52D351601FEFB44200177E88 /* ilist.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350F61FEFB44100177E88 /* ilist.h */; };
+		52D351611FEFB44200177E88 /* SC4Point.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350F71FEFB44100177E88 /* SC4Point.h */; };
+		52D351621FEFB44200177E88 /* SC4Rect.h in Headers */ = {isa = PBXBuildFile; fileRef = 52D350F81FEFB44100177E88 /* SC4Rect.h */; };
+		52D3516E1FEFB44D00177E88 /* cGZCityHallUpgradeDllDirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D351631FEFB44D00177E88 /* cGZCityHallUpgradeDllDirector.cpp */; };
+		52D3516F1FEFB44D00177E88 /* cGZCustomDllDirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D351641FEFB44D00177E88 /* cGZCustomDllDirector.cpp */; };
+		52D351701FEFB44D00177E88 /* cGZExampleDllDirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D351651FEFB44D00177E88 /* cGZExampleDllDirector.cpp */; };
+		52D351711FEFB44D00177E88 /* cGZExtraCheatsDllDirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D351661FEFB44D00177E88 /* cGZExtraCheatsDllDirector.cpp */; };
+		52D351721FEFB44D00177E88 /* cGZExtraExtraCheatsDllDirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D351671FEFB44D00177E88 /* cGZExtraExtraCheatsDllDirector.cpp */; };
+		52D351731FEFB44D00177E88 /* cRZBaseString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D351681FEFB44D00177E88 /* cRZBaseString.cpp */; };
+		52D351741FEFB44D00177E88 /* cRZCOMDllDirector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D351691FEFB44D00177E88 /* cRZCOMDllDirector.cpp */; };
+		52D351751FEFB44D00177E88 /* cRZMessage2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D3516A1FEFB44D00177E88 /* cRZMessage2.cpp */; };
+		52D351761FEFB44D00177E88 /* cRZMessage2Standard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D3516B1FEFB44D00177E88 /* cRZMessage2Standard.cpp */; };
+		52D351771FEFB44D00177E88 /* cS3DVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D3516C1FEFB44D00177E88 /* cS3DVector3.cpp */; };
+		52D351781FEFB44D00177E88 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52D3516D1FEFB44D00177E88 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		52D3507F1FEFB3ED00177E88 /* gzcom-dll.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "gzcom-dll.so"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52D3508F1FEFB44100177E88 /* cGZAllocatorServiceSTLAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cGZAllocatorServiceSTLAllocator.h; path = include/cGZAllocatorServiceSTLAllocator.h; sourceTree = "<group>"; };
+		52D350901FEFB44100177E88 /* cGZCOMLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cGZCOMLibrary.h; path = include/cGZCOMLibrary.h; sourceTree = "<group>"; };
+		52D350911FEFB44100177E88 /* cGZMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cGZMessage.h; path = include/cGZMessage.h; sourceTree = "<group>"; };
+		52D350921FEFB44100177E88 /* cIGZAllocatorService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZAllocatorService.h; path = include/cIGZAllocatorService.h; sourceTree = "<group>"; };
+		52D350931FEFB44100177E88 /* cIGZApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZApp.h; path = include/cIGZApp.h; sourceTree = "<group>"; };
+		52D350941FEFB44100177E88 /* cIGZCanvasMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZCanvasMessage.h; path = include/cIGZCanvasMessage.h; sourceTree = "<group>"; };
+		52D350951FEFB44100177E88 /* cIGZCheatCodeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZCheatCodeManager.h; path = include/cIGZCheatCodeManager.h; sourceTree = "<group>"; };
+		52D350961FEFB44100177E88 /* cIGZCOM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZCOM.h; path = include/cIGZCOM.h; sourceTree = "<group>"; };
+		52D350971FEFB44100177E88 /* cIGZCOMDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZCOMDirector.h; path = include/cIGZCOMDirector.h; sourceTree = "<group>"; };
+		52D350981FEFB44100177E88 /* cIGZCOMLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZCOMLibrary.h; path = include/cIGZCOMLibrary.h; sourceTree = "<group>"; };
+		52D350991FEFB44100177E88 /* cIGZDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZDate.h; path = include/cIGZDate.h; sourceTree = "<group>"; };
+		52D3509A1FEFB44100177E88 /* cIGZFrameWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZFrameWork.h; path = include/cIGZFrameWork.h; sourceTree = "<group>"; };
+		52D3509B1FEFB44100177E88 /* cIGZFrameWorkHooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZFrameWorkHooks.h; path = include/cIGZFrameWorkHooks.h; sourceTree = "<group>"; };
+		52D3509C1FEFB44100177E88 /* cIGZIStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZIStream.h; path = include/cIGZIStream.h; sourceTree = "<group>"; };
+		52D3509D1FEFB44100177E88 /* cIGZKeyMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZKeyMessage.h; path = include/cIGZKeyMessage.h; sourceTree = "<group>"; };
+		52D3509E1FEFB44100177E88 /* cIGZMessage2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZMessage2.h; path = include/cIGZMessage2.h; sourceTree = "<group>"; };
+		52D3509F1FEFB44100177E88 /* cIGZMessage2Standard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZMessage2Standard.h; path = include/cIGZMessage2Standard.h; sourceTree = "<group>"; };
+		52D350A01FEFB44100177E88 /* cIGZMessageServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZMessageServer.h; path = include/cIGZMessageServer.h; sourceTree = "<group>"; };
+		52D350A11FEFB44100177E88 /* cIGZMessageServer2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZMessageServer2.h; path = include/cIGZMessageServer2.h; sourceTree = "<group>"; };
+		52D350A21FEFB44100177E88 /* cIGZMessageTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZMessageTarget.h; path = include/cIGZMessageTarget.h; sourceTree = "<group>"; };
+		52D350A31FEFB44100177E88 /* cIGZMessageTarget2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZMessageTarget2.h; path = include/cIGZMessageTarget2.h; sourceTree = "<group>"; };
+		52D350A41FEFB44100177E88 /* cIGZMouseMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZMouseMessage.h; path = include/cIGZMouseMessage.h; sourceTree = "<group>"; };
+		52D350A51FEFB44100177E88 /* cIGZOStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZOStream.h; path = include/cIGZOStream.h; sourceTree = "<group>"; };
+		52D350A61FEFB44100177E88 /* cIGZRadio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZRadio.h; path = include/cIGZRadio.h; sourceTree = "<group>"; };
+		52D350A71FEFB44100177E88 /* cIGZSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZSerializable.h; path = include/cIGZSerializable.h; sourceTree = "<group>"; };
+		52D350A81FEFB44100177E88 /* cIGZString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZString.h; path = include/cIGZString.h; sourceTree = "<group>"; };
+		52D350A91FEFB44100177E88 /* cIGZSystemService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZSystemService.h; path = include/cIGZSystemService.h; sourceTree = "<group>"; };
+		52D350AA1FEFB44100177E88 /* cIGZUnknown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZUnknown.h; path = include/cIGZUnknown.h; sourceTree = "<group>"; };
+		52D350AB1FEFB44100177E88 /* cIGZUnknownList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZUnknownList.h; path = include/cIGZUnknownList.h; sourceTree = "<group>"; };
+		52D350AC1FEFB44100177E88 /* cIGZWin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZWin.h; path = include/cIGZWin.h; sourceTree = "<group>"; };
+		52D350AD1FEFB44100177E88 /* cIGZWinMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cIGZWinMgr.h; path = include/cIGZWinMgr.h; sourceTree = "<group>"; };
+		52D350AE1FEFB44100177E88 /* cISC4Advice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4Advice.h; path = include/cISC4Advice.h; sourceTree = "<group>"; };
+		52D350AF1FEFB44100177E88 /* cISC4AdviceSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4AdviceSubject.h; path = include/cISC4AdviceSubject.h; sourceTree = "<group>"; };
+		52D350B01FEFB44100177E88 /* cISC4Advisor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4Advisor.h; path = include/cISC4Advisor.h; sourceTree = "<group>"; };
+		52D350B11FEFB44100177E88 /* cISC4AdvisorSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4AdvisorSystem.h; path = include/cISC4AdvisorSystem.h; sourceTree = "<group>"; };
+		52D350B21FEFB44100177E88 /* cISC4App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4App.h; path = include/cISC4App.h; sourceTree = "<group>"; };
+		52D350B31FEFB44100177E88 /* cISC4BudgetSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4BudgetSimulator.h; path = include/cISC4BudgetSimulator.h; sourceTree = "<group>"; };
+		52D350B41FEFB44100177E88 /* cISC4BuildingDevelopmentSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4BuildingDevelopmentSimulator.h; path = include/cISC4BuildingDevelopmentSimulator.h; sourceTree = "<group>"; };
+		52D350B51FEFB44100177E88 /* cISC4BuildingOccupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4BuildingOccupant.h; path = include/cISC4BuildingOccupant.h; sourceTree = "<group>"; };
+		52D350B61FEFB44100177E88 /* cISC4BusinessUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4BusinessUnit.h; path = include/cISC4BusinessUnit.h; sourceTree = "<group>"; };
+		52D350B71FEFB44100177E88 /* cISC4City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4City.h; path = include/cISC4City.h; sourceTree = "<group>"; };
+		52D350B81FEFB44100177E88 /* cISC4ConstructionOccupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4ConstructionOccupant.h; path = include/cISC4ConstructionOccupant.h; sourceTree = "<group>"; };
+		52D350B91FEFB44100177E88 /* cISC4DBSegmentIStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4DBSegmentIStream.h; path = include/cISC4DBSegmentIStream.h; sourceTree = "<group>"; };
+		52D350BA1FEFB44100177E88 /* cISC4DBSegmentOStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4DBSegmentOStream.h; path = include/cISC4DBSegmentOStream.h; sourceTree = "<group>"; };
+		52D350BB1FEFB44100177E88 /* cISC4DisasterInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4DisasterInstance.h; path = include/cISC4DisasterInstance.h; sourceTree = "<group>"; };
+		52D350BC1FEFB44100177E88 /* cISC4DisasterInstanceFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4DisasterInstanceFire.h; path = include/cISC4DisasterInstanceFire.h; sourceTree = "<group>"; };
+		52D350BD1FEFB44100177E88 /* cISC4DisasterInstanceVolcano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4DisasterInstanceVolcano.h; path = include/cISC4DisasterInstanceVolcano.h; sourceTree = "<group>"; };
+		52D350BE1FEFB44100177E88 /* cISC4DisasterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4DisasterLayer.h; path = include/cISC4DisasterLayer.h; sourceTree = "<group>"; };
+		52D350BF1FEFB44100177E88 /* cISC4DisasterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4DisasterManager.h; path = include/cISC4DisasterManager.h; sourceTree = "<group>"; };
+		52D350C01FEFB44100177E88 /* cISC4DisasterManagerFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4DisasterManagerFire.h; path = include/cISC4DisasterManagerFire.h; sourceTree = "<group>"; };
+		52D350C11FEFB44100177E88 /* cISC4DisasterManagerVolcano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4DisasterManagerVolcano.h; path = include/cISC4DisasterManagerVolcano.h; sourceTree = "<group>"; };
+		52D350C21FEFB44100177E88 /* cISC4FeatureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4FeatureManager.h; path = include/cISC4FeatureManager.h; sourceTree = "<group>"; };
+		52D350C31FEFB44100177E88 /* cISC4FireOccupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4FireOccupant.h; path = include/cISC4FireOccupant.h; sourceTree = "<group>"; };
+		52D350C41FEFB44100177E88 /* cISC4FloraOccupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4FloraOccupant.h; path = include/cISC4FloraOccupant.h; sourceTree = "<group>"; };
+		52D350C51FEFB44100177E88 /* cISC4FoundationOccupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4FoundationOccupant.h; path = include/cISC4FoundationOccupant.h; sourceTree = "<group>"; };
+		52D350C61FEFB44100177E88 /* cISC4HistoryWarehouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4HistoryWarehouse.h; path = include/cISC4HistoryWarehouse.h; sourceTree = "<group>"; };
+		52D350C71FEFB44100177E88 /* cISC4LandfillOccupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4LandfillOccupant.h; path = include/cISC4LandfillOccupant.h; sourceTree = "<group>"; };
+		52D350C81FEFB44100177E88 /* cISC4Lot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4Lot.h; path = include/cISC4Lot.h; sourceTree = "<group>"; };
+		52D350C91FEFB44100177E88 /* cISC4LotBaseTextureOccupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4LotBaseTextureOccupant.h; path = include/cISC4LotBaseTextureOccupant.h; sourceTree = "<group>"; };
+		52D350CA1FEFB44100177E88 /* cISC4LotConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4LotConfiguration.h; path = include/cISC4LotConfiguration.h; sourceTree = "<group>"; };
+		52D350CB1FEFB44100177E88 /* cISC4LotConfigurationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4LotConfigurationManager.h; path = include/cISC4LotConfigurationManager.h; sourceTree = "<group>"; };
+		52D350CC1FEFB44100177E88 /* cISC4LotDeveloper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4LotDeveloper.h; path = include/cISC4LotDeveloper.h; sourceTree = "<group>"; };
+		52D350CD1FEFB44100177E88 /* cISC4LotManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4LotManager.h; path = include/cISC4LotManager.h; sourceTree = "<group>"; };
+		52D350CE1FEFB44100177E88 /* cISC4LotRetainingWallOccupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4LotRetainingWallOccupant.h; path = include/cISC4LotRetainingWallOccupant.h; sourceTree = "<group>"; };
+		52D350CF1FEFB44100177E88 /* cISC4Nation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4Nation.h; path = include/cISC4Nation.h; sourceTree = "<group>"; };
+		52D350D01FEFB44100177E88 /* cISC4NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4NetworkManager.h; path = include/cISC4NetworkManager.h; sourceTree = "<group>"; };
+		52D350D11FEFB44100177E88 /* cISC4Occupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4Occupant.h; path = include/cISC4Occupant.h; sourceTree = "<group>"; };
+		52D350D21FEFB44100177E88 /* cISC4OccupantFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4OccupantFilter.h; path = include/cISC4OccupantFilter.h; sourceTree = "<group>"; };
+		52D350D31FEFB44100177E88 /* cISC4OccupantManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4OccupantManager.h; path = include/cISC4OccupantManager.h; sourceTree = "<group>"; };
+		52D350D41FEFB44100177E88 /* cISC4PoliceSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4PoliceSimulator.h; path = include/cISC4PoliceSimulator.h; sourceTree = "<group>"; };
+		52D350D51FEFB44100177E88 /* cISC4PollutionSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4PollutionSimulator.h; path = include/cISC4PollutionSimulator.h; sourceTree = "<group>"; };
+		52D350D61FEFB44100177E88 /* cISC4PowerLineOccupant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4PowerLineOccupant.h; path = include/cISC4PowerLineOccupant.h; sourceTree = "<group>"; };
+		52D350D71FEFB44100177E88 /* cISC4Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4Region.h; path = include/cISC4Region.h; sourceTree = "<group>"; };
+		52D350D81FEFB44100177E88 /* cISC4RegionalCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4RegionalCity.h; path = include/cISC4RegionalCity.h; sourceTree = "<group>"; };
+		52D350D91FEFB44100177E88 /* cISC4RenderProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4RenderProperties.h; path = include/cISC4RenderProperties.h; sourceTree = "<group>"; };
+		52D350DA1FEFB44100177E88 /* cISC4ResidentialSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4ResidentialSimulator.h; path = include/cISC4ResidentialSimulator.h; sourceTree = "<group>"; };
+		52D350DB1FEFB44100177E88 /* cISC4SimGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4SimGrid.h; path = include/cISC4SimGrid.h; sourceTree = "<group>"; };
+		52D350DC1FEFB44100177E88 /* cISC4Simulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4Simulator.h; path = include/cISC4Simulator.h; sourceTree = "<group>"; };
+		52D350DD1FEFB44100177E88 /* cISC4TractDeveloper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4TractDeveloper.h; path = include/cISC4TractDeveloper.h; sourceTree = "<group>"; };
+		52D350DE1FEFB44100177E88 /* cISC4TrafficSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4TrafficSource.h; path = include/cISC4TrafficSource.h; sourceTree = "<group>"; };
+		52D350DF1FEFB44100177E88 /* cISC4TutorialSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4TutorialSystem.h; path = include/cISC4TutorialSystem.h; sourceTree = "<group>"; };
+		52D350E01FEFB44100177E88 /* cISC4View3DWin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC4View3DWin.h; path = include/cISC4View3DWin.h; sourceTree = "<group>"; };
+		52D350E11FEFB44100177E88 /* cISC43DRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC43DRender.h; path = include/cISC43DRender.h; sourceTree = "<group>"; };
+		52D350E21FEFB44100177E88 /* cISC424HourClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISC424HourClock.h; path = include/cISC424HourClock.h; sourceTree = "<group>"; };
+		52D350E31FEFB44100177E88 /* cISCExemplarPropertyHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISCExemplarPropertyHolder.h; path = include/cISCExemplarPropertyHolder.h; sourceTree = "<group>"; };
+		52D350E41FEFB44100177E88 /* cISCPropertyHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISCPropertyHolder.h; path = include/cISCPropertyHolder.h; sourceTree = "<group>"; };
+		52D350E51FEFB44100177E88 /* cISCResExemplar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cISCResExemplar.h; path = include/cISCResExemplar.h; sourceTree = "<group>"; };
+		52D350E61FEFB44100177E88 /* cRZAutoRefCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cRZAutoRefCount.h; path = include/cRZAutoRefCount.h; sourceTree = "<group>"; };
+		52D350E71FEFB44100177E88 /* cRZBaseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cRZBaseString.h; path = include/cRZBaseString.h; sourceTree = "<group>"; };
+		52D350E81FEFB44100177E88 /* cRZCOMDllDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cRZCOMDllDirector.h; path = include/cRZCOMDllDirector.h; sourceTree = "<group>"; };
+		52D350E91FEFB44100177E88 /* cRZMessage2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cRZMessage2.h; path = include/cRZMessage2.h; sourceTree = "<group>"; };
+		52D350EA1FEFB44100177E88 /* cRZMessage2COMDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cRZMessage2COMDirector.h; path = include/cRZMessage2COMDirector.h; sourceTree = "<group>"; };
+		52D350EB1FEFB44100177E88 /* cRZMessage2Standard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cRZMessage2Standard.h; path = include/cRZMessage2Standard.h; sourceTree = "<group>"; };
+		52D350EC1FEFB44100177E88 /* cRZPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cRZPoint.h; path = include/cRZPoint.h; sourceTree = "<group>"; };
+		52D350ED1FEFB44100177E88 /* cRZSysServPtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cRZSysServPtr.h; path = include/cRZSysServPtr.h; sourceTree = "<group>"; };
+		52D350EE1FEFB44100177E88 /* cRZUnknown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cRZUnknown.h; path = include/cRZUnknown.h; sourceTree = "<group>"; };
+		52D350EF1FEFB44100177E88 /* cS3DCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cS3DCamera.h; path = include/cS3DCamera.h; sourceTree = "<group>"; };
+		52D350F01FEFB44100177E88 /* cS3DVector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cS3DVector3.h; path = include/cS3DVector3.h; sourceTree = "<group>"; };
+		52D350F11FEFB44100177E88 /* cSC4OccupantTypeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cSC4OccupantTypeFilter.h; path = include/cSC4OccupantTypeFilter.h; sourceTree = "<group>"; };
+		52D350F21FEFB44100177E88 /* GZCLSIDDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZCLSIDDefs.h; path = include/GZCLSIDDefs.h; sourceTree = "<group>"; };
+		52D350F31FEFB44100177E88 /* GZMSGIDDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZMSGIDDefs.h; path = include/GZMSGIDDefs.h; sourceTree = "<group>"; };
+		52D350F41FEFB44100177E88 /* GZServDecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZServDecls.h; path = include/GZServDecls.h; sourceTree = "<group>"; };
+		52D350F51FEFB44100177E88 /* GZServPtrs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GZServPtrs.h; path = include/GZServPtrs.h; sourceTree = "<group>"; };
+		52D350F61FEFB44100177E88 /* ilist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ilist.h; path = include/ilist.h; sourceTree = "<group>"; };
+		52D350F71FEFB44100177E88 /* SC4Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SC4Point.h; path = include/SC4Point.h; sourceTree = "<group>"; };
+		52D350F81FEFB44100177E88 /* SC4Rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SC4Rect.h; path = include/SC4Rect.h; sourceTree = "<group>"; };
+		52D351631FEFB44D00177E88 /* cGZCityHallUpgradeDllDirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cGZCityHallUpgradeDllDirector.cpp; path = src/cGZCityHallUpgradeDllDirector.cpp; sourceTree = "<group>"; };
+		52D351641FEFB44D00177E88 /* cGZCustomDllDirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cGZCustomDllDirector.cpp; path = src/cGZCustomDllDirector.cpp; sourceTree = "<group>"; };
+		52D351651FEFB44D00177E88 /* cGZExampleDllDirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cGZExampleDllDirector.cpp; path = src/cGZExampleDllDirector.cpp; sourceTree = "<group>"; };
+		52D351661FEFB44D00177E88 /* cGZExtraCheatsDllDirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cGZExtraCheatsDllDirector.cpp; path = src/cGZExtraCheatsDllDirector.cpp; sourceTree = "<group>"; };
+		52D351671FEFB44D00177E88 /* cGZExtraExtraCheatsDllDirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cGZExtraExtraCheatsDllDirector.cpp; path = src/cGZExtraExtraCheatsDllDirector.cpp; sourceTree = "<group>"; };
+		52D351681FEFB44D00177E88 /* cRZBaseString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cRZBaseString.cpp; path = src/cRZBaseString.cpp; sourceTree = "<group>"; };
+		52D351691FEFB44D00177E88 /* cRZCOMDllDirector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cRZCOMDllDirector.cpp; path = src/cRZCOMDllDirector.cpp; sourceTree = "<group>"; };
+		52D3516A1FEFB44D00177E88 /* cRZMessage2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cRZMessage2.cpp; path = src/cRZMessage2.cpp; sourceTree = "<group>"; };
+		52D3516B1FEFB44D00177E88 /* cRZMessage2Standard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cRZMessage2Standard.cpp; path = src/cRZMessage2Standard.cpp; sourceTree = "<group>"; };
+		52D3516C1FEFB44D00177E88 /* cS3DVector3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cS3DVector3.cpp; path = src/cS3DVector3.cpp; sourceTree = "<group>"; };
+		52D3516D1FEFB44D00177E88 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
+		52D351791FEFB88E00177E88 /* exports.exp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.exports; name = exports.exp; path = src/exports.exp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52D3507C1FEFB3ED00177E88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52D350761FEFB3ED00177E88 = {
+			isa = PBXGroup;
+			children = (
+				52D350811FEFB3ED00177E88 /* gzcom-dll */,
+				52D350801FEFB3ED00177E88 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52D350801FEFB3ED00177E88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52D3507F1FEFB3ED00177E88 /* gzcom-dll.so */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52D350811FEFB3ED00177E88 /* gzcom-dll */ = {
+			isa = PBXGroup;
+			children = (
+				52D3508D1FEFB42600177E88 /* include */,
+				52D3508E1FEFB42B00177E88 /* src */,
+			);
+			path = "gzcom-dll";
+			sourceTree = "<group>";
+		};
+		52D3508D1FEFB42600177E88 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				52D3508F1FEFB44100177E88 /* cGZAllocatorServiceSTLAllocator.h */,
+				52D350901FEFB44100177E88 /* cGZCOMLibrary.h */,
+				52D350911FEFB44100177E88 /* cGZMessage.h */,
+				52D350921FEFB44100177E88 /* cIGZAllocatorService.h */,
+				52D350931FEFB44100177E88 /* cIGZApp.h */,
+				52D350941FEFB44100177E88 /* cIGZCanvasMessage.h */,
+				52D350951FEFB44100177E88 /* cIGZCheatCodeManager.h */,
+				52D350961FEFB44100177E88 /* cIGZCOM.h */,
+				52D350971FEFB44100177E88 /* cIGZCOMDirector.h */,
+				52D350981FEFB44100177E88 /* cIGZCOMLibrary.h */,
+				52D350991FEFB44100177E88 /* cIGZDate.h */,
+				52D3509A1FEFB44100177E88 /* cIGZFrameWork.h */,
+				52D3509B1FEFB44100177E88 /* cIGZFrameWorkHooks.h */,
+				52D3509C1FEFB44100177E88 /* cIGZIStream.h */,
+				52D3509D1FEFB44100177E88 /* cIGZKeyMessage.h */,
+				52D3509E1FEFB44100177E88 /* cIGZMessage2.h */,
+				52D3509F1FEFB44100177E88 /* cIGZMessage2Standard.h */,
+				52D350A01FEFB44100177E88 /* cIGZMessageServer.h */,
+				52D350A11FEFB44100177E88 /* cIGZMessageServer2.h */,
+				52D350A21FEFB44100177E88 /* cIGZMessageTarget.h */,
+				52D350A31FEFB44100177E88 /* cIGZMessageTarget2.h */,
+				52D350A41FEFB44100177E88 /* cIGZMouseMessage.h */,
+				52D350A51FEFB44100177E88 /* cIGZOStream.h */,
+				52D350A61FEFB44100177E88 /* cIGZRadio.h */,
+				52D350A71FEFB44100177E88 /* cIGZSerializable.h */,
+				52D350A81FEFB44100177E88 /* cIGZString.h */,
+				52D350A91FEFB44100177E88 /* cIGZSystemService.h */,
+				52D350AA1FEFB44100177E88 /* cIGZUnknown.h */,
+				52D350AB1FEFB44100177E88 /* cIGZUnknownList.h */,
+				52D350AC1FEFB44100177E88 /* cIGZWin.h */,
+				52D350AD1FEFB44100177E88 /* cIGZWinMgr.h */,
+				52D350AE1FEFB44100177E88 /* cISC4Advice.h */,
+				52D350AF1FEFB44100177E88 /* cISC4AdviceSubject.h */,
+				52D350B01FEFB44100177E88 /* cISC4Advisor.h */,
+				52D350B11FEFB44100177E88 /* cISC4AdvisorSystem.h */,
+				52D350B21FEFB44100177E88 /* cISC4App.h */,
+				52D350B31FEFB44100177E88 /* cISC4BudgetSimulator.h */,
+				52D350B41FEFB44100177E88 /* cISC4BuildingDevelopmentSimulator.h */,
+				52D350B51FEFB44100177E88 /* cISC4BuildingOccupant.h */,
+				52D350B61FEFB44100177E88 /* cISC4BusinessUnit.h */,
+				52D350B71FEFB44100177E88 /* cISC4City.h */,
+				52D350B81FEFB44100177E88 /* cISC4ConstructionOccupant.h */,
+				52D350B91FEFB44100177E88 /* cISC4DBSegmentIStream.h */,
+				52D350BA1FEFB44100177E88 /* cISC4DBSegmentOStream.h */,
+				52D350BB1FEFB44100177E88 /* cISC4DisasterInstance.h */,
+				52D350BC1FEFB44100177E88 /* cISC4DisasterInstanceFire.h */,
+				52D350BD1FEFB44100177E88 /* cISC4DisasterInstanceVolcano.h */,
+				52D350BE1FEFB44100177E88 /* cISC4DisasterLayer.h */,
+				52D350BF1FEFB44100177E88 /* cISC4DisasterManager.h */,
+				52D350C01FEFB44100177E88 /* cISC4DisasterManagerFire.h */,
+				52D350C11FEFB44100177E88 /* cISC4DisasterManagerVolcano.h */,
+				52D350C21FEFB44100177E88 /* cISC4FeatureManager.h */,
+				52D350C31FEFB44100177E88 /* cISC4FireOccupant.h */,
+				52D350C41FEFB44100177E88 /* cISC4FloraOccupant.h */,
+				52D350C51FEFB44100177E88 /* cISC4FoundationOccupant.h */,
+				52D350C61FEFB44100177E88 /* cISC4HistoryWarehouse.h */,
+				52D350C71FEFB44100177E88 /* cISC4LandfillOccupant.h */,
+				52D350C81FEFB44100177E88 /* cISC4Lot.h */,
+				52D350C91FEFB44100177E88 /* cISC4LotBaseTextureOccupant.h */,
+				52D350CA1FEFB44100177E88 /* cISC4LotConfiguration.h */,
+				52D350CB1FEFB44100177E88 /* cISC4LotConfigurationManager.h */,
+				52D350CC1FEFB44100177E88 /* cISC4LotDeveloper.h */,
+				52D350CD1FEFB44100177E88 /* cISC4LotManager.h */,
+				52D350CE1FEFB44100177E88 /* cISC4LotRetainingWallOccupant.h */,
+				52D350CF1FEFB44100177E88 /* cISC4Nation.h */,
+				52D350D01FEFB44100177E88 /* cISC4NetworkManager.h */,
+				52D350D11FEFB44100177E88 /* cISC4Occupant.h */,
+				52D350D21FEFB44100177E88 /* cISC4OccupantFilter.h */,
+				52D350D31FEFB44100177E88 /* cISC4OccupantManager.h */,
+				52D350D41FEFB44100177E88 /* cISC4PoliceSimulator.h */,
+				52D350D51FEFB44100177E88 /* cISC4PollutionSimulator.h */,
+				52D350D61FEFB44100177E88 /* cISC4PowerLineOccupant.h */,
+				52D350D71FEFB44100177E88 /* cISC4Region.h */,
+				52D350D81FEFB44100177E88 /* cISC4RegionalCity.h */,
+				52D350D91FEFB44100177E88 /* cISC4RenderProperties.h */,
+				52D350DA1FEFB44100177E88 /* cISC4ResidentialSimulator.h */,
+				52D350DB1FEFB44100177E88 /* cISC4SimGrid.h */,
+				52D350DC1FEFB44100177E88 /* cISC4Simulator.h */,
+				52D350DD1FEFB44100177E88 /* cISC4TractDeveloper.h */,
+				52D350DE1FEFB44100177E88 /* cISC4TrafficSource.h */,
+				52D350DF1FEFB44100177E88 /* cISC4TutorialSystem.h */,
+				52D350E01FEFB44100177E88 /* cISC4View3DWin.h */,
+				52D350E11FEFB44100177E88 /* cISC43DRender.h */,
+				52D350E21FEFB44100177E88 /* cISC424HourClock.h */,
+				52D350E31FEFB44100177E88 /* cISCExemplarPropertyHolder.h */,
+				52D350E41FEFB44100177E88 /* cISCPropertyHolder.h */,
+				52D350E51FEFB44100177E88 /* cISCResExemplar.h */,
+				52D350E61FEFB44100177E88 /* cRZAutoRefCount.h */,
+				52D350E71FEFB44100177E88 /* cRZBaseString.h */,
+				52D350E81FEFB44100177E88 /* cRZCOMDllDirector.h */,
+				52D350E91FEFB44100177E88 /* cRZMessage2.h */,
+				52D350EA1FEFB44100177E88 /* cRZMessage2COMDirector.h */,
+				52D350EB1FEFB44100177E88 /* cRZMessage2Standard.h */,
+				52D350EC1FEFB44100177E88 /* cRZPoint.h */,
+				52D350ED1FEFB44100177E88 /* cRZSysServPtr.h */,
+				52D350EE1FEFB44100177E88 /* cRZUnknown.h */,
+				52D350EF1FEFB44100177E88 /* cS3DCamera.h */,
+				52D350F01FEFB44100177E88 /* cS3DVector3.h */,
+				52D350F11FEFB44100177E88 /* cSC4OccupantTypeFilter.h */,
+				52D350F21FEFB44100177E88 /* GZCLSIDDefs.h */,
+				52D350F31FEFB44100177E88 /* GZMSGIDDefs.h */,
+				52D350F41FEFB44100177E88 /* GZServDecls.h */,
+				52D350F51FEFB44100177E88 /* GZServPtrs.h */,
+				52D350F61FEFB44100177E88 /* ilist.h */,
+				52D350F71FEFB44100177E88 /* SC4Point.h */,
+				52D350F81FEFB44100177E88 /* SC4Rect.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		52D3508E1FEFB42B00177E88 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				52D351631FEFB44D00177E88 /* cGZCityHallUpgradeDllDirector.cpp */,
+				52D351641FEFB44D00177E88 /* cGZCustomDllDirector.cpp */,
+				52D351651FEFB44D00177E88 /* cGZExampleDllDirector.cpp */,
+				52D351661FEFB44D00177E88 /* cGZExtraCheatsDllDirector.cpp */,
+				52D351671FEFB44D00177E88 /* cGZExtraExtraCheatsDllDirector.cpp */,
+				52D351681FEFB44D00177E88 /* cRZBaseString.cpp */,
+				52D351691FEFB44D00177E88 /* cRZCOMDllDirector.cpp */,
+				52D3516A1FEFB44D00177E88 /* cRZMessage2.cpp */,
+				52D3516B1FEFB44D00177E88 /* cRZMessage2Standard.cpp */,
+				52D3516C1FEFB44D00177E88 /* cS3DVector3.cpp */,
+				52D3516D1FEFB44D00177E88 /* main.cpp */,
+				52D351791FEFB88E00177E88 /* exports.exp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		52D3507D1FEFB3ED00177E88 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52D3511B1FEFB44200177E88 /* cISC4AdvisorSystem.h in Headers */,
+				52D351151FEFB44200177E88 /* cIGZUnknownList.h in Headers */,
+				52D3511E1FEFB44200177E88 /* cISC4BuildingDevelopmentSimulator.h in Headers */,
+				52D350F91FEFB44100177E88 /* cGZAllocatorServiceSTLAllocator.h in Headers */,
+				52D3511F1FEFB44200177E88 /* cISC4BuildingOccupant.h in Headers */,
+				52D351621FEFB44200177E88 /* SC4Rect.h in Headers */,
+				52D351571FEFB44200177E88 /* cRZSysServPtr.h in Headers */,
+				52D351231FEFB44200177E88 /* cISC4DBSegmentIStream.h in Headers */,
+				52D351551FEFB44200177E88 /* cRZMessage2Standard.h in Headers */,
+				52D3513A1FEFB44200177E88 /* cISC4NetworkManager.h in Headers */,
+				52D351061FEFB44100177E88 /* cIGZIStream.h in Headers */,
+				52D351491FEFB44200177E88 /* cISC4TutorialSystem.h in Headers */,
+				52D3513C1FEFB44200177E88 /* cISC4OccupantFilter.h in Headers */,
+				52D351591FEFB44200177E88 /* cS3DCamera.h in Headers */,
+				52D3515D1FEFB44200177E88 /* GZMSGIDDefs.h in Headers */,
+				52D351411FEFB44200177E88 /* cISC4Region.h in Headers */,
+				52D3514D1FEFB44200177E88 /* cISCExemplarPropertyHolder.h in Headers */,
+				52D3513F1FEFB44200177E88 /* cISC4PollutionSimulator.h in Headers */,
+				52D351261FEFB44200177E88 /* cISC4DisasterInstanceFire.h in Headers */,
+				52D351601FEFB44200177E88 /* ilist.h in Headers */,
+				52D351381FEFB44200177E88 /* cISC4LotRetainingWallOccupant.h in Headers */,
+				52D3514C1FEFB44200177E88 /* cISC424HourClock.h in Headers */,
+				52D351561FEFB44200177E88 /* cRZPoint.h in Headers */,
+				52D351051FEFB44100177E88 /* cIGZFrameWorkHooks.h in Headers */,
+				52D351321FEFB44200177E88 /* cISC4Lot.h in Headers */,
+				52D351191FEFB44200177E88 /* cISC4AdviceSubject.h in Headers */,
+				52D3512B1FEFB44200177E88 /* cISC4DisasterManagerVolcano.h in Headers */,
+				52D351021FEFB44100177E88 /* cIGZCOMLibrary.h in Headers */,
+				52D351181FEFB44200177E88 /* cISC4Advice.h in Headers */,
+				52D351531FEFB44200177E88 /* cRZMessage2.h in Headers */,
+				52D351351FEFB44200177E88 /* cISC4LotConfigurationManager.h in Headers */,
+				52D351281FEFB44200177E88 /* cISC4DisasterLayer.h in Headers */,
+				52D3514F1FEFB44200177E88 /* cISCResExemplar.h in Headers */,
+				52D351361FEFB44200177E88 /* cISC4LotDeveloper.h in Headers */,
+				52D3513D1FEFB44200177E88 /* cISC4OccupantManager.h in Headers */,
+				52D350FB1FEFB44100177E88 /* cGZMessage.h in Headers */,
+				52D351291FEFB44200177E88 /* cISC4DisasterManager.h in Headers */,
+				52D351501FEFB44200177E88 /* cRZAutoRefCount.h in Headers */,
+				52D3510E1FEFB44200177E88 /* cIGZMouseMessage.h in Headers */,
+				52D351331FEFB44200177E88 /* cISC4LotBaseTextureOccupant.h in Headers */,
+				52D351211FEFB44200177E88 /* cISC4City.h in Headers */,
+				52D351461FEFB44200177E88 /* cISC4Simulator.h in Headers */,
+				52D350FA1FEFB44100177E88 /* cGZCOMLibrary.h in Headers */,
+				52D351171FEFB44200177E88 /* cIGZWinMgr.h in Headers */,
+				52D351341FEFB44200177E88 /* cISC4LotConfiguration.h in Headers */,
+				52D3510A1FEFB44100177E88 /* cIGZMessageServer.h in Headers */,
+				52D3513B1FEFB44200177E88 /* cISC4Occupant.h in Headers */,
+				52D351391FEFB44200177E88 /* cISC4Nation.h in Headers */,
+				52D351611FEFB44200177E88 /* SC4Point.h in Headers */,
+				52D351071FEFB44100177E88 /* cIGZKeyMessage.h in Headers */,
+				52D351421FEFB44200177E88 /* cISC4RegionalCity.h in Headers */,
+				52D351131FEFB44200177E88 /* cIGZSystemService.h in Headers */,
+				52D3511C1FEFB44200177E88 /* cISC4App.h in Headers */,
+				52D3515C1FEFB44200177E88 /* GZCLSIDDefs.h in Headers */,
+				52D3511D1FEFB44200177E88 /* cISC4BudgetSimulator.h in Headers */,
+				52D351251FEFB44200177E88 /* cISC4DisasterInstance.h in Headers */,
+				52D351001FEFB44100177E88 /* cIGZCOM.h in Headers */,
+				52D351121FEFB44200177E88 /* cIGZString.h in Headers */,
+				52D351091FEFB44100177E88 /* cIGZMessage2Standard.h in Headers */,
+				52D351081FEFB44100177E88 /* cIGZMessage2.h in Headers */,
+				52D351311FEFB44200177E88 /* cISC4LandfillOccupant.h in Headers */,
+				52D350FC1FEFB44100177E88 /* cIGZAllocatorService.h in Headers */,
+				52D3514A1FEFB44200177E88 /* cISC4View3DWin.h in Headers */,
+				52D3515B1FEFB44200177E88 /* cSC4OccupantTypeFilter.h in Headers */,
+				52D351011FEFB44100177E88 /* cIGZCOMDirector.h in Headers */,
+				52D351481FEFB44200177E88 /* cISC4TrafficSource.h in Headers */,
+				52D351141FEFB44200177E88 /* cIGZUnknown.h in Headers */,
+				52D351401FEFB44200177E88 /* cISC4PowerLineOccupant.h in Headers */,
+				52D3510D1FEFB44200177E88 /* cIGZMessageTarget2.h in Headers */,
+				52D351541FEFB44200177E88 /* cRZMessage2COMDirector.h in Headers */,
+				52D351431FEFB44200177E88 /* cISC4RenderProperties.h in Headers */,
+				52D351201FEFB44200177E88 /* cISC4BusinessUnit.h in Headers */,
+				52D351581FEFB44200177E88 /* cRZUnknown.h in Headers */,
+				52D351451FEFB44200177E88 /* cISC4SimGrid.h in Headers */,
+				52D351521FEFB44200177E88 /* cRZCOMDllDirector.h in Headers */,
+				52D351031FEFB44100177E88 /* cIGZDate.h in Headers */,
+				52D351241FEFB44200177E88 /* cISC4DBSegmentOStream.h in Headers */,
+				52D3512A1FEFB44200177E88 /* cISC4DisasterManagerFire.h in Headers */,
+				52D3510F1FEFB44200177E88 /* cIGZOStream.h in Headers */,
+				52D351471FEFB44200177E88 /* cISC4TractDeveloper.h in Headers */,
+				52D351111FEFB44200177E88 /* cIGZSerializable.h in Headers */,
+				52D3512C1FEFB44200177E88 /* cISC4FeatureManager.h in Headers */,
+				52D351041FEFB44100177E88 /* cIGZFrameWork.h in Headers */,
+				52D350FD1FEFB44100177E88 /* cIGZApp.h in Headers */,
+				52D350FF1FEFB44100177E88 /* cIGZCheatCodeManager.h in Headers */,
+				52D3515F1FEFB44200177E88 /* GZServPtrs.h in Headers */,
+				52D3512F1FEFB44200177E88 /* cISC4FoundationOccupant.h in Headers */,
+				52D351371FEFB44200177E88 /* cISC4LotManager.h in Headers */,
+				52D351441FEFB44200177E88 /* cISC4ResidentialSimulator.h in Headers */,
+				52D3514B1FEFB44200177E88 /* cISC43DRender.h in Headers */,
+				52D3511A1FEFB44200177E88 /* cISC4Advisor.h in Headers */,
+				52D350FE1FEFB44100177E88 /* cIGZCanvasMessage.h in Headers */,
+				52D3512D1FEFB44200177E88 /* cISC4FireOccupant.h in Headers */,
+				52D3515E1FEFB44200177E88 /* GZServDecls.h in Headers */,
+				52D3515A1FEFB44200177E88 /* cS3DVector3.h in Headers */,
+				52D351301FEFB44200177E88 /* cISC4HistoryWarehouse.h in Headers */,
+				52D351101FEFB44200177E88 /* cIGZRadio.h in Headers */,
+				52D3510C1FEFB44100177E88 /* cIGZMessageTarget.h in Headers */,
+				52D351271FEFB44200177E88 /* cISC4DisasterInstanceVolcano.h in Headers */,
+				52D351221FEFB44200177E88 /* cISC4ConstructionOccupant.h in Headers */,
+				52D3513E1FEFB44200177E88 /* cISC4PoliceSimulator.h in Headers */,
+				52D3512E1FEFB44200177E88 /* cISC4FloraOccupant.h in Headers */,
+				52D3514E1FEFB44200177E88 /* cISCPropertyHolder.h in Headers */,
+				52D351161FEFB44200177E88 /* cIGZWin.h in Headers */,
+				52D3510B1FEFB44100177E88 /* cIGZMessageServer2.h in Headers */,
+				52D351511FEFB44200177E88 /* cRZBaseString.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		52D3507E1FEFB3ED00177E88 /* gzcom-dll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52D3508A1FEFB3ED00177E88 /* Build configuration list for PBXNativeTarget "gzcom-dll" */;
+			buildPhases = (
+				52D3507B1FEFB3ED00177E88 /* Sources */,
+				52D3507C1FEFB3ED00177E88 /* Frameworks */,
+				52D3507D1FEFB3ED00177E88 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "gzcom-dll";
+			productName = "gzcom-dll";
+			productReference = 52D3507F1FEFB3ED00177E88 /* gzcom-dll.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52D350771FEFB3ED00177E88 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Nelson Gomez";
+				TargetAttributes = {
+					52D3507E1FEFB3ED00177E88 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 52D3507A1FEFB3ED00177E88 /* Build configuration list for PBXProject "gzcom-dll" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 52D350761FEFB3ED00177E88;
+			productRefGroup = 52D350801FEFB3ED00177E88 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52D3507E1FEFB3ED00177E88 /* gzcom-dll */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52D3507B1FEFB3ED00177E88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52D3516F1FEFB44D00177E88 /* cGZCustomDllDirector.cpp in Sources */,
+				52D351731FEFB44D00177E88 /* cRZBaseString.cpp in Sources */,
+				52D351761FEFB44D00177E88 /* cRZMessage2Standard.cpp in Sources */,
+				52D351701FEFB44D00177E88 /* cGZExampleDllDirector.cpp in Sources */,
+				52D351781FEFB44D00177E88 /* main.cpp in Sources */,
+				52D351711FEFB44D00177E88 /* cGZExtraCheatsDllDirector.cpp in Sources */,
+				52D351721FEFB44D00177E88 /* cGZExtraExtraCheatsDllDirector.cpp in Sources */,
+				52D351741FEFB44D00177E88 /* cRZCOMDllDirector.cpp in Sources */,
+				52D351771FEFB44D00177E88 /* cS3DVector3.cpp in Sources */,
+				52D351751FEFB44D00177E88 /* cRZMessage2.cpp in Sources */,
+				52D3516E1FEFB44D00177E88 /* cGZCityHallUpgradeDllDirector.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		52D350881FEFB3ED00177E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		52D350891FEFB3ED00177E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		52D3508B1FEFB3ED00177E88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				EXPORTED_SYMBOLS_FILE = "./gzcom-dll/src/exports.exp";
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		52D3508C1FEFB3ED00177E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				EXPORTED_SYMBOLS_FILE = "./gzcom-dll/src/exports.exp";
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52D3507A1FEFB3ED00177E88 /* Build configuration list for PBXProject "gzcom-dll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52D350881FEFB3ED00177E88 /* Debug */,
+				52D350891FEFB3ED00177E88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52D3508A1FEFB3ED00177E88 /* Build configuration list for PBXNativeTarget "gzcom-dll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52D3508B1FEFB3ED00177E88 /* Debug */,
+				52D3508C1FEFB3ED00177E88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52D350771FEFB3ED00177E88 /* Project object */;
+}
