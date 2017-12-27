@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52D3507E1FEFB3ED00177E88"
-               BuildableName = "libgzcom-dll.dylib"
+               BuildableName = "gzcom-dll.so"
                BlueprintName = "gzcom-dll"
                ReferencedContainer = "container:gzcom-dll.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D3507E1FEFB3ED00177E88"
-            BuildableName = "libgzcom-dll.dylib"
+            BuildableName = "gzcom-dll.so"
             BlueprintName = "gzcom-dll"
             ReferencedContainer = "container:gzcom-dll.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D3507E1FEFB3ED00177E88"
-            BuildableName = "libgzcom-dll.dylib"
+            BuildableName = "gzcom-dll.so"
             BlueprintName = "gzcom-dll"
             ReferencedContainer = "container:gzcom-dll.xcodeproj">
          </BuildableReference>

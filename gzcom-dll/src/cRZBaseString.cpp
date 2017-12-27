@@ -6,6 +6,7 @@
 #include <string.h>
 
 static const uint32_t kRZBaseStringIID = 0xab13a836;
+static const uint32_t GZIID_cIGZString = 0x89b7dc8;
 
 cRZBaseString::cRZBaseString(cIGZString const& szSource)
 	: mnRefCount(0), szData(szSource.ToChar()) {
@@ -52,16 +53,22 @@ bool cRZBaseString::QueryInterface(uint32_t riid, void** ppvObj) {
 	switch (riid) {
 		case kRZBaseStringIID:
 			*ppvObj = static_cast<cRZBaseString*>(this);
-			AddRef();
-			return true;
+            break;
+            
+        case GZIID_cIGZString:
+            *ppvObj = static_cast<cIGZString*>(this);
+            break;
 
 		case GZIID_cIGZUnknown:
 			*ppvObj = static_cast<cIGZUnknown*>(static_cast<cRZBaseString*>(this));
-			AddRef();
-			return true;
+            break;
+            
+        default:
+            return false;
 	}
-
-	return false;
+    
+    AddRef();
+    return true;
 }
 
 uint32_t cRZBaseString::AddRef(void) {
@@ -107,11 +114,15 @@ char const* cRZBaseString::Data(void) const {
 }
 
 uint32_t cRZBaseString::Strlen(void) const {
-	return szData.length();
+	return (uint32_t)szData.length();
 }
 
 bool cRZBaseString::IsEqual(cIGZString const* szOther, bool bCaseSensitive) const {
-	return CompareTo(*szOther, bCaseSensitive) == 0;
+    if (szOther == NULL) {
+        return this->Strlen() == 0;
+    }
+    
+	return CompareTo(cRZBaseString(szOther->ToChar()), bCaseSensitive) == 0;
 }
 
 bool cRZBaseString::IsEqual(cIGZString const& szOther, bool bCaseSensitive) const {
@@ -119,18 +130,22 @@ bool cRZBaseString::IsEqual(cIGZString const& szOther, bool bCaseSensitive) cons
 }
 
 bool cRZBaseString::IsEqual(char const* pszOther, uint32_t dwLength, bool bCaseSensitive) const {
+    if (pszOther == NULL) {
+        return this->Strlen() == 0;
+    }
+    
 	return CompareTo(pszOther, dwLength, bCaseSensitive) == 0;
 }
 
 int32_t cRZBaseString::CompareTo(cIGZString const& szOther, bool bCaseSensitive) const {
 	if (bCaseSensitive) {
-		cRZBaseString szThis = cRZBaseString(*this);
-		cRZBaseString szOther = cRZBaseString(szOther);
+		cRZBaseString szThis = cRZBaseString(this->ToChar());
+		cRZBaseString szDupOther = cRZBaseString(szOther);
 
 		szThis.MakeUpper();
-		szOther.MakeUpper();
+		szDupOther.MakeUpper();
 
-		return szThis.CompareTo(szOther, false);
+		return szThis.CompareTo(szDupOther, false);
 	}
 	else {
 		return szData.compare(szOther.ToChar());
@@ -201,16 +216,16 @@ int32_t cRZBaseString::Find(char const* pszOther, uint32_t dwPos, bool bCaseSens
 
 int32_t cRZBaseString::Find(cIGZString const& szOther, uint32_t dwPos, bool bCaseSensitive) const {
 	if (bCaseSensitive) {
-		cRZBaseString szThis = cRZBaseString(*this);
-		cRZBaseString szOther = cRZBaseString(szOther);
+		cRZBaseString szThis = cRZBaseString(this->ToChar());
+		cRZBaseString szDupOther = cRZBaseString(szOther);
 
 		szThis.MakeUpper();
-		szOther.MakeUpper();
+		szDupOther.MakeUpper();
 
-		return szThis.Find(szOther, dwPos, false);
+		return szThis.Find(szDupOther, dwPos, false);
 	}
 	else {
-		return szData.find(szOther.ToChar(), dwPos);
+		return (int32_t)szData.find(szOther.ToChar(), dwPos);
 	}
 }
 
@@ -221,16 +236,16 @@ int32_t cRZBaseString::RFind(char const* pszOther, uint32_t dwPos, bool bCaseSen
 
 int32_t cRZBaseString::RFind(cIGZString const& szOther, uint32_t dwPos, bool bCaseSensitive) const {
 	if (bCaseSensitive) {
-		cRZBaseString szThis = cRZBaseString(*this);
-		cRZBaseString szOther = cRZBaseString(szOther);
+		cRZBaseString szThis = cRZBaseString(this->ToChar());
+		cRZBaseString szDupOther = cRZBaseString(szOther);
 
 		szThis.MakeUpper();
-		szOther.MakeUpper();
+		szDupOther.MakeUpper();
 
 		return szThis.RFind(szOther, dwPos, false);
 	}
 	else {
-		return szData.rfind(szOther.ToChar(), dwPos);
+		return (int32_t)szData.rfind(szOther.ToChar(), dwPos);
 	}
 }
 
