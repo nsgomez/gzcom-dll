@@ -3,7 +3,7 @@
 #include "../include/cRZCOMDllDirector.h"
 #include <assert.h>
 
-#if defined(WIN32)
+#if defined(_WIN32)
 #define EXPORT __declspec(dllexport)
 #elif defined(__APPLE__)
 #define EXPORT __attribute__((visibility("default")))
