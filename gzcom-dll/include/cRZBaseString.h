@@ -18,6 +18,12 @@ class cRZBaseString : public cIGZString
 		cRZBaseString(void);
 		virtual ~cRZBaseString(void) { /* Empty */ }
 
+		cRZBaseString(const cRZBaseString& other);
+		cRZBaseString(cRZBaseString&& other) noexcept;
+
+		cRZBaseString& operator=(const cRZBaseString& other);
+		cRZBaseString& operator=(cRZBaseString&& other) noexcept;
+
 		bool QueryInterface(uint32_t riid, void** ppvObj);
 		uint32_t AddRef(void);
 		uint32_t Release(void);

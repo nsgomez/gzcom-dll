@@ -6,7 +6,6 @@
 #include <string.h>
 
 static const uint32_t kRZBaseStringIID = 0xab13a836;
-static const uint32_t GZIID_cIGZString = 0x89b7dc8;
 
 cRZBaseString::cRZBaseString(cIGZString const& szSource)
 	: mnRefCount(0), szData(szSource.ToChar()) {
@@ -47,6 +46,41 @@ cRZBaseString::cRZBaseString(size_t dwStartSize)
 cRZBaseString::cRZBaseString(void)
 	: mnRefCount(0), szData() {
 	// Empty
+}
+
+cRZBaseString::cRZBaseString(const cRZBaseString& other)
+	: mnRefCount(0), szData(other.szData)
+{
+}
+
+cRZBaseString::cRZBaseString(cRZBaseString&& other) noexcept
+	: mnRefCount(other.mnRefCount), szData(std::move(other.szData))
+{
+}
+
+cRZBaseString& cRZBaseString::operator=(const cRZBaseString& other)
+{
+	if (this == &other)
+	{
+		return *this;
+	}
+
+	szData = other.szData;
+
+	return *this;
+}
+
+cRZBaseString& cRZBaseString::operator=(cRZBaseString&& other) noexcept
+{
+	if (this == &other)
+	{
+		return *this;
+	}
+
+	mnRefCount = other.mnRefCount;
+	szData = std::move(other.szData);
+
+	return *this;
 }
 
 bool cRZBaseString::QueryInterface(uint32_t riid, void** ppvObj) {

@@ -21,32 +21,32 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D13A65FB-F5EB-42E1-8520-C5B6A03F274A}</ProjectGuid>
     <RootNamespace>gzcom2</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -91,6 +91,7 @@
       <AdditionalIncludeDirectories>./include/</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -124,6 +125,7 @@
       <AdditionalIncludeDirectories>./include/</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -135,6 +137,7 @@
     <ClInclude Include="include\cGZAllocatorServiceSTLAllocator.h" />
     <ClInclude Include="include\cGZCOMLibrary.h" />
     <ClInclude Include="include\cGZMessage.h" />
+    <ClInclude Include="include\cGZPersistResourceKey.h" />
     <ClInclude Include="include\cIGZAllocatorService.h" />
     <ClInclude Include="include\cIGZApp.h" />
     <ClInclude Include="include\cIGZCanvasMessage.h" />
@@ -147,6 +150,8 @@
     <ClInclude Include="include\cIGZFrameWorkHooks.h" />
     <ClInclude Include="include\cIGZIStream.h" />
     <ClInclude Include="include\cIGZKeyMessage.h" />
+    <ClInclude Include="include\cIGZLanguageManager.h" />
+    <ClInclude Include="include\cIGZLanguageUtility.h" />
     <ClInclude Include="include\cIGZMessage2.h" />
     <ClInclude Include="include\cIGZMessage2Standard.h" />
     <ClInclude Include="include\cIGZMessageServer.h" />
@@ -155,7 +160,10 @@
     <ClInclude Include="include\cIGZMessageTarget2.h" />
     <ClInclude Include="include\cIGZMouseMessage.h" />
     <ClInclude Include="include\cIGZOStream.h" />
+    <ClInclude Include="include\cIGZPersistResourceCache.h" />
+    <ClInclude Include="include\cIGZPersistResourceManager.h" />
     <ClInclude Include="include\cIGZUnknownList.h" />
+    <ClInclude Include="include\cIGZVariant.h" />
     <ClInclude Include="include\cIGZWin.h" />
     <ClInclude Include="include\cIGZWinMgr.h" />
     <ClInclude Include="include\cISC43DRender.h" />
@@ -202,6 +210,8 @@
     <ClInclude Include="include\cISC4Occupant.h" />
     <ClInclude Include="include\cISC4OccupantFilter.h" />
     <ClInclude Include="include\cISC4OccupantManager.h" />
+    <ClInclude Include="include\cISC4Ordinance.h" />
+    <ClInclude Include="include\cISC4OrdinanceSimulator.h" />
     <ClInclude Include="include\cISC4PoliceSimulator.h" />
     <ClInclude Include="include\cISC4PollutionSimulator.h" />
     <ClInclude Include="include\cISC4PowerLineOccupant.h" />
@@ -215,10 +225,12 @@
     <ClInclude Include="include\cISC4TutorialSystem.h" />
     <ClInclude Include="include\cISC4View3DWin.h" />
     <ClInclude Include="include\cISCExemplarPropertyHolder.h" />
+    <ClInclude Include="include\cISCProperty.h" />
     <ClInclude Include="include\cISCPropertyHolder.h" />
     <ClInclude Include="include\cISCResExemplar.h" />
     <ClInclude Include="include\cRZAutoRefCount.h" />
     <ClInclude Include="include\cRZBaseString.h" />
+    <ClInclude Include="include\cRZBaseVariant.h" />
     <ClInclude Include="include\cRZCOMDllDirector.h" />
     <ClInclude Include="include\cRZMessage2.h" />
     <ClInclude Include="include\cRZMessage2COMDirector.h" />
@@ -229,11 +241,13 @@
     <ClInclude Include="include\cS3DCamera.h" />
     <ClInclude Include="include\cS3DVector3.h" />
     <ClInclude Include="include\cSC4OccupantTypeFilter.h" />
+    <ClInclude Include="include\cSCBaseProperty.h" />
     <ClInclude Include="include\GZCLSIDDefs.h" />
     <ClInclude Include="include\GZMSGIDDefs.h" />
     <ClInclude Include="include\GZServDecls.h" />
     <ClInclude Include="include\GZServPtrs.h" />
     <ClInclude Include="include\ilist.h" />
+    <ClInclude Include="include\SC4Percentage.h" />
     <ClInclude Include="include\SC4Point.h" />
     <ClInclude Include="include\SC4Rect.h" />
   </ItemGroup>
@@ -243,11 +257,13 @@
     <ClCompile Include="src\cGZExtraCheatsDllDirector.cpp" />
     <ClCompile Include="src\cGZExtraExtraCheatsDllDirector.cpp" />
     <ClCompile Include="src\cRZBaseString.cpp" />
+    <ClCompile Include="src\cRZBaseVariant.cpp" />
     <ClCompile Include="src\cRZCOMDllDirector.cpp" />
     <ClCompile Include="src\cGZCustomDllDirector.cpp" />
     <ClCompile Include="src\cRZMessage2.cpp" />
     <ClCompile Include="src\cRZMessage2Standard.cpp" />
     <ClCompile Include="src\cS3DVector3.cpp" />
+    <ClCompile Include="src\cSCBaseProperty.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

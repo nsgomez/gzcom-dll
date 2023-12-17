@@ -1,6 +1,8 @@
 #pragma once
 #include "cIGZUnknown.h"
 
+static const uint32_t GZIID_cIGZString = 0x89b7dc8;
+
 /**
  * @brief An interface for string objects, similar to std::string
  */

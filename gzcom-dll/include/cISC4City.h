@@ -14,6 +14,7 @@ class cISC4LotDeveloper;
 class cISC4LotManager;
 class cISC4NetworkManager;
 class cISC4OccupantManager;
+class cISC4OrdinanceSimulator;
 class cISC4PoliceSimulator;
 class cISC4PollutionSimulator;
 class cISC4ResidentialSimulator;
@@ -100,7 +101,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetIndustrialSimulator(void) = 0;
 		virtual intptr_t GetLandValueSimulator(void) = 0;
 		virtual intptr_t GetNeighborsSimulator(void) = 0;
-		virtual intptr_t GetOrdinanceSimulator(void) = 0;
+		virtual cISC4OrdinanceSimulator* GetOrdinanceSimulator(void) = 0;
 		virtual intptr_t GetPlumbingSimulator(void) = 0;
 		virtual cISC4PoliceSimulator* GetPoliceSimulator(void) = 0;
 		virtual cISC4PollutionSimulator* GetPollutionSimulator(void) = 0;
