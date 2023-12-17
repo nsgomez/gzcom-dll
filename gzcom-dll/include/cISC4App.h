@@ -26,15 +26,15 @@ class cISC4App : public cIGZUnknown
 		virtual bool RequestNewCity(intptr_t pCity) = 0; // Actually an AutoRefCount<cISC4RegionalCity>
 		virtual bool RequestLoadCity(void) = 0;
 		virtual bool RequestCloseCity(bool bShowConfirmPrompt) = 0;
-		virtual bool RequestSaveCity(bool bShowNotif, bool bUnknown) = 0;
+		virtual bool RequestSaveCity(bool bShowNotif, bool bFastSave) = 0;
 		virtual bool RequestQuit(bool bShowDialog, bool bSaveFirst) = 0;
 		virtual bool RequestQuitFromRegion(bool bShowDialog) = 0;
 		virtual bool RequestGoToRegionView(bool bShowDialog) = 0;
 		
 		virtual bool LoadCity(cIGZString& szString, intptr_t pCityOut) = 0; // Actually an AutoRefCount<cISC4RegionalCity>
 		virtual bool CloseCity(void) = 0;
-		virtual bool SaveCity(bool bUnknown) = 0;
-		virtual bool SaveCity(cIGZString const& szName, bool bUnknown) = 0;
+		virtual bool SaveCity(bool bFastSave) = 0;
+		virtual bool SaveCity(cIGZString const& szName, bool bFastSave) = 0;
 		
 		virtual bool SavePreferences(void) = 0;
 		virtual bool EnableFullGamePauseOnAppFocusLoss(bool bEnable) = 0;
