@@ -57,7 +57,7 @@ class cIGZMessageServer : public cIGZUnknown
 		/**
 		 * @brief A service event for processing posted messages on each tick
 		 */
-		virtual bool OnTick(void) = 0;
+		virtual bool OnTick(uint32_t unknown1) = 0;
 
 		virtual uint32_t GetMessageQueueSize(void) = 0;
 		virtual cIGZMessageServer* SetAlwaysClearQueueOnTick(bool bToggle) = 0;

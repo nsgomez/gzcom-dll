@@ -121,7 +121,7 @@ class cIGZFrameWork : public cIGZUnknown
 		/**
 		 * @brief Called whenever the game has an idle tick
 		 */
-		virtual bool OnIdle(void) = 0;
+		virtual bool OnIdle(uint32_t unknown1) = 0;
 
 		/**
 		 * @return Whether or not tick events are enabled

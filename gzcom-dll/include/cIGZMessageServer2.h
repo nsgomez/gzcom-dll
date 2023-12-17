@@ -21,7 +21,7 @@ class cIGZMessageServer2 : public cIGZUnknown
 		virtual bool GeneralMessagePostToTarget(cIGZMessage2* pMessage, cIGZMessageTarget2* pTarget) = 0;
 		virtual bool CancelGeneralMessagePostsToTarget(cIGZMessageTarget2* pTarget) = 0;
 		
-		virtual bool OnTick(void) = 0;
+		virtual bool OnTick(uint32_t unknown1) = 0;
 
 		virtual uint32_t GetMessageQueueSize(void) = 0;
 		virtual cIGZMessageServer2* SetAlwaysClearQueueOnTick(bool bToggle) = 0;

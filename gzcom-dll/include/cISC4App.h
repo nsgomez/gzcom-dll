@@ -18,7 +18,7 @@ class cISC4RenderProperties;
 class cISC4App : public cIGZUnknown
 {
 	public:
-		virtual bool OnIdle(void) = 0;
+		virtual bool OnIdle(uint32_t unknown1) = 0;
 
 		virtual bool RunMessageServerPump(uint32_t dwMinMessages, uint32_t dwMaxMessages, uint32_t dwMaxTime) = 0;
 		virtual bool RunMessageServer2Pump(uint32_t dwMinMessages, uint32_t dwMaxMessages, uint32_t dwMaxTime) = 0;
