@@ -57,7 +57,7 @@ class cIGZSystemService : public cIGZUnknown
 		 * The service must be registered to receive active tick callbacks via
 		 * cIGZFrameWork::AddToTick(cIGZSystemService* pService)
 		 */
-		virtual bool OnTick(void) = 0;
+		virtual bool OnTick(uint32_t unknown1) = 0;
 
 		/**
 		 * @brief A callback for each idle tick when the game is not focused
@@ -65,5 +65,10 @@ class cIGZSystemService : public cIGZUnknown
 		 * The service must be registered to receive idle tick callbacks via
 		 * cIGZFrameWork::AddToOnIdle(cIGZSystemService* pService)
 		 */
-		virtual bool OnIdle(void) = 0;
+		virtual bool OnIdle(uint32_t unknown1) = 0;
+
+		/**
+		 * @return This service's tick priority. Lower values yield more priority
+		 */
+		virtual int32_t GetServiceTickPriority() = 0;
 };
