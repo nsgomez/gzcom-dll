@@ -11,7 +11,7 @@ public:
 	virtual bool Init() = 0;
 	virtual bool Shutdown() = 0;
 	virtual bool AddAvailableLanguage(uint32_t languageID) = 0;
-	virtual bool RemoveAvailableLanguage(uint32_t languageID) {}
+	virtual bool RemoveAvailableLanguage(uint32_t languageID) = 0;
 	virtual uint32_t GetCurrentLanguage() = 0;
 	virtual bool SetCurrentLanguage(uint32_t languageID) = 0;
 	virtual bool CanSwitchToLanguage(uint32_t languageID) = 0;

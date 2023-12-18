@@ -19,9 +19,9 @@ class cIGZLanguageUtility : cIGZUnknown
 	virtual bool GetThousandSeparator(cIGZString& outString) = 0;
 	virtual bool GetDecimalSeparator(cIGZString& outString) = 0;
 	virtual bool MakeMoneyString(int64_t unknown1, cIGZString& unknown2, cIGZString const* unknown3) = 0;
-	virtual bool MakeFormattedMoneyString(double unknown1, cIGZString* unknown2, cIGZString const& unknown3, cIGZString const* unknown4) = 0;
+	virtual bool MakeFormattedMoneyString(double unknown1, cIGZString& unknown2, cIGZString const& unknown3, cIGZString const* unknown4) = 0;
 	virtual bool MakeNumberString(int64_t unknown1, cIGZString& unknown2) = 0;
-	virtual bool MakeFormattedNumberString(double unknown1, cIGZString* unknown2, cIGZString* unknown3) = 0;
+	virtual bool MakeFormattedNumberString(double unknown1, cIGZString& unknown2, cIGZString const& unknown3) = 0;
 	virtual bool ConvertToLowerCase(cIGZString const& source, cIGZString& dest) = 0;
 	virtual bool ConvertToUpperCase(cIGZString const& source, cIGZString& dest) = 0;
 	virtual int32_t CompareStrings(cIGZString const& s1, cIGZString const& s2, bool caseSensitive) = 0;
