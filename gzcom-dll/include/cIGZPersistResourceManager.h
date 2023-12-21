@@ -7,6 +7,7 @@ class cIGZPersistResourceKeyList;
 class cIGZPersistResourceKeyFilter;
 class cIGZPersistResourceFactory;
 class cIGZPersistDBRecord;
+class cIGZPersistDBSegment;
 class cIGZPersistCacheStrategy;
 
 class cIGZPersistResourceManager : public cIGZUnknown
