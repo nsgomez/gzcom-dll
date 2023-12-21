@@ -250,6 +250,8 @@
     <ClInclude Include="include\SC4Percentage.h" />
     <ClInclude Include="include\SC4Point.h" />
     <ClInclude Include="include\SC4Rect.h" />
+    <ClInclude Include="include\StringResourceKey.h" />
+    <ClInclude Include="include\StringResourceManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cGZCityHallUpgradeDllDirector.cpp" />
@@ -264,6 +266,7 @@
     <ClCompile Include="src\cRZMessage2Standard.cpp" />
     <ClCompile Include="src\cS3DVector3.cpp" />
     <ClCompile Include="src\cSCBaseProperty.cpp" />
+    <ClCompile Include="src\StringResourceManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

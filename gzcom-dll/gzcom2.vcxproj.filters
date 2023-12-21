@@ -366,6 +366,12 @@
     <ClInclude Include="include\SC4Percentage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\StringResourceKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\StringResourceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
@@ -403,6 +409,9 @@
     </ClCompile>
     <ClCompile Include="src\cSCBaseProperty.cpp">
       <Filter>Source Files\Directors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StringResourceManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
