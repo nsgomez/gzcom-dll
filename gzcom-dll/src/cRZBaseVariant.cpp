@@ -584,144 +584,144 @@ void cRZBaseVariant::SetValUnknown(cIGZUnknown* value)
 	SetValue(value);
 }
 
-bool cRZBaseVariant::AsBool()
+bool* cRZBaseVariant::AsBool()
 {
-	return type == cIGZVariant::Type::Bool ? std::get<bool>(numericTypes) : false;
+	return std::get_if<bool>(&numericTypes);
 }
 
-bool cRZBaseVariant::AsBool() const
+bool* cRZBaseVariant::AsBool() const
 {
-	return type == cIGZVariant::Type::Bool ? std::get<bool>(numericTypes) : false;
+	return std::get_if<bool>(&numericTypes);
 }
 
-uint8_t cRZBaseVariant::AsUint8()
+uint8_t* cRZBaseVariant::AsUint8()
 {
-	return type == cIGZVariant::Type::Uint8 ? std::get<uint8_t>(numericTypes) : 0;
+	return std::get_if<uint8_t>(&numericTypes);
 }
 
-uint8_t cRZBaseVariant::AsUint8() const
+uint8_t* cRZBaseVariant::AsUint8() const
 {
-	return type == cIGZVariant::Type::Uint8 ? std::get<uint8_t>(numericTypes) : 0;
+	return std::get_if<uint8_t>(&numericTypes);
 }
 
-int8_t cRZBaseVariant::AsSint8()
+int8_t* cRZBaseVariant::AsSint8()
 {
-	return type == cIGZVariant::Type::Sint8 ? std::get<int8_t>(numericTypes) : 0;
+	return std::get_if<int8_t>(&numericTypes);
 }
 
-int8_t cRZBaseVariant::AsSint8() const
+int8_t* cRZBaseVariant::AsSint8() const
 {
-	return type == cIGZVariant::Type::Sint8 ? std::get<int8_t>(numericTypes) : 0;
+	return std::get_if<int8_t>(&numericTypes);
 }
 
-uint16_t cRZBaseVariant::AsUint16()
+uint16_t* cRZBaseVariant::AsUint16()
 {
-	return type == cIGZVariant::Type::Uint16 ? std::get<uint16_t>(numericTypes) : 0;
+	return std::get_if<uint16_t>(&numericTypes);
 }
 
-uint16_t cRZBaseVariant::AsUint16() const
+uint16_t* cRZBaseVariant::AsUint16() const
 {
-	return type == cIGZVariant::Type::Uint16 ? std::get<uint16_t>(numericTypes) : 0;
+	return std::get_if<uint16_t>(&numericTypes);
 }
 
-int16_t cRZBaseVariant::AsSint16()
+int16_t* cRZBaseVariant::AsSint16()
 {
-	return type == cIGZVariant::Type::Sint16 ? std::get<int16_t>(numericTypes) : 0;
+	return std::get_if<int16_t>(&numericTypes);
 }
 
-int16_t cRZBaseVariant::AsSint16() const
+int16_t* cRZBaseVariant::AsSint16() const
 {
-	return type == cIGZVariant::Type::Sint16 ? std::get<int16_t>(numericTypes) : 0;
+	return std::get_if<int16_t>(&numericTypes);
 }
 
-uint32_t cRZBaseVariant::AsUint32()
+uint32_t* cRZBaseVariant::AsUint32()
 {
-	return type == cIGZVariant::Type::Uint32 ? std::get<uint32_t>(numericTypes) : 0;
+	return std::get_if<uint32_t>(&numericTypes);
 }
 
-uint32_t cRZBaseVariant::AsUint32() const
+uint32_t* cRZBaseVariant::AsUint32() const
 {
-	return type == cIGZVariant::Type::Uint32 ? std::get<uint32_t>(numericTypes) : 0;
+	return std::get_if<uint32_t>(&numericTypes);
 }
 
-int32_t cRZBaseVariant::AsSint32()
+int32_t* cRZBaseVariant::AsSint32()
 {
-	return type == cIGZVariant::Type::Sint32 ? std::get<int32_t>(numericTypes) : 0;
+	return std::get_if<int32_t>(&numericTypes);
 }
 
-int32_t cRZBaseVariant::AsSint32() const
+int32_t* cRZBaseVariant::AsSint32() const
 {
-	return type == cIGZVariant::Type::Sint32 ? std::get<int32_t>(numericTypes) : 0;
+	return std::get_if<int32_t>(&numericTypes);
 }
 
-uint64_t cRZBaseVariant::AsUint64()
+uint64_t* cRZBaseVariant::AsUint64()
 {
-	return type == cIGZVariant::Type::Uint64 ? std::get<uint64_t>(numericTypes) : 0;
+	return std::get_if<uint64_t>(&numericTypes);
 }
 
-uint64_t cRZBaseVariant::AsUint64() const
+uint64_t* cRZBaseVariant::AsUint64() const
 {
-	return type == cIGZVariant::Type::Uint64 ? std::get<uint64_t>(numericTypes) : 0;
+	return std::get_if<uint64_t>(&numericTypes);
 }
 
-int64_t cRZBaseVariant::AsSint64()
+int64_t* cRZBaseVariant::AsSint64()
 {
-	return type == cIGZVariant::Type::Sint64 ? std::get<int64_t>(numericTypes) : 0;
+	return std::get_if<int64_t>(&numericTypes);
 }
 
-int64_t cRZBaseVariant::AsSint64() const
+int64_t* cRZBaseVariant::AsSint64() const
 {
-	return type == cIGZVariant::Type::Sint64 ? std::get<int64_t>(numericTypes) : 0;
+	return std::get_if<int64_t>(&numericTypes);
 }
 
-float cRZBaseVariant::AsFloat32()
+float* cRZBaseVariant::AsFloat32()
 {
-	return type == cIGZVariant::Type::Float32 ? std::get<float>(numericTypes) : 0;
+	return std::get_if<float>(&numericTypes);
 }
 
-float cRZBaseVariant::AsFloat32() const
+float* cRZBaseVariant::AsFloat32() const
 {
-	return type == cIGZVariant::Type::Float32 ? std::get<float>(numericTypes) : 0;
+	return std::get_if<float>(&numericTypes);
 }
 
-double cRZBaseVariant::AsFloat64()
+double* cRZBaseVariant::AsFloat64()
 {
-	return type == cIGZVariant::Type::Float64 ? std::get<double>(numericTypes) : 0;
+	return std::get_if<double>(&numericTypes);
 }
 
-double cRZBaseVariant::AsFloat64() const
+double* cRZBaseVariant::AsFloat64() const
 {
-	return type == cIGZVariant::Type::Float64 ? std::get<double>(numericTypes) : 0;
+	return std::get_if<double>(&numericTypes);
 }
 
-char cRZBaseVariant::AsChar()
+char* cRZBaseVariant::AsChar()
 {
-	return type == cIGZVariant::Type::Char ? std::get<char>(numericTypes) : 0;
+	return type == cIGZVariant::Type::Char ? std::get_if<char>(&numericTypes) : nullptr;
 }
 
-char cRZBaseVariant::AsChar() const
+char* cRZBaseVariant::AsChar() const
 {
-	return type == cIGZVariant::Type::Char ? std::get<char>(numericTypes) : 0;
+	return type == cIGZVariant::Type::Char ? std::get_if<char>(&numericTypes) : nullptr;
 }
 
-uint16_t cRZBaseVariant::AsRZUnicodeChar()
+uint16_t* cRZBaseVariant::AsRZUnicodeChar()
 {
-	return type == cIGZVariant::Type::RZUnicodeChar ? std::get<uint16_t>(numericTypes) : 0;
+	return type == cIGZVariant::Type::RZUnicodeChar ? std::get_if<uint16_t>(&numericTypes) : nullptr;
 }
 
-uint16_t cRZBaseVariant::AsRZUnicodeChar() const
+uint16_t* cRZBaseVariant::AsRZUnicodeChar() const
 {
-	return type == cIGZVariant::Type::RZUnicodeChar ? std::get<uint16_t>(numericTypes) : 0;
+	return type == cIGZVariant::Type::RZUnicodeChar ? std::get_if<uint16_t>(&numericTypes) : nullptr;
 }
 
-char cRZBaseVariant::AsRZChar()
+char* cRZBaseVariant::AsRZChar()
 {
-	return type == cIGZVariant::Type::RZChar ? std::get<char>(numericTypes) : 0;
+	return type == cIGZVariant::Type::RZChar ? std::get_if<char>(&numericTypes) : nullptr;
 }
 
-char cRZBaseVariant::AsRZChar() const
+char* cRZBaseVariant::AsRZChar() const
 {
-	return type == cIGZVariant::Type::RZChar ? std::get<char>(numericTypes) : 0;
+	return type == cIGZVariant::Type::RZChar ? std::get_if<char>(&numericTypes) : nullptr;
 }
 
 void** cRZBaseVariant::AsVoidPtr()

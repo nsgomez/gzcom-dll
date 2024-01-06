@@ -27,7 +27,7 @@ public:
 	uint32_t AddRef();
 
 	uint32_t Release();
-	
+
 	uint16_t GetType() const;
 	uint32_t GetCount() const;
 	bool Erase();
@@ -106,34 +106,34 @@ public:
 	cIGZUnknown* GetValUnknown();
 	void SetValUnknown(cIGZUnknown* value);
 
-	bool AsBool();
-	bool AsBool() const;
-	uint8_t AsUint8();
-	uint8_t AsUint8() const;
-	int8_t AsSint8();
-	int8_t AsSint8() const;
-	uint16_t AsUint16();
-	uint16_t AsUint16() const;
-	int16_t AsSint16();
-	int16_t AsSint16() const;
-	uint32_t AsUint32();
-	uint32_t AsUint32() const;
-	int32_t AsSint32();
-	int32_t AsSint32() const;
-	uint64_t AsUint64();
-	uint64_t AsUint64() const;
-	int64_t AsSint64();
-	int64_t AsSint64() const;
-	float AsFloat32();
-	float AsFloat32() const;
-	double AsFloat64();
-	double AsFloat64() const;
-	char AsChar();
-	char AsChar() const;
-	uint16_t AsRZUnicodeChar();
-	uint16_t AsRZUnicodeChar() const;
-	char AsRZChar();
-	char AsRZChar() const;
+	bool* AsBool();
+	bool* AsBool() const;
+	uint8_t* AsUint8();
+	uint8_t* AsUint8() const;
+	int8_t* AsSint8();
+	int8_t* AsSint8() const;
+	uint16_t* AsUint16();
+	uint16_t* AsUint16() const;
+	int16_t* AsSint16();
+	int16_t* AsSint16() const;
+	uint32_t* AsUint32();
+	uint32_t* AsUint32() const;
+	int32_t* AsSint32();
+	int32_t* AsSint32() const;
+	uint64_t* AsUint64();
+	uint64_t* AsUint64() const;
+	int64_t* AsSint64();
+	int64_t* AsSint64() const;
+	float* AsFloat32();
+	float* AsFloat32() const;
+	double* AsFloat64();
+	double* AsFloat64() const;
+	char* AsChar();
+	char* AsChar() const;
+	uint16_t* AsRZUnicodeChar();
+	uint16_t* AsRZUnicodeChar() const;
+	char* AsRZChar();
+	char* AsRZChar() const;
 	void** AsVoidPtr();
 	void** AsVoidPtr() const;
 
@@ -203,7 +203,7 @@ private:
 
 	cIGZVariant::Type type;
 	uint32_t count;
-	NumericTypeVariant numericTypes;
+	mutable NumericTypeVariant numericTypes;
 	void* voidPtr;
 	cIGZUnknown* gzUnknown;
 	uint32_t refCount;
