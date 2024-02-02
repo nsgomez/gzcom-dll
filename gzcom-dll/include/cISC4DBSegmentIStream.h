@@ -6,6 +6,8 @@ class cIGZSerializable;
 class cIGZVariant;
 class cISC4DBSegment;
 
+static const uint32_t GZIID_cISC4DBSegmentIStream = 0x4999a8f5;
+
 class cISC4DBSegmentIStream : public cIGZIStream
 {
 	public:

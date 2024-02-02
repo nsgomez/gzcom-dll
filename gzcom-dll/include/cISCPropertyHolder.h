@@ -6,6 +6,8 @@ class cIGZUnknownList;
 class cIGZVariant;
 class cISCProperty;
 
+static const uint32_t GZIID_cISCPropertyHolder = 0x25216283;
+
 class cISCPropertyHolder : public cIGZUnknown
 {
 	public:
@@ -20,9 +22,9 @@ class cISCPropertyHolder : public cIGZUnknown
 
 		virtual bool AddProperty(cISCProperty* pProperty, bool bUnknown) = 0;
 		virtual bool AddProperty(uint32_t dwProperty, cIGZVariant const* pVariant, bool bUnknown) = 0;
-		virtual bool AddProperty(uint32_t dwProperty, uint32_t dwUnknown, bool bUnknown) = 0;
+		virtual bool AddProperty(uint32_t dwProperty, uint32_t dwValue, bool bUnknown) = 0;
 		virtual bool AddProperty(uint32_t dwProperty, cIGZString const& szValue) = 0;
-		virtual bool AddProperty(uint32_t dwProperty, int32_t lUnknown, bool bUnknown) = 0;
+		virtual bool AddProperty(uint32_t dwProperty, int32_t lValue, bool bUnknown) = 0;
 		virtual bool AddProperty(uint32_t dwProperty, void* pUnknown, uint32_t dwUnknown, bool bUnknown) = 0;
 
 		virtual bool CopyAddProperty(cISCProperty* pProperty, bool bUnknown) = 0;

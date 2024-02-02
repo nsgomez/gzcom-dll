@@ -4,6 +4,8 @@
 class cIGZIStream;
 class cIGZOStream;
 
+static const uint32_t GZIID_cIGZSerializable = 0xe4fda3d4;
+
 /**
  * @brief An interface for objects that can be saved to and read from disk
  * 
@@ -39,5 +41,5 @@ class cIGZSerializable : public cIGZUnknown
 		/**
 		 * @return The clsid associated with this serializable object
 		 */
-		virtual int32_t GetGZCLSID(void) = 0;
+		virtual uint32_t GetGZCLSID(void) = 0;
 };
