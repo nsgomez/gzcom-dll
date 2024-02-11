@@ -10,6 +10,15 @@ class cISC4RegionalCity;
 class cISC4Region : public cIGZUnknown
 {
 	public:
+		class cLocation
+		{
+		public:
+
+			uint32_t x;
+			uint32_t y;
+			uint32_t isLargeTile;
+		};
+
 		virtual char* GetName(void) = 0;
 		virtual bool SetName(const cIGZString& szName) = 0;
 
@@ -22,7 +31,7 @@ class cISC4Region : public cIGZUnknown
 		virtual bool Shutdown(void) = 0;
 		virtual bool Delete(void) = 0;
 
-		virtual cISC4RegionalCity* GetCity(uint32_t x, uint32_t y) = 0;
+		virtual cISC4RegionalCity*& GetCity(uint32_t x, uint32_t y) = 0;
 		virtual cISC4RegionalCity**& InsertCity(cISC4RegionalCity* pCity) = 0;
 		virtual bool RemoveCity(cISC4RegionalCity*& pCity) = 0;
 		virtual bool DeleteCity(cISC4RegionalCity*& pCity) = 0;
@@ -38,6 +47,6 @@ class cISC4Region : public cIGZUnknown
 
 		virtual bool ResetTutorialCity(uint32_t dwTutorialCityID) = 0;
 
-		virtual bool GetCityLocations(eastl::vector<intptr_t>& cityLocations) = 0;
+		virtual bool GetCityLocations(eastl::vector<cLocation>& cityLocations) = 0;
 		virtual int32_t GetBoundingRect(intptr_t pRectLongs) = 0;
 };
