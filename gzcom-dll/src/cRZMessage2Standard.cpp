@@ -72,7 +72,7 @@ void* cRZMessage2Standard::GetVoid3(void) const {
 }
 
 cIGZMessage2Standard* cRZMessage2Standard::SetData3(intptr_t ulData) {
-	m_dwData[3] = ulData;
+	m_dwData[2] = ulData;
 	m_uDataFlags |= FIELD_DATA3;
 	return this;
 }
