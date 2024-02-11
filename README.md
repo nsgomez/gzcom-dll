@@ -18,3 +18,8 @@ methods with unknown parameters.
 Known Issues
 =========
 * None so far
+
+# Third Party Components
+
+[EABase](https://github.com/electronicarts/EABase) - BSD 3-Clause License.    
+[EASTL](https://github.com/electronicarts/EASTL) - BSD 3-Clause License.    

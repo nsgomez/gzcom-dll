@@ -1,7 +1,8 @@
 #pragma once
 #include "cIGZUnknown.h"
+#include "EASTLConfigSC4.h"
+#include "EASTL/vector.h"
 #include <list>
-#include <vector>
 
 class cIGZString;
 class cISC4RegionalCity;
@@ -16,7 +17,7 @@ class cISC4Region : public cIGZUnknown
 		virtual bool SetDirectoryName(const cIGZString& szName) = 0;
 
 		virtual bool LoadConfig(void) = 0;
-		
+
 		virtual bool Init(void) = 0;
 		virtual bool Shutdown(void) = 0;
 		virtual bool Delete(void) = 0;
@@ -36,7 +37,7 @@ class cISC4Region : public cIGZUnknown
 		virtual int32_t GetWaterPrefs(uint8_t& cUnknown1, uint8_t& cUnknown2) = 0;
 
 		virtual bool ResetTutorialCity(uint32_t dwTutorialCityID) = 0;
-		
-		virtual bool GetCityLocations(intptr_t pVector) = 0;
+
+		virtual bool GetCityLocations(eastl::vector<intptr_t>& cityLocations) = 0;
 		virtual int32_t GetBoundingRect(intptr_t pRectLongs) = 0;
 };

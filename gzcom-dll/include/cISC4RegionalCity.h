@@ -1,7 +1,8 @@
 #pragma once
 #include "cIGZUnknown.h"
+#include "EASTLConfigSC4.h"
+#include "EASTL/vector.h"
 #include <list>
-#include <vector>
 
 class cIGZString;
 class cISC4City;
@@ -113,5 +114,5 @@ class cISC4RegionalCity : public cIGZUnknown
 		
 		virtual bool UpdateImportExport(void) = 0;
 
-		virtual bool GetPointsOfInterest(uint32_t dwPointOfInterestType, std::vector<uint32_t>& sList) = 0;
+		virtual bool GetPointsOfInterest(uint32_t dwPointOfInterestType, eastl::vector<uint32_t>& sList) = 0;
 };

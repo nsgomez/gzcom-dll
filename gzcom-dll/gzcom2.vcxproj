@@ -74,9 +74,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>./include/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./include/;../EABase/include/Common/;../EASTL/include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -88,10 +89,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>./include/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./include/;../EABase/include/Common/;../EASTL/include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -105,9 +106,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>./include/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./include/;../EABase/include/Common/;../EASTL/include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -122,10 +124,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>./include/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./include/;../EABase/include/Common/;../EASTL/include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -242,6 +244,7 @@
     <ClInclude Include="include\cS3DVector3.h" />
     <ClInclude Include="include\cSC4OccupantTypeFilter.h" />
     <ClInclude Include="include\cSCBaseProperty.h" />
+    <ClInclude Include="include\EASTLConfigSC4.h" />
     <ClInclude Include="include\GZCLSIDDefs.h" />
     <ClInclude Include="include\GZMSGIDDefs.h" />
     <ClInclude Include="include\GZServDecls.h" />
@@ -254,6 +257,15 @@
     <ClInclude Include="include\StringResourceManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\EASTL\source\assert.cpp" />
+    <ClCompile Include="..\EASTL\source\atomic.cpp" />
+    <ClCompile Include="..\EASTL\source\fixed_pool.cpp" />
+    <ClCompile Include="..\EASTL\source\hashtable.cpp" />
+    <ClCompile Include="..\EASTL\source\intrusive_list.cpp" />
+    <ClCompile Include="..\EASTL\source\numeric_limits.cpp" />
+    <ClCompile Include="..\EASTL\source\red_black_tree.cpp" />
+    <ClCompile Include="..\EASTL\source\string.cpp" />
+    <ClCompile Include="..\EASTL\source\thread_support.cpp" />
     <ClCompile Include="src\cGZCityHallUpgradeDllDirector.cpp" />
     <ClCompile Include="src\cGZExampleDllDirector.cpp" />
     <ClCompile Include="src\cGZExtraCheatsDllDirector.cpp" />
@@ -266,6 +278,7 @@
     <ClCompile Include="src\cRZMessage2Standard.cpp" />
     <ClCompile Include="src\cS3DVector3.cpp" />
     <ClCompile Include="src\cSCBaseProperty.cpp" />
+    <ClCompile Include="src\EASTLAllocatorSC4.cpp" />
     <ClCompile Include="src\StringResourceManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

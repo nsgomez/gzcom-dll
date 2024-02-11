@@ -16,6 +16,9 @@
     <Filter Include="Source Files\Directors">
       <UniqueIdentifier>{71a7cf7a-570e-4fcb-be8f-57f1d0ccdcb2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\EASTL">
+      <UniqueIdentifier>{aa09a9bb-bcaa-4b22-9f99-49fe39fea644}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\cGZCOMLibrary.h">
@@ -372,6 +375,9 @@
     <ClInclude Include="include\StringResourceManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\EASTLConfigSC4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
@@ -411,6 +417,36 @@
       <Filter>Source Files\Directors</Filter>
     </ClCompile>
     <ClCompile Include="src\StringResourceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EASTL\source\assert.cpp">
+      <Filter>Source Files\EASTL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EASTL\source\atomic.cpp">
+      <Filter>Source Files\EASTL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EASTL\source\fixed_pool.cpp">
+      <Filter>Source Files\EASTL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EASTL\source\hashtable.cpp">
+      <Filter>Source Files\EASTL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EASTL\source\intrusive_list.cpp">
+      <Filter>Source Files\EASTL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EASTL\source\numeric_limits.cpp">
+      <Filter>Source Files\EASTL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EASTL\source\red_black_tree.cpp">
+      <Filter>Source Files\EASTL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EASTL\source\string.cpp">
+      <Filter>Source Files\EASTL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EASTL\source\thread_support.cpp">
+      <Filter>Source Files\EASTL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EASTLAllocatorSC4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

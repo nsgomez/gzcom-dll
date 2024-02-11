@@ -1,7 +1,8 @@
 #pragma once
 #include "cIGZUnknown.h"
+#include "EASTLConfigSC4.h"
+#include "EASTL/vector.h"
 #include <unordered_set>
-#include <vector>
 
 class cGZPersistResourceKey;
 class cIGZString;
@@ -27,8 +28,8 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 		virtual int64_t GetCostOfOccupantDemolition(cISC4BuildingOccupant* pOccupant, uint32_t dwUnknown) = 0;
 
 		virtual size_t GetAllBuildingTypes(uint32_t* pArray, uint32_t& nCount) = 0;
-		virtual size_t GetAllBuildingTypes(std::vector<uint32_t>& sList) = 0;
-		virtual size_t GetAllBuildingFamilyTypes(std::vector<uint32_t>& sList) = 0;
+		virtual size_t GetAllBuildingTypes(eastl::vector<uint32_t>& sList) = 0;
+		virtual size_t GetAllBuildingFamilyTypes(eastl::vector<uint32_t>& sList) = 0;
 
 		virtual bool GetBuildingKeyFromType(uint32_t dwType, cGZPersistResourceKey& sKey) = 0;
 
@@ -37,11 +38,11 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 
 		virtual bool GetBuildingTypesByFilter(std::unordered_set<uint32_t>& sList, cISC4BuildingTypeFilter* pFilter) = 0;
 		virtual bool GetBuildingTypesByFamily(std::unordered_set<uint32_t>& sList, uint32_t dwFamily) = 0;
-		virtual bool GetBuildingTypesByFamily(std::vector<uint32_t>& sList, uint32_t dwFamily) = 0;
+		virtual bool GetBuildingTypesByFamily(eastl::vector<uint32_t>& sList, uint32_t dwFamily) = 0;
 
 		virtual bool IsBuildingInFamily(uint32_t dwBuilding, uint32_t dwFamily) = 0;
 		
-		virtual bool GetAllFoundationTypes(std::vector<uint32_t>& sList) = 0;
+		virtual bool GetAllFoundationTypes(eastl::vector<uint32_t>& sList) = 0;
 		virtual bool GetFoundationKeyFromType(uint32_t dwType, cGZPersistResourceKey& sKey) = 0;
 		virtual bool AddNewFoundationOccupant(cISC4FoundationOccupant* pOccupant) = 0;
 		virtual bool AddNewFoundationOccupant(uint32_t, int32_t, float*, float, float, int, float) = 0;
@@ -49,7 +50,7 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 		virtual int64_t GetCostOfOccupantDemolition(void) = 0;
 		virtual bool LoadFoundationProperties(cISC4FoundationOccupant* pOccupant, uint32_t) = 0;
 
-		virtual bool GetAllLotRetainingWallTypes(std::vector<uint32_t>& sList) = 0;
+		virtual bool GetAllLotRetainingWallTypes(eastl::vector<uint32_t>& sList) = 0;
 		virtual bool GetLotRetainingWallKeyFromType(uint32_t dwType, cGZPersistResourceKey& sKey) = 0;
 		virtual bool LoadLotRetainingWallProperties(cISC4LotRetainingWallOccupant* pOccupant, uint32_t) = 0;
 
