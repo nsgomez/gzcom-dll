@@ -1,6 +1,7 @@
 #pragma once
 #include "cIGZUnknown.h"
-#include <vector>
+#include "EASTLConfigSC4.h"
+#include "EASTL/vector.h"
 
 class cIGZString;
 class cISCPropertyHolder;
@@ -47,10 +48,10 @@ class cISC4BudgetSimulator : public cIGZUnknown
 		virtual intptr_t GetDepartmentBudget(uint32_t dwDepartmentID) = 0;
 		virtual intptr_t GetDepartmentBudget(cIGZString const& szDepartmentName) = 0;
 
-		virtual bool GetAllGroups(std::vector<intptr_t>& sGroups) = 0;
+		virtual bool GetAllGroups(eastl::vector<intptr_t>& sGroups) = 0;
 
 		virtual bool SetGroupName(uint32_t dwGroupID, cIGZString& szName) = 0;
-		virtual bool GetDepartmentBudgetsInGroup(uint32_t dwGroupID, std::vector<intptr_t>& sGroups) = 0;
+		virtual bool GetDepartmentBudgetsInGroup(uint32_t dwGroupID, eastl::vector<intptr_t>& sGroups) = 0;
 
 		virtual void NeededFundingChanged(intptr_t pDepartmentBudget) = 0;
 		virtual void FundingPercentageChanged(intptr_t pDepartmentBudget) = 0;
@@ -72,13 +73,13 @@ class cISC4BudgetSimulator : public cIGZUnknown
 		virtual int64_t GetCurrentMaxOutstandingBondsLimit(void) = 0;
 		virtual int64_t GetTotalMonthlyBondPayments(void) = 0;
 		
-		virtual bool GetAllLoans(std::vector<intptr_t>& sLoans) = 0;
+		virtual bool GetAllLoans(eastl::vector<intptr_t>& sLoans) = 0;
 
 		virtual int32_t GetLoanTimeInMonths(void) = 0;
 		virtual int64_t GetMonthlyPaymentForLoan(int64_t llLoanAmount) = 0;
 		virtual int64_t GetFullCostOfLoan(int64_t llLoanAmount) = 0;
 
-		virtual bool GetBudgetItemInfo(cISCPropertyHolder* pProperty, std::vector<intptr_t>& sBudgetInfo) = 0;
+		virtual bool GetBudgetItemInfo(cISCPropertyHolder* pProperty, eastl::vector<intptr_t>& sBudgetInfo) = 0;
 		virtual bool GetBudgetItemForPurpose(cISCPropertyHolder* pProperty, uint32_t dwPurpose, intptr_t& sBudgetItem) = 0;
 		virtual bool ChangeBudgetItemLine(cISCPropertyHolder* pProperty, uint32_t dwPurpose, uint32_t dwUnknown) = 0;
 		virtual bool ChangeBudgetItemCost(cISCPropertyHolder* pProperty, uint32_t dwPurpose, int64_t llCost) = 0;

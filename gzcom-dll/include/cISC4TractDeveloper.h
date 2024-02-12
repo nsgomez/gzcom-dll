@@ -1,7 +1,8 @@
 #pragma once
 #include "cIGZUnknown.h"
+#include "EASTLConfigSC4.h"
+#include "EASTL/vector.h"
 #include <list>
-#include <vector>
 
 class cISC4TractDeveloper : public cIGZUnknown
 {
@@ -16,9 +17,9 @@ class cISC4TractDeveloper : public cIGZUnknown
 		virtual bool UpdatePopulation(cISC4TractDeveloper::GrowthProfile const& sProfile) = 0;
 
 		virtual int32_t GetCurrentStyle(void) const = 0;
-		virtual std::vector<uint32_t>& GetActiveStyles(void) const = 0;
-		virtual bool SetActiveStyles(std::vector<uint32_t> const& sStyles) = 0;
-		
+		virtual eastl::vector<uint32_t>& GetActiveStyles(void) const = 0;
+		virtual bool SetActiveStyles(eastl::vector<uint32_t> const& sStyles) = 0;
+
 		virtual bool IsUsingAllStylesAtOnce(void) const = 0;
 		virtual cISC4TractDeveloper* UseAllStylesAtOnce(bool bFlag) = 0;
 
