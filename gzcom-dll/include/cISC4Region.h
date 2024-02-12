@@ -1,8 +1,9 @@
 #pragma once
 #include "cIGZUnknown.h"
+#include "cRZAutoRefCount.h"
 #include "EASTLConfigSC4.h"
-#include "EASTL/vector.h"
-#include <list>
+#include "EASTL\vector.h"
+#include <EASTL\list.h>
 
 class cIGZString;
 class cISC4RegionalCity;
@@ -10,13 +11,23 @@ class cISC4RegionalCity;
 class cISC4Region : public cIGZUnknown
 {
 	public:
+		enum class eCityTileSize : uint32_t
+		{
+			// Small city tile (4,096 cells)
+			Small = 0,
+			// Medium city tile (16,384 cells)
+			Medium = 1,
+			// Large city tile (65,536 cells)
+			Large = 2
+		};
+
 		class cLocation
 		{
 		public:
 
 			uint32_t x;
 			uint32_t y;
-			uint32_t isLargeTile;
+			eCityTileSize cityTileSize;
 		};
 
 		virtual char* GetName(void) = 0;
@@ -37,7 +48,7 @@ class cISC4Region : public cIGZUnknown
 		virtual bool DeleteCity(cISC4RegionalCity*& pCity) = 0;
 		virtual bool ReloadCity(cISC4RegionalCity*& pCity) = 0;
 		virtual bool MoveCity(cISC4Region* pRegion, cISC4RegionalCity* pCity, int32_t x, int32_t y) = 0;
-		virtual bool GetAllCities(std::list<cISC4RegionalCity*>& pList) = 0;
+		virtual bool GetAllCities(eastl::list<cRZAutoRefCount<cISC4RegionalCity>>& pList) = 0;
 
 		virtual int GetBaseTerrainType(void) = 0;
 		virtual cISC4Region* SetBaseTerrainType(int nType) = 0;
@@ -47,6 +58,6 @@ class cISC4Region : public cIGZUnknown
 
 		virtual bool ResetTutorialCity(uint32_t dwTutorialCityID) = 0;
 
-		virtual bool GetCityLocations(eastl::vector<cLocation>& cityLocations) = 0;
+		virtual void GetCityLocations(eastl::vector<cLocation>& cityLocations) = 0;
 		virtual int32_t GetBoundingRect(intptr_t pRectLongs) = 0;
 };
