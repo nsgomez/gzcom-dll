@@ -3,6 +3,7 @@
 #include <list>
 
 class cIGZApp;
+class cIGZCmdLine;
 class cIGZCOM;
 class cIGZExceptionNotification;
 class cIGZFrameWorkHooks;
@@ -47,7 +48,7 @@ class cIGZFrameWork : public cIGZUnknown
 		 * @see AddToOnIdle(cIGZSystemService* pService)
 		 */
 		virtual bool AddSystemService(cIGZSystemService* pService) = 0;
-		
+
 		/**
 		 * @brief Unregisters a system service
 		 */
@@ -105,7 +106,7 @@ class cIGZFrameWork : public cIGZUnknown
 		 * @brief Deactivates the on-idle event for a system service
 		 */
 		virtual bool RemoveFromOnIdle(cIGZSystemService* pService) = 0;
-		
+
 		/**
 		 * @return The interval at which the idle tick occurs, in milliseconds
 		 */
@@ -135,7 +136,7 @@ class cIGZFrameWork : public cIGZUnknown
 		 */
 		virtual cIGZFrameWork* ToggleTick(bool bTick) = 0;
 
-		/** 
+		/**
 		 * @brief Prepares the game for shutdown for some given reason
 		 * @return nQuitReason
 		 */
@@ -145,12 +146,12 @@ class cIGZFrameWork : public cIGZUnknown
 		 * @brief Immediately terminates the game for some given reason
 		 */
 		virtual void AbortiveQuit(int32_t nQuitReason) = 0;
-		
+
 		/**
 		 * @return The command line passed to the application
 		 */
-		virtual char* CommandLine(void) = 0;
-		
+		virtual cIGZCmdLine* CommandLine(void) = 0;
+
 		/**
 		 * @return Whether the game is in an installation-only mode
 		 */
@@ -181,7 +182,7 @@ class cIGZFrameWork : public cIGZUnknown
 		 * @brief Sets an application to associate with the framework
 		 */
 		virtual bool SetApplication(cIGZApp* const pIGZApp) = 0;
-		
+
 		/**
 		 * @return The application associated with this framework
 		 */
