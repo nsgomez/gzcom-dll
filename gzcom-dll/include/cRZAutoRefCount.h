@@ -29,11 +29,22 @@ class cRZAutoRefCount
 
 			return *this;
 		}
-		
+
 		virtual ~cRZAutoRefCount() {
+			Reset();
+		}
+
+		void Reset() {
 			if (pObject) {
 				pObject->Release();
+				pObject = nullptr;
 			}
+		}
+
+		void** AsPPVoid() {
+			Reset();
+
+			return reinterpret_cast<void**>(&pObject);
 		}
 
 		T* operator->() const { return pObject; }
