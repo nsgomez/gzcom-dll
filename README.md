@@ -13,8 +13,3 @@ subscribe to hook events like PreFrameWorkInit, PostAppInit, and the rest.
 Since most of the core work is done, the rest of the effort is focused on
 finding other classes and interfaces to add and fixing poorly documented
 methods with unknown parameters.
-
-
-Known Issues
-=========
-* None so far
