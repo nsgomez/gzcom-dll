@@ -58,7 +58,7 @@ class cRZCOMDllDirector : public cIGZCOMDirector, public cIGZFrameWorkHooks
 			kFactorFunctionType2 = 2
 		};
 
-		enum GZIIDList {
+		enum GZIIDList : uint32_t {
 			GZIID_cIGZFrameWorkHooks = 0x03FA40BF,
 			kGZIID_cIGZCOMDirector = 0xA21EE941
 		};
