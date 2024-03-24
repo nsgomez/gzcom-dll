@@ -3,20 +3,19 @@
 
 class cGZPersistResourceKey;
 class cISCPropertyHolder;
-class cISCResExemplarCohort;
 
-static const uint32_t GZIID_cISCResExemplar = 0xA52160F5;
+static const uint32_t GZIID_cISCResExemplarCohort = 0x452160FB;
 
-class cISCResExemplar : public cIGZSerializable
+class cISCResExemplarCohort : public cIGZSerializable
 {
 	public:
+		virtual cISCResExemplarCohort* GetParent(void) = 0;
+		virtual bool SetParent(cISCResExemplarCohort* pCohort, bool bSendMsg) = 0;
+
 		virtual cISCPropertyHolder* AsISCPropertyHolder(void) = 0;
 		virtual cISCPropertyHolder* AsISCPropertyHolder(void) const = 0;
 
 		virtual bool IsPropertyLocal(uint32_t dwProperty) = 0;
-
-		virtual cISCResExemplarCohort* GetCohort(void) = 0;
-		virtual bool SetCohort(cISCResExemplarCohort* pCohort, bool bSendMsg) = 0;
 
 		virtual bool GetKey(cGZPersistResourceKey& sKey) = 0;
 		virtual bool SetKey(cGZPersistResourceKey const& sKey) = 0;
