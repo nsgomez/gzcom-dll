@@ -11,14 +11,14 @@ static const uint32_t GZIID_cISCPropertyHolder = 0x25216283;
 class cISCPropertyHolder : public cIGZUnknown
 {
 	public:
-		virtual bool HasProperty(uint32_t dwProperty) = 0;
-		
-		virtual bool GetPropertyList(cIGZUnknownList** ppList) = 0;
-		virtual cISCProperty* GetProperty(uint32_t dwProperty) = 0;
-		virtual bool GetProperty(uint32_t dwProperty, uint32_t& dwValueOut) = 0;
-		virtual bool GetProperty(uint32_t dwProperty, cIGZString& szValueOut) = 0;
-		virtual bool GetProperty(uint32_t dwProperty, uint32_t riid, void** ppvObj) = 0;
-		virtual bool GetProperty(uint32_t dwProperty, void* pUnknown, uint32_t& dwUnknownOut) = 0;
+		virtual bool HasProperty(uint32_t dwProperty) const = 0;
+
+		virtual bool GetPropertyList(cIGZUnknownList** ppList) const = 0;
+		virtual cISCProperty* GetProperty(uint32_t dwProperty) const = 0;
+		virtual bool GetProperty(uint32_t dwProperty, uint32_t& dwValueOut) const = 0;
+		virtual bool GetProperty(uint32_t dwProperty, cIGZString& szValueOut) const = 0;
+		virtual bool GetProperty(uint32_t dwProperty, uint32_t riid, void** ppvObj) const = 0;
+		virtual bool GetProperty(uint32_t dwProperty, void* pUnknown, uint32_t& dwUnknownOut) const = 0;
 
 		virtual bool AddProperty(cISCProperty* pProperty, bool bUnknown) = 0;
 		virtual bool AddProperty(uint32_t dwProperty, cIGZVariant const* pVariant, bool bUnknown) = 0;
@@ -35,8 +35,8 @@ class cISCPropertyHolder : public cIGZUnknown
 		typedef void (*FunctionPtr1)(cISCProperty*, void*);
 		typedef bool (*FunctionPtr2)(cISCProperty*, void*);
 
-		virtual bool EnumProperties(FunctionPtr1 pFunction1, void* pData) = 0;
-		virtual bool EnumProperties(FunctionPtr2 pFunction2, FunctionPtr1 pFunctionPipe) = 0;
+		virtual bool EnumProperties(FunctionPtr1 pFunction1, void* pData) const = 0;
+		virtual bool EnumProperties(FunctionPtr2 pFunction2, FunctionPtr1 pFunctionPipe) const = 0;
 
 		virtual bool CompactProperties(void) = 0;
 };
