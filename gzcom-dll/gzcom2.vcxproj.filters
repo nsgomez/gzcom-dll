@@ -423,6 +423,12 @@
     <ClInclude Include="include\SC4ViewPreferences.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4NetworkOccupant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cSC4EdgeConnectionStore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
