@@ -339,9 +339,6 @@
     <ClInclude Include="include\cIGZLanguageUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\cIGZPersistResourceCache.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\cIGZPersistResourceManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>

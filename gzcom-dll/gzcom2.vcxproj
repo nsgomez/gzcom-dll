@@ -103,7 +103,6 @@
     <ClInclude Include="include\cIGZMessageTarget2.h" />
     <ClInclude Include="include\cIGZMouseMessage.h" />
     <ClInclude Include="include\cIGZOStream.h" />
-    <ClInclude Include="include\cIGZPersistResourceCache.h" />
     <ClInclude Include="include\cIGZPersistResourceManager.h" />
     <ClInclude Include="include\cIGZUnknownList.h" />
     <ClInclude Include="include\cIGZVariant.h" />
