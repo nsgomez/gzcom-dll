@@ -13,6 +13,8 @@ class cISC4Preferences;
 class cISC4Region;
 class cISC4RegionalCity;
 class cISC4RenderProperties;
+class SC4Preferences;
+class SC4VideoPreferences;
 
 // Taken from the Mac vtable
 class cISC4App : public cIGZUnknown
@@ -22,7 +24,7 @@ class cISC4App : public cIGZUnknown
 
 		virtual bool RunMessageServerPump(uint32_t dwMinMessages, uint32_t dwMaxMessages, uint32_t dwMaxTime) = 0;
 		virtual bool RunMessageServer2Pump(uint32_t dwMinMessages, uint32_t dwMaxMessages, uint32_t dwMaxTime) = 0;
-		
+
 		virtual bool RequestNewCity(intptr_t pCity) = 0; // Actually an AutoRefCount<cISC4RegionalCity>
 		virtual bool RequestLoadCity(void) = 0;
 		virtual bool RequestCloseCity(bool bShowConfirmPrompt) = 0;
@@ -30,17 +32,17 @@ class cISC4App : public cIGZUnknown
 		virtual bool RequestQuit(bool bShowDialog, bool bSaveFirst) = 0;
 		virtual bool RequestQuitFromRegion(bool bShowDialog) = 0;
 		virtual bool RequestGoToRegionView(bool bShowDialog) = 0;
-		
+
 		virtual bool LoadCity(cIGZString& szString, intptr_t pCityOut) = 0; // Actually an AutoRefCount<cISC4RegionalCity>
 		virtual bool CloseCity(void) = 0;
 		virtual bool SaveCity(bool bFastSave) = 0;
 		virtual bool SaveCity(cIGZString const& szName, bool bFastSave) = 0;
-		
+
 		virtual bool SavePreferences(void) = 0;
 		virtual bool EnableFullGamePauseOnAppFocusLoss(bool bEnable) = 0;
 
-		virtual bool ApplyVideoPreferences(intptr_t const sPreferences) = 0; // Actually takes SC4VideoPreferences const&
-		virtual bool GetAutoVideoPreferences(intptr_t pPreferencesOut) = 0; // Actually takes SC4VideoPreferences&
+		virtual bool ApplyVideoPreferences(SC4VideoPreferences const& sPreferences) = 0;
+		virtual bool GetAutoVideoPreferences(SC4VideoPreferences& pPreferencesOut) = 0;
 
 		virtual bool GetDebugFunctionalityEnabled(void) = 0;
 		virtual cISC4App* SetDebugFunctionalityEnabled(bool bEnabled) = 0;
@@ -65,7 +67,7 @@ class cISC4App : public cIGZUnknown
 		virtual cISC4Region* GetRegion(void) = 0;
 		virtual cISC4RegionalCity* GetRegionalCity(void) = 0;
 		virtual cISC4City* GetCity(void) = 0;
-		virtual intptr_t GetPreferences(void) = 0; // Returns a cISC4Preferences*
+		virtual SC4Preferences* GetPreferences(void) = 0;
 		virtual intptr_t GetNewCitySpecification(void) = 0; // Returns a SC4NewCitySpecification*
 		virtual intptr_t GetDebugConsole(void) = 0;
 		virtual intptr_t GetGimexFactory(void) = 0; // Returns a cIGZGimexFactory*
