@@ -108,6 +108,8 @@
     <ClInclude Include="include\cIGZUnknownList.h" />
     <ClInclude Include="include\cIGZVariant.h" />
     <ClInclude Include="include\cIGZWin.h" />
+    <ClInclude Include="include\cIGZWinKeyAccelerator.h" />
+    <ClInclude Include="include\cIGZWinKeyAcceleratorRes.h" />
     <ClInclude Include="include\cIGZWinMgr.h" />
     <ClInclude Include="include\cISC43DRender.h" />
     <ClInclude Include="include\cISC4Advice.h" />
@@ -189,6 +191,7 @@
     <ClInclude Include="include\GZMSGIDDefs.h" />
     <ClInclude Include="include\GZServDecls.h" />
     <ClInclude Include="include\GZServPtrs.h" />
+    <ClInclude Include="include\GZWinKeyAcceleratorUtil.h" />
     <ClInclude Include="include\ilist.h" />
     <ClInclude Include="include\SC4Percentage.h" />
     <ClInclude Include="include\SC4Point.h" />
