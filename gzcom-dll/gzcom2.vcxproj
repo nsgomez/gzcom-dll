@@ -178,6 +178,7 @@
     <ClInclude Include="include\cISCProperty.h" />
     <ClInclude Include="include\cISCPropertyHolder.h" />
     <ClInclude Include="include\cISCResExemplar.h" />
+    <ClInclude Include="include\cISCStringDetokenizer.h" />
     <ClInclude Include="include\cRZAutoRefCount.h" />
     <ClInclude Include="include\cRZBaseString.h" />
     <ClInclude Include="include\cRZBaseVariant.h" />
