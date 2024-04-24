@@ -7,6 +7,8 @@ class cISC424HourClock;
 class cISC4AdvisorSystem;
 class cISC4BudgetSimulator;
 class cISC4BuildingDevelopmentSimulator;
+class cISC4CivicBuildingSimulator;
+class cISC4DemandSimulator;
 class cISC4DisasterLayer;
 class cISC4HistoryWarehouse;
 class cISC4LotConfigurationManager;
@@ -15,6 +17,7 @@ class cISC4LotManager;
 class cISC4NetworkManager;
 class cISC4OccupantManager;
 class cISC4OrdinanceSimulator;
+class cISC4PlumbingSimulator;
 class cISC4PoliceSimulator;
 class cISC4PollutionSimulator;
 class cISC4ResidentialSimulator;
@@ -34,7 +37,7 @@ class cISC4City : public cIGZUnknown
 
 		virtual bool GetOriginalLanguageAndCountry(uint32_t& dwLanguage, uint32_t& dwCountry) = 0;
 		virtual bool GetLastLanguageAndCountry(uint32_t& dwLanguage, uint32_t& dwCountry) = 0;
-		
+
 		virtual bool GetCitySaveFilePath(cIGZString& szPath) = 0;
 		virtual bool SetCitySaveFilePath(cIGZString const& szPath) = 0;
 
@@ -94,7 +97,7 @@ class cISC4City : public cIGZUnknown
 		virtual cISC4BuildingDevelopmentSimulator* GetBuildingDevelopmentSimulator(void) = 0;
 		virtual intptr_t GetCommercialSimulator(void) = 0;
 		virtual intptr_t GetCrimeSimulator(void) = 0;
-		virtual intptr_t GetDemandSimulator(void) = 0;
+		virtual cISC4DemandSimulator* GetDemandSimulator(void) = 0;
 		virtual intptr_t GetFireProtectionSimulator(void) = 0;
 		virtual intptr_t GetFlammabilitySimulator(void) = 0;
 		virtual intptr_t GetFloraSimulator(void) = 0;
@@ -102,7 +105,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetLandValueSimulator(void) = 0;
 		virtual intptr_t GetNeighborsSimulator(void) = 0;
 		virtual cISC4OrdinanceSimulator* GetOrdinanceSimulator(void) = 0;
-		virtual intptr_t GetPlumbingSimulator(void) = 0;
+		virtual cISC4PlumbingSimulator* GetPlumbingSimulator(void) = 0;
 		virtual cISC4PoliceSimulator* GetPoliceSimulator(void) = 0;
 		virtual cISC4PollutionSimulator* GetPollutionSimulator(void) = 0;
 		virtual intptr_t GetPowerSimulator(void) = 0;
@@ -110,9 +113,9 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetTrafficSimulator(void) = 0;
 		virtual intptr_t GetWeatherSimulator(void) = 0;
 		virtual intptr_t GetMySimAgentSimulator(void) = 0;
-		
+
 		virtual cISC4DisasterLayer* GetDisasterLayer(void) = 0;
-		virtual intptr_t GetCivicBuildingSimulator(void) = 0;
+		virtual cISC4CivicBuildingSimulator* GetCivicBuildingSimulator(void) = 0;
 		virtual intptr_t GetParkManager(void) = 0;
 		virtual cISC4LotManager* GetZoneDeveloper(void) = 0;
 		virtual intptr_t GetSeaportDeveloper(void) = 0;
@@ -128,9 +131,9 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetTerrain(void) = 0;
 
 		virtual intptr_t GetEffectsManager(void) = 0;
-		
+
 		virtual cISC424HourClock* Get24HourClock(void) = 0;
-		
+
 		virtual uint32_t GetCitySizeType(void) = 0;
 		virtual bool SetSize(float fX, float fZ) = 0;
 		virtual float SizeX(void) = 0;

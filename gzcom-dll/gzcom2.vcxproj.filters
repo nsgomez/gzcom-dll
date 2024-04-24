@@ -435,6 +435,18 @@
     <ClInclude Include="include\SC4UI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4CivicBuildingSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4Demand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4DemandSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4PlumbingSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
