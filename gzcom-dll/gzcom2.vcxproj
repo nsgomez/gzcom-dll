@@ -104,6 +104,7 @@
     <ClInclude Include="include\cIGZMouseMessage.h" />
     <ClInclude Include="include\cIGZOStream.h" />
     <ClInclude Include="include\cIGZPersistResourceManager.h" />
+    <ClInclude Include="include\cIGZUIScriptService.h" />
     <ClInclude Include="include\cIGZUnknownList.h" />
     <ClInclude Include="include\cIGZVariant.h" />
     <ClInclude Include="include\cIGZWin.h" />
@@ -208,6 +209,7 @@
     <ClInclude Include="include\SC4TipOfTheDayPreferences.h" />
     <ClInclude Include="include\SC4TutorialPreferences.h" />
     <ClInclude Include="include\SC4TutorialPreferences2.h" />
+    <ClInclude Include="include\SC4UI.h" />
     <ClInclude Include="include\SC4VideoPreferences.h" />
     <ClInclude Include="include\SC4ViewPreferences.h" />
     <ClInclude Include="include\SCPropertyUtil.h" />
@@ -227,6 +229,7 @@
     <ClCompile Include="src\cRZMessage2Standard.cpp" />
     <ClCompile Include="src\cS3DVector3.cpp" />
     <ClCompile Include="src\cSCBaseProperty.cpp" />
+    <ClCompile Include="src\SC4UI.cpp" />
     <ClCompile Include="src\SCPropertyUtil.cpp" />
     <ClCompile Include="src\StringResourceManager.cpp" />
   </ItemGroup>

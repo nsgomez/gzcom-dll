@@ -429,6 +429,12 @@
     <ClInclude Include="include\cSC4EdgeConnectionStore.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cIGZUIScriptService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SC4UI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
@@ -471,6 +477,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\SCPropertyUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SC4UI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
