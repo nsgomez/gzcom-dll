@@ -122,6 +122,7 @@
     <ClInclude Include="include\cISC4BusinessUnit.h" />
     <ClInclude Include="include\cISC4CivicBuildingSimulator.h" />
     <ClInclude Include="include\cISC4ConstructionOccupant.h" />
+    <ClInclude Include="include\cISC4DBSegment.h" />
     <ClInclude Include="include\cISC4DBSegmentIStream.h" />
     <ClInclude Include="include\cISC4DBSegmentOStream.h" />
     <ClInclude Include="include\cIGZSerializable.h" />
