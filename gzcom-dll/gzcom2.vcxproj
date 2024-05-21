@@ -187,6 +187,7 @@
     <ClInclude Include="include\cISCStringDetokenizer.h" />
     <ClInclude Include="include\cRZAutoRefCount.h" />
     <ClInclude Include="include\cRZBaseString.h" />
+    <ClInclude Include="include\cRZBaseUnknown.h" />
     <ClInclude Include="include\cRZBaseVariant.h" />
     <ClInclude Include="include\cRZCOMDllDirector.h" />
     <ClInclude Include="include\cRZMessage2.h" />
@@ -233,6 +234,7 @@
     <ClCompile Include="src\cGZExtraCheatsDllDirector.cpp" />
     <ClCompile Include="src\cGZExtraExtraCheatsDllDirector.cpp" />
     <ClCompile Include="src\cRZBaseString.cpp" />
+    <ClCompile Include="src\cRZBaseUnknown.cpp" />
     <ClCompile Include="src\cRZBaseVariant.cpp" />
     <ClCompile Include="src\cRZCOMDllDirector.cpp" />
     <ClCompile Include="src\cGZCustomDllDirector.cpp" />
