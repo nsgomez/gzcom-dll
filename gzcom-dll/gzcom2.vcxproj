@@ -78,6 +78,9 @@
   <ItemGroup>
     <ClInclude Include="include\cGZAllocatorServiceSTLAllocator.h" />
     <ClInclude Include="include\cGZCOMLibrary.h" />
+    <ClInclude Include="include\cGZDisplayMetrics.h" />
+    <ClInclude Include="include\cGZDisplayTiming.h" />
+    <ClInclude Include="include\cGZGPixelFormatDesc.h" />
     <ClInclude Include="include\cGZMessage.h" />
     <ClInclude Include="include\cGZPersistResourceKey.h" />
     <ClInclude Include="include\cIGZAllocatorService.h" />
@@ -91,6 +94,8 @@
     <ClInclude Include="include\cIGZDate.h" />
     <ClInclude Include="include\cIGZFrameWork.h" />
     <ClInclude Include="include\cIGZFrameWorkHooks.h" />
+    <ClInclude Include="include\cIGZGraphicSystem.h" />
+    <ClInclude Include="include\cIGZGraphicSystem2.h" />
     <ClInclude Include="include\cIGZIStream.h" />
     <ClInclude Include="include\cIGZKeyMessage.h" />
     <ClInclude Include="include\cIGZLanguageManager.h" />
