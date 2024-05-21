@@ -113,9 +113,12 @@
     <ClInclude Include="include\cIGZUnknownList.h" />
     <ClInclude Include="include\cIGZVariant.h" />
     <ClInclude Include="include\cIGZWin.h" />
+    <ClInclude Include="include\cIGZWinBtn.h" />
     <ClInclude Include="include\cIGZWinKeyAccelerator.h" />
     <ClInclude Include="include\cIGZWinKeyAcceleratorRes.h" />
+    <ClInclude Include="include\cIGZWinMessageTarget.h" />
     <ClInclude Include="include\cIGZWinMgr.h" />
+    <ClInclude Include="include\cIGZWinProc.h" />
     <ClInclude Include="include\cISC43DRender.h" />
     <ClInclude Include="include\cISC4Advice.h" />
     <ClInclude Include="include\cISC4AdviceSubject.h" />
