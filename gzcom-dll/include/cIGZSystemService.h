@@ -1,6 +1,8 @@
 #pragma once
 #include "cIGZUnknown.h"
 
+static const uint32_t GZIID_cIGZSystemService = 0x287fb697;
+
 /**
  * @brief An interface for services that provide helpers and run on ticks
  *
@@ -45,12 +47,12 @@ class cIGZSystemService : public cIGZUnknown
 		 * @brief A callback for post-framework initialization
 		 */
 		virtual bool Init(void) = 0;
-		
+
 		/**
 		 * @brief A callback for pre-framework shutdown
 		 */
 		virtual bool Shutdown(void) = 0;
-		
+
 		/**
 		 * @brief A callback for each active tick when the game is focused
 		 *
