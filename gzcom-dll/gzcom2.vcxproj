@@ -186,6 +186,7 @@
     <ClInclude Include="include\cISC4TrafficSource.h" />
     <ClInclude Include="include\cISC4TutorialSystem.h" />
     <ClInclude Include="include\cISC4View3DWin.h" />
+    <ClInclude Include="include\cISC4ViewInputControl.h" />
     <ClInclude Include="include\cISCExemplarPropertyHolder.h" />
     <ClInclude Include="include\cISCProperty.h" />
     <ClInclude Include="include\cISCPropertyHolder.h" />

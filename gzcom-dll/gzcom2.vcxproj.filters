@@ -483,6 +483,18 @@
     <ClInclude Include="include\cIGZWinProc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4AuraSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4PowerSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4TrafficSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4ViewInputControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
