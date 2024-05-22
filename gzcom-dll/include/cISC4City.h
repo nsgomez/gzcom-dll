@@ -5,6 +5,7 @@ class cIGZPersistDBSegment;
 class cIGZString;
 class cISC424HourClock;
 class cISC4AdvisorSystem;
+class cISC4AuraSimulator;
 class cISC4BudgetSimulator;
 class cISC4BuildingDevelopmentSimulator;
 class cISC4CivicBuildingSimulator;
@@ -20,9 +21,11 @@ class cISC4OrdinanceSimulator;
 class cISC4PlumbingSimulator;
 class cISC4PoliceSimulator;
 class cISC4PollutionSimulator;
+class cISC4PowerSimulator;
 class cISC4ResidentialSimulator;
 class cISC4Simulator;
 class cISC4TractDeveloper;
+class cISC4TrafficSimulator;
 class cISC4TutorialSystem;
 
 class cISC4City : public cIGZUnknown
@@ -92,7 +95,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetCitySituationManager(void) = 0;
 
 		virtual cISC4Simulator* GetSimulator(void) = 0;
-		virtual intptr_t GetAuraSimulator(void) = 0;
+		virtual cISC4AuraSimulator* GetAuraSimulator(void) = 0;
 		virtual cISC4BudgetSimulator* GetBudgetSimulator(void) = 0;
 		virtual cISC4BuildingDevelopmentSimulator* GetBuildingDevelopmentSimulator(void) = 0;
 		virtual intptr_t GetCommercialSimulator(void) = 0;
@@ -108,9 +111,9 @@ class cISC4City : public cIGZUnknown
 		virtual cISC4PlumbingSimulator* GetPlumbingSimulator(void) = 0;
 		virtual cISC4PoliceSimulator* GetPoliceSimulator(void) = 0;
 		virtual cISC4PollutionSimulator* GetPollutionSimulator(void) = 0;
-		virtual intptr_t GetPowerSimulator(void) = 0;
+		virtual cISC4PowerSimulator* GetPowerSimulator(void) = 0;
 		virtual cISC4ResidentialSimulator* GetResidentialSimulator(void) = 0;
-		virtual intptr_t GetTrafficSimulator(void) = 0;
+		virtual cISC4TrafficSimulator* GetTrafficSimulator(void) = 0;
 		virtual intptr_t GetWeatherSimulator(void) = 0;
 		virtual intptr_t GetMySimAgentSimulator(void) = 0;
 

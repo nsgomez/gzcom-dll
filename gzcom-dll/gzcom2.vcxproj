@@ -124,6 +124,7 @@
     <ClInclude Include="include\cISC4AdviceSubject.h" />
     <ClInclude Include="include\cISC4Advisor.h" />
     <ClInclude Include="include\cISC4AdvisorSystem.h" />
+    <ClInclude Include="include\cISC4AuraSimulator.h" />
     <ClInclude Include="include\cISC4BudgetSimulator.h" />
     <ClInclude Include="include\cISC4BuildingDevelopmentSimulator.h" />
     <ClInclude Include="include\cISC4BuildingOccupant.h" />
@@ -174,12 +175,14 @@
     <ClInclude Include="include\cISC4PoliceSimulator.h" />
     <ClInclude Include="include\cISC4PollutionSimulator.h" />
     <ClInclude Include="include\cISC4PowerLineOccupant.h" />
+    <ClInclude Include="include\cISC4PowerSimulator.h" />
     <ClInclude Include="include\cISC4Region.h" />
     <ClInclude Include="include\cISC4RegionalCity.h" />
     <ClInclude Include="include\cISC4RenderProperties.h" />
     <ClInclude Include="include\cISC4SimGrid.h" />
     <ClInclude Include="include\cISC4Simulator.h" />
     <ClInclude Include="include\cISC4TractDeveloper.h" />
+    <ClInclude Include="include\cISC4TrafficSimulator.h" />
     <ClInclude Include="include\cISC4TrafficSource.h" />
     <ClInclude Include="include\cISC4TutorialSystem.h" />
     <ClInclude Include="include\cISC4View3DWin.h" />
