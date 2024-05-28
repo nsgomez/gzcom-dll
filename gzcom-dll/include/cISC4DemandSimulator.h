@@ -32,7 +32,7 @@ public:
     /**
      * @brief Gets the number of jobs by census type.
      * @param type The census type
-     * @return Che number of jobs by census type.
+     * @return The number of jobs by census type.
     */
     virtual uint32_t GetJobsBySensus(uint32_t type) = 0;
 
