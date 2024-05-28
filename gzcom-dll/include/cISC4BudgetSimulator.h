@@ -84,7 +84,7 @@ class cISC4BudgetSimulator : public cIGZUnknown
 		virtual bool ChangeBudgetItemCost(cISCPropertyHolder* pProperty, uint32_t dwPurpose, int64_t llCost) = 0;
 		virtual bool ChangeBudgetItemLocalFunding(cISCPropertyHolder* pProperty, uint32_t dwPurpose, SC4Percentage const& sFunding) = 0;
 		virtual bool AddBudgetItemToBudget(cISCPropertyHolder* pProperty, uint32_t dwPurpose) = 0;
-		virtual bool RemoveBudgetItemToBudget(cISCPropertyHolder* pProperty, uint32_t dwPurpose) = 0;
+		virtual bool RemoveBudgetItemFromBudget(cISCPropertyHolder* pProperty, uint32_t dwPurpose) = 0;
 
 		virtual int32_t GetLineItemFromBudgetItem(intptr_t pBudgetItem) = 0;
 		virtual bool CopyBudgetItemProperties(cISCPropertyHolder* pOriginal, cISCPropertyHolder* pCopy) = 0;
