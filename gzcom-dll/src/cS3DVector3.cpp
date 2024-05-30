@@ -42,9 +42,9 @@ bool cS3DVector3::operator!=(cS3DVector3 const& sOther) {
 }
 
 bool cS3DVector3::operator==(cS3DVector3 const& sOther) {
-	float fDiffX = fabs(sOther.fX - fX);
-	float fDiffY = fabs(sOther.fY - fY);
-	float fDiffZ = fabs(sOther.fZ - fZ);
+	float fDiffX = (float)fabs(sOther.fX - fX);
+	float fDiffY = (float)fabs(sOther.fY - fY);
+	float fDiffZ = (float)fabs(sOther.fZ - fZ);
 
 	return fDiffX <= 0.0001 && fDiffY <= 0.0001 && fDiffZ <= 0.0001;
 }
