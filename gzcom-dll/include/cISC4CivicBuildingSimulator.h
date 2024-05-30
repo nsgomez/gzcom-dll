@@ -1,22 +1,26 @@
 #pragma once
 #include "cIGZUnknown.h"
+#include "SC4String.h"
 
 class cIGZString;
 
 class cISC4CivicBuildingSimulator : public cIGZUnknown
 {
 public:
+	enum eConditionalBuildingStatus : uint8_t
+	{
+		ConditionalBuildingStatusNone = 0,
+		ConditionalBuildingStatusHidden = 1,
+		ConditionalBuildingStatusAvailable = 2,
+		ConditionalBuildingStatusAdvisorEventDataSet = 4
+	};
+
 	class ConditionalBuildingStatus
 	{
 	public:
-		int8_t status;
-		int8_t statusPadding; // Padding for alignment.
+		eConditionalBuildingStatus status;
 		uint16_t buildingCount;
-		intptr_t unknown1; // Possibly a pointer to a cIGZString, but it crashes when accessing any method
-		intptr_t unknown2; // std::string, null/0 if status == -4
-		intptr_t unknown3;
-		intptr_t unknown4;
-		intptr_t unknown5;
+		SC4String itemToolTip;
 	};
 
 	virtual bool Init() = 0;
@@ -24,7 +28,7 @@ public:
 
 	virtual bool IsBuildingExcluded(uint32_t buildingID) = 0;
 
-	virtual ConditionalBuildingStatus* GetConditionalBuildingStatus(uint32_t buildingID) = 0;
+	virtual ConditionalBuildingStatus* GetConditionalBuildingStatus(uint32_t buildingID) const = 0;
 	virtual bool UpdateConditionalBuildingStatus(uint32_t buildingID, ConditionalBuildingStatus* status) = 0;
 
 	virtual uint32_t GetLandmarkCount() = 0;
