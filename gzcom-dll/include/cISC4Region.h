@@ -5,18 +5,19 @@
 
 class cIGZString;
 class cISC4RegionalCity;
+class SC4String;
 
 class cISC4Region : public cIGZUnknown
 {
 	public:
-		virtual char* GetName(void) = 0;
+		virtual SC4String* GetName(void) = 0;
 		virtual bool SetName(const cIGZString& szName) = 0;
 
-		virtual char* GetDirectoryName(void) = 0;
+		virtual SC4String* GetDirectoryName(void) = 0;
 		virtual bool SetDirectoryName(const cIGZString& szName) = 0;
 
 		virtual bool LoadConfig(void) = 0;
-		
+
 		virtual bool Init(void) = 0;
 		virtual bool Shutdown(void) = 0;
 		virtual bool Delete(void) = 0;
@@ -36,7 +37,7 @@ class cISC4Region : public cIGZUnknown
 		virtual int32_t GetWaterPrefs(uint8_t& cUnknown1, uint8_t& cUnknown2) = 0;
 
 		virtual bool ResetTutorialCity(uint32_t dwTutorialCityID) = 0;
-		
+
 		virtual bool GetCityLocations(intptr_t pVector) = 0;
 		virtual int32_t GetBoundingRect(intptr_t pRectLongs) = 0;
 };
