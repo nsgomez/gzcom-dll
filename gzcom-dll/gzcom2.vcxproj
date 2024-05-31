@@ -179,6 +179,7 @@
     <ClInclude Include="include\cISC4Region.h" />
     <ClInclude Include="include\cISC4RegionalCity.h" />
     <ClInclude Include="include\cISC4RenderProperties.h" />
+    <ClInclude Include="include\cISC4ResidentialSimulator.h" />
     <ClInclude Include="include\cISC4SimGrid.h" />
     <ClInclude Include="include\cISC4Simulator.h" />
     <ClInclude Include="include\cISC4TractDeveloper.h" />
