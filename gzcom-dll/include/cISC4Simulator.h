@@ -5,6 +5,7 @@
 class cIGZDate;
 class cIGZMessageTarget2;
 class cIGZString;
+class SC4String;
 
 class cISC4Simulator : public cIGZUnknown
 {
@@ -37,7 +38,7 @@ class cISC4Simulator : public cIGZUnknown
 		virtual bool RemoveAgent(cIGZMessageTarget2* pAgent) = 0;
 		virtual bool RemoveAllAgents(void) = 0;
 		virtual bool RemoveAllAgents(uint32_t dwAgentType) = 0;
-		virtual bool EnumerateAgentsByName(std::vector<cIGZString>& sAgents) = 0;
+		virtual bool EnumerateAgentsByName(std::vector<SC4String>& sAgents) = 0;
 		virtual bool GetAgentEnabled(cIGZString const& szAgentName) = 0;
 		virtual bool SetAgentEnabled(cIGZString const& szAgentName, bool bEnabled) = 0;
 
