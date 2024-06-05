@@ -44,8 +44,8 @@ class cISC4BuildingOccupant : public cIGZUnknown
 		virtual bool SetCompletionPercent(SC4Percentage const&) = 0;
 
 		virtual intptr_t GetBuildingProfile(void) = 0;
-		virtual intptr_t GetBuildingName(void) = 0;
-		virtual intptr_t GetExemplarName(void) = 0;
+		virtual cIGZString* GetBuildingName(void) = 0;
+		virtual cIGZString* GetExemplarName(void) = 0;
 
 		virtual int32_t GetOrientation(void) = 0;
 		virtual bool SetOrientation(int32_t) = 0;
