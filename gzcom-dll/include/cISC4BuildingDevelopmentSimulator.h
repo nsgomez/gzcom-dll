@@ -79,8 +79,8 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 		virtual cISC4LotDeveloper* GetLotDeveloper(void) = 0;
 		virtual cIGZString* GetExemplarName(uint32_t dwExemplar) = 0;
 		virtual cIGZString* GetBuildingName(uint32_t dwBuilding) = 0;
-		virtual int32_t GetBuildingProfile(uint32_t dwBuilding) = 0;
-		virtual intptr_t GetBuildingProfilePtr(uint32_t dwBuilding) = 0;
+		virtual cISC4BuildingOccupant::BuildingProfile& GetBuildingProfile(uint32_t dwBuilding) const = 0;
+		virtual cISC4BuildingOccupant::BuildingProfile* GetBuildingProfilePtr(uint32_t dwBuilding) const = 0;
 		virtual intptr_t GetBuildingMap(void) = 0;
 		virtual intptr_t GetBuildingMapKey(cISC4BuildingDevelopmentSimulator* pSimulator) = 0;
 		virtual intptr_t GetBuildingMapKey(cISC4BuildingOccupant::PurposeType purpose, cISC4BuildingOccupant::WealthType wealth) = 0;
