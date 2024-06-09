@@ -1,5 +1,6 @@
 #pragma once
 #include "cIGZUnknown.h"
+#include "cISC4BuildingOccupant.h"
 #include <list>
 #include <vector>
 
@@ -14,7 +15,7 @@ class cISC4ResidentialSimulator : public cIGZUnknown
 		virtual bool Init(void) = 0;
 		virtual bool Shutdown(void) = 0;
 
-		virtual cISC4SimGrid<uint8_t>* GetProximityMap(uint8_t cWealthType) = 0;
+		virtual cISC4SimGrid<uint8_t>* GetProximityMap(cISC4BuildingOccupant::WealthType eWealthType) = 0;
 
 		virtual bool SchoolIsOnStrike(void) = 0;
 		virtual bool HealthIsOnStrike(void) = 0;
@@ -61,14 +62,14 @@ class cISC4ResidentialSimulator : public cIGZUnknown
 		virtual float GetCellEQ(uint32_t dwCellX, uint32_t dwCellZ) = 0;
 		virtual float GetCellHQ(uint32_t dwCellX, uint32_t dwCellZ) = 0;
 
-		virtual float GetCellEQByWealth(uint32_t dwCellX, uint32_t dwCellZ, uint8_t cWealthType) = 0;
-		virtual float GetCellHQByWealth(uint32_t dwCellX, uint32_t dwCellZ, uint8_t cWealthType) = 0;
+		virtual float GetCellEQByWealth(uint32_t dwCellX, uint32_t dwCellZ, cISC4BuildingOccupant::WealthType eWealthType) = 0;
+		virtual float GetCellHQByWealth(uint32_t dwCellX, uint32_t dwCellZ, cISC4BuildingOccupant::WealthType eWealthType) = 0;
 
 		virtual int32_t GetSchoolAverageGradeMap(void) = 0;
 		virtual int32_t GetHospitalAverageGradeMap(void) = 0;
 		virtual int32_t GetAverageAgeMap(void) = 0;
 
-		virtual int32_t GetAverageNewAgeByWealth(uint8_t cWealthType) = 0;
+		virtual int32_t GetAverageNewAgeByWealth(cISC4BuildingOccupant::WealthType eWealthType) = 0;
 		virtual bool GetEQMinAndMaxCellCoords(uint32_t& dwMinCellX, uint32_t& dwMinCellZ, uint32_t& dwMaxCellX, uint32_t& dwMaxCellZ, float& fMin, float& fMax) = 0;
 		virtual bool GetHQMinAndMaxCellCoords(uint32_t& dwMinCellX, uint32_t& dwMinCellZ, uint32_t& dwMaxCellX, uint32_t& dwMaxCellZ, float& fMin, float& fMax) = 0;
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "cIGZUnknown.h"
+#include "cISC4BuildingOccupant.h"
 #include <vector>
 
 class cGZPersistResourceKey;
@@ -27,23 +28,23 @@ class cISC4LotConfiguration : public cIGZUnknown
 
 		virtual bool IsCompatibleWithWater(void) = 0;
 		virtual bool IsCompatibleWithZoneType(uint32_t dwType) = 0;
-		virtual bool IsCompatibleWithWealthType(uint32_t dwType) = 0;
-		virtual bool IsCompatibleWithPurposeType(uint32_t dwType) = 0;
+		virtual bool IsCompatibleWithWealthType(cISC4BuildingOccupant::WealthType eType) = 0;
+		virtual bool IsCompatibleWithPurposeType(cISC4BuildingOccupant::PurposeType eType) = 0;
 		virtual bool IsCompatibleWithStyleType(uint32_t dwType) = 0;
 		virtual bool IsCompatibleWithMonopolyPieceUse(void) = 0;
 		virtual bool IsDoConstruction(void) = 0;
 
 		virtual bool GetRequiredRoads(std::vector<bool>& sRequiredVector) = 0;
-		
+
 		virtual uint32_t GetLotConfigurationObjectCount(void) = 0;
 		virtual std::vector<cSC4LotConfigurationObject>* GetLotConfigurationObjectArray(void) = 0;
-		
+
 		virtual cSC4LotConfigurationObject* GetPrimaryBuildingConfigurationObject(void) = 0;
 		virtual cSC4LotConfigurationObject* GetPrimaryBaseConfigurationObject(void) = 0;
 		virtual cSC4LotConfigurationObject* GetPrimaryFoundationConfigurationObject(void) = 0;
 
 		virtual bool HasObjectsOfType(uint32_t dwTypeId) = 0;
-		
+
 		virtual std::vector<uint32_t>* GetRetainingWallIDArray(void) = 0;
 		virtual std::vector<uint32_t>* GetFenceIDArray(void) = 0;
 		virtual std::vector<int8_t>* GetFenceSegmentPositionArray(void) = 0;
