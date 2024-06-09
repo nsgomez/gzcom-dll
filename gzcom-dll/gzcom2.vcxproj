@@ -93,6 +93,7 @@
     <ClInclude Include="include\cIGZCOMLibrary.h" />
     <ClInclude Include="include\cIGZCommandParameterSet.h" />
     <ClInclude Include="include\cIGZDate.h" />
+    <ClInclude Include="include\cIGZFile.h" />
     <ClInclude Include="include\cIGZFrameWork.h" />
     <ClInclude Include="include\cIGZFrameWorkHooks.h" />
     <ClInclude Include="include\cIGZGraphicSystem.h" />
