@@ -15,6 +15,7 @@ class cISC4RegionalCity;
 class cISC4RenderProperties;
 class cISCStringDetokenizer;
 class SC4Preferences;
+class SC4String;
 class SC4VideoPreferences;
 
 // Taken from the Mac vtable
@@ -78,6 +79,9 @@ class cISC4App : public cIGZUnknown
 		virtual intptr_t GetGlyphTextureManager(void) = 0; // Returns a cISC4GlyphTextureManager*
 		virtual intptr_t GetLuaInterpreter(void) = 0; // Returns a cIGZLua5*
 		virtual intptr_t GetTutorialRegistry(void) = 0; // Returns cSC4TutorialRegistry*
+
+		virtual SC4String* GetExeceptionReportsDirectoryConst() const = 0;
+		virtual intptr_t Unknown1() = 0;
 
 		virtual bool IsRunFirstTimeAfterInstall(void) = 0;
 		virtual bool GetAppDirectory(cIGZString& szPathOut) = 0;
