@@ -14,10 +14,6 @@ public:
 
 	uint32_t Release() override;
 
-	bool Init() override;
-
-	bool Shutdown() override;
-
 	uint32_t GetServiceID() override;
 
 	cIGZSystemService* SetServiceID(uint32_t id) override;

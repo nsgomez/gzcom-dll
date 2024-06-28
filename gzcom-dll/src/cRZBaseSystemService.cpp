@@ -44,16 +44,6 @@ uint32_t cRZBaseSystemService::Release()
 	return refCount;
 }
 
-bool cRZBaseSystemService::Init()
-{
-	return true;
-}
-
-bool cRZBaseSystemService::Shutdown()
-{
-	return true;
-}
-
 uint32_t cRZBaseSystemService::GetServiceID()
 {
 	return serviceID;
