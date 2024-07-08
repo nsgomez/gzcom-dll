@@ -22,10 +22,10 @@ class cIGZLanguageUtility : cIGZUnknown
 	virtual bool GetThousandSeparator(cIGZString& outString) = 0;
 	virtual bool GetDecimalSeparator(cIGZString& outString) = 0;
 
-	virtual bool MakeMoneyString(int64_t unknown1, cIGZString& unknown2, cIGZString const* unknown3) = 0;
-	virtual bool MakeFormattedMoneyString(double unknown1, cIGZString& unknown2, cIGZString const& unknown3, cIGZString const* unknown4) = 0;
-	virtual bool MakeNumberString(int64_t unknown1, cIGZString& unknown2) = 0;
-	virtual bool MakeFormattedNumberString(double unknown1, cIGZString& unknown2, cIGZString const& unknown3) = 0;
+	virtual bool MakeMoneyString(int64_t value, cIGZString& outString, cIGZString const* currencySymbol) = 0;
+	virtual bool MakeFormattedMoneyString(double value, cIGZString& outString, cIGZString const& format, cIGZString const* currencySymbol) = 0;
+	virtual bool MakeNumberString(int64_t value, cIGZString& outString) = 0;
+	virtual bool MakeFormattedNumberString(double value, cIGZString& outString, cIGZString const& format) = 0;
 
 	virtual bool ConvertToLowerCase(cIGZString const& source, cIGZString& dest) = 0;
 	virtual bool ConvertToUpperCase(cIGZString const& source, cIGZString& dest) = 0;
