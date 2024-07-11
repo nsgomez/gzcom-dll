@@ -1,6 +1,7 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "cISC4BuildingOccupant.h"
+#include "cISC4ZoneManager.h"
 #include <vector>
 
 class cGZPersistResourceKey;
@@ -27,7 +28,7 @@ class cISC4LotConfiguration : public cIGZUnknown
 		virtual uint16_t GetMaxBuildingCapacity(void) = 0;
 
 		virtual bool IsCompatibleWithWater(void) = 0;
-		virtual bool IsCompatibleWithZoneType(uint32_t dwType) = 0;
+		virtual bool IsCompatibleWithZoneType(cISC4ZoneManager::ZoneType eType) = 0;
 		virtual bool IsCompatibleWithWealthType(cISC4BuildingOccupant::WealthType eType) = 0;
 		virtual bool IsCompatibleWithPurposeType(cISC4BuildingOccupant::PurposeType eType) = 0;
 		virtual bool IsCompatibleWithStyleType(uint32_t dwType) = 0;

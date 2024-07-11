@@ -1,6 +1,7 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "cISC4BuildingDevelopmentSimulator.h"
+#include "cISC4ZoneManager.h"
 #include <list>
 #include <map>
 
@@ -57,7 +58,7 @@ class cISC4Lot : public cIGZUnknown
 		virtual bool HasOrganicRoadAccess(uint32_t dwPurposeType) = 0;
 		virtual bool UpdateRoadAccess(void) = 0;
 
-		virtual uint32_t GetZoneType(void) = 0;
+		virtual cISC4ZoneManager::ZoneType GetZoneType(void) = 0;
 		virtual bool UpdateZoneType(void) = 0;
 
 		virtual uint32_t GetState(void) = 0;

@@ -1,6 +1,7 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "cISC4BuildingOccupant.h"
+#include "cISC4ZoneManager.h"
 #include <unordered_set>
 #include <vector>
 
@@ -86,7 +87,7 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 		virtual intptr_t GetBuildingMapKey(cISC4BuildingOccupant::PurposeType purpose, cISC4BuildingOccupant::WealthType wealth) = 0;
 		virtual intptr_t GetSpecialBuildings(void) = 0;
 
-		virtual int64_t GetMaxCapacity(int32_t nZoneType, cISC4BuildingOccupant::PurposeType purpose, cISC4BuildingOccupant::WealthType wealth) = 0;
+		virtual int64_t GetMaxCapacity(cISC4ZoneManager::ZoneType zone, cISC4BuildingOccupant::PurposeType purpose, cISC4BuildingOccupant::WealthType wealth) = 0;
 		virtual bool IsSuitableForConstruction(intptr_t const& sConstructionProfile, int32_t& nReasonForFail) = 0;
 		virtual bool PlopBuilding(intptr_t const& sConstructionProfile) = 0;
 

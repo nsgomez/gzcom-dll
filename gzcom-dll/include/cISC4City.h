@@ -27,6 +27,7 @@ class cISC4Simulator;
 class cISC4TractDeveloper;
 class cISC4TrafficSimulator;
 class cISC4TutorialSystem;
+class cISC4ZoneManager;
 
 class cISC4City : public cIGZUnknown
 {
@@ -79,7 +80,7 @@ class cISC4City : public cIGZUnknown
 		virtual cISC4LotManager* GetLotManager(void) = 0;
 		virtual cISC4OccupantManager* GetOccupantManager(void) = 0;
 		virtual intptr_t GetPropManager(void) = 0;
-		virtual intptr_t GetZoneManager(void) = 0;
+		virtual cISC4ZoneManager* GetZoneManager(void) = 0;
 		virtual cISC4LotConfigurationManager* GetLotConfigurationManager(void) = 0;
 		virtual cISC4NetworkManager* GetNetworkManager(void) = 0;
 		virtual intptr_t GetDispatchManager(void) = 0;
