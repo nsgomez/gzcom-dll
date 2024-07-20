@@ -16,8 +16,8 @@ class cISC4LotManager : public cIGZUnknown
 		virtual bool Init(void) = 0;
 		virtual bool Shutdown(void) = 0;
 
-		virtual bool GetLot(int32_t nCellX, int32_t nCellZ, bool bUnknown) = 0;
-		virtual bool GetLot(cS3DVector3 const& sPoint) = 0;
+		virtual cISC4Lot* GetLot(int32_t nCellX, int32_t nCellZ, bool bUnknown) = 0;
+		virtual cISC4Lot* GetLot(cS3DVector3 const& sPoint) = 0;
 
 		virtual bool GetLotsInCellRect(std::list<cISC4Lot>& sLotList, int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nBottomRightCellX, int32_t nBottomRightCellZ, bool bUnknown) = 0;
 		virtual bool GetLotsSurroundingLot(cISC4Lot const* pLot, std::list<cISC4Lot*>& sList, int32_t nFlags) = 0;
@@ -25,13 +25,13 @@ class cISC4LotManager : public cIGZUnknown
 		virtual bool GetLotsSurroundingRect(SC4Rect<long> const& sRect, std::list<cISC4Lot*>& sList, int32_t nFlags) = 0;
 		virtual bool GetVerticesAtEdgeOfLot(SC4Rect<long> const& sLotCells, int32_t nFlags, SC4Rect<long>& sVertices) = 0;
 		virtual bool GetNeighborCellsAtEdgeOfLot(SC4Rect<long> const& sLotCells, int32_t nFlags, SC4Rect<long>& sCells) = 0;
-		
+
 		virtual cISC4Lot* GetRandomLot(void) = 0;
 		virtual cISC4Lot* GetOccupantLot(cISC4Occupant* pOccupant) = 0;
 		virtual intptr_t GetSafeLotIterator(void) = 0;
 
 		virtual int32_t GetLotCount(void) = 0;
-		
+
 		virtual int32_t GetLotSavvyTerrainVertexAltitude(int32_t nPointX, int32_t nPointY, cISC4Lot* pLot, bool& bSucceeded) = 0;
 		virtual int32_t GetLotSavvyTerrainAltitude(float fPointX, float fPointY, bool& bSucceeded) = 0;
 		virtual int32_t GetLotSavvyCellAltitude(int32_t nCellX, int32_t nCellZ, bool& bSucceeded) = 0;
@@ -45,6 +45,6 @@ class cISC4LotManager : public cIGZUnknown
 		virtual bool DeleteLots(int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nBottomRightCellX, int32_t nBottomRightCellZ) = 0;
 
 		virtual bool GetLotVertexAltitudeAdjustmentRange(int32_t nCellX, int32_t nCellZ, float& fRangeX, float& fRangeY) = 0;
-		
+
 		virtual cISC4SimGrid<short>* GetMaximumCapacityGrid(void) = 0;
 };
