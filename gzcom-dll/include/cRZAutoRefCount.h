@@ -42,9 +42,13 @@ class cRZAutoRefCount
 		}
 
 		void** AsPPVoid() {
+			return reinterpret_cast<void**>(AsPPObj());
+		}
+
+		T** AsPPObj() {
 			Reset();
 
-			return reinterpret_cast<void**>(&pObject);
+			return &pObject;
 		}
 
 		T* operator->() const { return pObject; }
