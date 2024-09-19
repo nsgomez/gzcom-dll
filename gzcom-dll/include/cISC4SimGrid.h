@@ -16,15 +16,15 @@ class cISC4SimGrid : public cIGZUnknown
 
 		virtual bool SetTractSize(int32_t nSize) = 0;
 		virtual int32_t GetTractSize(void) = 0;
-		
+
 		virtual int32_t GetTractShift(void) = 0;
-		
+
 		virtual int32_t GetTractCountX(void) = 0;
 		virtual int32_t GetTractCountZ(void) = 0;
-		
+
 		virtual float GetTractWidthX(void) = 0;
 		virtual float GetTractWidthZ(void) = 0;
-		
+
 		virtual float GetOneOverTractWidthX(void) = 0;
 		virtual float GetOneOverTractWidthZ(void) = 0;
 
@@ -37,7 +37,8 @@ class cISC4SimGrid : public cIGZUnknown
 		virtual T GetAverageValueInTractRect(int32_t nTopLeftX, int32_t nTopLeftZ, int32_t nBottomRightX, int32_t nBottomRightZ) = 0;
 
 		virtual intptr_t GetGridData(void) = 0;
+		virtual intptr_t GetGridData(void) const = 0;
 
-		virtual bool SetTractValue(int32_t nTractX, int32_t nTractZ, T value) = 0;
-		virtual bool SetTractValues(T value) = 0;
+		virtual void SetTractValue(int32_t nTractX, int32_t nTractZ, T value) = 0;
+		virtual void SetTractValues(T value) = 0;
 };
