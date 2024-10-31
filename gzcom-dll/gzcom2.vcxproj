@@ -77,6 +77,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\cGZAllocatorServiceSTLAllocator.h" />
+    <ClInclude Include="include\cGZBufferColorType.h" />
+    <ClInclude Include="include\cGZBufferType.h" />
     <ClInclude Include="include\cGZCOMLibrary.h" />
     <ClInclude Include="include\cGZDisplayMetrics.h" />
     <ClInclude Include="include\cGZDisplayTiming.h" />
@@ -85,6 +87,7 @@
     <ClInclude Include="include\cGZPersistResourceKey.h" />
     <ClInclude Include="include\cIGZAllocatorService.h" />
     <ClInclude Include="include\cIGZApp.h" />
+    <ClInclude Include="include\cIGZBuffer.h" />
     <ClInclude Include="include\cIGZCanvasMessage.h" />
     <ClInclude Include="include\cIGZCheatCodeManager.h" />
     <ClInclude Include="include\cIGZCmdLine.h" />
@@ -97,6 +100,7 @@
     <ClInclude Include="include\cIGZFile.h" />
     <ClInclude Include="include\cIGZFrameWork.h" />
     <ClInclude Include="include\cIGZFrameWorkHooks.h" />
+    <ClInclude Include="include\cIGZGimexFactory.h" />
     <ClInclude Include="include\cIGZGraphicSystem.h" />
     <ClInclude Include="include\cIGZGraphicSystem2.h" />
     <ClInclude Include="include\cIGZIStream.h" />

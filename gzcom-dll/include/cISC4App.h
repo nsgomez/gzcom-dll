@@ -3,6 +3,7 @@
 
 class cGZMessage;
 class cIGZCheatCodeManager;
+class cIGZGimexFactory;
 class cIGZMessage;
 class cIGZString;
 class cIGZWin;
@@ -72,7 +73,7 @@ class cISC4App : public cIGZUnknown
 		virtual SC4Preferences* GetPreferences(void) = 0;
 		virtual intptr_t GetNewCitySpecification(void) = 0; // Returns a SC4NewCitySpecification*
 		virtual intptr_t GetDebugConsole(void) = 0;
-		virtual intptr_t GetGimexFactory(void) = 0; // Returns a cIGZGimexFactory*
+		virtual cIGZGimexFactory* GetGimexFactory(void) = 0;
 		virtual cISCStringDetokenizer* GetStringDetokenizer(void) = 0;
 		virtual intptr_t GetWinLocationSaver(void) = 0; // Returns a cISLWinLocationSaver*
 		virtual cISC4RenderProperties* GetRenderProperties(void) = 0;
