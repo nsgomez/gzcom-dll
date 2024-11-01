@@ -77,12 +77,11 @@ class cISC4App : public cIGZUnknown
 		virtual cISCStringDetokenizer* GetStringDetokenizer(void) = 0;
 		virtual intptr_t GetWinLocationSaver(void) = 0; // Returns a cISLWinLocationSaver*
 		virtual cISC4RenderProperties* GetRenderProperties(void) = 0;
+		virtual SC4String* GetExceptionReportsDirectory(void) const = 0;
 		virtual intptr_t GetGlyphTextureManager(void) = 0; // Returns a cISC4GlyphTextureManager*
 		virtual intptr_t GetLuaInterpreter(void) = 0; // Returns a cIGZLua5*
-		virtual intptr_t GetTutorialRegistry(void) = 0; // Returns cSC4TutorialRegistry*
-
-		virtual SC4String* GetExeceptionReportsDirectoryConst() const = 0;
-		virtual intptr_t Unknown1() = 0;
+		virtual SC4String* GetExceptionReportsDirectory2(void) const = 0;
+		virtual intptr_t GetTutorialRegistry(void) = 0; // Returns a cSC4TutorialRegistry*
 
 		virtual bool IsRunFirstTimeAfterInstall(void) = 0;
 		virtual bool GetAppDirectory(cIGZString& szPathOut) = 0;
