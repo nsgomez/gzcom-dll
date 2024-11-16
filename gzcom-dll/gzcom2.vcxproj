@@ -88,7 +88,9 @@
     <ClInclude Include="include\cIGZAllocatorService.h" />
     <ClInclude Include="include\cIGZApp.h" />
     <ClInclude Include="include\cIGZBuffer.h" />
+    <ClInclude Include="include\cIGZCanvas.h" />
     <ClInclude Include="include\cIGZCanvasMessage.h" />
+    <ClInclude Include="include\cIGZCanvasW32.h" />
     <ClInclude Include="include\cIGZCheatCodeManager.h" />
     <ClInclude Include="include\cIGZCmdLine.h" />
     <ClInclude Include="include\cIGZCOM.h" />
@@ -129,6 +131,7 @@
     <ClInclude Include="include\cIGZWinMessageTarget.h" />
     <ClInclude Include="include\cIGZWinMgr.h" />
     <ClInclude Include="include\cIGZWinProc.h" />
+    <ClInclude Include="include\cIGZWinProcFilterW32.h" />
     <ClInclude Include="include\cISC43DRender.h" />
     <ClInclude Include="include\cISC4Advice.h" />
     <ClInclude Include="include\cISC4AdviceSubject.h" />
