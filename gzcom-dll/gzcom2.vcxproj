@@ -212,6 +212,7 @@
     <ClInclude Include="include\cRZBaseSystemService.h" />
     <ClInclude Include="include\cRZBaseUnknown.h" />
     <ClInclude Include="include\cRZBaseVariant.h" />
+    <ClInclude Include="include\cRZCellMap.h" />
     <ClInclude Include="include\cRZCOMDllDirector.h" />
     <ClInclude Include="include\cRZMessage2.h" />
     <ClInclude Include="include\cRZMessage2COMDirector.h" />
@@ -232,6 +233,7 @@
     <ClInclude Include="include\ilist.h" />
     <ClInclude Include="include\SC4AppPreferences.h" />
     <ClInclude Include="include\SC4AudioPreferences.h" />
+    <ClInclude Include="include\SC4CellRegion.h" />
     <ClInclude Include="include\SC4DebugPreferences.h" />
     <ClInclude Include="include\SC4GameOptionPreferences.h" />
     <ClInclude Include="include\SC4NewCityPreferences.h" />
@@ -261,6 +263,7 @@
     <ClCompile Include="src\cRZBaseSystemService.cpp" />
     <ClCompile Include="src\cRZBaseUnknown.cpp" />
     <ClCompile Include="src\cRZBaseVariant.cpp" />
+    <ClCompile Include="src\cRZCellMap.cpp" />
     <ClCompile Include="src\cRZCOMDllDirector.cpp" />
     <ClCompile Include="src\cGZCustomDllDirector.cpp" />
     <ClCompile Include="src\cRZMessage2.cpp" />
