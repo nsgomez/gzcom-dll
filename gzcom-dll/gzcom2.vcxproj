@@ -109,6 +109,8 @@
     <ClInclude Include="include\cIGZKeyMessage.h" />
     <ClInclude Include="include\cIGZLanguageManager.h" />
     <ClInclude Include="include\cIGZLanguageUtility.h" />
+    <ClInclude Include="include\cIGZLua5.h" />
+    <ClInclude Include="include\cIGZLua5Thread.h" />
     <ClInclude Include="include\cIGZMessage2.h" />
     <ClInclude Include="include\cIGZMessage2Standard.h" />
     <ClInclude Include="include\cIGZMessageServer.h" />
@@ -167,6 +169,8 @@
     <ClInclude Include="include\cISC4FireOccupant.h" />
     <ClInclude Include="include\cISC4FloraOccupant.h" />
     <ClInclude Include="include\cISC4FoundationOccupant.h" />
+    <ClInclude Include="include\cISC4GameDataRegistry.h" />
+    <ClInclude Include="include\cISC4GameDataRegistryNotificationTarget.h" />
     <ClInclude Include="include\cISC4HistoryWarehouse.h" />
     <ClInclude Include="include\cISC4LandfillOccupant.h" />
     <ClInclude Include="include\cISC4Lot.h" />
@@ -203,6 +207,7 @@
     <ClInclude Include="include\cISC4ViewInputControl.h" />
     <ClInclude Include="include\cISC4ZoneManager.h" />
     <ClInclude Include="include\cISCExemplarPropertyHolder.h" />
+    <ClInclude Include="include\cISCLua.h" />
     <ClInclude Include="include\cISCProperty.h" />
     <ClInclude Include="include\cISCPropertyHolder.h" />
     <ClInclude Include="include\cISCResExemplar.h" />
@@ -250,6 +255,7 @@
     <ClInclude Include="include\SC4UI.h" />
     <ClInclude Include="include\SC4VideoPreferences.h" />
     <ClInclude Include="include\SC4ViewPreferences.h" />
+    <ClInclude Include="include\SCLuaUtil.h" />
     <ClInclude Include="include\SCPropertyUtil.h" />
     <ClInclude Include="include\StringResourceKey.h" />
     <ClInclude Include="include\StringResourceManager.h" />
@@ -271,6 +277,7 @@
     <ClCompile Include="src\cS3DVector3.cpp" />
     <ClCompile Include="src\cSCBaseProperty.cpp" />
     <ClCompile Include="src\SC4UI.cpp" />
+    <ClCompile Include="src\SCLuaUtil.cpp" />
     <ClCompile Include="src\SCPropertyUtil.cpp" />
     <ClCompile Include="src\StringResourceManager.cpp" />
   </ItemGroup>
