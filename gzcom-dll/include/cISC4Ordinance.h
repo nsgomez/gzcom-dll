@@ -35,7 +35,6 @@ class cISC4Ordinance : public cIGZUnknown
 		virtual bool IsOn(void) = 0;
 		virtual bool IsEnabled(void) = 0;
 
-		// TODO: Is int32_t the correct return type?
 		virtual int64_t GetMonthlyAdjustedIncome(void) = 0;
 
 		virtual bool CheckConditions(void) = 0;
@@ -50,8 +49,5 @@ class cISC4Ordinance : public cIGZUnknown
 
 		virtual bool ForceAvailable(bool isAvailable) = 0;
 		virtual bool ForceOn(bool isAvailable) = 0;
-		virtual bool ForceEnabled(bool isAvailable) = 0;
-
-		// TODO: Is int32_t the correct parameter type?
 		virtual bool ForceMonthlyAdjustedIncome(int64_t monthlyAdjustedIncome) = 0;
 };
