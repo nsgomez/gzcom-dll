@@ -99,6 +99,7 @@
     <ClInclude Include="include\cIGZCommandParameterSet.h" />
     <ClInclude Include="include\cIGZDate.h" />
     <ClInclude Include="include\cIGZDBSegmentPackedFile.h" />
+    <ClInclude Include="include\cIGZDBSerialRecordAsIGZFile.h" />
     <ClInclude Include="include\cIGZFile.h" />
     <ClInclude Include="include\cIGZFrameWork.h" />
     <ClInclude Include="include\cIGZFrameWorkHooks.h" />
@@ -123,6 +124,7 @@
     <ClInclude Include="include\cIGZPersistDBRecord.h" />
     <ClInclude Include="include\cIGZPersistDBSegment.h" />
     <ClInclude Include="include\cIGZPersistDBSegmentMultiPackedFiles.h" />
+    <ClInclude Include="include\cIGZPersistDBSerialRecord.h" />
     <ClInclude Include="include\cIGZPersistResourceManager.h" />
     <ClInclude Include="include\cIGZUIScriptService.h" />
     <ClInclude Include="include\cIGZUnknownList.h" />
