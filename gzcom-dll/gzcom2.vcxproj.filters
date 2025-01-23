@@ -567,6 +567,9 @@
     <ClInclude Include="include\cISC4GameDataRegistryNotificationTarget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cIGZFrameWorkW32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
