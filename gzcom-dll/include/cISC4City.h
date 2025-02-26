@@ -28,6 +28,8 @@ class cISC4TractDeveloper;
 class cISC4TrafficSimulator;
 class cISC4TutorialSystem;
 class cISC4ZoneManager;
+class cISTETerrain;
+class cISTESurfaceWater;
 
 class cISC4City : public cIGZUnknown
 {
@@ -131,8 +133,8 @@ class cISC4City : public cIGZUnknown
 		virtual cISC4AdvisorSystem* GetAdvisorSystem(void) = 0;
 		virtual cISC4TutorialSystem* GetTutorialSystem(void) = 0;
 
-		virtual intptr_t GetSurfaceWater(void) = 0;
-		virtual intptr_t GetTerrain(void) = 0;
+		virtual cISTESurfaceWater* GetSurfaceWater(void) = 0;
+		virtual cISTETerrain* GetTerrain(void) = 0;
 
 		virtual intptr_t GetEffectsManager(void) = 0;
 

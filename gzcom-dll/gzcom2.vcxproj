@@ -215,6 +215,8 @@
     <ClInclude Include="include\cISCPropertyHolder.h" />
     <ClInclude Include="include\cISCResExemplar.h" />
     <ClInclude Include="include\cISCStringDetokenizer.h" />
+    <ClInclude Include="include\cISTESurfaceWater.h" />
+    <ClInclude Include="include\cISTETerrain.h" />
     <ClInclude Include="include\cRZAutoRefCount.h" />
     <ClInclude Include="include\cRZBaseString.h" />
     <ClInclude Include="include\cRZBaseSystemService.h" />
