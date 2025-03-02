@@ -108,6 +108,7 @@
     <ClInclude Include="include\cIGZGraphicSystem.h" />
     <ClInclude Include="include\cIGZGraphicSystem2.h" />
     <ClInclude Include="include\cIGZIStream.h" />
+    <ClInclude Include="include\cIGZKeyboard.h" />
     <ClInclude Include="include\cIGZKeyMessage.h" />
     <ClInclude Include="include\cIGZLanguageManager.h" />
     <ClInclude Include="include\cIGZLanguageUtility.h" />
