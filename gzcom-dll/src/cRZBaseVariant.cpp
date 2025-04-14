@@ -538,11 +538,11 @@ bool cRZBaseVariant::CreateValString(cIGZString** value) const
 	return false;
 }
 
-void cRZBaseVariant::GetValString(cIGZString* value) const
+void cRZBaseVariant::GetValString(cIGZString& value) const
 {
 }
 
-void cRZBaseVariant::SetValString(cIGZString* value)
+void cRZBaseVariant::SetValString(cIGZString const& value)
 {
 }
 
