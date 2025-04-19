@@ -1,5 +1,6 @@
 #pragma once
 #include "cIGZUnknown.h"
+#include "cIGZFile.h"
 
 class cGZPersistResourceKey;
 class cIGZPersistDBRecord;
@@ -36,7 +37,7 @@ public:
 
 	virtual bool TestForRecord(cGZPersistResourceKey const& key) = 0;
 	virtual uint32_t GetRecordSize(cGZPersistResourceKey const& key) = 0;
-	virtual bool OpenRecord(cGZPersistResourceKey const& key, cIGZPersistDBRecord** record, uint32_t accessMode) = 0;
+	virtual bool OpenRecord(cGZPersistResourceKey const& key, cIGZPersistDBRecord** record, cIGZFile::AccessMode accessMode) = 0;
 	virtual bool CreateNewRecord(cGZPersistResourceKey const& key, cIGZPersistDBRecord** record) = 0;
 
 	virtual bool CloseRecord(cIGZPersistDBRecord* record) = 0;
