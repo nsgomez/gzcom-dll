@@ -105,8 +105,8 @@ public:
 	virtual int32_t SetFunctionEnvironment(int32_t) = 0;
 	virtual int32_t SetMetaTable(int32_t) = 0;
 
-	virtual void Call(int32_t, int32_t) = 0;
-	virtual void CallProtected(int32_t, int32_t, int32_t, bool) = 0;
+	virtual void Call(int32_t nargs, int32_t nresults) = 0;
+	virtual int32_t CallProtected(int32_t nargs, int32_t nresults, int32_t errorFnIndex, bool popErrorString) = 0;
 
 	virtual void DoFile(char const*) = 0;
 	virtual void DoString(char const*) = 0;

@@ -69,7 +69,7 @@ public:
 	virtual void SetTagMethod(int32_t, char const*) = 0;
 	virtual int32_t Ref(int32_t) = 0;
 
-	virtual void CallProtected(int32_t nargs, int32_t nresults) = 0;
+	virtual int32_t CallProtected(int32_t nargs, int32_t nresults) = 0;
 	virtual void RawCall(int32_t nargs, int32_t nresults) = 0;
 	virtual void DoFile(char const*) = 0;
 	virtual void DoString(char const*) = 0;
