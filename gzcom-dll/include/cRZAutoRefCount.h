@@ -15,6 +15,33 @@ class cRZAutoRefCount
 			this->pObject = pObject;
 		}
 
+		enum AddRef { kAddRef };
+
+		cRZAutoRefCount(T* pObject, AddRef addRef) {
+			this->pObject = pObject;
+
+			if (this->pObject) {
+				this->pObject->AddRef();
+			}
+		}
+
+		cRZAutoRefCount(const cRZAutoRefCount<T>& other) {
+			this->pObject = other.pObject;
+
+			if (this->pObject) {
+				this->pObject->AddRef();
+			}
+		}
+
+		cRZAutoRefCount(cRZAutoRefCount<T>&& other) noexcept {
+			this->pObject = other.pObject;
+			other.pObject = nullptr;
+		}
+
+		virtual ~cRZAutoRefCount() {
+			Reset();
+		}
+
 		cRZAutoRefCount<T>& operator=(T* pOther) {
 			if (pObject != pOther) {
 				if (pObject) {
@@ -30,8 +57,14 @@ class cRZAutoRefCount
 			return *this;
 		}
 
-		virtual ~cRZAutoRefCount() {
-			Reset();
+		cRZAutoRefCount<T>& operator=(const cRZAutoRefCount<T>& other) {
+			return operator=(other.pObject);
+		}
+
+		cRZAutoRefCount<T>& operator=(cRZAutoRefCount<T>&& other) noexcept {
+			this->pObject = other.pObject;
+			other.pObject = nullptr;
+			return *this;
 		}
 
 		void Reset() {
