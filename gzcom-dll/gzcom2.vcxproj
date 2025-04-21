@@ -88,6 +88,8 @@
     <ClInclude Include="include\cIGZAllocatorService.h" />
     <ClInclude Include="include\cIGZApp.h" />
     <ClInclude Include="include\cIGZBuffer.h" />
+    <ClInclude Include="include\cIGZCallbackManager.h" />
+    <ClInclude Include="include\cIGZCallbackService.h" />
     <ClInclude Include="include\cIGZCanvas.h" />
     <ClInclude Include="include\cIGZCanvasMessage.h" />
     <ClInclude Include="include\cIGZCanvasW32.h" />
