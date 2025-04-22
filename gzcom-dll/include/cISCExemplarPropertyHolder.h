@@ -3,6 +3,8 @@
 
 class cISCResExemplar;
 
+static const uint32_t GZIID_cISCExemplarPropertyHolder = 0x0ac2b5f7;
+
 class cISCExemplarPropertyHolder : public cIGZUnknown
 {
 	public:
