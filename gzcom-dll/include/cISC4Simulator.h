@@ -40,7 +40,7 @@ class cISC4Simulator : public cIGZUnknown
 		virtual bool GetSimStartDate(cIGZDate& sDate) = 0;
 
 		virtual cIGZDate* GetSimDate(void) = 0;
-		virtual void GetSimDate(long& year, long& month, long& day, long& dayOfYear, long& weekDay) = 0;
+		virtual void GetSimDate(uint32_t* year, uint32_t* month, uint32_t* day, uint32_t* dayOfYear, uint32_t* weekDay) = 0;
 		virtual int32_t GetSimDateNumber(void) = 0;
 
 		virtual bool Pause(void) = 0;
