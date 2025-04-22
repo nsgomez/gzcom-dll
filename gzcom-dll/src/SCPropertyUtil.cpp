@@ -4,6 +4,27 @@
 #include "cIGZVariant.h"
 #include "StringResourceKey.h"
 
+bool SCPropertyUtil::GetPropertyValue(const cISCPropertyHolder* propertyHolder, uint32_t id, bool& value)
+{
+	if (propertyHolder)
+	{
+		const cISCProperty* property = propertyHolder->GetProperty(id);
+
+		if (property)
+		{
+			const cIGZVariant* data = property->GetPropertyValue();
+
+			if (data)
+			{
+				return data->GetValBool(value);
+			}
+		}
+	}
+
+	value = false;
+	return false;
+}
+
 bool SCPropertyUtil::GetPropertyValue(const cISCPropertyHolder* propertyHolder, uint32_t id, int8_t& value)
 {
 	if (propertyHolder)

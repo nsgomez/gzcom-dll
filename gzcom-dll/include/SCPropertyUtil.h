@@ -6,6 +6,8 @@ struct StringResourceKey;
 
 namespace SCPropertyUtil
 {
+	bool GetPropertyValue(const cISCPropertyHolder* propertyHolder, uint32_t id, bool& value);
+
 	bool GetPropertyValue(const cISCPropertyHolder* propertyHolder, uint32_t id, int8_t& value);
 	bool GetPropertyValue(const cISCPropertyHolder* propertyHolder, uint32_t id, uint8_t& value);
 
