@@ -11,6 +11,7 @@ class cISC4BuildingDevelopmentSimulator;
 class cISC4CivicBuildingSimulator;
 class cISC4DemandSimulator;
 class cISC4DisasterLayer;
+class cISC4FireProtectionSimulator;
 class cISC4HistoryWarehouse;
 class cISC4LotConfigurationManager;
 class cISC4LotDeveloper;
@@ -104,7 +105,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetCommercialSimulator(void) = 0;
 		virtual intptr_t GetCrimeSimulator(void) = 0;
 		virtual cISC4DemandSimulator* GetDemandSimulator(void) = 0;
-		virtual intptr_t GetFireProtectionSimulator(void) = 0;
+		virtual cISC4FireProtectionSimulator* GetFireProtectionSimulator(void) = 0;
 		virtual intptr_t GetFlammabilitySimulator(void) = 0;
 		virtual intptr_t GetFloraSimulator(void) = 0;
 		virtual intptr_t GetIndustrialSimulator(void) = 0;
