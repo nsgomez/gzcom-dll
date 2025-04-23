@@ -19,6 +19,8 @@ class SC4Preferences;
 class SC4String;
 class SC4VideoPreferences;
 
+static const uint32_t GZIID_cISC4App = 0x26CE01C0;
+
 // Taken from the Mac vtable
 class cISC4App : public cIGZUnknown
 {
