@@ -88,8 +88,8 @@ class cISC4App : public cIGZUnknown
 		virtual bool IsRunFirstTimeAfterInstall(void) = 0;
 		virtual bool GetAppDirectory(cIGZString& szPathOut) = 0;
 		virtual bool GetCDAppDirectory(cIGZString& szPathOut) = 0;
-		virtual bool GetDataDirectory(cIGZString& szPathOut) = 0;
-		virtual bool GetCDDataDirectory(cIGZString& szPathOut) = 0;
+		virtual bool GetDataDirectory(cIGZString& szPathOut, int32_t index) = 0;
+		virtual bool GetCDDataDirectory(cIGZString& szPathOut, int32_t index) = 0;
 		virtual bool GetPluginDirectory(cIGZString& szPathOut) = 0;
 		virtual bool GetCDPluginDirectory(cIGZString& szPathOut) = 0;
 		virtual bool GetSkuSpecificDirectory(cIGZString& szPathOut) = 0;
