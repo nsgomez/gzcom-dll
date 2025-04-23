@@ -35,5 +35,7 @@ public:
 
 protected:
 	cRZBaseUnknown();
+
+private:
 	uint32_t refCount;
 };
