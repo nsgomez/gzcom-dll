@@ -137,7 +137,7 @@
     <ClInclude Include="include\cIGZWinBtn.h" />
     <ClInclude Include="include\cIGZWinKeyAccelerator.h" />
     <ClInclude Include="include\cIGZWinKeyAcceleratorRes.h" />
-    <ClInclude Include="include\cIGZWinMessageTarget.h" />
+    <ClInclude Include="include\cIGZWinMessageFilter.h" />
     <ClInclude Include="include\cIGZWinMgr.h" />
     <ClInclude Include="include\cIGZWinProc.h" />
     <ClInclude Include="include\cIGZWinProcFilterW32.h" />

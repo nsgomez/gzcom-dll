@@ -477,9 +477,6 @@
     <ClInclude Include="include\cIGZWinBtn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\cIGZWinMessageTarget.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\cIGZWinProc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -595,6 +592,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cIGZPersistResourceFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cIGZWinMessageFilter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,9 +4,9 @@
 class cGZMessage;
 class cIGZWin;
 
-static const uint32_t GZIID_cIGZWinMessageTarget = 0xC6AE7085;
+static const uint32_t GZIID_cIGZWinMessageFilter = 0xC6AE7085;
 
-class cIGZWinMessageTarget : public cIGZUnknown
+class cIGZWinMessageFilter : public cIGZUnknown
 {
 public:
 	virtual bool DoMessage(cIGZWin* pWin, cGZMessage& message) = 0;
