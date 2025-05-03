@@ -82,7 +82,6 @@ class cISC4App : public cIGZUnknown
 		virtual SC4String* GetExceptionReportsDirectory(void) const = 0;
 		virtual intptr_t GetGlyphTextureManager(void) = 0; // Returns a cISC4GlyphTextureManager*
 		virtual intptr_t GetLuaInterpreter(void) = 0; // Returns a cIGZLua5*
-		virtual SC4String* GetExceptionReportsDirectory2(void) const = 0;
 		virtual intptr_t GetTutorialRegistry(void) = 0; // Returns a cSC4TutorialRegistry*
 
 		virtual bool IsRunFirstTimeAfterInstall(void) = 0;
