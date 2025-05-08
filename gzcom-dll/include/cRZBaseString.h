@@ -32,6 +32,7 @@ class cRZBaseString : public cIGZString
 		uint32_t FromChar(char const* pszSource, uint32_t dwLength);
 		char const* ToChar(void) const;
 		char const* Data(void) const;
+		char* Data(void);
 
 		uint32_t Strlen(void) const;
 		bool IsEqual(cIGZString const* szOther, bool bCaseSensitive) const;

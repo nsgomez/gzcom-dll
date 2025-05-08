@@ -147,6 +147,10 @@ char const* cRZBaseString::Data(void) const {
 	return szData.c_str();
 }
 
+char* cRZBaseString::Data(void) {
+	return szData.data();
+}
+
 uint32_t cRZBaseString::Strlen(void) const {
 	return (uint32_t)szData.length();
 }
