@@ -18,6 +18,7 @@
 #include "../include/cISC4PollutionSimulator.h"
 #include "../include/cISC4SimGrid.h"
 #include "../include/cISC4View3DWin.h"
+#include "../include/cISC4ZoneDeveloper.h"
 #include "../include/cRZAutoRefCount.h"
 #include "../include/cRZBaseString.h"
 #include "../include/cRZCOMDllDirector.h"
@@ -228,15 +229,17 @@ class cGZExtraExtraCheatsPluginCOMDirector : public cRZCOMDllDirector, public cI
 		}
 
 		bool GetRandomLotLocation(cISC4City* pCity, int32_t& nX, int32_t& nZ) {
-			cISC4LotManager* pLotManager = pCity->GetZoneDeveloper();
-			if (!pLotManager) return false;
-			if (!pLotManager->QueryInterface(kGZIID_cISC4LotManager, (void**)&pLotManager)) return false;
+			cISC4ZoneDeveloper* pZoneDeveloper = pCity->GetZoneDeveloper();
+			if (!pZoneDeveloper) return false;
 
-			cISC4Lot* pLot = pLotManager->GetRandomLot();
-			if (!pLot) { pLotManager->Release(); return false; }
-			if (!pLot->GetLocation(nX, nZ)) { pLotManager->Release(); return false; }
+			cRZAutoRefCount<cISC4LotManager> lotManager;
 
-			pLotManager->Release();
+			if (!pZoneDeveloper->QueryInterface(kGZIID_cISC4LotManager, lotManager.AsPPVoid())) return false;
+
+			cISC4Lot* pLot = lotManager->GetRandomLot();
+			if (!pLot) { return false; }
+			if (!pLot->GetLocation(nX, nZ)) { return false; }
+
 			return true;
 		}
 
