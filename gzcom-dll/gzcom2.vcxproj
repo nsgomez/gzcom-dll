@@ -166,6 +166,7 @@
     <ClInclude Include="include\cISC4City.h" />
     <ClInclude Include="include\cISC4Demand.h" />
     <ClInclude Include="include\cISC4DemandSimulator.h" />
+    <ClInclude Include="include\cISC4DepartmentBudget.h" />
     <ClInclude Include="include\cISC4DisasterInstance.h" />
     <ClInclude Include="include\cISC4DisasterInstanceFire.h" />
     <ClInclude Include="include\cISC4DisasterInstanceVolcano.h" />
@@ -182,6 +183,7 @@
     <ClInclude Include="include\cISC4GameDataRegistryNotificationTarget.h" />
     <ClInclude Include="include\cISC4HistoryWarehouse.h" />
     <ClInclude Include="include\cISC4LandfillOccupant.h" />
+    <ClInclude Include="include\cISC4LineItem.h" />
     <ClInclude Include="include\cISC4Lot.h" />
     <ClInclude Include="include\cISC4LotBaseTextureOccupant.h" />
     <ClInclude Include="include\cISC4LotConfiguration.h" />
