@@ -1,15 +1,34 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include <list>
-#include <vector>
 
 class cIGZString;
 class cISC4RegionalCity;
 class SC4String;
 
+template <typename T> class SC4Vector;
+
 class cISC4Region : public cIGZUnknown
 {
 	public:
+		enum class eCityTileSize : uint32_t
+		{
+			// Small city tile (4,096 cells)
+			Small = 0,
+			// Medium city tile (16,384 cells)
+			Medium = 1,
+			// Large city tile (65,536 cells)
+			Large = 2
+		};
+
+		class cLocation
+		{
+		public:
+			uint32_t x;
+			uint32_t z;
+			eCityTileSize cityTileSize;
+		};
+
 		virtual SC4String* GetName(void) = 0;
 		virtual bool SetName(const cIGZString& szName) = 0;
 
@@ -38,6 +57,6 @@ class cISC4Region : public cIGZUnknown
 
 		virtual bool ResetTutorialCity(uint32_t dwTutorialCityID) = 0;
 
-		virtual bool GetCityLocations(intptr_t pVector) = 0;
+		virtual bool GetCityLocations(SC4Vector<cLocation>& cityLocations) = 0;
 		virtual int32_t GetBoundingRect(intptr_t pRectLongs) = 0;
 };
