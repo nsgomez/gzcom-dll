@@ -7,6 +7,7 @@ class cISC4Occupant;
 class SC4Percentage;
 
 template <typename T> class cISC4SimGrid;
+template<typename T> class SC4Vector;
 
 static const uint32_t GZIID_cISC4PowerSimulator = 0xE9E7BFF5;
 
@@ -31,7 +32,7 @@ public:
 	virtual int32_t GetMonthlyDemand() = 0;
 	virtual int32_t GetMonthlyConsumption() = 0;
 	virtual int32_t GetMonthlyConsumption(int32_t x, int32_t z) = 0;
-	virtual void GetMonthlyConsumptionMapPtr(std::vector<std::vector<int16_t>>*& vector) = 0;
+	virtual void GetMonthlyConsumptionMapPtr(SC4Vector<SC4Vector<int16_t>>*& vector) = 0;
 
 	virtual bool GetSupplyValue(int32_t x, int32_t z) = 0; // Same as IsPowered
 	virtual void GetSupplyValueMapPtr(cISC4SimGrid<uint8_t>*& grid) = 0;

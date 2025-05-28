@@ -3,6 +3,8 @@
 #include <list>
 #include <vector>
 
+template<typename T> class SC4Vector;
+
 class cISC4TractDeveloper : public cIGZUnknown
 {
 	public:
@@ -16,8 +18,8 @@ class cISC4TractDeveloper : public cIGZUnknown
 		virtual bool UpdatePopulation(cISC4TractDeveloper::GrowthProfile const& sProfile) = 0;
 
 		virtual int32_t GetCurrentStyle(void) const = 0;
-		virtual std::vector<uint32_t>& GetActiveStyles(void) const = 0;
-		virtual bool SetActiveStyles(std::vector<uint32_t> const& sStyles) = 0;
+		virtual SC4Vector<uint32_t>& GetActiveStyles(void) const = 0;
+		virtual bool SetActiveStyles(SC4Vector<uint32_t> const& sStyles) = 0;
 		
 		virtual bool IsUsingAllStylesAtOnce(void) const = 0;
 		virtual cISC4TractDeveloper* UseAllStylesAtOnce(bool bFlag) = 0;

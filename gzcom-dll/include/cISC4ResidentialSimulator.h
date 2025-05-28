@@ -8,6 +8,7 @@ class cISC4Occupant;
 class SC4Percentage;
 
 template <typename T> class cISC4SimGrid;
+template<typename T> class SC4Vector;
 
 class cISC4ResidentialSimulator : public cIGZUnknown
 {
@@ -29,8 +30,8 @@ class cISC4ResidentialSimulator : public cIGZUnknown
 		virtual float GetSchoolSystemRating(void) = 0;
 		virtual float GetHealthSystemRating(void) = 0;
 
-		virtual bool GetSchoolSystemTotals(intptr_t tQueryData, std::vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
-		virtual bool GetHospitalSystemTotals(intptr_t tQueryData, std::vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
+		virtual bool GetSchoolSystemTotals(intptr_t tQueryData, SC4Vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
+		virtual bool GetHospitalSystemTotals(intptr_t tQueryData, SC4Vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
 
 		virtual int32_t GetPopulation(void) = 0;
 		virtual int32_t GetTotalCityEducationUpkeepCost(void) = 0; // probably a no-op
@@ -76,10 +77,10 @@ class cISC4ResidentialSimulator : public cIGZUnknown
 		virtual bool GetOccupantCoverage(cISC4Occupant* pOccupant, SC4Percentage const& sEffectiveness, float& fRangeX, float& fRangeZ) = 0;
 
 		virtual int32_t GetSchoolBuildingCount(void) = 0;
-		virtual bool GetSchoolBuildings(std::list<cISC4Occupant*>& sBuildings, std::vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
+		virtual bool GetSchoolBuildings(std::list<cISC4Occupant*>& sBuildings, SC4Vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
 
 		virtual int32_t GetHospitalBuildingCount(void) = 0;
-		virtual bool GetHospitalBuildings(std::list<cISC4Occupant*>& sBuildings, std::vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
+		virtual bool GetHospitalBuildings(std::list<cISC4Occupant*>& sBuildings, SC4Vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
 
 		virtual int32_t GetMaxEQ(void) = 0;
 		virtual int32_t GetMaxHQ(void) = 0;

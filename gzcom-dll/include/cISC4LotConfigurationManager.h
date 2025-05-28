@@ -8,6 +8,7 @@ class cISC4LotConfiguration;
 class cISC4LotConfigurationFilter;
 class cS3DRect2D;
 class cSC4LotConfigurationObject;
+template<typename T> class SC4Vector;
 
 class cISC4LotConfigurationManager : public cIGZUnknown
 {
@@ -41,9 +42,9 @@ class cISC4LotConfigurationManager : public cIGZUnknown
 		virtual bool CreateGenericLotConfiguration(cISC4LotConfiguration*& pConfig, uint32_t dwConfigID) = 0;
 		virtual bool FixLotConfiguration(cISC4LotConfiguration* pConfig) = 0;
 
-		virtual bool GetMaxFootprintForBuildingFamilies(std::vector<uint32_t> const& sFamilies, cS3DRect2D& sRect) = 0;
-		virtual bool GetMaxFootprintForFloraFamilies(std::vector<uint32_t> const& sFamilies, cS3DRect2D& sRect) = 0;
-		virtual bool GetMaxFootprintForPropFamilies(std::vector<uint32_t> const& sFamilies, cS3DRect2D& sRect) = 0;
+		virtual bool GetMaxFootprintForBuildingFamilies(SC4Vector<uint32_t> const& sFamilies, cS3DRect2D& sRect) = 0;
+		virtual bool GetMaxFootprintForFloraFamilies(SC4Vector<uint32_t> const& sFamilies, cS3DRect2D& sRect) = 0;
+		virtual bool GetMaxFootprintForPropFamilies(SC4Vector<uint32_t> const& sFamilies, cS3DRect2D& sRect) = 0;
 
-		virtual bool GetObjectIDArray(cSC4LotConfigurationObject* pConfigObj, std::vector<uint32_t>& sArray) = 0;
+		virtual bool GetObjectIDArray(cSC4LotConfigurationObject* pConfigObj, SC4Vector<uint32_t>& sArray) = 0;
 };

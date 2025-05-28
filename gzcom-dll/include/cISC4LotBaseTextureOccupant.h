@@ -4,6 +4,7 @@
 #include <vector>
 
 class cISC4Occupant;
+template<typename T> class SC4Vector;
 
 class cISC4LotBaseTextureOccupant : public cIGZUnknown
 {
@@ -15,7 +16,7 @@ class cISC4LotBaseTextureOccupant : public cIGZUnknown
 		virtual int32_t GetUsage(void) = 0;
 		virtual bool SetUsage(int32_t) = 0;
 
-		virtual bool GetCellCoverage(std::vector<SC4Point<int>>&, std::vector<bool>*) = 0;
+		virtual bool GetCellCoverage(SC4Vector<SC4Point<int>>&, SC4Vector<bool>*) = 0;
 		virtual bool IsCellCovered(int32_t, int32_t, bool*) = 0;
 		
 		virtual bool SetTextureSpecification(cISC4LotBaseTextureOccupant::LotBaseTextureSpecification const*, uint32_t, bool*) = 0;

@@ -265,6 +265,7 @@
     <ClInclude Include="include\SC4TutorialPreferences.h" />
     <ClInclude Include="include\SC4TutorialPreferences2.h" />
     <ClInclude Include="include\SC4UI.h" />
+    <ClInclude Include="include\SC4Vector.h" />
     <ClInclude Include="include\SC4VideoPreferences.h" />
     <ClInclude Include="include\SC4ViewPreferences.h" />
     <ClInclude Include="include\SCLuaUtil.h" />

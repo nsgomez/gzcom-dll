@@ -13,6 +13,7 @@ class TransitSwitchQueryData;
 
 template <typename T> class cISC4SimGrid;
 template <typename T> class SC4CellRegion;
+template<typename T> class SC4Vector;
 
 class cISC4TrafficSimulator : public cIGZUnknown
 {
@@ -48,15 +49,15 @@ public:
 	virtual float GetTravelTimeRatio(long unknown1, long unknown2, uint32_t travelType) = 0;
 
 	virtual uint32_t GetConnectionCount(uint32_t networkType, int unknown2, int unknown3) = 0;
-	virtual bool GetTravelStrategyPercentages(uint32_t wealthType, std::vector<SC4Percentage> unknown2) = 0;
+	virtual bool GetTravelStrategyPercentages(uint32_t wealthType, SC4Vector<SC4Percentage> unknown2) = 0;
 	virtual float GetFreightScalingFactor() = 0;
 	virtual bool GetTransitSwitches(ilist<cISC4Occupant*>& unknown1) = 0;
 
 	virtual int32_t GetFerryRouteBetweenTiles(long unknown1, long unknown2, long unknown3, long unknown4) = 0;
-	virtual bool GetAllFerryRoutes(std::list<std::vector<uint8_t>>& unknown1) = 0;
+	virtual bool GetAllFerryRoutes(std::list<SC4Vector<uint8_t>>& unknown1) = 0;
 	virtual bool GetFerryRoutesInUse(std::list<FerryRouteInfo>& unknown1) = 0;
 	virtual uint32_t GetFerryTerminalCount(uint32_t ferryType) = 0;
-	virtual bool GetWaterRoute(long unknown1, long unknown2, long unknown3, long unknown4, std::vector<uint8_t>& unknown5) = 0;
+	virtual bool GetWaterRoute(long unknown1, long unknown2, long unknown3, long unknown4, SC4Vector<uint8_t>& unknown5) = 0;
 
 	virtual intptr_t GetTrafficStats() = 0; // No idea what the return type is, structure pointer, float array?
 	virtual bool GetTransitSwitchQueryData(uint32_t unknown1, uint32_t unknown2, TransitSwitchQueryData& data) = 0;
@@ -64,8 +65,8 @@ public:
 	virtual bool AreLotsConnected(cISC4Lot* unknown1, cISC4Lot* unknown2) const = 0;
 	virtual uint32_t GetConnectedOccupantCount(cISC4Lot* unknown1, uint32_t unknown2) const = 0;
 	virtual uint32_t GetConnectedDestinationCount(cISC4Lot* unknown1, int unknown2) const = 0;
-	virtual bool GetSubnetworksForLot(cISC4Lot* unknown1, std::vector<uint32_t>& unknown2) = 0;
-	virtual bool GetSubnetworksInRectangle(SC4Rect<int> const& rect, std::vector<uint32_t>& unknown2) = 0;
-	virtual bool GetSubnetworksInRegion(SC4CellRegion<long> const& cellRegion, std::vector<uint32_t>& unknown2) = 0;
-	virtual bool GetOccupantCountForAllSubnetworks(uint32_t unknown1, std::vector<uint32_t>& unknown2) = 0;
+	virtual bool GetSubnetworksForLot(cISC4Lot* unknown1, SC4Vector<uint32_t>& unknown2) = 0;
+	virtual bool GetSubnetworksInRectangle(SC4Rect<int> const& rect, SC4Vector<uint32_t>& unknown2) = 0;
+	virtual bool GetSubnetworksInRegion(SC4CellRegion<long> const& cellRegion, SC4Vector<uint32_t>& unknown2) = 0;
+	virtual bool GetOccupantCountForAllSubnetworks(uint32_t unknown1, SC4Vector<uint32_t>& unknown2) = 0;
 };
