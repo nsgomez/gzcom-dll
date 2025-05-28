@@ -37,7 +37,7 @@ public:
 	{
 		if (mpStart != nullptr)
 		{
-			std::destroy_n(mpStart, size());
+			destroy_contents(mpStart, size());
 			deallocate(mpStart);
 
 			mpStart = nullptr;
@@ -57,6 +57,21 @@ public:
 			if (newSize > 0)
 			{
 				push_back(other.mpStart, newSize);
+
+				if constexpr (std::is_base_of_v<cIGZUnknown, std::remove_pointer_t<T>>)
+				{
+					for (size_t i = 0; i < newSize; i++)
+					{
+						if constexpr (std::is_pointer_v<T>)
+						{
+							other.mpStart[i]->AddRef();
+						}
+						else
+						{
+							other.mpStart[i].AddRef();
+						}
+					}
+				}
 			}
 		}
 
@@ -112,7 +127,7 @@ public:
 
 	void clear()
 	{
-		std::destroy_n(mpStart, size());
+		destroy_contents(mpStart, size());
 		mpEnd = mpStart;
 	}
 
@@ -129,7 +144,7 @@ public:
 		}
 
 		--mpEnd;
-		std::destroy_at(mpEnd);
+		destroy(mpEnd);
 
 		return position;
 	}
@@ -214,6 +229,33 @@ private:
 		cIGZAllocatorServicePtr pAllocator;
 
 		pAllocator->Deallocate(ptr);
+	}
+
+	static void destroy(T& item)
+	{
+		if constexpr (std::is_base_of_v<cIGZUnknown, std::remove_pointer_t<T>>)
+		{
+			if constexpr (std::is_pointer_v<T>)
+			{
+				item->Release();
+			}
+			else
+			{
+				item.Release();
+			}
+		}
+		else
+		{
+			item.~T();
+		}
+	}
+
+	static void destroy_contents(T* pItems, size_t itemCount)
+	{
+		for (size_t i = 0; i < itemCount; i++)
+		{
+			destroy(pItems[i]);
+		}
 	}
 
 	size_t remaining_capacity() const
