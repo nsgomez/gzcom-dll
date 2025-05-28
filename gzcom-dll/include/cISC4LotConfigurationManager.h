@@ -1,7 +1,6 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include <unordered_set>
-#include <vector>
 
 class cGZPersistResourceKey;
 class cISC4LotConfiguration;
@@ -19,7 +18,7 @@ class cISC4LotConfigurationManager : public cIGZUnknown
 		virtual bool AddLotConfiguration(cISC4LotConfiguration* pConfig, bool bUnknown) = 0;
 		virtual bool AddLotConfiguration(cGZPersistResourceKey const& sUnknown, void* pUnknown) = 0;
 		virtual bool RemoveLotConfiguration(uint32_t dwConfigID) = 0;
-		
+
 		virtual cISC4LotConfiguration* GetLotConfiguration(uint32_t dwConfigID) = 0;
 		virtual bool GetLotConfigurationsByFilter(std::unordered_set<cISC4LotConfiguration*>& sConfigs, cISC4LotConfigurationFilter* pFilter) = 0;
 		virtual bool GetLotConfigurationsByFamily(std::unordered_set<cISC4LotConfiguration*>& sConfigs, uint32_t dwFamily) = 0;

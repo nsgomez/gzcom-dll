@@ -1,6 +1,5 @@
 #pragma once
 #include "cIGZUnknown.h"
-#include <vector>
 
 class cIGZDate;
 class cIGZMessageTarget2;

@@ -2,7 +2,6 @@
 #include "cIGZUnknown.h"
 #include "cISC4BuildingOccupant.h"
 #include <list>
-#include <vector>
 
 class cISC4Occupant;
 class SC4Percentage;

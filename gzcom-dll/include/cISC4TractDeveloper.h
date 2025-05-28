@@ -1,7 +1,6 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include <list>
-#include <vector>
 
 template<typename T> class SC4Vector;
 

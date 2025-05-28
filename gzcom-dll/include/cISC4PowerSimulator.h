@@ -1,7 +1,6 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "ilist.h"
-#include <vector>
 
 class cISC4Occupant;
 class SC4Percentage;
