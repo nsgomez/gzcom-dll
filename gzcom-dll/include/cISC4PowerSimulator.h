@@ -6,7 +6,7 @@ class cISC4Occupant;
 class SC4Percentage;
 
 template <typename T> class cISC4SimGrid;
-template<typename T> class SC4Vector;
+template <typename T> class SC4Vector;
 
 static const uint32_t GZIID_cISC4PowerSimulator = 0xE9E7BFF5;
 

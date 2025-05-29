@@ -5,7 +5,7 @@ class cIGZDate;
 class cIGZMessageTarget2;
 class cIGZString;
 class SC4String;
-template<typename T> class SC4Vector;
+template <typename T> class SC4Vector;
 
 class cISC4Simulator : public cIGZUnknown
 {

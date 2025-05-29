@@ -7,7 +7,7 @@ class cISC4Occupant;
 class SC4Percentage;
 
 template <typename T> class cISC4SimGrid;
-template<typename T> class SC4Vector;
+template <typename T> class SC4Vector;
 
 class cISC4ResidentialSimulator : public cIGZUnknown
 {

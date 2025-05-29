@@ -3,7 +3,6 @@
 #include "cISC4BuildingOccupant.h"
 #include "cISC4ZoneManager.h"
 #include <unordered_set>
-#include <vector>
 
 class cGZPersistResourceKey;
 class cIGZString;
@@ -12,7 +11,7 @@ class cISC4FoundationOccupant;
 class cISC4LotDeveloper;
 class cISC4LotRetainingWallOccupant;
 class cISC4TractDeveloper;
-template<typename T> class SC4Vector;
+template <typename T> class SC4Vector;
 
 class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 {

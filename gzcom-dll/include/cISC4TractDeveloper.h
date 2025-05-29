@@ -2,7 +2,7 @@
 #include "cIGZUnknown.h"
 #include <list>
 
-template<typename T> class SC4Vector;
+template <typename T> class SC4Vector;
 
 class cISC4TractDeveloper : public cIGZUnknown
 {
@@ -19,7 +19,7 @@ class cISC4TractDeveloper : public cIGZUnknown
 		virtual int32_t GetCurrentStyle(void) const = 0;
 		virtual SC4Vector<uint32_t>& GetActiveStyles(void) const = 0;
 		virtual bool SetActiveStyles(SC4Vector<uint32_t> const& sStyles) = 0;
-		
+
 		virtual bool IsUsingAllStylesAtOnce(void) const = 0;
 		virtual cISC4TractDeveloper* UseAllStylesAtOnce(bool bFlag) = 0;
 

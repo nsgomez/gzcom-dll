@@ -2,13 +2,12 @@
 #include "cIGZUnknown.h"
 #include "cISC4BuildingOccupant.h"
 #include "cISC4ZoneManager.h"
-#include <vector>
 
 class cGZPersistResourceKey;
 class cIGZPersistDBSegment;
 class cIGZString;
 class cSC4LotConfigurationObject;
-template<typename T> class SC4Vector;
+template <typename T> class SC4Vector;
 
 class cISC4LotConfiguration : public cIGZUnknown
 {

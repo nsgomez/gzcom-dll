@@ -1,10 +1,9 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "SC4Point.h"
-#include <vector>
 
 class cISC4Occupant;
-template<typename T> class SC4Vector;
+template <typename T> class SC4Vector;
 
 class cISC4LotBaseTextureOccupant : public cIGZUnknown
 {

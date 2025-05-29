@@ -7,7 +7,7 @@ class cISC4LotConfiguration;
 class cISC4LotConfigurationFilter;
 class cS3DRect2D;
 class cSC4LotConfigurationObject;
-template<typename T> class SC4Vector;
+template <typename T> class SC4Vector;
 
 class cISC4LotConfigurationManager : public cIGZUnknown
 {
