@@ -237,7 +237,12 @@ private:
 		{
 			if constexpr (std::is_pointer_v<T>)
 			{
-				item->Release();
+				T ptr = item;
+
+				if (ptr)
+				{
+					ptr->Release();
+				}
 			}
 			else
 			{
