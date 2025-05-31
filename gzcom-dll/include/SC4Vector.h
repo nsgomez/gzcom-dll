@@ -233,25 +233,32 @@ private:
 
 	static void destroy(T& item)
 	{
-		if constexpr (std::is_base_of_v<cIGZUnknown, std::remove_pointer_t<T>>)
+		if constexpr (std::is_pointer_v<T>)
 		{
-			if constexpr (std::is_pointer_v<T>)
-			{
-				T ptr = item;
+			T ptr = item;
 
-				if (ptr)
+			if (ptr)
+			{
+				if constexpr (std::is_base_of_v<cIGZUnknown, std::remove_pointer_t<T>>)
 				{
 					ptr->Release();
 				}
-			}
-			else
-			{
-				item.Release();
+				else
+				{
+					ptr->~T();
+				}
 			}
 		}
 		else
 		{
-			item.~T();
+			if constexpr (std::is_base_of_v<cIGZUnknown, T>)
+			{
+				ptr.Release();
+			}
+			else
+			{
+				item.~T();
+			}
 		}
 	}
 
