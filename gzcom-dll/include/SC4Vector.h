@@ -253,7 +253,7 @@ private:
 		{
 			if constexpr (std::is_base_of_v<cIGZUnknown, T>)
 			{
-				ptr.Release();
+				item.Release();
 			}
 			else
 			{
