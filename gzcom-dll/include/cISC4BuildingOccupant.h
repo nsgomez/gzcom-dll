@@ -6,6 +6,8 @@ class cIGZString;
 class cISC4Occupant;
 class SC4Percentage;
 
+static const uint32_t GZIID_cISC4BuildingOccupant = 0x87dda3a9;
+
 class cISC4BuildingOccupant : public cIGZUnknown
 {
 	public:
@@ -33,6 +35,7 @@ class cISC4BuildingOccupant : public cIGZUnknown
 
 		class BuildingProfile
 		{
+		public:
 			// These flags are probably intended as a quick way for the game to
 			// identify buildings that are part of the specified occupant groups.
 			enum BuildingCategoryFlags : uint32_t
