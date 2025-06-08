@@ -144,7 +144,7 @@ public:
 		}
 
 		--mpEnd;
-		destroy(mpEnd);
+		destroy(*mpEnd);
 
 		return position;
 	}
