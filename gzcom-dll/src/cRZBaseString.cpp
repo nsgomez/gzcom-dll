@@ -288,16 +288,30 @@ int32_t cRZBaseString::RFind(cIGZString const& szOther, uint32_t dwPos, bool bCa
 }
 
 cIGZString* cRZBaseString::Sprintf(char const* pszFormat, ...) {
-	// TODO: Is there a less hacky way of doing this?
 	va_list args;
 	va_start(args, pszFormat);
 
-	int nBufferSize = vsnprintf(NULL, 0, pszFormat, args);
-	char* pszResult = (char*)malloc(nBufferSize + 1);
-	vsnprintf(pszResult, nBufferSize, pszFormat, args);
+	va_list argsCopy;
+	va_copy(argsCopy, args);
 
-	szData.assign(pszResult);
-	free(pszResult);
+	int nBufferSize = vsnprintf(NULL, 0, pszFormat, argsCopy);
+
+	va_end(argsCopy);
+
+	if (nBufferSize > 0)
+	{
+		char* pszResult = (char*)malloc(nBufferSize + 1);
+
+		if (pszResult)
+		{
+			if (vsnprintf(pszResult, nBufferSize, pszFormat, args) > 0)
+			{
+				szData.assign(pszResult);
+			}
+
+			free(pszResult);
+		}
+	}
 
 	va_end(args);
 
