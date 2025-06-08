@@ -57,8 +57,11 @@ class cIGZWin : public cIGZUnknown
 		virtual bool MoveRelativeTo(cIGZWin* pWin, bool) = 0;
 		virtual bool ChildMoveRelative(cIGZWin*, cIGZWin*, bool) = 0;
 
-		virtual bool EnumChildren(uint32_t, bool(*)(cIGZWin*, uint32_t, void*, void*), void*) = 0;
-		virtual bool SortChildren(bool(*)(cIGZWin*, cIGZWin*, void*), void*, bool) = 0;
+		typedef bool(*EnumChildrenCallback)(cIGZWin* parent, uint32_t childID, void* child, void* pContext);
+		virtual bool EnumChildren(uint32_t riid, EnumChildrenCallback callback, void* pContext) = 0;
+
+		typedef bool(*SortChildrenCallback)(cIGZWin*, cIGZWin*, void*);
+		virtual bool SortChildren(SortChildrenCallback, void*, bool) = 0;
 
 		virtual cIGZWin* GetChildWindowFromID(uint32_t dwWinID) = 0;
 		virtual cIGZWin* GetChildWindowFromIDRecursive(uint32_t dwWinID) = 0;
