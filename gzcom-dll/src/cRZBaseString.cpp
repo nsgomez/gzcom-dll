@@ -49,19 +49,15 @@ cRZBaseString::cRZBaseString(void)
 }
 
 cRZBaseString::cRZBaseString(const cRZBaseString& other)
-	: mnRefCount(0), szData(other.szData)
-{
+	: mnRefCount(0), szData(other.szData) {
 }
 
 cRZBaseString::cRZBaseString(cRZBaseString&& other) noexcept
-	: mnRefCount(other.mnRefCount), szData(std::move(other.szData))
-{
+	: mnRefCount(other.mnRefCount), szData(std::move(other.szData)) {
 }
 
-cRZBaseString& cRZBaseString::operator=(const cRZBaseString& other)
-{
-	if (this == &other)
-	{
+cRZBaseString& cRZBaseString::operator=(const cRZBaseString& other) {
+	if (this == &other)	{
 		return *this;
 	}
 
@@ -70,10 +66,8 @@ cRZBaseString& cRZBaseString::operator=(const cRZBaseString& other)
 	return *this;
 }
 
-cRZBaseString& cRZBaseString::operator=(cRZBaseString&& other) noexcept
-{
-	if (this == &other)
-	{
+cRZBaseString& cRZBaseString::operator=(cRZBaseString&& other) noexcept {
+	if (this == &other)	{
 		return *this;
 	}
 
@@ -83,26 +77,32 @@ cRZBaseString& cRZBaseString::operator=(cRZBaseString&& other) noexcept
 	return *this;
 }
 
+cRZBaseString& cRZBaseString::operator=(const std::string_view& view) {
+	szData = view;
+
+	return *this;
+}
+
 bool cRZBaseString::QueryInterface(uint32_t riid, void** ppvObj) {
 	switch (riid) {
 		case kRZBaseStringIID:
 			*ppvObj = static_cast<cRZBaseString*>(this);
-            break;
-            
-        case GZIID_cIGZString:
-            *ppvObj = static_cast<cIGZString*>(this);
-            break;
+			break;
+
+		case GZIID_cIGZString:
+			*ppvObj = static_cast<cIGZString*>(this);
+			break;
 
 		case GZIID_cIGZUnknown:
 			*ppvObj = static_cast<cIGZUnknown*>(static_cast<cRZBaseString*>(this));
-            break;
-            
-        default:
-            return false;
+			break;
+
+		default:
+			return false;
 	}
-    
-    AddRef();
-    return true;
+
+	AddRef();
+	return true;
 }
 
 uint32_t cRZBaseString::AddRef(void) {
@@ -156,10 +156,10 @@ uint32_t cRZBaseString::Strlen(void) const {
 }
 
 bool cRZBaseString::IsEqual(cIGZString const* szOther, bool bCaseSensitive) const {
-    if (szOther == NULL) {
-        return this->Strlen() == 0;
-    }
-    
+	if (szOther == NULL) {
+		return this->Strlen() == 0;
+	}
+
 	return CompareTo(cRZBaseString(szOther->ToChar()), bCaseSensitive) == 0;
 }
 
@@ -168,10 +168,10 @@ bool cRZBaseString::IsEqual(cIGZString const& szOther, bool bCaseSensitive) cons
 }
 
 bool cRZBaseString::IsEqual(char const* pszOther, uint32_t dwLength, bool bCaseSensitive) const {
-    if (pszOther == NULL) {
-        return this->Strlen() == 0;
-    }
-    
+	if (pszOther == NULL) {
+		return this->Strlen() == 0;
+	}
+
 	return CompareTo(pszOther, dwLength, bCaseSensitive) == 0;
 }
 
@@ -295,7 +295,7 @@ cIGZString* cRZBaseString::Sprintf(char const* pszFormat, ...) {
 	int nBufferSize = vsnprintf(NULL, 0, pszFormat, args);
 	char* pszResult = (char*)malloc(nBufferSize + 1);
 	vsnprintf(pszResult, nBufferSize, pszFormat, args);
-	
+
 	szData.assign(pszResult);
 	free(pszResult);
 

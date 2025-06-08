@@ -23,6 +23,7 @@ class cRZBaseString : public cIGZString
 
 		cRZBaseString& operator=(const cRZBaseString& other);
 		cRZBaseString& operator=(cRZBaseString&& other) noexcept;
+		cRZBaseString& operator=(const std::string_view& view);
 
 		bool QueryInterface(uint32_t riid, void** ppvObj);
 		uint32_t AddRef(void);
