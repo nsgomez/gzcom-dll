@@ -8,6 +8,7 @@ class cGZPersistResourceKey;
 class cIGZString;
 class cISC4BuildingTypeFilter;
 class cISC4FoundationOccupant;
+class cISC4GrowthDeveloper;
 class cISC4LotDeveloper;
 class cISC4LotRetainingWallOccupant;
 class cISC4TractDeveloper;
@@ -16,6 +17,21 @@ template <typename T> class SC4Vector;
 class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 {
 	public:
+		class ConstructionProfile
+		{
+		public:
+			uint32_t unknown1;
+			uint32_t unknown2;
+			cISC4BuildingOccupant::WealthType wealth;
+			cISC4BuildingOccupant::PurposeType purpose;
+			uint8_t landValueRangeMin;
+			uint8_t landValueRangeMax;
+			uint32_t buildingType;
+			uint32_t unknown3; // facing?
+			uint32_t cellCenterX;
+			uint32_t cellCenterZ;
+		};
+
 		enum class DeveloperType : uint32_t
 		{
 			None = 0,
@@ -73,8 +89,8 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 
 		virtual DeveloperType GetDeveloperType(cISC4BuildingOccupant::PurposeType purpose, cISC4BuildingOccupant::WealthType wealth) = 0;
 		virtual cISC4BuildingOccupant::WealthType GetWealth(DeveloperType developerType) = 0;
-		virtual intptr_t GetDeveloper(cISC4BuildingOccupant::PurposeType purpose, cISC4BuildingOccupant::WealthType wealth) = 0;
-		virtual intptr_t GetDeveloper(DeveloperType developerType) = 0;
+		virtual cISC4GrowthDeveloper* GetDeveloper(cISC4BuildingOccupant::PurposeType purpose, cISC4BuildingOccupant::WealthType wealth) const = 0;
+		virtual cISC4GrowthDeveloper* GetDeveloper(DeveloperType developerType) const = 0;
 		virtual intptr_t GetDevelopers(void) = 0;
 		virtual cISC4TractDeveloper* GetTractDeveloper(void) = 0;
 		virtual cISC4LotDeveloper* GetLotDeveloper(void) = 0;
@@ -83,13 +99,13 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 		virtual cISC4BuildingOccupant::BuildingProfile& GetBuildingProfile(uint32_t dwBuilding) const = 0;
 		virtual cISC4BuildingOccupant::BuildingProfile* GetBuildingProfilePtr(uint32_t dwBuilding) const = 0;
 		virtual intptr_t GetBuildingMap(void) = 0;
-		virtual intptr_t GetBuildingMapKey(cISC4BuildingDevelopmentSimulator* pSimulator) = 0;
+		virtual intptr_t GetBuildingMapKey(uint32_t dwBuilding) = 0;
 		virtual intptr_t GetBuildingMapKey(cISC4BuildingOccupant::PurposeType purpose, cISC4BuildingOccupant::WealthType wealth) = 0;
 		virtual intptr_t GetSpecialBuildings(void) = 0;
 
 		virtual int64_t GetMaxCapacity(cISC4ZoneManager::ZoneType zone, cISC4BuildingOccupant::PurposeType purpose, cISC4BuildingOccupant::WealthType wealth) = 0;
 		virtual bool IsSuitableForConstruction(intptr_t const& sConstructionProfile, int32_t& nReasonForFail) = 0;
-		virtual bool PlopBuilding(intptr_t const& sConstructionProfile) = 0;
+		virtual bool PlopBuilding(ConstructionProfile const& sConstructionProfile) = 0;
 
 		virtual int16_t GetFreeConstructionResources(void) = 0;
 		virtual int16_t GetTotalConstructionResources(void) = 0;
