@@ -21,12 +21,12 @@ cRZAutoRefCount<cISCLua> SCLuaUtil::GetISCLuaFromFunctionState(lua_State* pState
 SCLuaUtil::RegisterLuaFunctionStatus SCLuaUtil::RegisterLuaFunction(
 	cISC4AdvisorSystem* pAdvisorSystem,
 	const char* tableName,
-	const char* functionName,
+	const std::string_view& functionName,
 	lua_CFunction pFunction)
 {
-	RegisterLuaFunctionStatus status = RegisterLuaFunctionStatus::NullParameter;
+	RegisterLuaFunctionStatus status = RegisterLuaFunctionStatus::InvalidParameter;
 
-	if (pAdvisorSystem && tableName && functionName && pFunction)
+	if (pAdvisorSystem && !functionName.empty() && pFunction)
 	{
 		// The Lua system can have different instances active.
 		// We use the one from the advisor system so that the commands are registered
@@ -37,7 +37,15 @@ SCLuaUtil::RegisterLuaFunctionStatus SCLuaUtil::RegisterLuaFunction(
 		if (pLua)
 		{
 			int32_t top = pLua->GetTop();
-			pLua->GetGlobal(tableName);
+
+			if (tableName)
+			{
+				pLua->GetGlobal(tableName);
+			}
+			else
+			{
+				pLua->GetGlobals();
+			}
 
 			int32_t functionTableTop = pLua->GetTop();
 
@@ -56,7 +64,7 @@ SCLuaUtil::RegisterLuaFunctionStatus SCLuaUtil::RegisterLuaFunction(
 					// (e.g. game.trend_slope).
 
 					pLua->Register(pFunction, kTempFunctionName);
-					pLua->PushString(functionName);
+					pLua->PushLString(functionName.data(), functionName.size());
 					pLua->GetGlobal(kTempFunctionName);
 					pLua->SetTable(-3);
 					pLua->Pop(1);
