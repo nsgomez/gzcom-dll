@@ -14,6 +14,7 @@ class cISC4Preferences;
 class cISC4Region;
 class cISC4RegionalCity;
 class cISC4RenderProperties;
+class cISCLua;
 class cISCStringDetokenizer;
 class SC4Preferences;
 class SC4String;
@@ -81,7 +82,7 @@ class cISC4App : public cIGZUnknown
 		virtual cISC4RenderProperties* GetRenderProperties(void) = 0;
 		virtual SC4String* GetExceptionReportsDirectory2(void) const = 0;
 		virtual intptr_t GetGlyphTextureManager(void) = 0; // Returns a cISC4GlyphTextureManager*
-		virtual intptr_t GetLuaInterpreter(void) = 0; // Returns a cIGZLua5*
+		virtual cISCLua* GetLuaInterpreter(void) = 0;
 		virtual SC4String* GetExceptionReportsDirectory3(void) const = 0;
 		virtual intptr_t GetTutorialRegistry(void) = 0; // Returns a cSC4TutorialRegistry*
 
