@@ -7,7 +7,7 @@ class cIGZString;
 class cISC4Advice;
 class cISC4AdviceSubject;
 class cISC4Advisor;
-class cISCLua; // TODO: Implement me (it's long!)
+class cISCLua;
 
 class cISC4AdvisorSystem : public cIGZUnknown
 {
