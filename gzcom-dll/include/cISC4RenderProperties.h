@@ -31,22 +31,23 @@
 class cISC4RenderProperties : public cIGZUnknown
 {
 	public:
+		virtual int32_t NumBoolProperties(void) = 0;
 		virtual int32_t NumIntProperties(void) = 0;
 		virtual int32_t NumFloatProperties(void) = 0;
-		
-		virtual bool BoolValue(uint32_t dwPropKey) = 0;
-		virtual int32_t IntValue(uint32_t dwPropKey) = 0;
-		virtual float FloatValue(uint32_t dwPropKey) = 0;
 
-		virtual int32_t SetBoolValue(uint32_t dwPropKey, bool bValue) = 0;
-		virtual int32_t SetIntValue(uint32_t dwPropKey, int32_t nValue) = 0;
-		virtual int32_t SetFloatValue(uint32_t dwPropKey, float fValue) = 0;
+		virtual bool BoolValue(int32_t dwPropKey) = 0;
+		virtual int32_t IntValue(int32_t dwPropKey) = 0;
+		virtual float FloatValue(int32_t dwPropKey) = 0;
 
-		virtual uint32_t BoolPropertyIDFromName(char const* pszName) = 0;
-		virtual uint32_t IntPropertyIDFromName(char const* pszName) = 0;
-		virtual uint32_t FloatPropertyIDFromName(char const* pszName) = 0;
+		virtual void SetBoolValue(int32_t dwPropKey, bool bValue) = 0;
+		virtual void SetIntValue(int32_t dwPropKey, int32_t nValue) = 0;
+		virtual void SetFloatValue(int32_t dwPropKey, float fValue) = 0;
 
-		virtual char const* NameFromBoolPropertyID(uint32_t dwPropKey) = 0;
-		virtual char const* NameFromIntPropertyID(uint32_t dwPropKey) = 0;
-		virtual char const* NameFromFloatPropertyID(uint32_t dwPropKey) = 0;
+		virtual int32_t BoolPropertyIDFromName(char const* pszName) = 0;
+		virtual int32_t IntPropertyIDFromName(char const* pszName) = 0;
+		virtual int32_t FloatPropertyIDFromName(char const* pszName) = 0;
+
+		virtual char const* NameFromBoolPropertyID(int32_t dwPropKey) = 0;
+		virtual char const* NameFromIntPropertyID(int32_t dwPropKey) = 0;
+		virtual char const* NameFromFloatPropertyID(int32_t dwPropKey) = 0;
 };
