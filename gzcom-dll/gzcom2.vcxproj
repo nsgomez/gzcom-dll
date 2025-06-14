@@ -98,7 +98,9 @@
     <ClInclude Include="include\cIGZCOM.h" />
     <ClInclude Include="include\cIGZCOMDirector.h" />
     <ClInclude Include="include\cIGZCOMLibrary.h" />
+    <ClInclude Include="include\cIGZCommandDispatcher.h" />
     <ClInclude Include="include\cIGZCommandParameterSet.h" />
+    <ClInclude Include="include\cIGZCommandServer.h" />
     <ClInclude Include="include\cIGZDate.h" />
     <ClInclude Include="include\cIGZDBSegmentPackedFile.h" />
     <ClInclude Include="include\cIGZDBSerialRecordAsIGZFile.h" />
@@ -130,7 +132,10 @@
     <ClInclude Include="include\cIGZPersistDBSegmentMultiPackedFiles.h" />
     <ClInclude Include="include\cIGZPersistDBSerialRecord.h" />
     <ClInclude Include="include\cIGZPersistResourceFactory.h" />
+    <ClInclude Include="include\cIGZPersistResourceKeyFilter.h" />
+    <ClInclude Include="include\cIGZPersistResourceKeyList.h" />
     <ClInclude Include="include\cIGZPersistResourceManager.h" />
+    <ClInclude Include="include\cIGZRadio.h" />
     <ClInclude Include="include\cIGZUIScriptService.h" />
     <ClInclude Include="include\cIGZUnknownList.h" />
     <ClInclude Include="include\cIGZVariant.h" />
@@ -224,6 +229,7 @@
     <ClInclude Include="include\cISCProperty.h" />
     <ClInclude Include="include\cISCPropertyHolder.h" />
     <ClInclude Include="include\cISCResExemplar.h" />
+    <ClInclude Include="include\cISCResExemplarCohort.h" />
     <ClInclude Include="include\cISCStringDetokenizer.h" />
     <ClInclude Include="include\cISTESurfaceWater.h" />
     <ClInclude Include="include\cISTETerrain.h" />
