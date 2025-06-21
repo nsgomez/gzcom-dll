@@ -19,9 +19,9 @@ public:
 	virtual bool CanSwitchToLanguage(uint32_t languageID) = 0;
 
 	virtual uint32_t GetCurrentSystemLanguage() = 0;
-	virtual uint32_t GetSystemLanguageFromLanguage() = 0;
-	virtual uint32_t GetLanguageFromSystemLanguage() = 0;
-	virtual bool GetLanguageRuntimeLibraryName(cIGZString& name, uint32_t& languageID) = 0;
+	virtual uint32_t GetSystemLanguageFromLanguage(uint32_t languageID) = 0;
+	virtual uint32_t GetLanguageFromSystemLanguage(uint32_t systemLanguage) = 0;
+	virtual bool GetLanguageRuntimeLibraryName(cIGZString& name, uint32_t languageID) = 0;
 	virtual bool GetNextAvailableLanguage(uint32_t& languageID) = 0;
 
 	virtual bool GetLanguageDirectoryName(cIGZString& name, uint32_t languageID) = 0;
