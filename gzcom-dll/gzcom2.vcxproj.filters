@@ -665,9 +665,6 @@
     <ClCompile Include="src\cRZMessage2Standard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\cSCBaseProperty.cpp">
-      <Filter>Source Files\Directors</Filter>
-    </ClCompile>
     <ClCompile Include="src\StringResourceManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -690,6 +687,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\cRZBaseVariant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cSCBaseProperty.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

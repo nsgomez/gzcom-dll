@@ -1,16 +1,21 @@
 #pragma once
 
 #include "cIGZVariant.h"
-#include <variant>
 
 class cRZBaseVariant : public cIGZVariant
 {
 public:
 
 	cRZBaseVariant();
-	cRZBaseVariant(int32_t);
+	cRZBaseVariant(bool);
+	cRZBaseVariant(uint16_t);
+	cRZBaseVariant(int16_t);
 	cRZBaseVariant(uint32_t);
+	cRZBaseVariant(int32_t);
+	cRZBaseVariant(uint64_t);
+	cRZBaseVariant(int64_t);
 	cRZBaseVariant(float);
+	cRZBaseVariant(double);
 	cRZBaseVariant(const cIGZVariant& other);
 	cRZBaseVariant(const cIGZVariant* other);
 
@@ -19,6 +24,7 @@ public:
 
 	~cRZBaseVariant();
 
+	cRZBaseVariant& operator=(const cIGZVariant& other);
 	cRZBaseVariant& operator=(const cRZBaseVariant& other);
 	cRZBaseVariant& operator=(cRZBaseVariant&& other) noexcept;
 
@@ -106,36 +112,36 @@ public:
 	cIGZUnknown* GetValUnknown();
 	void SetValUnknown(cIGZUnknown* value);
 
-	bool* AsBool();
-	bool* AsBool() const;
-	uint8_t* AsUint8();
-	uint8_t* AsUint8() const;
-	int8_t* AsSint8();
-	int8_t* AsSint8() const;
-	uint16_t* AsUint16();
-	uint16_t* AsUint16() const;
-	int16_t* AsSint16();
-	int16_t* AsSint16() const;
-	uint32_t* AsUint32();
-	uint32_t* AsUint32() const;
-	int32_t* AsSint32();
-	int32_t* AsSint32() const;
-	uint64_t* AsUint64();
-	uint64_t* AsUint64() const;
-	int64_t* AsSint64();
-	int64_t* AsSint64() const;
-	float* AsFloat32();
-	float* AsFloat32() const;
-	double* AsFloat64();
-	double* AsFloat64() const;
-	char* AsChar();
-	char* AsChar() const;
-	uint16_t* AsRZUnicodeChar();
-	uint16_t* AsRZUnicodeChar() const;
-	char* AsRZChar();
-	char* AsRZChar() const;
-	void** AsVoidPtr();
-	void** AsVoidPtr() const;
+	bool& AsBool();
+	bool AsBool() const;
+	uint8_t& AsUint8();
+	uint8_t AsUint8() const;
+	int8_t& AsSint8();
+	int8_t AsSint8() const;
+	uint16_t& AsUint16();
+	uint16_t AsUint16() const;
+	int16_t& AsSint16();
+	int16_t AsSint16() const;
+	uint32_t& AsUint32();
+	uint32_t AsUint32() const;
+	int32_t& AsSint32();
+	int32_t AsSint32() const;
+	uint64_t& AsUint64();
+	uint64_t AsUint64() const;
+	int64_t& AsSint64();
+	int64_t AsSint64() const;
+	float& AsFloat32();
+	float AsFloat32() const;
+	double& AsFloat64();
+	double AsFloat64() const;
+	char& AsChar();
+	char AsChar() const;
+	uint16_t& AsRZUnicodeChar();
+	uint16_t AsRZUnicodeChar() const;
+	char& AsRZChar();
+	char AsRZChar() const;
+	void*& AsVoidPtr();
+	void* AsVoidPtr() const;
 
 	bool* RefBool() const;
 	void RefBool(bool* value, uint32_t length);
@@ -170,41 +176,34 @@ public:
 	void* RefVoid() const;
 	void RefVoid(void* value, uint32_t length);
 	cIGZUnknown* RefIGZUnknown() const;
-	void RefIGZUnknown(cIGZUnknown** value);
+	bool RefIGZUnknown(uint32_t riid, void** ppObj);
 	void RefIGZUnknown(cIGZUnknown* value);
 
 private:
 
-	using NumericTypeVariant = std::variant<
-		char, bool, uint8_t, int8_t, uint16_t,
-		int16_t, uint32_t, int32_t, float,
-		uint64_t, int64_t, double>;
-
 	void Clear();
-	void CopyDataFrom(cIGZVariant const& other);
-	bool IsArrayType() const;
-	void SetType(cIGZVariant::Type newType);
-	void SetValue(bool value);
-	void SetValue(uint8_t value);
-	void SetValue(int8_t value);
-	void SetValue(uint16_t value);
-	void SetValue(int16_t value);
-	void SetValue(uint32_t value);
-	void SetValue(int32_t value);
-	void SetValue(uint64_t value);
-	void SetValue(int64_t value);
-	void SetValue(float value);
-	void SetValue(double value);
-	void SetValue(char value);
-	void SetValueRZUnicode(uint16_t value);
-	void SetValueRZChar(char value);
-	void SetValue(void* value);
-	void SetValue(cIGZUnknown* value);
+	void SetType(cIGZVariant::Type newType, uint32_t count = 0);
 
+	union
+	{
+		bool Bool;
+		uint8_t Uint8;
+		int8_t Sint8;
+		uint16_t Uint16;
+		int16_t Sint16;
+		uint32_t Uint32;
+		int32_t Sint32;
+		uint64_t Uint64;
+		int64_t Sint64;
+		float Float32;
+		double Float64;
+		char Char;
+		uint16_t RZUnicodeChar;
+		char RZChar;
+		void* VoidPtr;
+		cIGZUnknown* IGZUnknown;
+	} data;
 	cIGZVariant::Type type;
 	uint32_t count;
-	mutable NumericTypeVariant numericTypes;
-	void* voidPtr;
-	cIGZUnknown* gzUnknown;
 	uint32_t refCount;
 };

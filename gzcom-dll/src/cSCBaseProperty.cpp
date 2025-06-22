@@ -3,6 +3,7 @@
 #include "cIGZOStream.h"
 #include "cISC4DBSegmentIStream.h"
 #include "cISC4DBSegmentOStream.h"
+#include <utility>
 
 static const uint32_t GZIID_cSCBaseProperty = 0x151ab0f8;
 
