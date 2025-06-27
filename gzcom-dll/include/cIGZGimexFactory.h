@@ -1,5 +1,6 @@
 #pragma once
 #include "cIGZUnknown.h"
+#include "cGZBufferType.h"
 
 class cGZPersistResourceKey;
 class cIGZBuffer;
