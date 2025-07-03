@@ -16,6 +16,7 @@ public:
 	cRZBaseVariant(int64_t);
 	cRZBaseVariant(float);
 	cRZBaseVariant(double);
+	cRZBaseVariant(const cIGZString&);
 	cRZBaseVariant(const cIGZVariant& other);
 	cRZBaseVariant(const cIGZVariant* other);
 

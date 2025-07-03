@@ -1,4 +1,5 @@
 #include "cRZBaseVariant.h"
+#include "cIGZString.h"
 #include <cstdint>
 #include <string>
 
@@ -82,6 +83,14 @@ cRZBaseVariant::cRZBaseVariant(double value)
 	  refCount(0)
 {
 	data.Float64 = value;
+}
+
+cRZBaseVariant::cRZBaseVariant(const cIGZString& value)
+	: type(cIGZVariant::Type::Empty),
+	  count(0),
+	  refCount(0)
+{
+	RefRZChar(const_cast<char*>(value.Data()), value.Strlen());
 }
 
 cRZBaseVariant::cRZBaseVariant(const cIGZVariant& other)
