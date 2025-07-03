@@ -118,7 +118,7 @@ public:
 	virtual void SetValVoidPtr(void* value) = 0;
 
 	virtual bool CreateValString(cIGZString** value) const = 0;
-	virtual void GetValString(cIGZString& value) const = 0;
+	virtual bool GetValString(cIGZString& value) const = 0;
 	virtual void SetValString(cIGZString const& value) = 0;
 
 	virtual bool GetValVoid(void* value, uint32_t& length) const = 0;

@@ -103,7 +103,7 @@ public:
 	void SetValVoidPtr(void* value);
 
 	bool CreateValString(cIGZString** value) const;
-	void GetValString(cIGZString& value) const;
+	bool GetValString(cIGZString& value) const;
 	void SetValString(cIGZString const& value);
 
 	bool GetValVoid(void* value, uint32_t& length) const;
