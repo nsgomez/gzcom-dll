@@ -10,6 +10,7 @@ class cISC4BudgetSimulator;
 class cISC4BuildingDevelopmentSimulator;
 class cISC4CivicBuildingSimulator;
 class cISC4DemandSimulator;
+class cISC4Demolition;
 class cISC4DisasterLayer;
 class cISC4FireProtectionSimulator;
 class cISC4HistoryWarehouse;
@@ -79,7 +80,7 @@ class cISC4City : public cIGZUnknown
 		virtual int32_t GetWorldHemisphere(void) = 0;
 
 		// intptr_t's are class instances that have yet to be discerned
-		virtual intptr_t GetDemolitionUtility(void) = 0;
+		virtual cISC4Demolition* GetDemolitionUtility(void) = 0;
 		virtual cISC4HistoryWarehouse* GetHistoryWarehouse(void) = 0;
 		virtual cISC4LotManager* GetLotManager(void) = 0;
 		virtual cISC4OccupantManager* GetOccupantManager(void) = 0;

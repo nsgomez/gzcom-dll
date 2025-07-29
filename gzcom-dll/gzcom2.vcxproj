@@ -171,6 +171,7 @@
     <ClInclude Include="include\cISC4City.h" />
     <ClInclude Include="include\cISC4Demand.h" />
     <ClInclude Include="include\cISC4DemandSimulator.h" />
+    <ClInclude Include="include\cISC4Demolition.h" />
     <ClInclude Include="include\cISC4DepartmentBudget.h" />
     <ClInclude Include="include\cISC4DisasterInstance.h" />
     <ClInclude Include="include\cISC4DisasterInstanceFire.h" />
