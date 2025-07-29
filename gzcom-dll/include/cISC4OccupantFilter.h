@@ -4,6 +4,8 @@
 class cISC4Occupant;
 class cISCPropertyHolder;
 
+static const uint32_t GZIID_cISC4OccupantFilter = 0x46a80026;
+
 class cISC4OccupantFilter : public cIGZUnknown
 {
 	public:

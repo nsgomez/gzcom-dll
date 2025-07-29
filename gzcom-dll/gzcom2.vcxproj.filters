@@ -633,6 +633,9 @@
     <ClInclude Include="include\cISCResExemplarCohort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cSC4BaseOccupantFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
@@ -690,6 +693,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\cSCBaseProperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cSC4BaseOccupantFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
