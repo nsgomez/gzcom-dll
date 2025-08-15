@@ -3,6 +3,7 @@
 
 class cGZMessage;
 class cIGZCanvas;
+class cIGZCursorManager;
 class cIGZKeyboard;
 class cIGZString;
 class cIGZWin;
@@ -53,7 +54,7 @@ class cIGZWinMgr : public cIGZUnknown
 		virtual bool GZReleaseCapture(cIGZWin* pWin) = 0;
 
 		virtual bool GZShowCursor(bool bShow) = 0;
-		virtual intptr_t GetCursorManager(void) = 0;
+		virtual cIGZCursorManager* GetCursorManager(void) = 0;
 		virtual bool GetCursorScreenPosition(int32_t& nX, int32_t& nZ) = 0;
 		virtual bool GetCursorRelativePosition(cIGZWin* pWin, int32_t& nX, int32_t& nZ) = 0;
 		virtual bool SetCursorPosition(int32_t nX, int32_t nZ) = 0;

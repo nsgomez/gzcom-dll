@@ -101,6 +101,8 @@
     <ClInclude Include="include\cIGZCommandDispatcher.h" />
     <ClInclude Include="include\cIGZCommandParameterSet.h" />
     <ClInclude Include="include\cIGZCommandServer.h" />
+    <ClInclude Include="include\cIGZCursor.h" />
+    <ClInclude Include="include\cIGZCursorManager.h" />
     <ClInclude Include="include\cIGZDate.h" />
     <ClInclude Include="include\cIGZDBSegmentPackedFile.h" />
     <ClInclude Include="include\cIGZDBSerialRecordAsIGZFile.h" />
