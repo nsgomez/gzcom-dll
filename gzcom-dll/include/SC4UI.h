@@ -1,4 +1,6 @@
 #pragma once
+#include "cISC4View3DWin.h"
+#include "cRZAutoRefCount.h"
 #include <cstdint>
 
 class cGZPersistResourceKey;
@@ -14,4 +16,6 @@ namespace SC4UI
 		uint32_t windowClsid,
 		uint32_t riid,
 		void** ppvObj);
+
+	cRZAutoRefCount<cISC4View3DWin> GetView3DWin();
 }

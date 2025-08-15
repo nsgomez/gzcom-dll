@@ -13,6 +13,8 @@ class cS3DVector3;
 class cSC4ViewFilterInformation;
 class cSC4ViewLevelInformation;
 
+static const uint32_t kGZIID_cISC4View3DWin = 0xFA47B3F9;
+
 class cISC4View3DWin : public cIGZUnknown
 {
 	public:
@@ -71,7 +73,7 @@ class cISC4View3DWin : public cIGZUnknown
 		/// Passed as second bool to underlying cSC43DRender::PickTerrain method.</param>
 		/// <returns>true if terrain was successfully picked, false otherwise</returns>
 		virtual bool PickTerrain(int32_t screenX, int32_t screenZ, float* pWorldCoordsOut, bool bUnknownFlag) = 0;
-		
+
 		/// <summary>
 		/// Converts screen coordinates to a cISC4Occupant at that location.
 		/// </summary>
@@ -80,7 +82,7 @@ class cISC4View3DWin : public cIGZUnknown
 		/// <param name="pOccupantOut">Output reference to occupant pointer (set to found occupant or null)</param>
 		/// <returns>true if an occupant was found, false otherwise</returns>
 		virtual bool PickOccupant(int32_t screenX, int32_t screenZ, cISC4Occupant*& pOccupantOut) = 0;
-		
+
 		virtual void DisplayTerrainPickDebugString(int32_t, int32_t) = 0; // no-op
 		virtual bool GetTerrainQueryEnabled(void) = 0;
 		virtual bool SetCursorText(uint32_t, uint32_t, cIGZString const*, cIGZString const*, int32_t) = 0;
@@ -93,7 +95,7 @@ class cISC4View3DWin : public cIGZUnknown
 		virtual int32_t GetGlobalEffectTriggerState(uint32_t) = 0;
 		virtual int32_t AssertGlobalEffectTrigger(uint32_t) = 0;
 		virtual int32_t RetractGlobalEffectTrigger(uint32_t) = 0;
-		
+
 		virtual int32_t GetCoverageHelper(void) = 0;
 		virtual bool SetCursorTextPosition3D(cS3DVector3 const&) = 0;
 
