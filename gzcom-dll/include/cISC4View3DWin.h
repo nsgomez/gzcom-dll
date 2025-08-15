@@ -18,6 +18,13 @@ static const uint32_t kGZIID_cISC4View3DWin = 0xFA47B3F9;
 class cISC4View3DWin : public cIGZUnknown
 {
 	public:
+		enum ViewInputControlStackOperation : int32_t
+		{
+			ViewInputControlStackOperation_None = 0,
+			ViewInputControlStackOperation_RemoveCurrentControl = 1,
+			ViewInputControlStackOperation_RemoveAllControls = 2,
+		};
+
 		virtual cIGZWin* AsIGZWin(void) = 0;
 
 		virtual cISC43DRender* GetRenderer(void) = 0;
@@ -48,9 +55,24 @@ class cISC4View3DWin : public cIGZUnknown
 		virtual bool SetCurrentViewLevel(uint32_t nLevel) = 0;
 
 		virtual cISC4ViewInputControl* GetCurrentViewInputControl(void) = 0;
-		virtual bool SetCurrentViewInputControl(cISC4ViewInputControl* pControl, int32_t sOperation) = 0;
-		virtual bool RemoveCurrentViewInputControl(bool) = 0;
-		virtual bool RemoveAllViewInputControls(bool) = 0;
+		virtual bool SetCurrentViewInputControl(cISC4ViewInputControl* pControl, ViewInputControlStackOperation sOperation) = 0;
+
+		/**
+		 * @brief Removes the current view input control.
+		 * @param suppressPreviousControlRestore Weather the game should be prevented from
+		 * returning to the user's previously selected control.
+		 * @return True if successful; otherwise, false.
+		 */
+		virtual bool RemoveCurrentViewInputControl(bool suppressPreviousControlRestore) = 0;
+
+
+		/**
+		 * @brief Removes all view input controls.
+		 * @param suppressPreviousControlRestore Weather the game should be prevented from
+		 * returning to the user's previously selected control.
+		 * @return Always false.
+		 */
+		virtual bool RemoveAllViewInputControls(bool suppressPreviousControlRestore) = 0;
 
 		virtual bool AddPersistentViewInputControl(cISC4ViewInputControl* pControl) = 0;
 		virtual bool RemovePersistentViewInputControl(cISC4ViewInputControl* pControl) = 0;
@@ -63,24 +85,24 @@ class cISC4View3DWin : public cIGZUnknown
 		virtual bool ScrollStop(void) = 0;
 		virtual bool KillKeyboardScrolling(void) = 0;
 
-		/// <summary>
-		/// Converts screen coordinates to 3D world coordinates by intersecting with terrain.
-		/// </summary>
-		/// <param name="screenX">Screen X coordinate</param>
-		/// <param name="screenZ">Screen Z coordinate</param>
-		/// <param name="pWorldCoordsOut">Output array of 3 floats for world coordinates [x,y,z]</param>
-		/// <param name="bUnknownFlag">Purpose unclear - likely controls picking precision/quality.
-		/// Passed as second bool to underlying cSC43DRender::PickTerrain method.</param>
-		/// <returns>true if terrain was successfully picked, false otherwise</returns>
+		/**
+		 * @brief Converts screen coordinates to 3D world coordinates by intersecting with terrain.
+		 * @param screenX Screen X coordinate.
+		 * @param screenZ Screen Z coordinate.
+		 * @param pWorldCoordsOut Output array of 3 floats for world coordinates [x,y,z].
+		 * @param bUnknownFlag Purpose unclear - likely controls picking precision/quality.
+		 * Passed as second bool to underlying cSC43DRender::PickTerrain method.
+		 * @return True if terrain was successfully picked, false otherwise.
+		 */
 		virtual bool PickTerrain(int32_t screenX, int32_t screenZ, float* pWorldCoordsOut, bool bUnknownFlag) = 0;
 
-		/// <summary>
-		/// Converts screen coordinates to a cISC4Occupant at that location.
-		/// </summary>
-		/// <param name="screenX">Screen X coordinate</param>
-		/// <param name="screenZ">Screen Z coordinate</param>
-		/// <param name="pOccupantOut">Output reference to occupant pointer (set to found occupant or null)</param>
-		/// <returns>true if an occupant was found, false otherwise</returns>
+		/**
+		 * @brief Converts screen coordinates to a cISC4Occupant at that location.
+		 * @param screenX Screen X coordinate.
+		 * @param screenZ Screen Z coordinate.
+		 * @param pOccupantOut Output reference to occupant pointer (set to found occupant or null.
+		 * @return True if an occupant was found, false otherwise.
+		 */
 		virtual bool PickOccupant(int32_t screenX, int32_t screenZ, cISC4Occupant*& pOccupantOut) = 0;
 
 		virtual void DisplayTerrainPickDebugString(int32_t, int32_t) = 0; // no-op

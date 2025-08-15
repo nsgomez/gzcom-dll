@@ -1,84 +1,103 @@
 #pragma once
-#include "cIGZUnknown.h"
+#include "cRZBaseUnknown.h"
+#include "cIGZCursor.h"
+#include "cIGZWin.h"
+#include "cIGZWinMgr.h"
+#include "cISC4View3DWin.h"
+#include "cISC4ViewInputControl.h"
+#include "cRZAutoRefCount.h"
 
-class cIGZCursor;
-class cIGZWin;
-
-static const uint32_t GZIID_cISC4ViewInputControl = 0xC6BB8345;
-
-class cISC4ViewInputControl : public cIGZUnknown
+class cSC4BaseViewInputControl : public cRZBaseUnknown, public cISC4ViewInputControl
 {
+protected:
+	/**
+	 * @brief Constructs the cSC4BaseViewInputControl
+	 * @param controlCLSID The unique id that identifies this view input control.
+	 * It should be a randomly generated unsigned 32-bit integer.
+	 */
+	cSC4BaseViewInputControl(uint32_t controlID);
+
 public:
+	// cIGZUnknown
+
+	bool QueryInterface(uint32_t riid, void** ppvObj) override;
+	uint32_t AddRef() override;
+	uint32_t Release() override;
+
+	// cISC4ViewInputControl
+
 	/**
 	 * @brief Initializes the control.
 	 * @return True if successful; otherwise, false.
+	 * @remarks Make sure you call the base class implementation first if you override this.
 	 */
-	virtual bool Init() = 0;
+	bool Init() override;
 
 	/**
 	 * @brief Shuts down the control.
 	 * @return True if successful; otherwise, false.
 	 * @remarks Make sure you call the base class implementation first if you override this.
 	 */
-	virtual bool Shutdown() = 0;
+	bool Shutdown() override;
 
 	/**
 	 * @brief Gets the control id.
 	 * @return The control id.
 	 */
-	virtual uint32_t GetID() = 0;
+	uint32_t GetID() override;
 
 	/**
 	 * @brief Sets the control id.
 	 * @param id The control id.
 	 */
-	virtual void SetID(uint32_t id) = 0;
+	void SetID(uint32_t id) override;
 
 	/**
 	 * @brief Gets the cursor used by this view input control.
 	 * @return The cursor used by this view input control.
 	 */
-	virtual cIGZCursor* GetCursor() = 0;
+	cIGZCursor* GetCursor() override;
 
 	/**
 	 * @brief Sets the cursor used by this view input control.
 	 * @param pIGZCursor The cursor to use for this view input control.
 	 */
-	virtual void SetCursor(cIGZCursor* pIGZCursor) = 0;
+	void SetCursor(cIGZCursor* pIGZCursor) override;
 
 	/**
 	 * @brief Sets the cursor used by this view input control.
-	 * @param pIGZCursor The cursor to use for this view input control.
+	 * @param cursorID The cursor to use for this view input control.
 	 */
-	virtual void SetCursor(uint32_t cursorID) = 0;
+	void SetCursor(uint32_t cursorID) override;
 
 	/**
 	 * @brief Sets the parent window for this view input control.
 	 * @param pWin The parent window for this view input control.
 	 */
-	virtual void SetWindow(cIGZWin* pWin) = 0;
+	void SetWindow(cIGZWin* pWin) override;
 
 	/**
 	 * @brief Weather the control handles its own scrolling.
 	 * @return True if the control handles its own scrolling; otherwise, false.
+	 * @remarks Defaults to false.
 	 */
-	virtual bool IsSelfScrollingView() = 0;
+	bool IsSelfScrollingView() override;
 
 	/**
 	 * @brief Weather the control should stack with previously active controls.
 	 * @return True if the control should stack with previously active
 	 * controls; otherwise, false.
 	 * @remarks Most tools leave this at the default of true, but the query tool, torch,
-	 * set it to false.
+	 * dispatch tool, and a few others override it and return false.
 	 */
-	virtual bool ShouldStack() = 0;
+	bool ShouldStack() override;
 
 	/**
 	 * @brief Notifies the view input control that a character was entered on the keyboard.
 	 * @param value The character.
 	 * @return True if the control handled the event; otherwise, false.
 	 */
-	virtual bool OnCharacter(char value) = 0;
+	bool OnCharacter(char value) override;
 
 	/**
 	 * @brief Notifies the view input control that a keyboard key is down.
@@ -86,7 +105,7 @@ public:
 	 * @param modifiers The framework modifier flags.
 	 * @return True if the control handled the event; otherwise, false.
 	 */
-	virtual bool OnKeyDown(int32_t vkCode, uint32_t modifiers) = 0;
+	bool OnKeyDown(int32_t vkCode, uint32_t modifiers) override;
 
 	/**
 	 * @brief Notifies the view input control that a keyboard key is up.
@@ -94,7 +113,7 @@ public:
 	 * @param modifiers The framework modifier flags.
 	 * @return True if the control handled the event; otherwise, false.
 	 */
-	virtual bool OnKeyUp(int32_t vkCode, uint32_t modifiers) = 0;
+	bool OnKeyUp(int32_t vkCode, uint32_t modifiers) override;
 
 	/**
 	 * @brief Notifies the view input control that the left mouse button is down.
@@ -103,7 +122,7 @@ public:
 	 * @param modifiers The framework modifier flags.
 	 * @return True if the control handled the event; otherwise, false.
 	 */
-	virtual bool OnMouseDownL(int32_t x, int32_t z, uint32_t modifiers) = 0;
+	bool OnMouseDownL(int32_t x, int32_t z, uint32_t modifiers) override;
 
 	/**
 	 * @brief Notifies the view input control that the right mouse button is down.
@@ -112,7 +131,7 @@ public:
 	 * @param modifiers The framework modifier flags.
 	 * @return True if the control handled the event; otherwise, false.
 	 */
-	virtual bool OnMouseDownR(int32_t x, int32_t z, uint32_t modifiers) = 0;
+	bool OnMouseDownR(int32_t x, int32_t z, uint32_t modifiers) override;
 
 	/**
 	 * @brief Notifies the view input control that the left mouse button is up.
@@ -121,7 +140,7 @@ public:
 	 * @param modifiers The framework modifier flags.
 	 * @return True if the control handled the event; otherwise, false.
 	 */
-	virtual bool OnMouseUpL(int32_t x, int32_t z, uint32_t modifiers) = 0;
+	bool OnMouseUpL(int32_t x, int32_t z, uint32_t modifiers) override;
 
 	/**
 	 * @brief Notifies the view input control that the right mouse button is up.
@@ -130,7 +149,7 @@ public:
 	 * @param modifiers The framework modifier flags.
 	 * @return True if the control handled the event; otherwise, false.
 	 */
-	virtual bool OnMouseUpR(int32_t x, int32_t z, uint32_t modifiers) = 0;
+	bool OnMouseUpR(int32_t x, int32_t z, uint32_t modifiers) override;
 
 	/**
 	 * @brief Notifies the view input control that the mouse has moved.
@@ -139,7 +158,7 @@ public:
 	 * @param modifiers The framework modifier flags.
 	 * @return True if the control handled the event; otherwise, false.
 	 */
-	virtual bool OnMouseMove(int32_t x, int32_t z, uint32_t modifiers) = 0;
+	bool OnMouseMove(int32_t x, int32_t z, uint32_t modifiers) override;
 
 	/**
 	 * @brief Notifies the view input control that the mouse wheel has moved.
@@ -150,27 +169,61 @@ public:
 	 * negative for scroll wheel down (e.g. zoom out).
 	 * @return True if the control handled the event; otherwise, false.
 	 */
-	virtual bool OnMouseWheel(int32_t x, int32_t z, uint32_t modifiers, int32_t wheelDelta) = 0;
+	bool OnMouseWheel(int32_t x, int32_t z, uint32_t modifiers, int32_t wheelDelta) override;
 
 	/**
 	 * @brief Notifies the view input control that the mouse has exited the control.
 	 * @return True if the control handled the event; otherwise, false.
 	 */
-	virtual bool OnMouseExit() = 0;
+	bool OnMouseExit() override;
 
 	/**
 	 * @brief Called when the control is activated.
 	 */
-	virtual void Activate() = 0;
+	void Activate() override;
 
 	/**
 	 * @brief Called when the control is deactivated.
 	 */
-	virtual void Deactivate() = 0;
+	void Deactivate() override;
 
 	/**
 	 * @brief Indicates if the control is capturing input.
 	 * @return True if the control is capturing input; otherwise, false.
 	 */
-	virtual bool AmCapturing() = 0;
+	bool AmCapturing() override;
+
+protected:
+	/**
+	 * @brief Removes the control from the game's UI.
+	 */
+	virtual void EndInput();
+
+	/**
+	 * @brief Gets a value indicating if this control is
+	 * at the top of the view input control stack.
+	 * @return True if this control is at the top of the
+	 * view input control stack; otherwise, false.
+	 */
+	bool IsOnTop();
+
+	/**
+	 * @brief Releases the control from capturing input.
+	 * @return True if successful; otherwise, false.
+	 */
+	bool ReleaseCapture();
+
+	/**
+	 * @brief Set the control to capture input.
+	 * @return True if successful; otherwise, false.
+	 */
+	bool SetCapture();
+
+	bool initialized;
+	uint32_t id;
+	uint32_t cursorID;
+	cRZAutoRefCount<cIGZCursor> cursor;
+	cRZAutoRefCount<cIGZWin> window;
+	cRZAutoRefCount<cIGZWinMgr> windowManager;
+	cRZAutoRefCount<cISC4View3DWin> view3D;
 };

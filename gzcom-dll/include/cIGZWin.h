@@ -132,7 +132,7 @@ class cIGZWin : public cIGZUnknown
 
 		virtual bool ProcessCursorMessage(cGZMessage& msg) = 0;
 		virtual bool UpdateCursor() = 0;
-		virtual bool SetCursor(cIGZCursor* unknown1, bool unknown2) = 0;
+		virtual bool SetCursor(cIGZCursor* pCursor, bool updateCursor) = 0;
 
 		virtual bool SetNotificationTarget(cIGZWin* pTarget) = 0;
 		virtual cIGZWin* GetNotificationTarget() = 0;

@@ -645,6 +645,9 @@
     <ClInclude Include="include\cIGZCursorManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cSC4BaseViewInputControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
@@ -705,6 +708,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\cSC4BaseOccupantFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cSC4BaseViewInputControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
