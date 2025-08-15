@@ -11,13 +11,13 @@ public:
 	virtual bool Shutdown() = 0;
 
 	virtual uint32_t GetID() = 0;
-	virtual bool SetID(uint32_t id) = 0;
+	virtual void SetID(uint32_t id) = 0;
 
 	virtual cIGZCursor* GetCursor() = 0;
-	virtual bool SetCursor(cIGZCursor* cursor) = 0;
-	virtual bool SetCursor(uint32_t cursor) = 0;
+	virtual void SetCursor(cIGZCursor* cursor) = 0;
+	virtual void SetCursor(uint32_t cursor) = 0;
 
-	virtual bool SetWindow(cIGZWin* unknown1) = 0;
+	virtual void SetWindow(cIGZWin* unknown1) = 0;
 
 	virtual bool IsSelfScrollingView() = 0;
 	virtual bool ShouldStack() = 0;
@@ -33,7 +33,7 @@ public:
 	virtual bool OnMouseWheel(int32_t x, int32_t z, uint32_t modifiers, int32_t wheelDelta) = 0;
 	virtual bool OnMouseExit() = 0;
 
-	virtual bool Activate() = 0;
-	virtual bool Deactivate() = 0;
+	virtual void Activate() = 0;
+	virtual void Deactivate() = 0;
 	virtual bool AmCapturing() = 0;
 };
