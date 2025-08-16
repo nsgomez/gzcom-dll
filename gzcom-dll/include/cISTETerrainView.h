@@ -15,6 +15,7 @@ template <typename T> class SC4Vector;
 
 class cISTETerrainView : public cIGZUnknown
 {
+public:
 	enum class tOverlayManagerType
 	{
 		Unknown1 = 0,
