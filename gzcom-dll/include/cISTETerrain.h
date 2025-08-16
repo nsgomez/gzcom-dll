@@ -2,7 +2,7 @@
 #include "cIGZUnknown.h"
 
 class cIGZPersistDBSegment;
-class cISTETerrainView3D;
+class cISTETerrainView;
 class cS3DVector3;
 template<typename T> class SC4Point;
 template<typename T> class SC4Rect;
@@ -19,6 +19,15 @@ public:
 		Smoothing,
 		Unknown,
 		Flora
+	};
+
+	enum class eHilightColorType : int
+	{
+		Red = 0,
+		Green = 1,
+		Blue = 2,
+		Yellow = 3,
+		Black = 4
 	};
 
 	struct tBrushParameters;
@@ -111,7 +120,7 @@ public:
 	virtual void UpdateWaveProducers() = 0;
 	virtual bool IsGoodWaveProducerLocation(float unknown1, float unknown2, float unknown3) const = 0;
 
-	virtual cISTETerrainView3D* GetView() = 0;
+	virtual cISTETerrainView* GetView() = 0;
 	virtual void DoLighting(SC4Rect<int32_t> const& unknown1) = 0;
 
 	virtual void RedisplayTerrain(bool unknown1, bool unknown2, SC4Point<int32_t> const& unknown3, SC4Point<int32_t> const& unknown4, uint32_t unknown5) = 0;
