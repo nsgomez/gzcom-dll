@@ -38,7 +38,6 @@ static const uint32_t kGZIID_cIGZMouseMessage = 0x1a0c615f;
 static const uint32_t kGZIID_cISC4App = 0x26ce01c0;
 static const uint32_t kGZIID_cISC4DisasterInstance = 0x49b43f58;
 static const uint32_t kGZIID_cISC4LotManager = 0x681905bd;
-static const uint32_t kGZIID_cISC4View3DWin = -95964167;
 static const uint32_t kGZIID_cS3DCamera = 0xe9c6262a;
 
 static const uint32_t kGZWin_WinSC4App = 0x6104489a;
