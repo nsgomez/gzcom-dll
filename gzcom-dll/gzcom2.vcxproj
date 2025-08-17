@@ -138,6 +138,7 @@
     <ClInclude Include="include\cIGZPersistResourceKeyList.h" />
     <ClInclude Include="include\cIGZPersistResourceManager.h" />
     <ClInclude Include="include\cIGZRadio.h" />
+    <ClInclude Include="include\cIGZSndSys.h" />
     <ClInclude Include="include\cIGZUIScriptService.h" />
     <ClInclude Include="include\cIGZUnknownList.h" />
     <ClInclude Include="include\cIGZVariant.h" />
