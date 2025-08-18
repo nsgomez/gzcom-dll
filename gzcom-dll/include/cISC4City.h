@@ -17,6 +17,7 @@ class cISC4HistoryWarehouse;
 class cISC4LotConfigurationManager;
 class cISC4LotDeveloper;
 class cISC4LotManager;
+class cISC4NeighborsSimulator;
 class cISC4NetworkManager;
 class cISC4OccupantManager;
 class cISC4OrdinanceSimulator;
@@ -112,7 +113,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetFloraSimulator(void) = 0;
 		virtual intptr_t GetIndustrialSimulator(void) = 0;
 		virtual intptr_t GetLandValueSimulator(void) = 0;
-		virtual intptr_t GetNeighborsSimulator(void) = 0;
+		virtual cISC4NeighborsSimulator* GetNeighborsSimulator(void) = 0;
 		virtual cISC4OrdinanceSimulator* GetOrdinanceSimulator(void) = 0;
 		virtual cISC4PlumbingSimulator* GetPlumbingSimulator(void) = 0;
 		virtual cISC4PoliceSimulator* GetPoliceSimulator(void) = 0;

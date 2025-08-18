@@ -657,6 +657,15 @@
     <ClInclude Include="include\SC4List.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4NeighborConnection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4NeighborDeal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4NeighborsSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
