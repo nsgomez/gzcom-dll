@@ -1,12 +1,13 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "cISC4BuildingOccupant.h"
-#include <list>
+
 
 class cISC4Occupant;
 class SC4Percentage;
 
 template <typename T> class cISC4SimGrid;
+template<typename T> class SC4List;
 template <typename T> class SC4Vector;
 
 class cISC4ResidentialSimulator : public cIGZUnknown
@@ -76,10 +77,10 @@ class cISC4ResidentialSimulator : public cIGZUnknown
 		virtual bool GetOccupantCoverage(cISC4Occupant* pOccupant, SC4Percentage const& sEffectiveness, float& fRangeX, float& fRangeZ) = 0;
 
 		virtual int32_t GetSchoolBuildingCount(void) = 0;
-		virtual bool GetSchoolBuildings(std::list<cISC4Occupant*>& sBuildings, SC4Vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
+		virtual bool GetSchoolBuildings(SC4List<cISC4Occupant*>& sBuildings, SC4Vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
 
 		virtual int32_t GetHospitalBuildingCount(void) = 0;
-		virtual bool GetHospitalBuildings(std::list<cISC4Occupant*>& sBuildings, SC4Vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
+		virtual bool GetHospitalBuildings(SC4List<cISC4Occupant*>& sBuildings, SC4Vector<uint32_t>* requiredOccupantGroups = nullptr) = 0;
 
 		virtual int32_t GetMaxEQ(void) = 0;
 		virtual int32_t GetMaxHQ(void) = 0;

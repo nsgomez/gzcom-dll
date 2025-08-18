@@ -1,13 +1,13 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "ilist.h"
-#include <list>
 
 class cISC4DepartmentBudget;
 class cISC4Occupant;
 class SC4Percentage;
 
 template<typename T> class cISC4SimGrid;
+template<typename T> class SC4List;
 
 class cISC4FireProtectionSimulator : public cIGZUnknown
 {
@@ -33,7 +33,7 @@ public:
 	virtual uint32_t GetStrikeStartDate() = 0;
 	virtual uint32_t GetStrikeLength() = 0;
 
-	virtual bool GetStrikingStations(std::list<cISC4Occupant*>& list) = 0;
+	virtual bool GetStrikingStations(SC4List<cISC4Occupant*>& list) = 0;
 	virtual bool IsStationOnStrike(cISC4Occupant* pStation) = 0;
 
 	virtual float GetAverageCoverage() = 0;

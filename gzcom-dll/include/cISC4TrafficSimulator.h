@@ -13,7 +13,8 @@ class TransitSwitchQueryData;
 
 template <typename T> class cISC4SimGrid;
 template <typename T> class SC4CellRegion;
-template<typename T> class SC4Vector;
+template <typename T> class SC4List;
+template <typename T> class SC4Vector;
 
 class cISC4TrafficSimulator : public cIGZUnknown
 {
@@ -54,8 +55,8 @@ public:
 	virtual bool GetTransitSwitches(ilist<cISC4Occupant*>& unknown1) = 0;
 
 	virtual int32_t GetFerryRouteBetweenTiles(long unknown1, long unknown2, long unknown3, long unknown4) = 0;
-	virtual bool GetAllFerryRoutes(std::list<SC4Vector<uint8_t>>& unknown1) = 0;
-	virtual bool GetFerryRoutesInUse(std::list<FerryRouteInfo>& unknown1) = 0;
+	virtual bool GetAllFerryRoutes(SC4List<SC4Vector<uint8_t>>& unknown1) = 0;
+	virtual bool GetFerryRoutesInUse(SC4List<FerryRouteInfo>& unknown1) = 0;
 	virtual uint32_t GetFerryTerminalCount(uint32_t ferryType) = 0;
 	virtual bool GetWaterRoute(long unknown1, long unknown2, long unknown3, long unknown4, SC4Vector<uint8_t>& unknown5) = 0;
 

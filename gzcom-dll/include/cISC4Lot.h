@@ -2,7 +2,7 @@
 #include "cIGZUnknown.h"
 #include "cISC4BuildingDevelopmentSimulator.h"
 #include "cISC4ZoneManager.h"
-#include <list>
+
 #include <map>
 
 class cISCPropertyHolder;
@@ -13,7 +13,8 @@ class cISC4Occupant;
 class cISC4TrafficSource;
 class SC4Percentage;
 
-template<typename T> class SC4Rect;
+template <typename T> class SC4List;
+template <typename T> class SC4Rect;
 
 static const uint32_t GZIID_cISC4Lot = 0xe818fced;
 
@@ -109,7 +110,7 @@ class cISC4Lot : public cIGZUnknown
 		virtual bool SetBuildingType(uint32_t dwBuildingType) = 0;
 
 		virtual cISC4BuildingOccupant* GetBuilding(void) const = 0;
-		virtual bool GetLotOccupants(std::list<cISC4Occupant*>& sOccupants) const = 0;
+		virtual bool GetLotOccupants(SC4List<cISC4Occupant*>& sOccupants) const = 0;
 
 		virtual uint16_t GetCapacity(cISC4BuildingOccupant::WealthType eWealthType) const = 0;
 		virtual uint16_t GetCapacity(cISC4BuildingDevelopmentSimulator::DeveloperType eDeveloperType, bool bForceCalculation) const = 0;

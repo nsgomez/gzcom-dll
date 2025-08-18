@@ -1,7 +1,7 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "SC4Rect.h"
-#include <list>
+
 
 class cISC4Lot;
 class cISC4LotConfiguration;
@@ -9,6 +9,7 @@ class cISC4Occupant;
 class cS3DVector3;
 
 template<typename T> class cISC4SimGrid;
+template<typename T> class SC4List;
 
 class cISC4LotManager : public cIGZUnknown
 {
@@ -19,10 +20,10 @@ class cISC4LotManager : public cIGZUnknown
 		virtual cISC4Lot* GetLot(int32_t nCellX, int32_t nCellZ, bool bUnknown) = 0;
 		virtual cISC4Lot* GetLot(cS3DVector3 const& sPoint) = 0;
 
-		virtual bool GetLotsInCellRect(std::list<cISC4Lot>& sLotList, int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nBottomRightCellX, int32_t nBottomRightCellZ, bool bUnknown) = 0;
-		virtual bool GetLotsSurroundingLot(cISC4Lot const* pLot, std::list<cISC4Lot*>& sList, int32_t nFlags) = 0;
-		virtual bool GetLotsSurroundingLot(int32_t nCellX, int32_t nCellZ, std::list<cISC4Lot*>& sList, int32_t nFlags) = 0;
-		virtual bool GetLotsSurroundingRect(SC4Rect<long> const& sRect, std::list<cISC4Lot*>& sList, int32_t nFlags) = 0;
+		virtual bool GetLotsInCellRect(SC4List<cISC4Lot*>& sLotList, int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nBottomRightCellX, int32_t nBottomRightCellZ, bool bUnknown) = 0;
+		virtual bool GetLotsSurroundingLot(cISC4Lot const* pLot, SC4List<cISC4Lot*>& sList, int32_t nFlags) = 0;
+		virtual bool GetLotsSurroundingLot(int32_t nCellX, int32_t nCellZ, SC4List<cISC4Lot*>& sList, int32_t nFlags) = 0;
+		virtual bool GetLotsSurroundingRect(SC4Rect<long> const& sRect, SC4List<cISC4Lot*>& sList, int32_t nFlags) = 0;
 		virtual bool GetVerticesAtEdgeOfLot(SC4Rect<long> const& sLotCells, int32_t nFlags, SC4Rect<long>& sVertices) = 0;
 		virtual bool GetNeighborCellsAtEdgeOfLot(SC4Rect<long> const& sLotCells, int32_t nFlags, SC4Rect<long>& sCells) = 0;
 

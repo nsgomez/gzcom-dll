@@ -1,11 +1,12 @@
 #pragma once
 #include "cIGZUnknown.h"
-#include <list>
+
 
 class cISC4Occupant;
 class SC4Percentage;
 
 template<typename T> class cISC4SimGrid;
+template<typename T> class SC4List;
 
 class cISC4PoliceSimulator : public cIGZUnknown
 {
@@ -31,14 +32,14 @@ class cISC4PoliceSimulator : public cIGZUnknown
 		virtual uint32_t GetStrikeStartDate(void) = 0;
 		virtual uint32_t GetStrikeLength(void) = 0;
 
-		virtual bool GetStrikingStations(std::list<cISC4Occupant*>& sList) = 0;
+		virtual bool GetStrikingStations(SC4List<cISC4Occupant*>& sList) = 0;
 		virtual bool IsStationOnStrike(cISC4Occupant* pStation) = 0;
 		
 		virtual float GetAverageCoverage(void) = 0;
 		virtual float GetPercentCoverage(void) = 0;
 		virtual bool GetOccupantCoverage(cISC4Occupant* pStation, SC4Percentage const& sPercentage, float& fRadiusX, float& fRadiusZ) = 0;
 
-		virtual bool GetPoliceStations(std::list<cISC4Occupant*>& sList) = 0;
+		virtual bool GetPoliceStations(SC4List<cISC4Occupant*>& sList) = 0;
 		virtual bool IsPoliceStation(cISC4Occupant* pBuilding) = 0;
 		
 		virtual float GetStationDispatchRadius(cISC4Occupant* pStation) = 0;
@@ -53,7 +54,7 @@ class cISC4PoliceSimulator : public cIGZUnknown
 		virtual uint32_t GetJailPopulation(void) = 0;
 		virtual uint32_t GetCriminalCount(void) = 0;
 		
-		virtual int32_t GetJails(std::list<cISC4Occupant*>& sList) = 0;
+		virtual int32_t GetJails(SC4List<cISC4Occupant*>& sList) = 0;
 		virtual bool IsJail(cISC4Occupant* pBuilding) = 0;
 
 		virtual uint32_t GetArrestCount(void) = 0;
@@ -67,7 +68,7 @@ class cISC4PoliceSimulator : public cIGZUnknown
 		virtual bool IsInJailbreak(void) = 0;
 		virtual float BeginJailbreak(cISC4Occupant* pJail) = 0;
 		virtual bool EndJailbreak(cISC4Occupant* pJail) = 0;
-		virtual bool GetJailbreakBuildings(std::list<cISC4Occupant*>& sList) = 0;
+		virtual bool GetJailbreakBuildings(SC4List<cISC4Occupant*>& sList) = 0;
 
 		virtual uint32_t GetPoliceStationArrestCount(cISC4Occupant* pStation) = 0;
 		virtual uint32_t GetPoliceStationCrimeCount(cISC4Occupant* pStation) = 0;

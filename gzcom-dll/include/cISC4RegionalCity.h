@@ -1,12 +1,13 @@
 #pragma once
 #include "cIGZUnknown.h"
-#include <list>
 
 class cIGZString;
 class cISC4City;
 class cISC4NeighborConnection;
 class cISC4NeighborDeal;
 class SC4NewCityPreferences;
+
+template <typename T> class SC4List;
 template <typename T> class SC4Vector;
 
 class cISC4RegionalCity : public cIGZUnknown
@@ -36,7 +37,7 @@ class cISC4RegionalCity : public cIGZUnknown
 		virtual int32_t ExtrapolateGrowth(uint32_t dwPopulationType, float fAddedPop) = 0;
 
 		virtual cISC4RegionalCity* FindConnection(int32_t nUnknown1, int32_t nUnknown2, int32_t nUnknown3) = 0;
-		virtual bool GetAllConnections(std::list<cISC4NeighborConnection*>& sList) = 0;
+		virtual bool GetAllConnections(SC4List<cISC4NeighborConnection*>& sList) = 0;
 		virtual bool ChangeSymmetricConnection(cISC4NeighborConnection* pConnection, bool bUnknown) = 0;
 
 		virtual bool SetupPreferences(SC4NewCityPreferences* pPreferences) = 0;
@@ -108,8 +109,8 @@ class cISC4RegionalCity : public cIGZUnknown
 		virtual bool IsTutorial(void) = 0;
 
 		virtual bool UpdateLocalDeals(void) = 0;
-		virtual bool SetLocalDeals(std::list<cISC4NeighborDeal*>& sList) = 0;
-		virtual bool GetLocalDeals(std::list<cISC4NeighborDeal*>& sList) = 0;
+		virtual bool SetLocalDeals(SC4List<cISC4NeighborDeal*>& sList) = 0;
+		virtual bool GetLocalDeals(SC4List<cISC4NeighborDeal*>& sList) = 0;
 
 		virtual bool UpdateImportExport(void) = 0;
 

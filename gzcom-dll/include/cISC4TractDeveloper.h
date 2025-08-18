@@ -1,7 +1,8 @@
 #pragma once
 #include "cIGZUnknown.h"
-#include <list>
 
+
+template<typename T> class SC4List;
 template <typename T> class SC4Vector;
 
 class cISC4TractDeveloper : public cIGZUnknown
@@ -12,7 +13,7 @@ class cISC4TractDeveloper : public cIGZUnknown
 		virtual bool Init(void) = 0;
 		virtual bool Shutdown(void) = 0;
 
-		virtual bool Grow(cISC4TractDeveloper::GrowthProfile const& sProfile, std::list<int32_t>& sOutcomes, bool& bUnknown) = 0;
+		virtual bool Grow(cISC4TractDeveloper::GrowthProfile const& sProfile, SC4List<int32_t>& sOutcomes, bool& bUnknown) = 0;
 		virtual bool Decline(cISC4TractDeveloper::GrowthProfile const& sProfile) = 0;
 		virtual bool UpdatePopulation(cISC4TractDeveloper::GrowthProfile const& sProfile) = 0;
 

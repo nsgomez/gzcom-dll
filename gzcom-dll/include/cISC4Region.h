@@ -1,11 +1,12 @@
 #pragma once
 #include "cIGZUnknown.h"
-#include <list>
+
 
 class cIGZString;
 class cISC4RegionalCity;
 class SC4String;
 
+template <typename T> class SC4List;
 template <typename T> class SC4Vector;
 
 class cISC4Region : public cIGZUnknown
@@ -47,7 +48,7 @@ class cISC4Region : public cIGZUnknown
 		virtual bool DeleteCity(cISC4RegionalCity*& pCity) = 0;
 		virtual bool ReloadCity(cISC4RegionalCity*& pCity) = 0;
 		virtual bool MoveCity(cISC4Region* pRegion, cISC4RegionalCity* pCity, int32_t x, int32_t y) = 0;
-		virtual bool GetAllCities(std::list<cISC4RegionalCity*>& pList) = 0;
+		virtual bool GetAllCities(SC4List<cISC4RegionalCity*>& pList) = 0;
 
 		virtual int GetBaseTerrainType(void) = 0;
 		virtual cISC4Region* SetBaseTerrainType(int nType) = 0;

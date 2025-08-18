@@ -1,12 +1,14 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "cRZAutoRefCount.h"
-#include <list>
+#include <utility>
 
 class cIGZString;
 class cISC4Advice;
 class cISC4AdviceSubject;
 class SC4String;
+
+template <typename T> class SC4List;
 
 class cISC4Advisor : public cIGZUnknown
 {
@@ -22,8 +24,8 @@ class cISC4Advisor : public cIGZUnknown
 		virtual SC4String* GetPersonalName(void) const = 0;
 		virtual bool SetPersonalName(cIGZString const& szName) = 0;
 
-		virtual std::list<std::pair<int32_t, cRZAutoRefCount<cISC4Advice>>>& GetCurrentAdvices(void) const = 0;
-		virtual std::list<std::pair<int32_t, cRZAutoRefCount<cISC4Advice>>>& GetCurrentAdvices(void) = 0;
+		virtual SC4List<std::pair<int32_t, cRZAutoRefCount<cISC4Advice>>>& GetCurrentAdvices(void) const = 0;
+		virtual SC4List<std::pair<int32_t, cRZAutoRefCount<cISC4Advice>>>& GetCurrentAdvices(void) = 0;
 
 		virtual cISC4Advice* GetAdviceByGUID(int32_t dwGUID) = 0;
 		virtual cISC4Advice* GetAdviceBySessionID(int32_t dwSessionID) const = 0;

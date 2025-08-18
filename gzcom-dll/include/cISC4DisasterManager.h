@@ -1,8 +1,9 @@
 #pragma once
 #include "cIGZUnknown.h"
-#include <list>
 
 class cISC4DisasterInstance;
+
+template<typename T> class SC4List;
 
 class cISC4DisasterManager : public cIGZUnknown
 {
@@ -19,5 +20,5 @@ class cISC4DisasterManager : public cIGZUnknown
 		virtual bool RemoveInstanceFromList(cISC4DisasterInstance* pInstance) = 0;
 
 		virtual int32_t GetActiveInstanceCount(void) = 0;
-		virtual std::list<cISC4DisasterInstance*> const* GetInstances(void) = 0;
+		virtual SC4List<cISC4DisasterInstance*> const* GetInstances(void) = 0;
 };

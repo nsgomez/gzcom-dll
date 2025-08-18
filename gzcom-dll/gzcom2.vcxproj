@@ -269,6 +269,7 @@
     <ClInclude Include="include\SC4CellRegion.h" />
     <ClInclude Include="include\SC4DebugPreferences.h" />
     <ClInclude Include="include\SC4GameOptionPreferences.h" />
+    <ClInclude Include="include\SC4List.h" />
     <ClInclude Include="include\SC4NewCityPreferences.h" />
     <ClInclude Include="include\SC4Percentage.h" />
     <ClInclude Include="include\SC4Point.h" />

@@ -1,12 +1,13 @@
 #pragma once
 #include "cIGZUnknown.h"
-#include <list>
+
 
 class cISC4Occupant;
 class cS3DVector3;
 class SC4Percentage;
 
 template <typename T> class cISC4SimGrid;
+template<typename T> class SC4List;
 
 class cISC4PollutionSimulator : public cIGZUnknown
 {
@@ -66,7 +67,7 @@ class cISC4PollutionSimulator : public cIGZUnknown
 		virtual uint32_t GetRecyclingCenterCount(void) = 0;
 		virtual uint32_t GetWaterTreatmentPlantCount(void) = 0;
 		
-		virtual bool GetGarbageBuildings(std::list<cISC4Occupant*>& sList) = 0;
+		virtual bool GetGarbageBuildings(SC4List<cISC4Occupant*>& sList) = 0;
 		virtual uint32_t GetBuildingGarbageCapacity(cISC4Occupant* pOccupant) = 0;
 		virtual float GetGarbageScalingFactor(void) = 0;
 		
