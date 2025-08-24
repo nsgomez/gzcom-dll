@@ -4,6 +4,8 @@
 class cISC4Occupant;
 class cSC4StaticFloraData;
 
+static const uint32_t GZIID_cISC4FloraOccupant = 0xc83dd057;
+
 class cISC4FloraOccupant : public cIGZUnknown
 {
 	public:
