@@ -111,7 +111,7 @@ class cISC4BudgetSimulator : public cIGZUnknown
 		virtual int64_t GetMonthlyPaymentForLoan(int64_t llLoanAmount) = 0;
 		virtual int64_t GetFullCostOfLoan(int64_t llLoanAmount) = 0;
 
-		virtual bool GetBudgetItemInfo(cISCPropertyHolder* pProperty, SC4Vector<intptr_t>& sBudgetInfo) = 0;
+		virtual bool GetBudgetItemInfo(cISCPropertyHolder* pProperty, SC4Vector<BudgetItem>& sBudgetInfo) = 0;
 		virtual bool GetBudgetItemForPurpose(cISCPropertyHolder* pProperty, uint32_t dwPurpose, BudgetItem& sBudgetItem) = 0;
 		virtual bool ChangeBudgetItemLine(cISCPropertyHolder* pProperty, uint32_t dwPurpose, uint32_t dwLine) = 0;
 		virtual bool ChangeBudgetItemCost(cISCPropertyHolder* pProperty, uint32_t dwPurpose, int64_t llCost) = 0;
