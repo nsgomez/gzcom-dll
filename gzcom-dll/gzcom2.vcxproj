@@ -150,6 +150,7 @@
     <ClInclude Include="include\cIGZWinMgr.h" />
     <ClInclude Include="include\cIGZWinProc.h" />
     <ClInclude Include="include\cIGZWinProcFilterW32.h" />
+    <ClInclude Include="include\cIS3DModelInstance.h" />
     <ClInclude Include="include\cISC43DRender.h" />
     <ClInclude Include="include\cISC4Advice.h" />
     <ClInclude Include="include\cISC4AdviceSubject.h" />
@@ -187,6 +188,7 @@
     <ClInclude Include="include\cISC4FeatureManager.h" />
     <ClInclude Include="include\cISC4FireOccupant.h" />
     <ClInclude Include="include\cISC4FireProtectionSimulator.h" />
+    <ClInclude Include="include\cISC4FlammabilitySimulator.h" />
     <ClInclude Include="include\cISC4FloraOccupant.h" />
     <ClInclude Include="include\cISC4FoundationOccupant.h" />
     <ClInclude Include="include\cISC4GameDataRegistry.h" />
@@ -194,6 +196,7 @@
     <ClInclude Include="include\cISC4GrowthDeveloper.h" />
     <ClInclude Include="include\cISC4HistoryWarehouse.h" />
     <ClInclude Include="include\cISC4LandfillOccupant.h" />
+    <ClInclude Include="include\cISC4LandValueSimulator.h" />
     <ClInclude Include="include\cISC4LineItem.h" />
     <ClInclude Include="include\cISC4Lot.h" />
     <ClInclude Include="include\cISC4LotBaseTextureOccupant.h" />
@@ -202,6 +205,8 @@
     <ClInclude Include="include\cISC4LotDeveloper.h" />
     <ClInclude Include="include\cISC4LotManager.h" />
     <ClInclude Include="include\cISC4LotRetainingWallOccupant.h" />
+    <ClInclude Include="include\cISC4MySim.h" />
+    <ClInclude Include="include\cISC4MySimAgentSimulator.h" />
     <ClInclude Include="include\cISC4Nation.h" />
     <ClInclude Include="include\cISC4NeighborConnection.h" />
     <ClInclude Include="include\cISC4NeighborDeal.h" />
@@ -232,6 +237,7 @@
     <ClInclude Include="include\cISC4TutorialSystem.h" />
     <ClInclude Include="include\cISC4View3DWin.h" />
     <ClInclude Include="include\cISC4ViewInputControl.h" />
+    <ClInclude Include="include\cISC4WeatherSimulator.h" />
     <ClInclude Include="include\cISC4ZoneDeveloper.h" />
     <ClInclude Include="include\cISC4ZoneManager.h" />
     <ClInclude Include="include\cISCExemplarPropertyHolder.h" />
@@ -258,6 +264,7 @@
     <ClInclude Include="include\cRZSysServPtr.h" />
     <ClInclude Include="include\cRZUnknown.h" />
     <ClInclude Include="include\cS3DCamera.h" />
+    <ClInclude Include="include\cS3DVector2.h" />
     <ClInclude Include="include\cS3DVector3.h" />
     <ClInclude Include="include\cSC4BaseOccupantFilter.h" />
     <ClInclude Include="include\cSC4BaseViewInputControl.h" />
@@ -310,6 +317,7 @@
     <ClCompile Include="src\cGZCustomDllDirector.cpp" />
     <ClCompile Include="src\cRZMessage2.cpp" />
     <ClCompile Include="src\cRZMessage2Standard.cpp" />
+    <ClCompile Include="src\cS3DVector2.cpp" />
     <ClCompile Include="src\cS3DVector3.cpp" />
     <ClCompile Include="src\cSC4BaseOccupantFilter.cpp" />
     <ClCompile Include="src\cSC4BaseViewInputControl.cpp" />

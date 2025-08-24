@@ -14,10 +14,13 @@ class cISC4DemandSimulator;
 class cISC4Demolition;
 class cISC4DisasterLayer;
 class cISC4FireProtectionSimulator;
+class cISC4FlammabilitySimulator;
 class cISC4HistoryWarehouse;
+class cISC4LandValueSimulator;
 class cISC4LotConfigurationManager;
 class cISC4LotDeveloper;
 class cISC4LotManager;
+class cISC4MySimAgentSimulator;
 class cISC4NeighborsSimulator;
 class cISC4NetworkManager;
 class cISC4OccupantManager;
@@ -32,10 +35,11 @@ class cISC4Simulator;
 class cISC4TractDeveloper;
 class cISC4TrafficSimulator;
 class cISC4TutorialSystem;
+class cISC4WeatherSimulator;
+class cISC4ZoneDeveloper;
 class cISC4ZoneManager;
 class cISTETerrain;
 class cISTESurfaceWater;
-class cISC4ZoneDeveloper;
 
 class cISC4City : public cIGZUnknown
 {
@@ -111,10 +115,10 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetCrimeSimulator(void) = 0;
 		virtual cISC4DemandSimulator* GetDemandSimulator(void) = 0;
 		virtual cISC4FireProtectionSimulator* GetFireProtectionSimulator(void) = 0;
-		virtual intptr_t GetFlammabilitySimulator(void) = 0;
+		virtual cISC4FlammabilitySimulator* GetFlammabilitySimulator(void) = 0;
 		virtual intptr_t GetFloraSimulator(void) = 0;
 		virtual intptr_t GetIndustrialSimulator(void) = 0;
-		virtual intptr_t GetLandValueSimulator(void) = 0;
+		virtual cISC4LandValueSimulator* GetLandValueSimulator(void) = 0;
 		virtual cISC4NeighborsSimulator* GetNeighborsSimulator(void) = 0;
 		virtual cISC4OrdinanceSimulator* GetOrdinanceSimulator(void) = 0;
 		virtual cISC4PlumbingSimulator* GetPlumbingSimulator(void) = 0;
@@ -123,8 +127,8 @@ class cISC4City : public cIGZUnknown
 		virtual cISC4PowerSimulator* GetPowerSimulator(void) = 0;
 		virtual cISC4ResidentialSimulator* GetResidentialSimulator(void) = 0;
 		virtual cISC4TrafficSimulator* GetTrafficSimulator(void) = 0;
-		virtual intptr_t GetWeatherSimulator(void) = 0;
-		virtual intptr_t GetMySimAgentSimulator(void) = 0;
+		virtual cISC4WeatherSimulator* GetWeatherSimulator(void) = 0;
+		virtual cISC4MySimAgentSimulator* GetMySimAgentSimulator(void) = 0;
 
 		virtual cISC4DisasterLayer* GetDisasterLayer(void) = 0;
 		virtual cISC4CivicBuildingSimulator* GetCivicBuildingSimulator(void) = 0;
