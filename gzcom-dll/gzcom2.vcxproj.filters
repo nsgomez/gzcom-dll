@@ -696,10 +696,16 @@
     <ClInclude Include="include\cISC4LandValueSimulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-	<ClInclude Include="include\cISC4EffectsManager.h">
+    <ClInclude Include="include\cISC4EffectsManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-	<ClInclude Include="include\cISC4EffectMaps.h">
+    <ClInclude Include="include\cISC4EffectMaps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4LandfillDeveloper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4PropDeveloper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

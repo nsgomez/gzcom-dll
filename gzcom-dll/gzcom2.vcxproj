@@ -227,6 +227,7 @@
     <ClInclude Include="include\cISC4PortDeveloper.h" />
     <ClInclude Include="include\cISC4PowerLineOccupant.h" />
     <ClInclude Include="include\cISC4PowerSimulator.h" />
+    <ClInclude Include="include\cISC4PropDeveloper.h" />
     <ClInclude Include="include\cISC4Region.h" />
     <ClInclude Include="include\cISC4RegionalCity.h" />
     <ClInclude Include="include\cISC4RenderProperties.h" />

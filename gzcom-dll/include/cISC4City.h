@@ -31,6 +31,7 @@ class cISC4PlumbingSimulator;
 class cISC4PoliceSimulator;
 class cISC4PollutionSimulator;
 class cISC4PowerSimulator;
+class cISC4PropDeveloper;
 class cISC4ResidentialSimulator;
 class cISC4SeaportDeveloper;
 class cISC4Simulator;
@@ -99,7 +100,7 @@ class cISC4City : public cIGZUnknown
 		virtual cISC4NetworkManager* GetNetworkManager(void) = 0;
 		virtual intptr_t GetDispatchManager(void) = 0;
 		virtual intptr_t GetTrafficNetwork(void) = 0;
-		virtual intptr_t GetPropDeveloper(void) = 0;
+		virtual cISC4PropDeveloper* GetPropDeveloper(void) = 0;
 		virtual intptr_t GetNetworkLotManager(void) = 0;
 		virtual intptr_t GetVehicleManager(void) = 0;
 		virtual intptr_t GetPedestrianManager(void) = 0;
