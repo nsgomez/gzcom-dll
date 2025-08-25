@@ -31,7 +31,7 @@ public:
 	virtual cISC4SimGrid<uint8_t>* GetCommercialTrafficMap() const = 0;
 	virtual cISC4SimGrid<uint8_t>* GetCongestionMap() const = 0;
 	virtual intptr_t GetBackgroundTraffic(int unknown1, int unknown2) = 0;
-	virtual int64_t GetTrafficEdgeDensity(uint8_t unknown1, uint32_t travelType, bool unknown3) = 0;
+	virtual intptr_t GetTrafficEdgeDensity(uint8_t x, uint8_t z, uint32_t travelType, bool eveningCommute) = 0; // Returns cSC4TrafficEdgeDensityEntry*
 	virtual cISC4SimGrid<uint8_t>* GetTripLengthMap() const = 0;
 
 	virtual float GetTripScale() const = 0;
