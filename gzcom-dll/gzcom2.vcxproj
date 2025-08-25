@@ -195,6 +195,7 @@
     <ClInclude Include="include\cISC4GameDataRegistryNotificationTarget.h" />
     <ClInclude Include="include\cISC4GrowthDeveloper.h" />
     <ClInclude Include="include\cISC4HistoryWarehouse.h" />
+    <ClInclude Include="include\cISC4LandfillDeveloper.h" />
     <ClInclude Include="include\cISC4LandfillOccupant.h" />
     <ClInclude Include="include\cISC4LandValueSimulator.h" />
     <ClInclude Include="include\cISC4LineItem.h" />
