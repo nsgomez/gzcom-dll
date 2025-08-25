@@ -13,6 +13,7 @@ class cISC4CivicBuildingSimulator;
 class cISC4DemandSimulator;
 class cISC4Demolition;
 class cISC4DisasterLayer;
+class cISC4EffectsManager;
 class cISC4FireProtectionSimulator;
 class cISC4FlammabilitySimulator;
 class cISC4HistoryWarehouse;
@@ -147,7 +148,7 @@ class cISC4City : public cIGZUnknown
 		virtual cISTESurfaceWater* GetSurfaceWater(void) = 0;
 		virtual cISTETerrain* GetTerrain(void) = 0;
 
-		virtual intptr_t GetEffectsManager(void) = 0;
+		virtual cISC4EffectsManager* GetEffectsManager(void) = 0;
 
 		virtual cISC424HourClock* Get24HourClock(void) = 0;
 

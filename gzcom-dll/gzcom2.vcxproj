@@ -185,6 +185,8 @@
     <ClInclude Include="include\cISC4DisasterManager.h" />
     <ClInclude Include="include\cISC4DisasterManagerFire.h" />
     <ClInclude Include="include\cISC4DisasterManagerVolcano.h" />
+    <ClInclude Include="include\cISC4EffectMaps.h" />
+    <ClInclude Include="include\cISC4EffectsManager.h" />
     <ClInclude Include="include\cISC4FeatureManager.h" />
     <ClInclude Include="include\cISC4FireOccupant.h" />
     <ClInclude Include="include\cISC4FireProtectionSimulator.h" />

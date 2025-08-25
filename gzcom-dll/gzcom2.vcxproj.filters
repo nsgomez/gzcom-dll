@@ -696,6 +696,12 @@
     <ClInclude Include="include\cISC4LandValueSimulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+	<ClInclude Include="include\cISC4EffectsManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+	<ClInclude Include="include\cISC4EffectMaps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
