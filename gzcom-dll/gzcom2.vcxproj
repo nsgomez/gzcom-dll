@@ -241,6 +241,7 @@
     <ClInclude Include="include\cISC4TutorialSystem.h" />
     <ClInclude Include="include\cISC4View3DWin.h" />
     <ClInclude Include="include\cISC4ViewInputControl.h" />
+    <ClInclude Include="include\cISC4VisualEffect.h" />
     <ClInclude Include="include\cISC4WeatherSimulator.h" />
     <ClInclude Include="include\cISC4ZoneDeveloper.h" />
     <ClInclude Include="include\cISC4ZoneManager.h" />
