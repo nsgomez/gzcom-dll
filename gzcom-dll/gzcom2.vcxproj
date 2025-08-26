@@ -195,6 +195,7 @@
     <ClInclude Include="include\cISC4FireProtectionSimulator.h" />
     <ClInclude Include="include\cISC4FlammabilitySimulator.h" />
     <ClInclude Include="include\cISC4FloraOccupant.h" />
+    <ClInclude Include="include\cISC4FloraSimulator.h" />
     <ClInclude Include="include\cISC4FoundationOccupant.h" />
     <ClInclude Include="include\cISC4GameDataRegistry.h" />
     <ClInclude Include="include\cISC4GameDataRegistryNotificationTarget.h" />
