@@ -164,6 +164,7 @@
     <ClInclude Include="include\cISC4BuildingOccupant.h" />
     <ClInclude Include="include\cISC4BusinessUnit.h" />
     <ClInclude Include="include\cISC4CivicBuildingSimulator.h" />
+    <ClInclude Include="include\cISC4CommercialSimulator.h" />
     <ClInclude Include="include\cISC4ConstructionOccupant.h" />
     <ClInclude Include="include\cISC4DBSegment.h" />
     <ClInclude Include="include\cISC4DBSegmentIStream.h" />
@@ -198,6 +199,7 @@
     <ClInclude Include="include\cISC4GameDataRegistryNotificationTarget.h" />
     <ClInclude Include="include\cISC4GrowthDeveloper.h" />
     <ClInclude Include="include\cISC4HistoryWarehouse.h" />
+    <ClInclude Include="include\cISC4IndustrialSimulatorr.h" />
     <ClInclude Include="include\cISC4LandfillDeveloper.h" />
     <ClInclude Include="include\cISC4LandfillOccupant.h" />
     <ClInclude Include="include\cISC4LandValueSimulator.h" />

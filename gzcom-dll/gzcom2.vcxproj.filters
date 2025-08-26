@@ -714,6 +714,12 @@
 	<ClInclude Include="include\cISC4AutomataManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+	<ClInclude Include="include\cISC4CommercialSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+	<ClInclude Include="include\cISC4IndustrialSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
