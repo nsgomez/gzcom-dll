@@ -158,6 +158,7 @@
     <ClInclude Include="include\cISC4AdvisorSystem.h" />
     <ClInclude Include="include\cISC4AirportDeveloper.h" />
     <ClInclude Include="include\cISC4AuraSimulator.h" />
+    <ClInclude Include="include\cISC4AutomataManager.h" />
     <ClInclude Include="include\cISC4BudgetSimulator.h" />
     <ClInclude Include="include\cISC4BuildingDevelopmentSimulator.h" />
     <ClInclude Include="include\cISC4BuildingOccupant.h" />

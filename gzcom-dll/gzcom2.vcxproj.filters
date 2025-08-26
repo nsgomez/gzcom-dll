@@ -711,6 +711,9 @@
     <ClInclude Include="include\cISC4VisualEffect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+	<ClInclude Include="include\cISC4AutomataManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
