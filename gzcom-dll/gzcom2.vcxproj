@@ -166,6 +166,7 @@
     <ClInclude Include="include\cISC4CivicBuildingSimulator.h" />
     <ClInclude Include="include\cISC4CommercialSimulator.h" />
     <ClInclude Include="include\cISC4ConstructionOccupant.h" />
+    <ClInclude Include="include\cISC4CrimeSimulator.h" />
     <ClInclude Include="include\cISC4DBSegment.h" />
     <ClInclude Include="include\cISC4DBSegmentIStream.h" />
     <ClInclude Include="include\cISC4DBSegmentOStream.h" />

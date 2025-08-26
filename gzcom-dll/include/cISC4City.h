@@ -12,6 +12,7 @@ class cISC4BudgetSimulator;
 class cISC4BuildingDevelopmentSimulator;
 class cISC4CivicBuildingSimulator;
 class cISC4CommercialSimulator;
+class cISC4CrimeSimulator;
 class cISC4DemandSimulator;
 class cISC4Demolition;
 class cISC4DisasterLayer;
@@ -118,7 +119,7 @@ class cISC4City : public cIGZUnknown
 		virtual cISC4BudgetSimulator* GetBudgetSimulator(void) = 0;
 		virtual cISC4BuildingDevelopmentSimulator* GetBuildingDevelopmentSimulator(void) = 0;
 		virtual cISC4CommercialSimulator* GetCommercialSimulator(void) = 0;
-		virtual intptr_t GetCrimeSimulator(void) = 0;
+		virtual cISC4CrimeSimulator* GetCrimeSimulator(void) = 0;
 		virtual cISC4DemandSimulator* GetDemandSimulator(void) = 0;
 		virtual cISC4FireProtectionSimulator* GetFireProtectionSimulator(void) = 0;
 		virtual cISC4FlammabilitySimulator* GetFlammabilitySimulator(void) = 0;
