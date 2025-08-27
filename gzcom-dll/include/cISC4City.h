@@ -32,6 +32,7 @@ class cISC4NeighborsSimulator;
 class cISC4NetworkManager;
 class cISC4OccupantManager;
 class cISC4OrdinanceSimulator;
+class cISC4ParkManager;
 class cISC4PlumbingSimulator;
 class cISC4PoliceSimulator;
 class cISC4PollutionSimulator;
@@ -140,7 +141,7 @@ class cISC4City : public cIGZUnknown
 
 		virtual cISC4DisasterLayer* GetDisasterLayer(void) = 0;
 		virtual cISC4CivicBuildingSimulator* GetCivicBuildingSimulator(void) = 0;
-		virtual intptr_t GetParkManager(void) = 0;
+		virtual cISC4ParkManager* GetParkManager(void) = 0;
 		virtual cISC4ZoneDeveloper* GetZoneDeveloper(void) = 0;
 		virtual cISC4SeaportDeveloper* GetSeaportDeveloper(void) = 0;
 		virtual cISC4AirportDeveloper* GetAirportDeveloper(void) = 0;

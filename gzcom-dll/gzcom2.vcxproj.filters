@@ -711,19 +711,22 @@
     <ClInclude Include="include\cISC4VisualEffect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-	<ClInclude Include="include\cISC4AutomataManager.h">
+    <ClInclude Include="include\cISC4AutomataManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-	<ClInclude Include="include\cISC4CommercialSimulator.h">
+    <ClInclude Include="include\cISC4CommercialSimulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-	<ClInclude Include="include\cISC4IndustrialSimulator.h">
+    <ClInclude Include="include\cISC4CrimeSimulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-	<ClInclude Include="include\cISC4CrimeSimulator.h">
+    <ClInclude Include="include\cISC4FloraSimulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-	<ClInclude Include="include\cISC4FloraSimulator.h">
+    <ClInclude Include="include\cISC4IndustrialSimulatorr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4ParkManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
