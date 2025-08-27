@@ -7,6 +7,7 @@ class cISC424HourClock;
 class cISC4AdvisorSystem;
 class cISC4AirportDeveloper;
 class cISC4AuraSimulator;
+class cISC4AutomataScriptSystem;
 class cISC4AutomataManager;
 class cISC4BudgetSimulator;
 class cISC4BuildingDevelopmentSimulator;
@@ -113,7 +114,7 @@ class cISC4City : public cIGZUnknown
 		virtual cISC4AutomataManager* GetAircraftManager(void) = 0;
 		virtual cISC4AutomataManager* GetWatercraftManager(void) = 0;
 		virtual intptr_t GetAutomataControllerManager(void) = 0;
-		virtual intptr_t GetAutomataScriptSystem(void) = 0;
+		virtual cISC4AutomataScriptSystem* GetAutomataScriptSystem(void) = 0;
 		virtual intptr_t GetCitySituationManager(void) = 0;
 
 		virtual cISC4Simulator* GetSimulator(void) = 0;
