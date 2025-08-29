@@ -141,20 +141,12 @@ public:
 	using const_iterator = SC4ListConstIterator<T>;
 	using iterator = SC4ListIterator<T>;
 
-	SC4List()
+	SC4List() : root(create_root_node())
 	{
-		auto internalRoot = internal_root();
-
-		root.next = internalRoot;
-		root.prev = internalRoot;
 	}
 
-	SC4List(const SC4List<T>& other)
+	SC4List(const SC4List<T>& other) : root(create_root_node())
 	{
-		auto internalRoot = internal_root();
-
-		root.next = internalRoot;
-		root.prev = internalRoot;
 		operator=(other);
 	}
 
@@ -162,10 +154,9 @@ public:
 
 	~SC4List()
 	{
-		auto internalRoot = internal_root();
-		auto entry = root.next;
+		auto entry = root->next;
 
-		while (entry != internalRoot)
+		while (entry != root)
 		{
 			auto nextEntry = entry->next;
 
@@ -174,34 +165,37 @@ public:
 			entry = nextEntry;
 		}
 
-		root.next = internalRoot;
-		root.prev = internalRoot;
+		destroy_node(root);
 	}
 
 	SC4List<T>& operator=(const SC4List<T>& other)
 	{
-		auto internalRoot = other.internal_root();
-		auto entry = other.root.next;
+		const auto otherRoot = other.root;
 
-		while (entry != internalRoot)
+		if (otherRoot)
 		{
-			auto nextEntry = entry->next;
+			auto entry = otherRoot->next;
 
-			push_back(entry->value);
-
-			if constexpr (std::is_base_of_v<cIGZUnknown, std::remove_pointer_t<T>>)
+			while (entry != otherRoot)
 			{
-				if constexpr (std::is_pointer_v<T>)
-				{
-					entry->value->AddRef();
-				}
-				else
-				{
-					entry->value.AddRef();
-				}
-			}
+				auto nextEntry = entry->next;
 
-			entry = nextEntry;
+				push_back(entry->value);
+
+				if constexpr (std::is_base_of_v<cIGZUnknown, std::remove_pointer_t<T>>)
+				{
+					if constexpr (std::is_pointer_v<T>)
+					{
+						entry->value->AddRef();
+					}
+					else
+					{
+						entry->value.AddRef();
+					}
+				}
+
+				entry = nextEntry;
+			}
 		}
 
 		return *this;
@@ -211,37 +205,37 @@ public:
 
 	iterator begin()
 	{
-		return iterator(root.next);
+		return iterator(root->next);
 	}
 
 	iterator end()
 	{
-		return iterator(internal_root());
+		return iterator(root);
 	}
 
 	const_iterator begin() const
 	{
-		return const_iterator(root.next);
+		return const_iterator(root->next);
 	}
 
 	const_iterator end() const
 	{
-		return const_iterator(const_cast<SC4ListNode<T>*>(internal_root()));
+		return const_iterator(const_cast<SC4ListNode<T>*>(root));
 	}
 
 	const_iterator cbegin() const
 	{
-		return const_iterator(root.next);
+		return const_iterator(root->next);
 	}
 
 	const_iterator cend() const
 	{
-		return const_iterator(const_cast<SC4ListNode<T>*>(internal_root()));
+		return const_iterator(const_cast<SC4ListNode<T>*>(root));
 	}
 
 	bool empty() const
 	{
-		return root.next == internal_root();
+		return root->next == root;
 	}
 
 	iterator erase(iterator position)
@@ -288,10 +282,9 @@ public:
 	{
 		size_t size = 0;
 
-		auto internalRoot = internal_root();
-		auto entry = root.next;
+		auto entry = root->next;
 
-		while (entry != internalRoot)
+		while (entry != root)
 		{
 			auto nextEntry = entry->next;
 
@@ -316,6 +309,39 @@ private:
 		}
 
 		ptr->value = value;
+		return ptr;
+	}
+
+	static SC4ListNode<T>* create_root_node()
+	{
+		cIGZAllocatorServicePtr allocator;
+
+		auto ptr = static_cast<SC4ListNode<T>*>(allocator->Allocate(sizeof(SC4ListNode<T>)));
+
+		if (!ptr)
+		{
+			throw std::bad_alloc();
+		}
+
+		if constexpr (std::is_pointer_v<T>)
+		{
+			ptr->value = nullptr;
+		}
+		else
+		{
+			try
+			{
+				new (ptr->value) T();
+			}
+			catch (...)
+			{
+				allocator->Deallocate(ptr);
+				throw;
+			}
+		}
+		ptr->next = ptr;
+		ptr->prev = ptr;
+
 		return ptr;
 	}
 
@@ -359,15 +385,5 @@ private:
 		}
 	}
 
-	SC4ListNode<T>* internal_root()
-	{
-		return &root;
-	}
-
-	const SC4ListNode<T>* internal_root() const
-	{
-		return &root;
-	}
-
-	SC4ListNode<T> root;
+	SC4ListNode<T>* root;
 };
