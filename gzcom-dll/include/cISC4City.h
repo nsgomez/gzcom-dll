@@ -40,6 +40,7 @@ class cISC4PoliceSimulator;
 class cISC4PollutionSimulator;
 class cISC4PowerSimulator;
 class cISC4PropDeveloper;
+class cISC4PropManager;
 class cISC4ResidentialSimulator;
 class cISC4SeaportDeveloper;
 class cISC4Simulator;
@@ -102,7 +103,7 @@ class cISC4City : public cIGZUnknown
 		virtual cISC4HistoryWarehouse* GetHistoryWarehouse(void) = 0;
 		virtual cISC4LotManager* GetLotManager(void) = 0;
 		virtual cISC4OccupantManager* GetOccupantManager(void) = 0;
-		virtual intptr_t GetPropManager(void) = 0;
+		virtual cISC4PropManager* GetPropManager(void) = 0;
 		virtual cISC4ZoneManager* GetZoneManager(void) = 0;
 		virtual cISC4LotConfigurationManager* GetLotConfigurationManager(void) = 0;
 		virtual cISC4NetworkManager* GetNetworkManager(void) = 0;
