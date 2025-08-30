@@ -42,7 +42,7 @@ public:
 
 	virtual bool GetLotProps(SC4List<cISC4Occupant*>& list, cISC4Lot* pLot) = 0;
 	virtual bool GetLotProps(SC4List<cISC4Occupant*>& list, int x, int z) = 0;
-	virtual bool AddLotProp(uint32_t propID, cS3DVector3 const& position, int32_t orientation) = 0;
+	virtual cISC4Occupant* AddLotProp(uint32_t propID, cS3DVector3 const& position, int32_t orientation) = 0;
 	virtual bool AddLotProp(cISC4Lot* pLot, cISC4Occupant* pOccupant) = 0;
 	virtual bool RemoveLotProps(cISC4Lot* pLot) = 0;
 	virtual bool RemoveLotProps(int x, int z) = 0;
@@ -50,7 +50,7 @@ public:
 
 	virtual bool GetStreetProps(SC4List<cISC4Occupant*>& list, int x, int z) = 0;
 	virtual bool GetStreetProps(SC4List<cISC4Occupant*>& list, SC4Rect<int32_t> const& rect) = 0;
-	virtual bool AddStreetProp(uint32_t propID, cS3DVector3 const& position, int32_t orientation) = 0;
+	virtual cISC4Occupant* AddStreetProp(uint32_t propID, cS3DVector3 const& position, int32_t orientation) = 0;
 	virtual void RemoveStreetPropsFromTile(int x, int z) = 0;
 
 	virtual bool GetBuildingProps(SC4List<cISC4Occupant*>& list, cISC4Occupant* pBuildingOccupant) = 0;
