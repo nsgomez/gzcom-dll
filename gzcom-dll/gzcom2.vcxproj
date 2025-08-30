@@ -220,6 +220,8 @@
     <ClInclude Include="include\cISC4NeighborConnection.h" />
     <ClInclude Include="include\cISC4NeighborDeal.h" />
     <ClInclude Include="include\cISC4NeighborsSimulator.h" />
+    <ClInclude Include="include\cISC4NetworkLot.h" />
+    <ClInclude Include="include\cISC4NetworkLotConfiguration.h" />
     <ClInclude Include="include\cISC4NetworkManager.h" />
     <ClInclude Include="include\cISC4NetworkOccupant.h" />
     <ClInclude Include="include\cISC4Occupant.h" />
