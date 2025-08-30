@@ -31,6 +31,7 @@ class cISC4LotManager;
 class cISC4MySimAgentSimulator;
 class cISC4NeighborsSimulator;
 class cISC4NetworkManager;
+class cISC4NetworkLotManager;
 class cISC4OccupantManager;
 class cISC4OrdinanceSimulator;
 class cISC4ParkManager;
@@ -108,7 +109,7 @@ class cISC4City : public cIGZUnknown
 		virtual intptr_t GetDispatchManager(void) = 0;
 		virtual intptr_t GetTrafficNetwork(void) = 0;
 		virtual cISC4PropDeveloper* GetPropDeveloper(void) = 0;
-		virtual intptr_t GetNetworkLotManager(void) = 0;
+		virtual cISC4NetworkLotManager* GetNetworkLotManager(void) = 0;
 		virtual cISC4AutomataManager* GetVehicleManager(void) = 0;
 		virtual cISC4AutomataManager* GetPedestrianManager(void) = 0;
 		virtual cISC4AutomataManager* GetAircraftManager(void) = 0;
