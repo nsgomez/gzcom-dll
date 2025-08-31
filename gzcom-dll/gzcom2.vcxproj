@@ -133,6 +133,7 @@
     <ClInclude Include="include\cIGZPersistDBSegment.h" />
     <ClInclude Include="include\cIGZPersistDBSegmentMultiPackedFiles.h" />
     <ClInclude Include="include\cIGZPersistDBSerialRecord.h" />
+    <ClInclude Include="include\cIGZPersistResource.h" />
     <ClInclude Include="include\cIGZPersistResourceFactory.h" />
     <ClInclude Include="include\cIGZPersistResourceKeyFilter.h" />
     <ClInclude Include="include\cIGZPersistResourceKeyList.h" />
