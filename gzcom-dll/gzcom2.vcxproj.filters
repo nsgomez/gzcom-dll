@@ -753,6 +753,15 @@
     <ClInclude Include="include\cIGZPersistResource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\PersistResourceKeyFilterBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PersistResourceKeyFilterByType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PersistResourceKeyFilterByTypeAndGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
@@ -819,6 +828,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\cS3DVector2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PersistResourceKeyFilterBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PersistResourceKeyFilterByType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PersistResourceKeyFilterByTypeAndGroup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -296,6 +296,9 @@
     <ClInclude Include="include\GZServPtrs.h" />
     <ClInclude Include="include\GZWinKeyAcceleratorUtil.h" />
     <ClInclude Include="include\ilist.h" />
+    <ClInclude Include="include\PersistResourceKeyFilterBase.h" />
+    <ClInclude Include="include\PersistResourceKeyFilterByType.h" />
+    <ClInclude Include="include\PersistResourceKeyFilterByTypeAndGroup.h" />
     <ClInclude Include="include\SC4AppPreferences.h" />
     <ClInclude Include="include\SC4AudioPreferences.h" />
     <ClInclude Include="include\SC4CellRegion.h" />
@@ -341,6 +344,9 @@
     <ClCompile Include="src\cSC4BaseOccupantFilter.cpp" />
     <ClCompile Include="src\cSC4BaseViewInputControl.cpp" />
     <ClCompile Include="src\cSCBaseProperty.cpp" />
+    <ClCompile Include="src\PersistResourceKeyFilterBase.cpp" />
+    <ClCompile Include="src\PersistResourceKeyFilterByType.cpp" />
+    <ClCompile Include="src\PersistResourceKeyFilterByTypeAndGroup.cpp" />
     <ClCompile Include="src\SC4UI.cpp" />
     <ClCompile Include="src\SCLuaUtil.cpp" />
     <ClCompile Include="src\SCPropertyUtil.cpp" />
