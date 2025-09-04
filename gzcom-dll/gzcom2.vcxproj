@@ -167,6 +167,8 @@
     <ClInclude Include="include\cISC4BuildingDevelopmentSimulator.h" />
     <ClInclude Include="include\cISC4BuildingOccupant.h" />
     <ClInclude Include="include\cISC4BusinessUnit.h" />
+    <ClInclude Include="include\cISC4CitySituationAdvice.h" />
+    <ClInclude Include="include\cISC4CitySituationManager.h" />
     <ClInclude Include="include\cISC4CivicBuildingSimulator.h" />
     <ClInclude Include="include\cISC4CommercialSimulator.h" />
     <ClInclude Include="include\cISC4ConstructionOccupant.h" />

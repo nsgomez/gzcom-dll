@@ -12,6 +12,7 @@ class cISC4AutomataControllerManager;
 class cISC4AutomataScriptSystem;
 class cISC4BudgetSimulator;
 class cISC4BuildingDevelopmentSimulator;
+class cISC4CitySituationManager;
 class cISC4CivicBuildingSimulator;
 class cISC4CommercialSimulator;
 class cISC4CrimeSimulator;
@@ -119,7 +120,7 @@ class cISC4City : public cIGZUnknown
 		virtual cISC4AutomataManager* GetWatercraftManager(void) = 0;
 		virtual cISC4AutomataControllerManager* GetAutomataControllerManager(void) = 0;
 		virtual cISC4AutomataScriptSystem* GetAutomataScriptSystem(void) = 0;
-		virtual intptr_t GetCitySituationManager(void) = 0;
+		virtual cISC4CitySituationManager* GetCitySituationManager(void) = 0;
 
 		virtual cISC4Simulator* GetSimulator(void) = 0;
 		virtual cISC4AuraSimulator* GetAuraSimulator(void) = 0;
