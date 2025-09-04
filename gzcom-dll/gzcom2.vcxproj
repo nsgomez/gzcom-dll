@@ -162,6 +162,7 @@
     <ClInclude Include="include\cISC4AutomataControllerManager.h" />
     <ClInclude Include="include\cISC4AutomataManager.h" />
     <ClInclude Include="include\cISC4AutomataScriptSystem.h" />
+    <ClInclude Include="include\cISC4Automaton.h" />
     <ClInclude Include="include\cISC4BudgetSimulator.h" />
     <ClInclude Include="include\cISC4BuildingDevelopmentSimulator.h" />
     <ClInclude Include="include\cISC4BuildingOccupant.h" />
