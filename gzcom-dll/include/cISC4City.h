@@ -18,6 +18,7 @@ class cISC4CrimeSimulator;
 class cISC4DemandSimulator;
 class cISC4Demolition;
 class cISC4DisasterLayer;
+class cISC4DispatchManager;
 class cISC4EffectsManager;
 class cISC4FireProtectionSimulator;
 class cISC4FlammabilitySimulator;
@@ -108,7 +109,7 @@ class cISC4City : public cIGZUnknown
 		virtual cISC4ZoneManager* GetZoneManager(void) = 0;
 		virtual cISC4LotConfigurationManager* GetLotConfigurationManager(void) = 0;
 		virtual cISC4NetworkManager* GetNetworkManager(void) = 0;
-		virtual intptr_t GetDispatchManager(void) = 0;
+		virtual cISC4DispatchManager* GetDispatchManager(void) = 0;
 		virtual intptr_t GetTrafficNetwork(void) = 0;
 		virtual cISC4PropDeveloper* GetPropDeveloper(void) = 0;
 		virtual cISC4NetworkLotManager* GetNetworkLotManager(void) = 0;
