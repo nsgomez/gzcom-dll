@@ -19,6 +19,19 @@ template <typename T> class SC4Vector;
 class cISC4TrafficSimulator : public cIGZUnknown
 {
 public:
+	enum class TravelType : uint32_t
+	{
+		Walk = 0,
+		Car = 1,
+		Bus = 2,
+		PassangerTrain = 3,
+		FreightTruck = 4,
+		FreightTrain = 5,
+		Subway = 6,
+		ElevatedTrain = 7,
+		Monorail = 8
+	};
+
 	virtual bool Init() = 0;
 	virtual bool Shutdown() = 0;
 
@@ -31,7 +44,7 @@ public:
 	virtual cISC4SimGrid<uint8_t>* GetCommercialTrafficMap() const = 0;
 	virtual cISC4SimGrid<uint8_t>* GetCongestionMap() const = 0;
 	virtual intptr_t GetBackgroundTraffic(int unknown1, int unknown2) = 0;
-	virtual intptr_t GetTrafficEdgeDensity(uint8_t x, uint8_t z, uint32_t travelType, bool eveningCommute) = 0; // Returns cSC4TrafficEdgeDensityEntry*
+	virtual intptr_t GetTrafficEdgeDensity(uint8_t x, uint8_t z, TravelType travelType, bool eveningCommute) = 0; // Returns cSC4TrafficEdgeDensityEntry*
 	virtual cISC4SimGrid<uint8_t>* GetTripLengthMap() const = 0;
 
 	virtual float GetTripScale() const = 0;
@@ -47,7 +60,7 @@ public:
 	virtual uint32_t GetDesiredLotInsertionPoint() = 0;
 	virtual uint32_t GetCapacity(uint32_t networkType, int unknown2, int unknown3) = 0;
 
-	virtual float GetTravelTimeRatio(long unknown1, long unknown2, uint32_t travelType) = 0;
+	virtual float GetTravelTimeRatio(long unknown1, long unknown2, TravelType travelType) = 0;
 
 	virtual uint32_t GetConnectionCount(uint32_t networkType, int unknown2, int unknown3) = 0;
 	virtual bool GetTravelStrategyPercentages(uint32_t wealthType, SC4Vector<SC4Percentage> unknown2) = 0;
