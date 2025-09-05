@@ -33,7 +33,20 @@ public:
 
 	class tDispatchLocation;
 
-	typedef int32_t PopulateLayer;
+	enum class PopulateLayer : int32_t
+	{
+		None = 0,
+		Commute = 1,
+		Bus = 2,
+		FreightTruck = 3,
+		CommuteTrain = 4,
+		FreightTrain = 5,
+		Subway = 6,
+		OccupantTrip = 7,
+		Crime = 8,
+		ElevatedTrain = 9,
+		Monorail = 10
+	};
 
 	virtual bool Init() = 0;
 	virtual bool Shutdown() = 0;
