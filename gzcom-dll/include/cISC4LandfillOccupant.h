@@ -3,6 +3,8 @@
 
 class cISC4Occupant;
 
+static const uint32_t GZIID_cISC4LandfillOccupant = 0x2a15f262;
+
 class cISC4LandfillOccupant : public cIGZUnknown
 {
 	public:
