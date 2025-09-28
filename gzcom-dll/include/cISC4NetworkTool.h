@@ -4,6 +4,7 @@
  * cISC4NetworkTool.h
  *
  * Copyright (C) 2025 Casper Van Gheluwe
+ * Copyright (C) 2025 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -143,7 +144,7 @@ public:
 	 *
 	 * @return void
 	 */
-	virtual void ForceReload();
+	virtual void ForceReload() = 0;
 
 	virtual void SetTraceFinal(bool enable) = 0; // no-op
 
