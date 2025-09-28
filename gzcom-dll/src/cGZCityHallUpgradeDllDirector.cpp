@@ -1,3 +1,24 @@
+/*
+ * gzcom-dll - an open-source DLL Plugin SDK for SimCity 4
+ *
+ * cGZCityHallUpgradeDllDirector.cpp
+ *
+ * Copyright (C) 2016 Nelson Gomez
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation, under
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, see <https://www.gnu.org/licenses/>.
+ */
+
 #include "../include/cIGZApp.h"
 #include "../include/cIGZCheatCodeManager.h"
 #include "../include/cIGZFrameWork.h"
@@ -145,7 +166,7 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZMessage2COMDirector
 					PreAppInit();
 				}
 			}
-		
+
 			return true;
 		}
 
@@ -225,7 +246,7 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZMessage2COMDirector
 			cISC4RegionalCity* pCity = pISC4App->GetRegionalCity();
 			if (!pCity)
 				return;
-			
+
 			int32_t nPopulation = pCity->GetPopulation();
 			if (nPopulation >= kCityHall_PopThreshold3 && uCityHallStage < 3) {
 				SendUpgradeMessage(kGZMSG_UpgradeCityHall3);
@@ -243,7 +264,7 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZMessage2COMDirector
 			cISC4City* pCity = pISC4App->GetCity();
 			if (!pCity)
 				return;
-			
+
 			cISC4AdvisorSystem* pAdvisory = pCity->GetAdvisorSystem();
 			if (!pAdvisory)
 				return;
@@ -256,7 +277,7 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZMessage2COMDirector
 		void UpgradeCityHall(uint8_t uNewStage) {
 			if (uCityHallStage >= uNewStage)
 				return;
-			
+
 			uint32_t dwLotID = 0;
 			switch (uNewStage) {
 				case 1:
@@ -316,7 +337,7 @@ class cGZCityHallUpgradePluginCOMDirector : public cRZMessage2COMDirector
 
 			pLot = NULL;
 			pCityHall = NULL;
-			
+
 			/**
 			 * When creating the lot and spawning its occupants, the game will
 			 * handle the creation of the new city hall stage automatically.

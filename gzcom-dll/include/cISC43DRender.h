@@ -1,3 +1,24 @@
+/*
+ * gzcom-dll - an open-source DLL Plugin SDK for SimCity 4
+ *
+ * cISC43DRender.h
+ *
+ * Copyright (C) 2016 Nelson Gomez
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation, under
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, see <https://www.gnu.org/licenses/>.
+ */
+
 #pragma once
 #include "cIGZUnknown.h"
 
@@ -29,7 +50,7 @@ class cISC43DRender : public cIGZUnknown
 		virtual intptr_t GetViewUtilities(void) = 0;
 		virtual intptr_t GetLightingManager(void) = 0;
 		virtual intptr_t GetDrawContext(void) = 0;
-		
+
 		virtual bool GetViewportSize(uint32_t& nX, uint32_t& nZ) = 0;
 		virtual bool SetViewportSize(uint32_t nX, uint32_t nZ) = 0;
 		virtual bool SetSubpixelImageBias(float, float) = 0;
@@ -108,7 +129,7 @@ class cISC43DRender : public cIGZUnknown
 		virtual bool GetModelsInVolume(cS3DBoundingBox const&, cIS3DModelInstance**, uint32_t&) = 0;
 		virtual bool IsModelVisible(cIS3DModelInstance*, int32_t nFrustumType) = 0;
 		virtual bool IsModelVisible(SC43DGridElement*, int32_t nFrustumType) = 0;
-		
+
 		virtual bool GetViewFogEnabled(void) = 0;
 		virtual bool SetViewFogEnabled(bool bEnabled) = 0;
 

@@ -208,7 +208,7 @@
     <ClInclude Include="include\cISC4GameDataRegistryNotificationTarget.h" />
     <ClInclude Include="include\cISC4GrowthDeveloper.h" />
     <ClInclude Include="include\cISC4HistoryWarehouse.h" />
-    <ClInclude Include="include\cISC4IndustrialSimulatorr.h" />
+    <ClInclude Include="include\cISC4IndustrialSimulator.h" />
     <ClInclude Include="include\cISC4LandfillDeveloper.h" />
     <ClInclude Include="include\cISC4LandfillOccupant.h" />
     <ClInclude Include="include\cISC4LandValueSimulator.h" />
@@ -231,6 +231,7 @@
     <ClInclude Include="include\cISC4NetworkLotManager.h" />
     <ClInclude Include="include\cISC4NetworkManager.h" />
     <ClInclude Include="include\cISC4NetworkOccupant.h" />
+    <ClInclude Include="include\cISC4NetworkTool.h" />
     <ClInclude Include="include\cISC4Occupant.h" />
     <ClInclude Include="include\cISC4OccupantFilter.h" />
     <ClInclude Include="include\cISC4OccupantManager.h" />
@@ -294,6 +295,7 @@
     <ClInclude Include="include\cSC4BaseOccupantFilter.h" />
     <ClInclude Include="include\cSC4BaseViewInputControl.h" />
     <ClInclude Include="include\cSC4EdgeConnectionStore.h" />
+    <ClInclude Include="include\cSC4NetworkTool.h" />
     <ClInclude Include="include\cSC4OccupantTypeFilter.h" />
     <ClInclude Include="include\cSCBaseProperty.h" />
     <ClInclude Include="include\GZCLSIDDefs.h" />

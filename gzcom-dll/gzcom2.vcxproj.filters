@@ -723,9 +723,6 @@
     <ClInclude Include="include\cISC4FloraSimulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\cISC4IndustrialSimulatorr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\cISC4ParkManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -778,6 +775,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cISTETerrainMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4IndustrialSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cSC4NetworkTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4NetworkTool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

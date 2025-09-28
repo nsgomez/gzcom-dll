@@ -1,3 +1,24 @@
+/*
+ * gzcom-dll - an open-source DLL Plugin SDK for SimCity 4
+ *
+ * cIGZDate.h
+ *
+ * Copyright (C) 2016 Nelson Gomez
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation, under
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, see <https://www.gnu.org/licenses/>.
+ */
+
 #pragma once
 #include "cIGZUnknown.h"
 
@@ -18,7 +39,7 @@ class cIGZDate : public cIGZUnknown
 
 		virtual bool Copy(cIGZDate const& sCopyFrom) = 0;
 		virtual bool Clone(cIGZDate** ppCopyTo) = 0;
-		
+
 		virtual bool Between(cIGZDate const& sStart, cIGZDate const& sEnd) = 0;
 		virtual int32_t CompareTo(cIGZDate const& sOther) = 0;
 
@@ -53,19 +74,19 @@ class cIGZDate : public cIGZUnknown
 
 		virtual cIGZDate& operator-(cIGZDate const& sOther) = 0;
 		virtual cIGZDate& operator+(cIGZDate const& sOther) = 0;
-		
+
 		virtual cIGZDate& operator-(int32_t nDays) = 0;
 		virtual cIGZDate& operator+(int32_t nDays) = 0;
-		
+
 		virtual cIGZDate& operator++(void) = 0;
 		virtual cIGZDate& operator--(void) = 0;
-		
+
 		virtual cIGZDate& operator+=(int32_t nDays) = 0;
 		virtual cIGZDate& operator-=(int32_t nDays) = 0;
 
 		virtual bool DateString(cIGZString& sDateOut, uint32_t dwFormatID) = 0;
 		virtual bool DayWithinMonth(uint32_t dwMonth, uint32_t dwDay, uint32_t dwYear) = 0;
-		
+
 		virtual uint32_t DaysInYear(uint32_t dwYear) = 0;
 
 		/**

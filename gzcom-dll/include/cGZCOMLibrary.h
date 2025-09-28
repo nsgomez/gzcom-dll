@@ -1,3 +1,24 @@
+/*
+ * gzcom-dll - an open-source DLL Plugin SDK for SimCity 4
+ *
+ * cGZCOMLibrary.h
+ *
+ * Copyright (C) 2016 Nelson Gomez
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation, under
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, see <https://www.gnu.org/licenses/>.
+ */
+
 #pragma once
 #include "cIGZCOMLibrary.h"
 #include "cRZBaseString.h"
@@ -11,7 +32,7 @@ class cIGZCOMDirector;
  * Used by the game itself when loading GZCOM libraries when trying to load
  * them and keeping track of directors that were successfully loaded by the
  * game.
- * 
+ *
  * Custom directors should NOT inherit from this class. However, it can be
  * used when iterating over the libraries that have been loaded via cIGZCOM.
  */
