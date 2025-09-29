@@ -145,13 +145,17 @@
     <ClInclude Include="include\cIGZVariant.h" />
     <ClInclude Include="include\cIGZWin.h" />
     <ClInclude Include="include\cIGZWinBtn.h" />
+    <ClInclude Include="include\cIGZWinCombo.h" />
+    <ClInclude Include="include\cIGZWinGen.h" />
     <ClInclude Include="include\cIGZWinKeyAccelerator.h" />
     <ClInclude Include="include\cIGZWinKeyAcceleratorRes.h" />
     <ClInclude Include="include\cIGZWinMessageFilter.h" />
     <ClInclude Include="include\cIGZWinMgr.h" />
     <ClInclude Include="include\cIGZWinProc.h" />
     <ClInclude Include="include\cIGZWinProcFilterW32.h" />
+    <ClInclude Include="include\cIGZWinText.h" />
     <ClInclude Include="include\cIS3DModelInstance.h" />
+    <ClInclude Include="include\cIS3DTextureBindingFactory.h" />
     <ClInclude Include="include\cISC43DRender.h" />
     <ClInclude Include="include\cISC4Advice.h" />
     <ClInclude Include="include\cISC4AdviceSubject.h" />
@@ -281,6 +285,7 @@
     <ClInclude Include="include\cRZBaseSystemService.h" />
     <ClInclude Include="include\cRZBaseUnknown.h" />
     <ClInclude Include="include\cRZBaseVariant.h" />
+    <ClInclude Include="include\cRZBaseWinProc.h" />
     <ClInclude Include="include\cRZCellMap.h" />
     <ClInclude Include="include\cRZCOMDllDirector.h" />
     <ClInclude Include="include\cRZMessage2.h" />
@@ -290,6 +295,7 @@
     <ClInclude Include="include\cRZSysServPtr.h" />
     <ClInclude Include="include\cRZUnknown.h" />
     <ClInclude Include="include\cS3DCamera.h" />
+    <ClInclude Include="include\cS3DTextureBinding.h" />
     <ClInclude Include="include\cS3DVector2.h" />
     <ClInclude Include="include\cS3DVector3.h" />
     <ClInclude Include="include\cSC4BaseOccupantFilter.h" />
@@ -342,6 +348,7 @@
     <ClCompile Include="src\cRZBaseSystemService.cpp" />
     <ClCompile Include="src\cRZBaseUnknown.cpp" />
     <ClCompile Include="src\cRZBaseVariant.cpp" />
+    <ClCompile Include="src\cRZBaseWinProc.cpp" />
     <ClCompile Include="src\cRZCellMap.cpp" />
     <ClCompile Include="src\cRZCOMDllDirector.cpp" />
     <ClCompile Include="src\cGZCustomDllDirector.cpp" />
