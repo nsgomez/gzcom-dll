@@ -109,6 +109,7 @@
     <ClInclude Include="include\cIGZFrameWork.h" />
     <ClInclude Include="include\cIGZFrameWorkHooks.h" />
     <ClInclude Include="include\cIGZFrameWorkW32.h" />
+    <ClInclude Include="include\cIGZGDriver.h" />
     <ClInclude Include="include\cIGZGimexFactory.h" />
     <ClInclude Include="include\cIGZGraphicSystem.h" />
     <ClInclude Include="include\cIGZGraphicSystem2.h" />
@@ -335,6 +336,7 @@
     <ClInclude Include="include\SC4ViewPreferences.h" />
     <ClInclude Include="include\SCLuaUtil.h" />
     <ClInclude Include="include\SCPropertyUtil.h" />
+    <ClInclude Include="include\sGDMode.h" />
     <ClInclude Include="include\StringResourceKey.h" />
     <ClInclude Include="include\StringResourceManager.h" />
   </ItemGroup>
