@@ -1,9 +1,9 @@
 /*
  * gzcom-dll - an open-source DLL Plugin SDK for SimCity 4
  *
- * cGZBufferColorType.h
+ * cRZRect.h
  *
- * Copyright (C) 2024 Nicholas Hayes
+ * Copyright (C) 2025 Nelson Gomez (nsgomez) <nelson@ngomez.me>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,11 +20,32 @@
  */
 
 #pragma once
-#include "cGZBufferType.h"
+#include <stdint.h>
 
-class cGZBufferColorType
+class cRZRect
 {
-public:
-	cGZBufferType bufferType;
-	uint32_t bitsPerPixel;
+	public:
+		union
+		{
+			int32_t nX;
+			float fX;
+		};
+
+		union
+		{
+			int32_t nY;
+			float fY;
+		};
+
+		union
+		{
+			int32_t nWidth;
+			float fWidth;
+		};
+
+		union
+		{
+			int32_t nHeight;
+			float fHeight;
+		};
 };

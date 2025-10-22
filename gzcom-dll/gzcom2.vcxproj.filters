@@ -519,12 +519,6 @@
     <ClInclude Include="include\cISC4ZoneManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\cGZBufferColorType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\cGZBufferType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\cIGZBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -802,6 +796,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cS3DTextureBinding.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cRZRect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

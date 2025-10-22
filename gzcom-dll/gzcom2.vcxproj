@@ -77,8 +77,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\cGZAllocatorServiceSTLAllocator.h" />
-    <ClInclude Include="include\cGZBufferColorType.h" />
-    <ClInclude Include="include\cGZBufferType.h" />
     <ClInclude Include="include\cGZCOMLibrary.h" />
     <ClInclude Include="include\cGZDisplayMetrics.h" />
     <ClInclude Include="include\cGZDisplayTiming.h" />
@@ -292,6 +290,7 @@
     <ClInclude Include="include\cRZMessage2COMDirector.h" />
     <ClInclude Include="include\cRZMessage2Standard.h" />
     <ClInclude Include="include\cRZPoint.h" />
+    <ClInclude Include="include\cRZRect.h" />
     <ClInclude Include="include\cRZSysServPtr.h" />
     <ClInclude Include="include\cRZUnknown.h" />
     <ClInclude Include="include\cS3DCamera.h" />
