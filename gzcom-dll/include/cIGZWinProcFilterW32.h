@@ -26,5 +26,5 @@
 class cIGZWinProcFilterW32 : public cIGZUnknown
 {
 public:
-	virtual LRESULT FilterMessage(HWND hWnd, UINT uMsg, WPARAM wParram, LPARAM lParam, bool& handled) = 0;
+	virtual LRESULT FilterMessage(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam, bool& handled) = 0;
 };
