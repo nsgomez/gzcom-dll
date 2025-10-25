@@ -4,7 +4,7 @@
  * cISC4LotConfigurationManager.h
  *
  * Copyright (C) 2016 Nelson Gomez
- * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025 Nicholas Hayes, Casper Van Gheluwe
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -22,14 +22,15 @@
 
 #pragma once
 #include "cIGZUnknown.h"
-#include <unordered_set>
 
 class cGZPersistResourceKey;
 class cISC4LotConfiguration;
 class cISC4LotConfigurationFilter;
 class cS3DRect2D;
 class cSC4LotConfigurationObject;
+
 template <typename T> class SC4Vector;
+template <typename T> struct SC4HashSet;
 
 class cISC4LotConfigurationManager : public cIGZUnknown
 {
@@ -42,14 +43,14 @@ class cISC4LotConfigurationManager : public cIGZUnknown
 		virtual bool RemoveLotConfiguration(uint32_t dwConfigID) = 0;
 
 		virtual cISC4LotConfiguration* GetLotConfiguration(uint32_t dwConfigID) = 0;
-		virtual bool GetLotConfigurationsByFilter(std::unordered_set<cISC4LotConfiguration*>& sConfigs, cISC4LotConfigurationFilter* pFilter) = 0;
-		virtual bool GetLotConfigurationsByFamily(std::unordered_set<cISC4LotConfiguration*>& sConfigs, uint32_t dwFamily) = 0;
-		virtual bool GetLotConfigurationsBySize(std::unordered_set<cISC4LotConfiguration*>& sConfigs, uint32_t sX, uint32_t sZ) = 0;
-		virtual bool ClearLotConfigurationSet(std::unordered_set<cISC4LotConfiguration*>& sConfigs) = 0;
+		virtual bool GetLotConfigurationsByFilter(SC4HashSet<cISC4LotConfiguration*>& sConfigs, cISC4LotConfigurationFilter* pFilter) = 0;
+		virtual bool GetLotConfigurationsByFamily(SC4HashSet<cISC4LotConfiguration*>& sConfigs, uint32_t dwFamily) = 0;
+		virtual bool GetLotConfigurationsBySize(SC4HashSet<cISC4LotConfiguration*>& sConfigs, uint32_t sX, uint32_t sZ) = 0;
+		virtual bool ClearLotConfigurationSet(SC4HashSet<cISC4LotConfiguration*>& sConfigs) = 0;
 
-		virtual bool GetLotConfigurationIDsByFilter(std::unordered_set<uint32_t>& sConfigs, cISC4LotConfigurationFilter* pFilter) = 0;
-		virtual bool GetLotConfigurationIDsByFamily(std::unordered_set<uint32_t>& sConfigs, uint32_t dwFamily) = 0;
-		virtual bool GetLotConfigurationIDsBySize(std::unordered_set<uint32_t>& sConfigs, uint32_t sX, uint32_t sZ) = 0;
+		virtual bool GetLotConfigurationIDsByFilter(SC4HashSet<uint32_t>& sConfigs, cISC4LotConfigurationFilter* pFilter) = 0;
+		virtual bool GetLotConfigurationIDsByFamily(SC4HashSet<uint32_t>& sConfigs, uint32_t dwFamily) = 0;
+		virtual bool GetLotConfigurationIDsBySize(SC4HashSet<uint32_t>& sConfigs, uint32_t sX, uint32_t sZ) = 0;
 
 		virtual bool LotConfigurationHasBuildingFamily(cISC4LotConfiguration* pConfig, uint32_t dwFamily, cSC4LotConfigurationObject** ppObj) = 0;
 		virtual bool LotConfigurationHasBuildingType(cISC4LotConfiguration* pConfig, uint32_t dwFamily, cSC4LotConfigurationObject** ppObj) = 0;
