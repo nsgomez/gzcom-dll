@@ -219,6 +219,7 @@
     <ClInclude Include="include\cISC4Lot.h" />
     <ClInclude Include="include\cISC4LotBaseTextureOccupant.h" />
     <ClInclude Include="include\cISC4LotConfiguration.h" />
+    <ClInclude Include="include\cISC4LotConfigurationFilter.h" />
     <ClInclude Include="include\cISC4LotConfigurationManager.h" />
     <ClInclude Include="include\cISC4LotDeveloper.h" />
     <ClInclude Include="include\cISC4LotManager.h" />
@@ -298,6 +299,7 @@
     <ClInclude Include="include\cS3DTextureBinding.h" />
     <ClInclude Include="include\cS3DVector2.h" />
     <ClInclude Include="include\cS3DVector3.h" />
+    <ClInclude Include="include\cSC4BaseLotConfigurationFilter.h" />
     <ClInclude Include="include\cSC4BaseOccupantFilter.h" />
     <ClInclude Include="include\cSC4BaseViewInputControl.h" />
     <ClInclude Include="include\cSC4EdgeConnectionStore.h" />
@@ -357,6 +359,7 @@
     <ClCompile Include="src\cRZMessage2Standard.cpp" />
     <ClCompile Include="src\cS3DVector2.cpp" />
     <ClCompile Include="src\cS3DVector3.cpp" />
+    <ClCompile Include="src\cSC4BaseLotConfigurationFilter.cpp" />
     <ClCompile Include="src\cSC4BaseOccupantFilter.cpp" />
     <ClCompile Include="src\cSC4BaseViewInputControl.cpp" />
     <ClCompile Include="src\cSCBaseProperty.cpp" />

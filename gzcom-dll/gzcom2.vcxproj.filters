@@ -807,6 +807,12 @@
     <ClInclude Include="include\sGDMode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4LotConfigurationFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cSC4BaseLotConfigurationFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
@@ -885,6 +891,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\cRZBaseWinProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cSC4BaseLotConfigurationFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
