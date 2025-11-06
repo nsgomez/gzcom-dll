@@ -4,7 +4,8 @@
  * cISC4LotConfigurationManager.h
  *
  * Copyright (C) 2016 Nelson Gomez
- * Copyright (C) 2025 Nicholas Hayes, Casper Van Gheluwe
+ * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025 Casper Van Gheluwe
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -30,7 +31,7 @@ class cS3DRect2D;
 class cSC4LotConfigurationObject;
 
 template <typename T> class SC4Vector;
-template <typename T> struct SC4HashSet;
+template <typename T> class SC4HashSet;
 
 class cISC4LotConfigurationManager : public cIGZUnknown
 {

@@ -4,6 +4,7 @@
  * SC4HashSet.h
  *
  * Copyright (C) 2025 Casper Van Gheluwe
+ * Copyright (C) 2025 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -21,7 +22,9 @@
 
 #pragma once
 #include <cstdint>
-#include <cstdlib>
+#include "cIGZAllocatorService.h"
+#include "GZServPtrs.h"
+#include <type_traits>
 
 #pragma pack(push, 4)
 template<typename K>
@@ -34,32 +37,107 @@ static_assert(sizeof(SC4HashNode<void*>) == 8);
 
 // Binary-compatible hash table
 template<typename Key>
-struct SC4HashSet {
-    void* vftable;
+class SC4HashSet {
     SC4HashNode<Key>** mpStart;    // +0x04
     SC4HashNode<Key>** mpEnd;      // +0x08
-    uint32_t reserved;             // +0x0C (capacity)
+    void* reserved;                // +0x0C (capacity)
     uint32_t mSize;                // +0x10 (element count)
 
-    static void Init(SC4HashSet<Key>* table, size_t bucketCount = 8) {
-        table->mpStart = static_cast<SC4HashNode<Key> **>(std::malloc(bucketCount * sizeof(SC4HashNode<Key> *)));
-        std::memset(table->mpStart, 0, bucketCount * sizeof(SC4HashNode<Key>*));
-        table->mpEnd = table->mpStart + bucketCount;
-        table->reserved = bucketCount;
-        table->mSize = 0;
+    template <typename T>
+    struct IsIGZUnknownPointer
+    {
+        static constexpr bool value = std::is_pointer_v<T> && std::is_base_of_v<cIGZUnknown, std::remove_pointer_t<T>>;
+    };
+
+    static void DeleteBucketNodes(SC4HashNode<Key>** const pStart, size_t bucketCount)
+    {
+        cIGZAllocatorServicePtr as;
+
+        for (size_t i = 0; i < bucketCount; i++)
+        {
+            SC4HashNode<Key>* bucket = pStart[i];
+
+            if (bucket != nullptr)
+            {
+                // Cleanup the key values in each bucket.
+                // This can be skipped for types that are trivially destructable.
+                if constexpr (IsIGZUnknownPointer<Key>::value || !std::is_trivially_destructible_v<Key>)
+                {
+                    SC4HashNode<Key>* node = bucket;
+
+                    while (node != nullptr)
+                    {
+                        SC4HashNode<Key>* next = node->next;
+
+                        if constexpr (IsIGZUnknownPointer<Key>::value)
+                        {
+                            // Handle the cleanup of cIGZUnknown-derived types in case the user forgets to
+                            // call the clear method the game's API provides.
+                            if (node->key)
+                            {
+                                node->key->Release();
+                            }
+                        }
+                        else
+                        {
+                            node->key.~Key();
+                        }
+
+                        node = next;
+                    }
+                }
+                
+                as->Deallocate(bucket);
+                bucket = nullptr;
+            }
+        }
     }
 
-    void Init(size_t bucketCount = 8) {
-        mpStart = static_cast<SC4HashNode<Key> **>(std::malloc(bucketCount * sizeof(SC4HashNode<Key> *)));
-        std::memset(mpStart, 0, bucketCount * sizeof(SC4HashNode<Key>*));
-        mpEnd = mpStart + bucketCount;
-        reserved = bucketCount;
-        mSize = 0;
+public:
+    // Iterator type compatible with SC4's traversal pattern
+    class iterator {
+        SC4HashNode<Key>** pBucket;
+        SC4HashNode<Key>** pEnd;
+        SC4HashNode<Key>* pNode;
+
+    public:
+        iterator(SC4HashNode<Key>** start, SC4HashNode<Key>** end, SC4HashNode<Key>* node = nullptr)
+            : pBucket(start), pEnd(end), pNode(node)
+        {
+            advanceWhileNull();
+        }
+
+        iterator& operator++() {
+            if (pNode) pNode = pNode->next;
+            if (!pNode && pBucket < pEnd) {
+                ++pBucket;
+                advanceWhileNull();
+            }
+            return *this;
+        }
+
+        bool operator==(const iterator& other) const { return pNode == other.pNode; }
+        bool operator!=(const iterator& other) const { return pNode != other.pNode; }
+        Key operator*() const { return pNode->key; }
+        Key operator->() const { return pNode->key; }
+
+    private:
+        void advanceWhileNull() {
+            while (!pNode && pBucket < pEnd) {
+                pNode = *pBucket;
+                if (!pNode) ++pBucket;
+            }
+        }
+    };
+
+    SC4HashSet()
+        : mpStart(nullptr), mpEnd(nullptr), reserved(nullptr), mSize(0)
+    {
     }
 
-    void Clear() {
+    virtual ~SC4HashSet() {
         if (mpStart) {
-            std::free(mpStart);
+            DeleteBucketNodes(mpStart, bucketCount());
             mpStart = mpEnd = nullptr;
             reserved = 0;
             mSize = 0;
@@ -78,65 +156,20 @@ struct SC4HashSet {
     }
 
     // Find node by key
-    SC4HashNode<Key>* find(const Key& key) const {
+   iterator find(const Key& key) const {
         if (!mpStart || mpStart == mpEnd) return nullptr;
         auto idx = bucketIndex(key);
-        for (auto n = mpStart[idx]; n; n = n->next)
-            if (n->key == key) return n;
-        return nullptr;
+        auto bucket = mpStart[idx];
+
+        for (auto n = bucket; n; n = n->next)
+            if (n->key == key) return iterator(bucket, mpEnd, n);
+
+        return end();
     }
 
-    // Insert new node
-    SC4HashNode<Key>* insert(const Key& key, SC4HashNode<Key>* (*alloc)(size_t) = nullptr) {
-        if (!mpStart || mpStart == mpEnd) return nullptr;
-        auto idx = bucketIndex(key);
-        auto head = mpStart[idx];
-
-        for (auto n = head; n; n = n->next)
-            if (n->key == key) return n; // already exists
-
-        auto node = alloc ? alloc(sizeof(SC4HashNode<Key>))
-                          : reinterpret_cast<SC4HashNode<Key>*>(malloc(sizeof(SC4HashNode<Key>)));
-        node->next = head;
-        node->key = key;
-        mpStart[idx] = node;
-        mSize++;
-        return node;
+    size_t size() const {
+        return mSize;
     }
-
-    // Iterator type compatible with SC4's traversal pattern
-    struct iterator {
-        SC4HashNode<Key>** pBucket;
-        SC4HashNode<Key>** pEnd;
-        SC4HashNode<Key>* pNode;
-
-        iterator(SC4HashNode<Key>** start, SC4HashNode<Key>** end, SC4HashNode<Key>* node = nullptr)
-            : pBucket(start), pEnd(end), pNode(node)
-        {
-            advanceWhileNull();
-        }
-
-        void advanceWhileNull() {
-            while (!pNode && pBucket < pEnd) {
-                pNode = *pBucket;
-                if (!pNode) ++pBucket;
-            }
-        }
-
-        iterator& operator++() {
-            if (pNode) pNode = pNode->next;
-            if (!pNode && pBucket < pEnd) {
-                ++pBucket;
-                advanceWhileNull();
-            }
-            return *this;
-        }
-
-        bool operator==(const iterator& other) const { return pNode == other.pNode; }
-        bool operator!=(const iterator& other) const { return pNode != other.pNode; }
-        SC4HashNode<Key>* operator*() const { return pNode; }
-        SC4HashNode<Key>* operator->() const { return pNode; }
-    };
 
     iterator begin() const {
         if (!mpStart || mpStart == mpEnd) return iterator(mpEnd, mpEnd, nullptr);
