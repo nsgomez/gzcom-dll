@@ -205,16 +205,14 @@ uint32_t cRZCOMDllDirector::GetHeapAllocatedSize(void) {
 }
 
 void cRZCOMDllDirector::AddCls(uint32_t clsid, cRZCOMDllDirector::FactoryFunctionPtr1 pff1) {
-	ClassObjectMap::iterator it(mClassObjectMap.find(clsid));
-	assert(it == mClassObjectMap.end());
+	assert(mClassObjectMap.find(clsid) == mClassObjectMap.end());
 
 	const ClassObjectMap::value_type entry(clsid, FactoryFuncRecord(DummyFunctionPtr(pff1), kFactorFunctionType1));
 	mClassObjectMap.insert(entry);
 }
 
 void cRZCOMDllDirector::AddCls(uint32_t clsid, cRZCOMDllDirector::FactoryFunctionPtr2 pff2) {
-	ClassObjectMap::iterator it(mClassObjectMap.find(clsid));
-	assert(it == mClassObjectMap.end());
+	assert(mClassObjectMap.find(clsid) == mClassObjectMap.end());
 
 	const ClassObjectMap::value_type entry(clsid, FactoryFuncRecord(DummyFunctionPtr(pff2), kFactorFunctionType2));
 	mClassObjectMap.insert(entry);
