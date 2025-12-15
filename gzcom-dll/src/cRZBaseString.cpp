@@ -30,7 +30,7 @@
 static const uint32_t kRZBaseStringIID = 0xab13a836;
 
 cRZBaseString::cRZBaseString(cIGZString const& szSource)
-	: mnRefCount(0), szData(szSource.ToChar()) {
+	: szData(szSource.ToChar()), mnRefCount(0) {
 	// Empty
 }
 
@@ -41,41 +41,41 @@ cRZBaseString::cRZBaseString(cIGZString const& szSource, size_t dwStart, size_t 
 }
 
 cRZBaseString::cRZBaseString(char const* pszSource)
-	: mnRefCount(0), szData(pszSource) {
+	: szData(pszSource), mnRefCount(0) {
 	// Empty
 }
 
 cRZBaseString::cRZBaseString(char const* pszSource, size_t dwLen)
-	: mnRefCount(0), szData(pszSource, dwLen) {
+	: szData(pszSource, dwLen), mnRefCount(0) {
 	// Empty
 }
 
 cRZBaseString::cRZBaseString(char cChar, size_t dwRepetitions)
-	: mnRefCount(0), szData(dwRepetitions, cChar) {
+	: szData(dwRepetitions, cChar), mnRefCount(0) {
 	// Empty
 }
 
 cRZBaseString::cRZBaseString(std::string const& szSource)
-	: mnRefCount(0), szData(szSource) {
+	: szData(szSource), mnRefCount(0) {
 	// Empty
 }
 
 cRZBaseString::cRZBaseString(size_t dwStartSize)
-	: mnRefCount(0), szData(dwStartSize, '\0') {
+	: szData(dwStartSize, '\0'), mnRefCount(0) {
 	// Empty
 }
 
 cRZBaseString::cRZBaseString(void)
-	: mnRefCount(0), szData() {
+	: szData(), mnRefCount(0) {
 	// Empty
 }
 
 cRZBaseString::cRZBaseString(const cRZBaseString& other)
-	: mnRefCount(0), szData(other.szData) {
+	: szData(other.szData), mnRefCount(0) {
 }
 
 cRZBaseString::cRZBaseString(cRZBaseString&& other) noexcept
-	: mnRefCount(other.mnRefCount), szData(std::move(other.szData)) {
+	: szData(std::move(other.szData)), mnRefCount(other.mnRefCount) {
 }
 
 cRZBaseString& cRZBaseString::operator=(const cRZBaseString& other) {
