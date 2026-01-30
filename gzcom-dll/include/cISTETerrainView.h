@@ -3,7 +3,7 @@
  *
  * cISTETerrainView.h
  *
- * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -37,12 +37,12 @@ template <typename T> class SC4Vector;
 class cISTETerrainView : public cIGZUnknown
 {
 public:
-	enum class tOverlayManagerType
+	enum class tOverlayManagerType : uint32_t
 	{
-		Unknown1 = 0,
-		Unknown2 = 1,
-		Unknown3 = 2,
-		Unknown4 = 3,
+		StaticLand = 0,
+		StaticWater = 1,
+		DynamicLand = 2,
+		DynamicWater = 3,
 	};
 
 	virtual bool Pick(cS3DVector3 const&, cS3DVector3 const&, SC4DrawContext*, float*, bool) = 0;
