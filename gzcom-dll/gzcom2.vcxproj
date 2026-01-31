@@ -276,6 +276,7 @@
     <ClInclude Include="include\cISCResExemplar.h" />
     <ClInclude Include="include\cISCResExemplarCohort.h" />
     <ClInclude Include="include\cISCStringDetokenizer.h" />
+    <ClInclude Include="include\cISTEOverlayManager.h" />
     <ClInclude Include="include\cISTESurfaceWater.h" />
     <ClInclude Include="include\cISTETerrain.h" />
     <ClInclude Include="include\cISTETerrainMap.h" />
