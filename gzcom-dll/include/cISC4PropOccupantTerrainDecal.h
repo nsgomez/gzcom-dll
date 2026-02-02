@@ -17,7 +17,7 @@ public:
 	};
 
 	virtual void SetDecalTexture(cGZPersistResourceKey const& textureKey, float scale) = 0;
-	virtual void SetOpacity(float param_1) = 0;
+	virtual void SetOpacity(float opacity) = 0;
 	virtual void SetOpacityFade(float time, tCompletionAction action, float minOpacity, float maxOpacity) = 0;
 	virtual void SetDecalSize(float scale) = 0;
 };
