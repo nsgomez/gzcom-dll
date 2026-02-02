@@ -252,6 +252,7 @@
     <ClInclude Include="include\cISC4PropManager.h" />
     <ClInclude Include="include\cISC4PropOccupant.h" />
     <ClInclude Include="include\cISC4PropOccupantTerrainDecal.h" />
+    <ClInclude Include="include\cISC4PropOccupantVisualEffect.h" />
     <ClInclude Include="include\cISC4PylonOccupant.h" />
     <ClInclude Include="include\cISC4Region.h" />
     <ClInclude Include="include\cISC4RegionalCity.h" />
