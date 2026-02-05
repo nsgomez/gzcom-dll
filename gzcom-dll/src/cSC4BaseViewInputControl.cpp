@@ -4,6 +4,7 @@
  * cSC4BaseViewInputControl.cpp
  *
  * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2026 Casper Van Gheluwe
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -127,9 +128,9 @@ cIGZCursor* cSC4BaseViewInputControl::GetCursor()
 
 void cSC4BaseViewInputControl::SetCursor(cIGZCursor* pIGZursor)
 {
-	if (this->cursor != cursor)
+	if (this->cursor != pIGZCursor)
 	{
-		this->cursor = cursor;
+		this->cursor = pIGZCursor;
 
 		if (cursor && initialized && window)
 		{
@@ -140,7 +141,7 @@ void cSC4BaseViewInputControl::SetCursor(cIGZCursor* pIGZursor)
 
 void cSC4BaseViewInputControl::SetCursor(uint32_t cursorID)
 {
-	if (cursor != 0)
+	if (cursorID != 0)
 	{
 		cIGZWinMgrPtr localWindowManager;
 
