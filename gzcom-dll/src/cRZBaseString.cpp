@@ -5,6 +5,7 @@
  *
  * Copyright (C) 2016, 2017 Nelson Gomez
  * Copyright (C) 2023, 2025 Nicholas Hayes
+ * Copyright (C) 2026 Casper Van Gheluwe
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -198,14 +199,14 @@ bool cRZBaseString::IsEqual(char const* pszOther, uint32_t dwLength, bool bCaseS
 }
 
 int32_t cRZBaseString::CompareTo(cIGZString const& szOther, bool bCaseSensitive) const {
-	if (bCaseSensitive) {
+	if (!bCaseSensitive) {
 		cRZBaseString szThis = cRZBaseString(this->ToChar());
 		cRZBaseString szDupOther = cRZBaseString(szOther);
 
 		szThis.MakeUpper();
 		szDupOther.MakeUpper();
 
-		return szThis.CompareTo(szDupOther, false);
+		return szThis.CompareTo(szDupOther, true);
 	}
 	else {
 		return szData.compare(szOther.ToChar());
@@ -275,14 +276,14 @@ int32_t cRZBaseString::Find(char const* pszOther, uint32_t dwPos, bool bCaseSens
 }
 
 int32_t cRZBaseString::Find(cIGZString const& szOther, uint32_t dwPos, bool bCaseSensitive) const {
-	if (bCaseSensitive) {
+	if (!bCaseSensitive) {
 		cRZBaseString szThis = cRZBaseString(this->ToChar());
 		cRZBaseString szDupOther = cRZBaseString(szOther);
 
 		szThis.MakeUpper();
 		szDupOther.MakeUpper();
 
-		return szThis.Find(szDupOther, dwPos, false);
+		return szThis.Find(szDupOther, dwPos, true);
 	}
 	else {
 		return (int32_t)szData.find(szOther.ToChar(), dwPos);
@@ -295,14 +296,14 @@ int32_t cRZBaseString::RFind(char const* pszOther, uint32_t dwPos, bool bCaseSen
 }
 
 int32_t cRZBaseString::RFind(cIGZString const& szOther, uint32_t dwPos, bool bCaseSensitive) const {
-	if (bCaseSensitive) {
+	if (!bCaseSensitive) {
 		cRZBaseString szThis = cRZBaseString(this->ToChar());
 		cRZBaseString szDupOther = cRZBaseString(szOther);
 
 		szThis.MakeUpper();
 		szDupOther.MakeUpper();
 
-		return szThis.RFind(szOther, dwPos, false);
+		return szThis.RFind(szDupOther, dwPos, true);
 	}
 	else {
 		return (int32_t)szData.rfind(szOther.ToChar(), dwPos);
