@@ -4,6 +4,7 @@
  * cISC43DRender.h
  *
  * Copyright (C) 2016 Nelson Gomez
+ * Copyright (C) 2026 Casper Van Gheluwe
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -67,8 +68,8 @@ class cISC43DRender : public cIGZUnknown
 		virtual bool ForceFullRedraw(void) = 0;
 		virtual bool Draw(void) = 0;
 
-		virtual bool TakeSnapshot(cIGZBuffer**, bool) = 0;
 		virtual bool TakeSnapshot(cIGZString&, bool) = 0;
+		virtual bool TakeSnapshot(cIGZBuffer**, bool) = 0;
 
 		virtual bool Set3DCameraView(void) = 0;
 		virtual bool Set2DCameraView(void) = 0;
@@ -88,14 +89,14 @@ class cISC43DRender : public cIGZUnknown
 		virtual bool ZoomIn(void) = 0;
 		virtual bool ZoomOut(void) = 0;
 
-		virtual bool SetRotation(int32_t nZoomLevel) = 0;
+		virtual bool SetRotation(int32_t nRotation) = 0;
 		virtual bool RotateLeft(void) = 0;
 		virtual bool RotateRight(void) = 0;
 
 		virtual bool SetZoomAndRotation(int nZoom, int nRotation) = 0;
 
-		virtual bool StartScreenShake(float fIntensityX, float fIntensityZ) = 0;
 		virtual bool StartScreenShake(cSC4ShakeDescription const&, cS3DVector2 const*) = 0;
+		virtual bool StartScreenShake(float fIntensityX, float fIntensityZ) = 0;
 		virtual bool StopScreenShake(uint32_t nFadeTime) = 0;
 		virtual bool GetShakeOffsets(float& fX, float& fZ) = 0;
 
@@ -107,8 +108,8 @@ class cISC43DRender : public cIGZUnknown
 
 		virtual bool EnableBackgroundPicture(bool bEnable) = 0;
 		virtual uint32_t GetBackgroundPicture(bool* bEnabled) = 0;
-		virtual bool SetBackgroundPicture(cIGZBuffer*, bool) = 0;
 		virtual bool SetBackgroundPicture(uint32_t, int32_t, int32_t, bool) = 0;
+		virtual bool SetBackgroundPicture(cIGZBuffer*, bool) = 0;
 		virtual bool EnableTransparentBackground(bool) = 0;
 
 		virtual bool GetBackingStoreEnabled(void) = 0;
@@ -117,14 +118,14 @@ class cISC43DRender : public cIGZUnknown
 		virtual bool BorrowRenderSystem(void) = 0;
 		virtual bool ReturnRenderSystem(void) = 0;
 
-		virtual bool PickTerrain(float const*, float const*, float*, bool, bool) = 0;
 		virtual bool PickTerrain(int32_t, int32_t, float*, bool, bool) = 0;
+		virtual bool PickTerrain(float const*, float const*, float*, bool, bool) = 0;
 
-		virtual bool PickTerrainAlways(float const*, float const*, float*, bool) = 0;
 		virtual bool PickTerrainAlways(int32_t, int32_t, float*, bool) = 0;
+		virtual bool PickTerrainAlways(float const*, float const*, float*, bool) = 0;
 
-		virtual bool Pick(int32_t, int32_t, cISC4OccupantFilter*, cIS3DModelInstance*&) = 0;
 		virtual bool Pick(int32_t, int32_t, float const*, float const*, cISC4OccupantFilter*, cIS3DModelInstance*&) = 0;
+		virtual bool Pick(int32_t, int32_t, cISC4OccupantFilter*, cIS3DModelInstance*&) = 0;
 
 		virtual bool GetModelsInVolume(cS3DBoundingBox const&, cIS3DModelInstance**, uint32_t&) = 0;
 		virtual bool IsModelVisible(cIS3DModelInstance*, int32_t nFrustumType) = 0;
