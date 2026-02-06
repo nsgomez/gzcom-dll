@@ -30,3 +30,7 @@
 
 # Mac files and directories
 .DS_Store
+
+# CLion / JetBrains IDEs
+.idea/
+*.iml
