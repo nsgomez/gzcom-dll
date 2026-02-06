@@ -126,7 +126,7 @@ cIGZCursor* cSC4BaseViewInputControl::GetCursor()
 	return cursor;
 }
 
-void cSC4BaseViewInputControl::SetCursor(cIGZCursor* pIGZursor)
+void cSC4BaseViewInputControl::SetCursor(cIGZCursor* pIGZCursor)
 {
 	if (this->cursor != pIGZCursor)
 	{
