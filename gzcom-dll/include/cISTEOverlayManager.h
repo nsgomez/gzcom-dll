@@ -37,14 +37,37 @@ public:
 	class cDecalInfo
 	{
 	public:
-		cS3DVector2 position; 	// 0x0
-		float scale; 			// 0x8
-		float unknown3;			// 0xc
-		float unknown4;			// 0x10
-		float unknown5; 		// 0x14
-		float unknown6;			// 0x18
-		uint32_t unknown7;		// 0x1c
-		uint32_t unknown8;		// 0x20
+		// World-space center of the decal footprint (terrain X/Z).
+		// If you want it to cover an uneven number of tiles, the center should be in a tile center (i.e. 520x520)
+		// If you want it to cover an even number of tiles, the center should be in a tile node (i.e. 512x512)
+		cS3DVector2 center;					// 0x0
+
+		// Base footprint size in world units (i.e. meters). If this is smaller than one tile, the texture will be
+		// stretched towards the southwest corner of the tile. Larger values make the decal occupy more terrain area.
+		// To cover a number of tiles, the base size should be a multiple of the 16.0f (the tile size).
+		float baseSize = 16.0f; 			// 0x8
+
+		// Rotation in turns (fractions of a full circle): 0.25 = 90 deg, 0.5 = 180 deg, 1.0 = 360 deg.
+		// Rotations other than these values can cause stretch artifacts
+		float rotationTurns = 0.0f;			// 0xc
+
+		// Footprint aspect multiplier (applied with texture aspect ratio).
+		// > 1 stretches along one axis, < 1 compresses it.
+		float aspectMultiplier = 1.0f;		// 0x10
+
+		// U-axis UV scale. Affects texture stretching/tiling across the decal.
+		float uvScaleU = 1.0f; 				// 0x14
+
+		// V-axis UV scale. Affects texture stretching/tiling across the decal.
+		float uvScaleV = 1.0f;				// 0x18
+
+		// Uniform UV translation bias added to both texture axes.
+		// This shifts the sampled part of the texture without moving the decal in world space.
+		float uvOffset = 0.0f;				// 0x1c
+
+		// Copied/stored by the overlay manager and returned by DecalInfo().
+		// Does not seem to be consumed anywhere in Windows x86 v641, nor the available Mac x86 and PPC builds
+		float unknown8 = 0.0f;				// 0x20
 	};
 
 	virtual uint32_t AddDecal(uint32_t textureIID, cS3DVector2 const& position, float scale, float rotation) = 0;
