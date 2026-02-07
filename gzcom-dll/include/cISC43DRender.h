@@ -37,6 +37,7 @@ class cS3DVector2;
 class cSC4CameraControl;
 class cSC4ShakeDescription;
 class SC43DGridElement;
+class cISC4LightingManager;
 
 class cISC43DRender : public cIGZUnknown
 {
@@ -49,7 +50,7 @@ class cISC43DRender : public cIGZUnknown
 		virtual bool SetGDriver(cIGZGDriver*) = 0;
 
 		virtual intptr_t GetViewUtilities(void) = 0;
-		virtual intptr_t GetLightingManager(void) = 0;
+		virtual cISC4LightingManager GetLightingManager(void) = 0;
 		virtual intptr_t GetDrawContext(void) = 0;
 
 		virtual bool GetViewportSize(uint32_t& nX, uint32_t& nZ) = 0;
