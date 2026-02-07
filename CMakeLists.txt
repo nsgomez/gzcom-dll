@@ -19,8 +19,6 @@ if (MSVC)
     target_compile_options(gzcom_dll PRIVATE
         /W3
         /sdl
-        "$<$<CONFIG:Debug>:/MTd>"
-        "$<$<CONFIG:Release>:/MT>"
     )
 endif()
 
