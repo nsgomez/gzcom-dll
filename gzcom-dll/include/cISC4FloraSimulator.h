@@ -4,6 +4,7 @@
  * cISC4FloraSimulator.h
  *
  * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2026 Casper Van Gheluwe
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -24,7 +25,6 @@
 
 class cGZPersistResourceKey;
 class cIGZPersistDBSegment;
-class cISC4FloraOccupant;
 class cISC4FloraTypeFilter;
 class cISC4Occupant;
 class cISCResExemplar;
@@ -56,7 +56,7 @@ public:
 	virtual uint32_t GetBestFloraTypeForLocation(float unknown1, float unknown2, float& unknown3) = 0;
 
 	virtual bool AddNewFloraOccupant(cISC4Occupant* pOccupant) = 0;
-	virtual cISC4FloraOccupant* AddNewFloraOccupant(uint32_t unknown1, float* unknown2, bool unknown3) = 0;
+	virtual cISC4Occupant* AddNewFloraOccupant(uint32_t unknown1, float* unknown2, bool unknown3) = 0;
 	virtual bool DemolishFloraOccupant(cISC4Occupant* pOccupant, int32_t unknown2) = 0;
 	virtual bool DemolishFloraInCellArea(SC4Rect<int32_t> const& rect, int32_t unknown2) = 0;
 	virtual bool DemolishFloraInBoundingBox(float const* unknown1, float const* unknown2, int32_t unknown3) = 0;
