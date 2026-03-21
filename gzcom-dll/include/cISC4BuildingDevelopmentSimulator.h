@@ -4,7 +4,7 @@
  * cISC4BuildingDevelopmentSimulator.h
  *
  * Copyright (C) 2016 Nelson Gomez
- * Copyright (C) 2024, 2025 Nicholas Hayes
+ * Copyright (C) 2024, 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -52,6 +52,15 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 			uint32_t unknown3; // facing?
 			uint32_t cellCenterX;
 			uint32_t cellCenterZ;
+		};
+
+		class GrowthProfile
+		{
+		public:
+			cISC4GrowthDeveloper* pGrowthDeveloper;
+			uint32_t tractX;
+			uint32_t tractZ;
+			uint8_t growthStage;
 		};
 
 		enum class DeveloperType : uint32_t
