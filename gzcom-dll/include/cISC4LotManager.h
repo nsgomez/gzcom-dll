@@ -4,7 +4,7 @@
  * cISC4LotManager.h
  *
  * Copyright (C) 2016 Nelson Gomez
- * Copyright (C) 2024, 2025 Nicholas Hayes
+ * Copyright (C) 2024, 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -59,8 +59,8 @@ class cISC4LotManager : public cIGZUnknown
 		virtual int32_t GetLotSavvyTerrainAltitude(float fPointX, float fPointY, bool& bSucceeded) = 0;
 		virtual int32_t GetLotSavvyCellAltitude(int32_t nCellX, int32_t nCellZ, bool& bSucceeded) = 0;
 
-		virtual bool CanCreateLot(int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nLotWidth, int32_t nLotHeight, bool bZoneNotNeeded, bool bIgnoreConfig, cISC4LotConfiguration* pConfig) = 0;
-		virtual bool CanCreatePloppedLot(SC4Rect<long> sBounds, int32_t nUnknown, cISC4LotConfiguration* pConfig) = 0;
+		virtual int32_t CanCreateLot(int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nLotWidth, int32_t nLotHeight, bool bZoneNotNeeded, bool bIgnoreConfig, cISC4LotConfiguration* pConfig) = 0;
+		virtual int32_t CanCreatePloppedLot(SC4Rect<long> sBounds, int32_t nUnknown, cISC4LotConfiguration* pConfig) = 0;
 
 		virtual bool CreateLotIfPossible(int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nLotWidth, int32_t nLotHeight, int32_t nUnknown, bool bZoneNotNeeded, bool bIgnoreConfig, cISC4LotConfiguration* pConfig) = 0;
 		virtual bool CreateLot(int32_t nTopLeftCellX, int32_t nTopLeftCellZ, int32_t nLotWidth, int32_t nLotHeight, int32_t nFacing, cISC4Lot*& pLot) = 0;
