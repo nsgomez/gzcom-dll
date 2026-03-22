@@ -4,7 +4,7 @@
  * cISC4Region.h
  *
  * Copyright (C) 2016 Nelson Gomez
- * Copyright (C) 2024, 2025 Nicholas Hayes
+ * Copyright (C) 2024, 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -63,7 +63,7 @@ class cISC4Region : public cIGZUnknown
 		virtual bool Shutdown(void) = 0;
 		virtual bool Delete(void) = 0;
 
-		virtual cISC4RegionalCity* GetCity(uint32_t x, uint32_t y) = 0;
+		virtual cISC4RegionalCity** GetCity(uint32_t x, uint32_t y) = 0;
 		virtual cISC4RegionalCity**& InsertCity(cISC4RegionalCity* pCity) = 0;
 		virtual bool RemoveCity(cISC4RegionalCity*& pCity) = 0;
 		virtual bool DeleteCity(cISC4RegionalCity*& pCity) = 0;
