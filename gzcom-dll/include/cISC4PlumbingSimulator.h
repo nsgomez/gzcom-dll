@@ -3,7 +3,7 @@
  *
  * cISC4PlumbingSimulator.h
  *
- * Copyright (C) 2024 Nicholas Hayes
+ * Copyright (C) 2024, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -34,14 +34,14 @@ class cISC4PlumbingSimulator : public cIGZUnknown
 		virtual bool Init() = 0;
 		virtual bool Shutdown() = 0;
 
-		virtual intptr_t GetSupplyValue(int32_t unknown1) = 0;
+		virtual uint8_t GetSupplyValue(int32_t cX, int32_t cZ) = 0;
 		virtual bool GetSupplyValueMapPtr(cISC4SimGrid<uint8_t>*& grid) = 0;
 		virtual cISC4SimGrid<uint8_t>* GetWateredGrid() = 0;
 
 		virtual bool AreWateredBuildingsInCell(int32_t cX, int32_t cZ) = 0;
 		virtual bool IsBuildingWatered(cISC4Occupant* occupant) = 0;
 		virtual uint32_t GetWaterProduction(cISC4Occupant* occupant) = 0;
-		virtual bool IsCellWatered(int32_t unknown1, int32_t unknown2) = 0;
+		virtual bool IsCellWatered(int32_t cX, int32_t cZ) = 0;
 
 		virtual uint32_t GetNumWaterSources() = 0;
 		virtual uint32_t GetNumPollutedWaterSources() = 0;
