@@ -39,6 +39,22 @@ cRZAutoRefCount<cISCLua> SCLuaUtil::GetISCLuaFromFunctionState(lua_State* pState
 	return pLua;
 }
 
+cRZAutoRefCount<cIGZLua5Thread> SCLuaUtil::GetIGZLua5ThreadFromFunctionState(lua_State* pState)
+{
+	// The cIGZLua5Thread instance is located one pointer up from the state address.
+
+	cIGZLua5Thread* pIGZLua5Thread = *reinterpret_cast<cIGZLua5Thread**>(reinterpret_cast<intptr_t>(pState) + -4);
+
+	cRZAutoRefCount<cIGZLua5Thread> pLua;
+
+	if (pIGZLua5Thread)
+	{
+		pLua = pIGZLua5Thread;
+	}
+
+	return pLua;
+}
+
 SCLuaUtil::RegisterLuaFunctionStatus SCLuaUtil::RegisterLuaFunction(
 	cISC4AdvisorSystem* pAdvisorSystem,
 	const char* tableName,
@@ -47,7 +63,7 @@ SCLuaUtil::RegisterLuaFunctionStatus SCLuaUtil::RegisterLuaFunction(
 {
 	RegisterLuaFunctionStatus status = RegisterLuaFunctionStatus::InvalidParameter;
 
-	if (pAdvisorSystem && !functionName.empty() && pFunction)
+	if (pAdvisorSystem)
 	{
 		// The Lua system can have different instances active.
 		// We use the one from the advisor system so that the commands are registered
@@ -55,24 +71,58 @@ SCLuaUtil::RegisterLuaFunctionStatus SCLuaUtil::RegisterLuaFunction(
 
 		cISCLua* const pLua = pAdvisorSystem->GetScriptingContext();
 
-		if (pLua)
+		status = SCLuaUtil::RegisterLuaFunction(pLua, tableName, functionName, pFunction);
+	}
+
+	return status;
+}
+
+SCLuaUtil::RegisterLuaFunctionStatus SCLuaUtil::RegisterLuaFunction(
+	cISCLua* pLua,
+	const char* tableName,
+	const std::string_view& functionName,
+	lua_CFunction pFunction)
+{
+	RegisterLuaFunctionStatus status = RegisterLuaFunctionStatus::InvalidParameter;
+
+	if (pLua)
+	{
+		status = SCLuaUtil::RegisterLuaFunction(pLua->AsIGZLua5(), tableName, functionName, pFunction);
+	}
+
+	return status;
+}
+
+SCLuaUtil::RegisterLuaFunctionStatus SCLuaUtil::RegisterLuaFunction(
+	cIGZLua5* pLua,
+	const char* tableName,
+	const std::string_view& functionName,
+	lua_CFunction pFunction)
+{
+	RegisterLuaFunctionStatus status = RegisterLuaFunctionStatus::InvalidParameter;
+
+	if (pLua && !functionName.empty() && pFunction)
+	{
+		cIGZLua5Thread* const pLuaThread = pLua->AsIGZLua5Thread();
+
+		if (pLuaThread)
 		{
-			int32_t top = pLua->GetTop();
+			int32_t top = pLuaThread->GetTop();
 
 			if (tableName)
 			{
-				pLua->GetGlobal(tableName);
+				pLuaThread->GetGlobal(tableName);
 			}
 			else
 			{
-				pLua->GetGlobals();
+				pLuaThread->GetGlobalTable();
 			}
 
-			int32_t functionTableTop = pLua->GetTop();
+			int32_t functionTableTop = pLuaThread->GetTop();
 
 			if (top != functionTableTop)
 			{
-				cIGZLua5Thread::LuaType type = pLua->Type(-1);
+				cIGZLua5Thread::LuaType type = pLuaThread->Type(-1);
 
 				if (type == cIGZLua5Thread::LuaTypeTable)
 				{
@@ -84,11 +134,11 @@ SCLuaUtil::RegisterLuaFunctionStatus SCLuaUtil::RegisterLuaFunction(
 					// SC4 uses the same technique when registering the game table functions
 					// (e.g. game.trend_slope).
 
-					pLua->Register(pFunction, kTempFunctionName);
-					pLua->PushLString(functionName.data(), functionName.size());
-					pLua->GetGlobal(kTempFunctionName);
-					pLua->SetTable(-3);
-					pLua->Pop(1);
+					pLuaThread->Register(pFunction, kTempFunctionName);
+					pLuaThread->PushLString(functionName.data(), functionName.size());
+					pLuaThread->GetGlobal(kTempFunctionName);
+					pLuaThread->SetTable(-3);
+					pLuaThread->Pop(1);
 					status = RegisterLuaFunctionStatus::Ok;
 				}
 				else
@@ -101,7 +151,7 @@ SCLuaUtil::RegisterLuaFunctionStatus SCLuaUtil::RegisterLuaFunction(
 				status = RegisterLuaFunctionStatus::TableNotFound;
 			}
 
-			pLua->SetTop(top);
+			pLuaThread->SetTop(top);
 		}
 	}
 

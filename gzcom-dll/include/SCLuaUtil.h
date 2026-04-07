@@ -3,7 +3,7 @@
  *
  * SCLuaUtil.h
  *
- * Copyright (C) 2024, 2025 Nicholas Hayes
+ * Copyright (C) 2024, 2025. 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -30,10 +30,31 @@ namespace SCLuaUtil
 {
 	/**
 	 * @brief Gets an cISCLua instance from the Lua function state.
+	 *
+	 * Native functions created for advisor/automata scripts typically use this,
+	 * but functions created for cIGZLuaScriptServer or a private cIGZLua5 class
+	 * instance must use GetIGZLua5ThreadFromFunctionState.
+	 *
 	 * @param pState The function state.
 	 * @return The cISCLua instance.
 	 */
 	cRZAutoRefCount<cISCLua> GetISCLuaFromFunctionState(lua_State* pState);
+
+	/**
+	 * @brief Gets an cIGZLua5Thread instance from the Lua function state.
+	 *
+	 * cIGZLua5Thread is the low level interface for the game's Lua implementation,
+	 * all native functions will have access to it from the function state.
+	 *
+	 * This is normally only used by native functions that interact with
+	 * cIGZLuaScriptServer or a private cIGZLua5 class instance.
+	 * Native functions created for advisor/automata scripts typically use
+	 * GetISCLuaFromFunctionState.
+	 *
+	 * @param pState The function state.
+	 * @return The cIGZLua5Thread instance.
+	 */
+	cRZAutoRefCount<cIGZLua5Thread> GetIGZLua5ThreadFromFunctionState(lua_State* pState);
 
 	enum class RegisterLuaFunctionStatus : int32_t
 	{
@@ -57,6 +78,36 @@ namespace SCLuaUtil
 	 */
 	RegisterLuaFunctionStatus RegisterLuaFunction(
 		cISC4AdvisorSystem* pAdvisorSystem,
+		const char* tableName,
+		const std::string_view& functionName,
+		lua_CFunction pFunction);
+
+	/**
+	 * @brief Registers a C++ function to be called by the Lua system.
+	 * @param pLua A pointer to the Lua instance.
+	 * @param tableName The name of the Lua table that the function is defined in.
+	 * Can be NULL to register a global function.
+	 * @param functionName The name of the function.
+	 * @param pFunction The C++ function that is called by the Lua system.
+	 * @return The registration status.
+	 */
+	RegisterLuaFunctionStatus RegisterLuaFunction(
+		cISCLua* pLua,
+		const char* tableName,
+		const std::string_view& functionName,
+		lua_CFunction pFunction);
+
+	/**
+	 * @brief Registers a C++ function to be called by the Lua system.
+	 * @param pLua A pointer to the Lua instance.
+	 * @param tableName The name of the Lua table that the function is defined in.
+	 * Can be NULL to register a global function.
+	 * @param functionName The name of the function.
+	 * @param pFunction The C++ function that is called by the Lua system.
+	 * @return The registration status.
+	 */
+	RegisterLuaFunctionStatus RegisterLuaFunction(
+		cIGZLua5* pLua,
 		const char* tableName,
 		const std::string_view& functionName,
 		lua_CFunction pFunction);

@@ -122,6 +122,7 @@
     <ClInclude Include="include\cIGZLanguageUtility.h" />
     <ClInclude Include="include\cIGZLua5.h" />
     <ClInclude Include="include\cIGZLua5Thread.h" />
+    <ClInclude Include="include\cIGZLuaScriptServer.h" />
     <ClInclude Include="include\cIGZMessage2.h" />
     <ClInclude Include="include\cIGZMessage2Standard.h" />
     <ClInclude Include="include\cIGZMessageServer.h" />
