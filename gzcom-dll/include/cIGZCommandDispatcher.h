@@ -4,6 +4,7 @@
  * cIGZCommandDispatcher.h
  *
  * Copyright (C) 2018 Nelson Gomez
+ * Copyright (C) 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -30,7 +31,7 @@ class cIGZCommandDispatcher : public cIGZUnknown
 		virtual bool Init(void) = 0;
 		virtual bool Shutdown(void) = 0;
 
-		virtual bool ExecuteCommand(uint32_t dwCommandID, cIGZCommandParameterSet* pParamUnknown, cIGZCommandParameterSet* pCommandParams) = 0;
+		virtual int32_t ExecuteCommand(uint32_t dwCommandID, cIGZCommandParameterSet* pParamUnknown, cIGZCommandParameterSet* pCommandParams) = 0;
 
 		virtual ~cIGZCommandDispatcher() { }
 };

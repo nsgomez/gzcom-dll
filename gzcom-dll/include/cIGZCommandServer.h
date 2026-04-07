@@ -4,7 +4,7 @@
  * cIGZCommandServer.h
  *
  * Copyright (C) 2018 Nelson Gomez
- * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -65,9 +65,9 @@ class cIGZCommandServer : public cIGZUnknown
 		virtual cIGZCommandDispatcher* GetCommandDispatcher(void) = 0;
 		virtual bool SetCommandDispatcher(cIGZCommandDispatcher* pCommandDispatcher) = 0;
 
-		virtual bool ExecuteCommand(uint32_t dwCommandID, cIGZCommandParameterSet* pInput, cIGZCommandParameterSet* pOutput) = 0;
-		virtual bool ExecuteCommand(char const *pszCommandString, uint32_t nStringLen, cIGZCommandParameterSet* pParamSet) = 0;
-		virtual bool ExecuteCommandFormatted(char const *pszCommandFormat, cIGZCommandParameterSet *pParamUnknown, ...) = 0;
+		virtual int32_t ExecuteCommand(uint32_t dwCommandID, cIGZCommandParameterSet* pInput, cIGZCommandParameterSet* pOutput) = 0;
+		virtual int32_t ExecuteCommand(char const *pszCommandString, uint32_t nStringLen, cIGZCommandParameterSet* pParamSet) = 0;
+		virtual int32_t ExecuteCommandFormatted(char const *pszCommandFormat, cIGZCommandParameterSet *pParamUnknown, ...) = 0;
 
 		virtual bool ConvertStringToCommand(char const *pszCommandString, uint32_t nStringLen, uint32_t& dwCommandIDOut, cIGZCommandParameterSet*& pParamSetOut) = 0;
 		virtual bool ConvertCommandToString(uint32_t dwCommandID, cIGZCommandParameterSet *pParamSet, cIGZString& szStringOut) = 0;
