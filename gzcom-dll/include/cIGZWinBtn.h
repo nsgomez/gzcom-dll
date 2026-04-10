@@ -3,7 +3,7 @@
  *
  * cIGZWinBtn.h
  *
- * Copyright (C) 2024 Nicholas Hayes
+ * Copyright (C) 2024, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -34,10 +34,39 @@ static const uint32_t GZIID_cIGZWinBtn = 0x8810;
 class cIGZWinBtn : public cIGZUnknown
 {
 public:
+	enum BtnFlag : int32_t
+	{
+		BtnFlagToggle = 0x1,
+		BtnFlagTriggerOnDown = 0x2,
+		BtnFlagShowCaption = 0x4,
+		BtnFlagFill = 0x10,
+		BtnFlagAutoSize = 0x20,
+		BtnFlagWrapCaption = 0x40,
+		BtnFlagShiftCaption = 0x80,
+		BtnFlagTips = 0x100,
+		BtnFlagTipsDelay = 0x200,
+		BtnFlagTipsTimeOut = 0x400,
+	};
+
+	enum class CaptionStyle : int32_t
+	{
+		AlignCenter = 0,
+		AlignLeft = 1,
+		AlignRight = 2
+	};
+
+	enum class Style : int32_t
+	{
+		Label = 1,
+		Standard = 2,
+		Toggle = 3,
+		RadioCheck = 4
+	};
+
 	virtual cIGZWin* AsIGZWin() = 0;
 
-	virtual bool GetBtnFlag(int32_t flag) const = 0;
-	virtual bool SetBtnFlag(int32_t flag, bool value) = 0;
+	virtual bool GetBtnFlag(BtnFlag flag) const = 0;
+	virtual bool SetBtnFlag(BtnFlag flag, bool value) = 0;
 
 	virtual bool ToggleOn() = 0;
 	virtual bool ToggleOff() = 0;
@@ -46,9 +75,9 @@ public:
 	virtual bool SetChecked(bool unknown1) = 0;
 	virtual bool IsChecked() const = 0;
 
-	virtual uint32_t GetStyle() = 0;
-	virtual bool SetStyle(int32_t unknown1, cIGZBuffer* unknown2, cRZRect const* unknown3) = 0;
-	virtual bool SetButtonStyle(int32_t unknown1) = 0;
+	virtual Style GetStyle() = 0;
+	virtual bool SetStyle(Style style, cIGZBuffer* imageBuffer, cRZRect const* imageArea) = 0;
+	virtual bool SetButtonStyle(Style style) = 0;
 
 	virtual int32_t GetImageW() const = 0;
 	virtual int32_t GetImageH() const = 0;
@@ -67,8 +96,8 @@ public:
 	virtual bool GetFontColor(int32_t unknown1, cRZColor& unknown2) const = 0;
 	virtual bool ClearFontColor(int32_t unknown1) = 0;
 
-	virtual bool SetCaptionStyle(int32_t style) = 0;
-	virtual bool GetCaptionStyle(int32_t& style) const = 0;
+	virtual bool SetCaptionStyle(CaptionStyle style) = 0;
+	virtual bool GetCaptionStyle(CaptionStyle& style) const = 0;
 
 	virtual bool SetGutters(uint8_t unknown1, uint8_t unknown2) = 0;
 	virtual bool GetGutters(int32_t& unknown1, int32_t& unknown2) const = 0;
