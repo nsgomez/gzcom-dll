@@ -149,6 +149,7 @@
     <ClInclude Include="include\cIGZWin.h" />
     <ClInclude Include="include\cIGZWinBtn.h" />
     <ClInclude Include="include\cIGZWinCombo.h" />
+    <ClInclude Include="include\cIGZWinCtrlMgr.h" />
     <ClInclude Include="include\cIGZWinGen.h" />
     <ClInclude Include="include\cIGZWinKeyAccelerator.h" />
     <ClInclude Include="include\cIGZWinKeyAcceleratorRes.h" />
