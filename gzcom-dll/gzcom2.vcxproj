@@ -97,6 +97,7 @@
     <ClInclude Include="include\cIGZCOMDirector.h" />
     <ClInclude Include="include\cIGZCOMLibrary.h" />
     <ClInclude Include="include\cIGZCommandDispatcher.h" />
+    <ClInclude Include="include\cIGZCommandGenerator.h" />
     <ClInclude Include="include\cIGZCommandParameterSet.h" />
     <ClInclude Include="include\cIGZCommandServer.h" />
     <ClInclude Include="include\cIGZCursor.h" />
