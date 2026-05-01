@@ -89,11 +89,11 @@ class cIGZWinMgr : public cIGZUnknown
 		virtual bool GZRegisterKeyFilter(cIGZWinMessageFilter* pFilter) = 0;
 		virtual bool GZUnregisterKeyFilter(cIGZWinMessageFilter* pFilter) = 0;
 
-		virtual bool DoModalWin(cIGZWin* pWin) = 0;
+		virtual int32_t DoModalWin(cIGZWin* pWin) = 0;
 		virtual bool IsModal(void) = 0;
 		virtual int32_t GetModalNestCount(void) = 0;
 
-		virtual bool GZMsgBox(cIGZString const&, cIGZString const&, uint32_t, bool, uint32_t) = 0;
+		virtual int32_t GZMsgBox(cIGZString const&, cIGZString const&, uint32_t, bool, uint32_t) = 0;
 		virtual bool SetGZMsgBoxCMDID(uint32_t, uint32_t, bool) = 0;
 		virtual bool GetGZMsgBoxCMDID(uint32_t&, uint32_t&, bool&) = 0;
 
