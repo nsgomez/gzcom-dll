@@ -3,7 +3,7 @@
  *
  * cISC4TrafficSimulator.h
  *
- * Copyright (C) 2024, 2025 Nicholas Hayes
+ * Copyright (C) 2024, 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -53,6 +53,23 @@ public:
 		Monorail = 8
 	};
 
+	class TrafficEdgeDensity
+	{
+	public:
+		uint16_t unknown1[4];
+		uint16_t unknown2[4];
+		uint16_t unknown3[4];
+		uint16_t unknown4[4];
+		uint16_t usage;
+		uint16_t unknown5[4];
+		uint16_t unknown6[4];
+		uint16_t unknown7[4];
+		uint16_t unknown8[4];
+	};
+
+	static_assert(sizeof(TrafficEdgeDensity) == 0x42);
+	static_assert(offsetof(TrafficEdgeDensity, usage) == 0x20);
+
 	virtual bool Init() = 0;
 	virtual bool Shutdown() = 0;
 
@@ -65,7 +82,7 @@ public:
 	virtual cISC4SimGrid<uint8_t>* GetCommercialTrafficMap() const = 0;
 	virtual cISC4SimGrid<uint8_t>* GetCongestionMap() const = 0;
 	virtual intptr_t GetBackgroundTraffic(int unknown1, int unknown2) = 0;
-	virtual intptr_t GetTrafficEdgeDensity(uint8_t x, uint8_t z, TravelType travelType, bool eveningCommute) = 0; // Returns cSC4TrafficEdgeDensityEntry*
+	virtual TrafficEdgeDensity* GetTrafficEdgeDensity(uint8_t x, uint8_t z, TravelType travelType, bool eveningCommute) = 0;
 	virtual cISC4SimGrid<uint8_t>* GetTripLengthMap() const = 0;
 
 	virtual float GetTripScale() const = 0;
