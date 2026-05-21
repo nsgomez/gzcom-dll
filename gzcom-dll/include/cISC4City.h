@@ -4,7 +4,7 @@
  * cISC4City.h
  *
  * Copyright (C) 2016 Nelson Gomez
- * Copyright (C) 2023, 2024, 2025 Nicholas Hayes
+ * Copyright (C) 2023, 2024, 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -115,8 +115,8 @@ class cISC4City : public cIGZUnknown
 		virtual int32_t GetDifficultyLevel(void) = 0;
 		virtual cISC4City* SetDifficultyLevel(int32_t dwLevel) = 0;
 
-		virtual intptr_t GetWorldPosition(float& fX, float& fZ) = 0;
-		virtual cISC4City* SetWorldPosition(float fX, float fZ) = 0;
+		virtual void GetWorldPosition(float& fLongitude, float& fLatitude) = 0;
+		virtual void SetWorldPosition(float fLongitude, float fLatitude) = 0;
 
 		virtual float GetWorldBaseElevation(void) = 0;
 		virtual cISC4City* SetWorldBaseElevation(float fElevation) = 0;
