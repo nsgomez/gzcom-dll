@@ -37,6 +37,29 @@ static const uint32_t GZIID_cISC4Automaton = 0xa9b40f05;
 class cISC4Automaton : public cIGZUnknown
 {
 public:
+	enum eAutomataFlag : uint32_t
+	{
+		AutomataFlagNone =				0,
+		AutomataFlagRemove =			0x1,
+		AutomataFlagSelfControl =		0x2,
+		AutomataFlagReachedDest =		0x4,
+		AutomataFlagCollide =			0x8,
+		AutomataFlagStopLight =			0x10,
+		AutomataFlagStopped =			0x20,
+		AutomataFlagSpecialRoute =		0x40,
+		AutomataFlagEmergency =			0x80,
+		AutomataFlagIdle =				0x100,
+		AutomataFlagRepathing =			0x200,
+		AutomataFlagTeleporting =		0x400,
+		AutomataFlagIgnoreLights =		0x800,
+		AutomataFlagIgnoreSpeedLimit =	0x1000,
+		AutomataFlagIgnorePaths =		0x2000,
+		AutomataFlagIgnoreAttractors =	0x4000,
+		AutomataFlagIgnoreRoads =		0x20000,
+		AutomataFlagAvoidLots =			0x400000,
+		AutomataFlagAvoidRoads =		0x800000,
+	};
+
 	typedef int32_t ePlayerDriveCommand;
 
 	virtual bool Init() = 0;
@@ -74,8 +97,8 @@ public:
 	virtual void SetDispatchInfoID(uint32_t id) = 0;
 	virtual void ReturnToSourceOccupant() = 0;
 
-	virtual void SetAutomataFlag(uint32_t flag, bool value) = 0;
-	virtual bool CheckAutomataFlag(uint32_t flag) const = 0;
+	virtual void SetAutomataFlag(eAutomataFlag flag, bool value) = 0;
+	virtual bool CheckAutomataFlag(eAutomataFlag flag) const = 0;
 
 	virtual float GetOpacity() const = 0;
 	virtual void SetOpacity(float param_1, float param_2) = 0;
