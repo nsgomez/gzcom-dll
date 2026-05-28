@@ -38,6 +38,7 @@ class cISC4RegionalCity;
 class cISC4RenderProperties;
 class cISCLua;
 class cISCStringDetokenizer;
+class cISLWinLocationSaver;
 class SC4Preferences;
 class SC4String;
 class SC4VideoPreferences;
@@ -100,7 +101,7 @@ class cISC4App : public cIGZUnknown
 		virtual intptr_t GetDebugConsole(void) = 0;
 		virtual cIGZGimexFactory* GetGimexFactory(void) = 0;
 		virtual cISCStringDetokenizer* GetStringDetokenizer(void) = 0;
-		virtual intptr_t GetWinLocationSaver(void) = 0; // Returns a cISLWinLocationSaver*
+		virtual cISLWinLocationSaver* GetWinLocationSaver(void) = 0;
 		virtual cISC4RenderProperties* GetRenderProperties(void) = 0;
 		virtual SC4String* GetExceptionReportsDirectory2(void) const = 0;
 		virtual intptr_t GetGlyphTextureManager(void) = 0; // Returns a cISC4GlyphTextureManager*
