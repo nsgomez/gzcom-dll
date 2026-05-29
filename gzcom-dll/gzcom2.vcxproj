@@ -105,6 +105,7 @@
     <ClInclude Include="include\cIGZDate.h" />
     <ClInclude Include="include\cIGZDBSegmentPackedFile.h" />
     <ClInclude Include="include\cIGZDBSerialRecordAsIGZFile.h" />
+    <ClInclude Include="include\cIGZExceptionNotification.h" />
     <ClInclude Include="include\cIGZFile.h" />
     <ClInclude Include="include\cIGZFileSystem.h" />
     <ClInclude Include="include\cIGZFont.h" />
@@ -284,6 +285,7 @@
     <ClInclude Include="include\cISCResExemplar.h" />
     <ClInclude Include="include\cISCResExemplarCohort.h" />
     <ClInclude Include="include\cISCStringDetokenizer.h" />
+    <ClInclude Include="include\cISLWinLocationSaver.h" />
     <ClInclude Include="include\cISTEOverlayManager.h" />
     <ClInclude Include="include\cISTESurfaceWater.h" />
     <ClInclude Include="include\cISTETerrain.h" />
