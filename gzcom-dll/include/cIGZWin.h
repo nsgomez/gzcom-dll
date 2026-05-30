@@ -4,7 +4,7 @@
  * cIGZWin.h
  *
  * Copyright (C) 2016 Nelson Gomez
- * Copyright (C) 2024, 2025 Nicholas Hayes
+ * Copyright (C) 2024, 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -43,6 +43,25 @@ static const uint32_t GZIID_cIGZWin = 0x22BA0121;
 class cIGZWin : public cIGZUnknown
 {
 	public:
+		enum tWinFlag : uint32_t
+		{
+			WinFlag_Visible =				0x1,
+			WinFlag_Enabled =				0x2,
+			WinFlag_AlphaBlend =			0x4,
+			WinFlag_UseFade =				0x20,
+			WinFlag_Moveable =				0x100,
+			WinFlag_Sizeable =				0x200,
+			WinFlag_Sortable =				0x800,
+			WinFlag_PrivateBuffer =			0x10000,
+			WinFlag_PrivateBufferTrans =	0x20000,
+			WinFlag_PrivateBufferErase =	0x40000,
+			WinFlag_PrivateBufferVid =		0x100000,
+			WinFlag_AcceptFocus =			0x8000,
+			WinFlag_MouseTrans =			0x80000,
+			WinFlag_IgnoreMouse =			0x200000,
+			WinFlag_Unknown1 =				0x8000000,
+		};
+
 		virtual bool DoMessage(cGZMessage& sMessage) = 0;
 
 		virtual bool Init(void) = 0;
@@ -129,8 +148,8 @@ class cIGZWin : public cIGZUnknown
 		virtual uint32_t GetInstanceID() const = 0;
 		virtual bool SetInstanceID(uint32_t id) = 0;
 
-		virtual bool GetFlag(uint32_t flag) const = 0;
-		virtual bool SetFlag(uint32_t flag, bool value) = 0;
+		virtual bool GetFlag(tWinFlag flag) const = 0;
+		virtual bool SetFlag(tWinFlag flag, bool value) = 0;
 
 		virtual bool ShowWindow() = 0;
 		virtual bool HideWindow() = 0;
