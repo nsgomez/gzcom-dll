@@ -4,6 +4,7 @@
  * cISC4LotDeveloper.h
  *
  * Copyright (C) 2016 Nelson Gomez
+ * Copyright (C) 2026 Casper Van Gheluwe
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -28,8 +29,8 @@ class cISC4BusinessUnit;
 class cISC4Lot;
 class cISC4LotBaseTextureOccupant;
 class cISC4LotConfiguration;
-class cISC4LotConfigurationObject;
 class cISC4Occupant;
+class cSC4LotConfigurationObject;
 
 class cISC4LotDeveloper : public cIGZUnknown
 {
@@ -89,7 +90,7 @@ class cISC4LotDeveloper : public cIGZUnknown
 
 		virtual cISC4Occupant* GetFirstBuilding(cISC4Lot* pLot) = 0;
 
-		virtual bool GetPositionForLotConfigurationObject(cISC4Lot* pLot, cISC4LotConfiguration* pConfig, cISC4LotConfigurationObject* pObject, float*, long&) = 0;
+		virtual bool GetPositionForLotConfigurationObject(cISC4Lot* pLot, cISC4LotConfiguration* pConfig, cSC4LotConfigurationObject* pObject, float*, long&) = 0;
 		virtual bool GetPositionForBuilding(cISC4Lot* pLot, float*, long&) = 0;
 
 		virtual bool GetLotBaseTextureOccupant(cISC4Lot* pLot, cISC4LotBaseTextureOccupant*& pOccupant, bool) = 0;

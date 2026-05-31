@@ -5,6 +5,7 @@
  *
  * Copyright (C) 2016 Nelson Gomez
  * Copyright (C) 2024, 2025 Nicholas Hayes
+ * Copyright (C) 2026 Casper Van Gheluwe
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -30,9 +31,9 @@
 class cISCPropertyHolder;
 class cISC4BusinessUnit;
 class cISC4LotConfiguration;
-class cISC4LotConfigurationObject;
 class cISC4Occupant;
 class cISC4TrafficSource;
+class cSC4LotConfigurationObject;
 class SC4Percentage;
 
 template <typename T> class SC4List;
@@ -76,7 +77,7 @@ class cISC4Lot : public cIGZUnknown
 
 		virtual cISC4LotConfiguration* GetLotConfiguration(void) = 0;
 		virtual bool SetLotConfiguration(cISC4LotConfiguration* pConfig) = 0;
-		virtual cISC4LotConfigurationObject* GetLotConfigurationObject(cISC4Occupant* pOccupant) = 0;
+		virtual cSC4LotConfigurationObject* GetLotConfigurationObject(cISC4Occupant* pOccupant) = 0;
 
 		virtual uint32_t GetFlags(void) const = 0;
 		virtual bool SetFlags(uint32_t dwFlags) = 0;
