@@ -109,6 +109,6 @@ static_assert(offsetof(cSC4LotConfigurationObject, rectMaxX) == 0x10);
 static_assert(offsetof(cSC4LotConfigurationObject, rectMaxZ) == 0x14);
 static_assert(offsetof(cSC4LotConfigurationObject, rectMinX) == 0x18);
 static_assert(offsetof(cSC4LotConfigurationObject, rectMinZ) == 0x1c);
-static_assert(offsetof(cSC4LotConfigurationObject, foundationID) == 0x20);
+static_assert(offsetof(cSC4LotConfigurationObject, foundationIID) == 0x20);
 static_assert(offsetof(cSC4LotConfigurationObject, objectID) == 0x24);
 static_assert(offsetof(cSC4LotConfigurationObject, data) == 0x28);
