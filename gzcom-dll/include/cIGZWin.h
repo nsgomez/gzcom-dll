@@ -149,7 +149,7 @@ class cIGZWin : public cIGZUnknown
 		virtual bool SetInstanceID(uint32_t id) = 0;
 
 		virtual bool GetFlag(tWinFlag flag) const = 0;
-		virtual bool SetFlag(tWinFlag flag, bool value) = 0;
+		virtual tWinFlag SetFlag(tWinFlag flag, bool value) = 0;
 
 		virtual bool ShowWindow() = 0;
 		virtual bool HideWindow() = 0;
