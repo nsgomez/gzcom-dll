@@ -59,7 +59,7 @@ class cIGZWin : public cIGZUnknown
 			WinFlag_AcceptFocus =			0x8000,
 			WinFlag_MouseTrans =			0x80000,
 			WinFlag_IgnoreMouse =			0x200000,
-			WinFlag_Unknown1 =				0x8000000,
+			WinFlag_DelayedPlot =			0x8000000,
 		};
 
 		virtual bool DoMessage(cGZMessage& sMessage) = 0;
