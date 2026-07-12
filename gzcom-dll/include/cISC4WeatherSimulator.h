@@ -29,6 +29,14 @@ template <typename T> class SC4Vector;
 class cISC4WeatherSimulator : public cIGZUnknown
 {
 public:
+	enum class Season : int32_t
+	{
+		Winter = 0,
+		Spring = 1,
+		Summer = 2,
+		Fall = 3
+	};
+
 	virtual bool Init() = 0;
 	virtual bool Shutdown() = 0;
 
@@ -44,7 +52,7 @@ public:
 	virtual void CellToStandardCityCell(int32_t unknown1, int32_t unknown2, int32_t& unknown3, int32_t& unknown4) = 0;
 	virtual void StandardCityCellToCell(int32_t unknown1, int32_t unknown2, int32_t& unknown3, int32_t& unknown4) = 0;
 
-	virtual int32_t GetCurrentSeason() = 0;
+	virtual Season GetCurrentSeason() = 0;
 	virtual int32_t GetCurrentSeasonMonth() = 0;
 
 	virtual void UpdateMoisture(SC4Rect<int32_t> const& rect) = 0;
