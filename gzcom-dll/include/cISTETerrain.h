@@ -21,6 +21,8 @@
 
 #pragma once
 #include "cISTETerrainMap.h"
+#include "SC4Rect.h"
+#include <cstddef>
 
 class cIGZPersistDBSegment;
 class cISTETerrainView;
@@ -49,7 +51,21 @@ public:
 		Black = 4
 	};
 
-	struct tBrushParameters;
+	struct tBrushParameters
+	{
+		SC4Rect<float> bounds;
+		int zoom;
+		bool redisplayTerrain;
+		float strength;
+		float radiusScaling;
+		uint32_t terrainMessageData4;
+		SC4Rect<int> appliedArea;
+		float altitude;
+	};
+
+	static_assert(sizeof(tBrushParameters) == 0x38);
+	static_assert(offsetof(tBrushParameters, strength) == 0x18);
+	static_assert(offsetof(tBrushParameters, altitude) == 0x34);
 
 	struct tUIElementsForBrush
 	{
