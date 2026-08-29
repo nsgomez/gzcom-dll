@@ -27,6 +27,7 @@ class cISC4Occupant;
 class cISC4OccupantFilter;
 
 template <typename T> class SC4List;
+template <typename T> class SC4Point;
 
 class cISC4OccupantManager : public cIGZUnknown
 {
@@ -58,7 +59,7 @@ class cISC4OccupantManager : public cIGZUnknown
 
 		virtual bool IsCellEmpty(int32_t nX, int32_t nZ) = 0;
 		virtual int32_t GetBoundingCells(int nUnknown1, int nUnknown2, int* nUnknown3[2], int& nUnknown4) = 0;
-		
+
 		virtual bool FindOccupant(cISC4Occupant* pOccupant, bool bUnknown, int* nX, int* nZ) = 0;
 		virtual bool GetFirstOccupantByPosition(cISC4Occupant*& ppOccupant, float fX, float fZ, uint32_t dwUnknown) = 0;
 		virtual bool GetFirstOccupantByPosition(cISC4Occupant*& ppOccupant, float fX, float fZ, cISC4OccupantFilter* pFilter) = 0;
@@ -66,15 +67,15 @@ class cISC4OccupantManager : public cIGZUnknown
 		virtual bool GetFirstOccupant(cISC4Occupant*& ppOccupant, int nX, int nZ, cISC4OccupantFilter* pFilter) = 0;
 		virtual bool GetFirstOccupantByStandardCityCell(cISC4Occupant*& ppOccupant, int nX, int nZ, uint32_t dwUnknown) = 0;
 		virtual bool GetFirstOccupantByStandardCityCell(cISC4Occupant*& ppOccupant, int nX, int nZ, cISC4OccupantFilter* pFilter) = 0;
-		virtual bool GetFirstOccupantByStandardCityCells(cISC4Occupant*& ppOccupant, int const* nXCells, int const* nZCells, uint32_t dwUnknown) = 0;
-		virtual bool GetFirstOccupantByStandardCityCells(cISC4Occupant*& ppOccupant, int const* nXCells, int const* nZCells, cISC4OccupantFilter* pFilter) = 0;
+		virtual bool GetFirstOccupantByStandardCityCells(cISC4Occupant*& ppOccupant, SC4Point<int> const* northWestCell, SC4Point<int> const* southEastCell, uint32_t dwUnknown) = 0;
+		virtual bool GetFirstOccupantByStandardCityCells(cISC4Occupant*& ppOccupant, SC4Point<int> const* northWestCell, SC4Point<int> const* southEastCell, cISC4OccupantFilter* pFilter) = 0;
 
 		virtual bool GetOccupantsByBBox(SC4List<cISC4Occupant*>& sOccupants, float const* fXCells, float const* fZCells, uint32_t dwType, uint32_t dwUnknown) = 0;
 		virtual bool GetOccupantsByBBox(SC4List<cISC4Occupant*>& sOccupants, float const* fXCells, float const* fZCells, cISC4OccupantFilter* pFilter, uint32_t dwUnknown) = 0;
 		virtual bool GetOccupantsByOccupantManagerCells(SC4List<cISC4Occupant*>& sOccupants, int const* fXCells, int const* fZCells, uint32_t dwType, uint32_t dwUnknown) = 0;
 		virtual bool GetOccupantsByOccupantManagerCells(SC4List<cISC4Occupant*>& sOccupants, int const* fXCells, int const* fZCells, cISC4OccupantFilter* pFilter, uint32_t dwUnknown) = 0;
-		virtual bool GetOccupantsByStandardCityCells(SC4List<cISC4Occupant*>& sOccupants, int const* fXCells, int const* fZCells, uint32_t dwType, uint32_t dwUnknown) = 0;
-		virtual bool GetOccupantsByStandardCityCells(SC4List<cISC4Occupant*>& sOccupants, int const* fXCells, int const* fZCells, cISC4OccupantFilter* pFilter, uint32_t dwUnknown) = 0;
+		virtual bool GetOccupantsByStandardCityCells(SC4List<cISC4Occupant*>& sOccupants, SC4Point<int> const* northWestCell, SC4Point<int> const* southEastCell, uint32_t dwType, uint32_t dwUnknown) = 0;
+		virtual bool GetOccupantsByStandardCityCells(SC4List<cISC4Occupant*>& sOccupants, SC4Point<int> const* northWestCell, SC4Point<int> const* southEastCell, cISC4OccupantFilter* pFilter, uint32_t dwUnknown) = 0;
 
 		virtual bool IterateOccupantsByBBox(bool(*pfIterator)(cISC4Occupant*, void*), void* pData, float const* pfUnknown1, float const* pfUnknown2, uint32_t dwUnknown) = 0;
 		virtual bool IterateOccupantsByBBox(bool(*pfIterator)(cISC4Occupant*, void*), void* pData, float const* pfUnknown1, float const* pfUnknown2, cISC4OccupantFilter* pFilter) = 0;
