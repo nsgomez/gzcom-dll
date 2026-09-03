@@ -65,7 +65,7 @@ class cISC4App : public cIGZUnknown
 		virtual bool LoadCity(cIGZString& szString, intptr_t pCityOut) = 0; // Actually an AutoRefCount<cISC4RegionalCity>
 		virtual bool CloseCity(void) = 0;
 		virtual bool SaveCity(bool bFastSave) = 0;
-		virtual bool SaveCity(cIGZString const& szName, bool bFastSave) = 0;
+		virtual bool SaveCity(cIGZString const& szSaveFilePath, bool bFastSave) = 0;
 
 		virtual bool SavePreferences(void) = 0;
 		virtual bool EnableFullGamePauseOnAppFocusLoss(bool bEnable) = 0;
