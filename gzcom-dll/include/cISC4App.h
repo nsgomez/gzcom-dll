@@ -74,10 +74,10 @@ class cISC4App : public cIGZUnknown
 		virtual bool GetAutoVideoPreferences(SC4VideoPreferences& pPreferencesOut) = 0;
 
 		virtual bool GetDebugFunctionalityEnabled(void) = 0;
-		virtual cISC4App* SetDebugFunctionalityEnabled(bool bEnabled) = 0;
+		virtual void SetDebugFunctionalityEnabled(bool bEnabled) = 0;
 
 		virtual bool GetPopupDialogsEnabled(void) = 0;
-		virtual cISC4App* SetPopupDialogsEnabled(bool bEnabled) = 0;
+		virtual void SetPopupDialogsEnabled(bool bEnabled) = 0;
 
 		// All intptr_t types here are actually unspecified class types that have
 		// been omitted for simplicity's sake.

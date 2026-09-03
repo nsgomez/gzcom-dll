@@ -85,7 +85,7 @@ class cISC4City : public cIGZUnknown
 		virtual bool Shutdown(void) = 0;
 
 		virtual uint32_t GetCitySerialNumber(void) = 0;
-		virtual cISC4City* SetCitySerialNumber(uint32_t dwSerial) = 0;
+		virtual void SetCitySerialNumber(uint32_t dwSerial) = 0;
 		virtual uint32_t GetNewOccupantSerialNumber(void) = 0;
 
 		virtual bool GetOriginalLanguageAndCountry(uint32_t& dwLanguage, uint32_t& dwCountry) = 0;
@@ -98,7 +98,7 @@ class cISC4City : public cIGZUnknown
 		virtual bool SetCityName(cIGZString const& szPath) = 0;
 
 		virtual bool GetCityNameChanged(void) = 0;
-		virtual cISC4City* SetCityNameChanged(bool bToggle) = 0;
+		virtual void SetCityNameChanged(bool bToggle) = 0;
 
 		virtual bool GetMayorName(cIGZString& szName) = 0;
 		virtual bool SetMayorName(cIGZString const& szName) = 0;
@@ -107,19 +107,19 @@ class cISC4City : public cIGZUnknown
 		virtual bool SetCityDescription(cIGZString const& szDescription) = 0;
 
 		virtual uint32_t GetBirthDate(void) = 0;
-		virtual cISC4City* SetBirthDate(uint32_t dwDate) = 0;
+		virtual void SetBirthDate(uint32_t dwDate) = 0;
 
 		virtual bool GetEstablished(void) = 0;
 		virtual bool SetEstablished(bool bEstablished) = 0;
 
 		virtual int32_t GetDifficultyLevel(void) = 0;
-		virtual cISC4City* SetDifficultyLevel(int32_t dwLevel) = 0;
+		virtual void SetDifficultyLevel(int32_t dwLevel) = 0;
 
 		virtual void GetWorldPosition(float& fLongitude, float& fLatitude) = 0;
 		virtual void SetWorldPosition(float fLongitude, float fLatitude) = 0;
 
 		virtual float GetWorldBaseElevation(void) = 0;
-		virtual cISC4City* SetWorldBaseElevation(float fElevation) = 0;
+		virtual void SetWorldBaseElevation(float fElevation) = 0;
 
 		virtual int32_t GetWorldHemisphere(void) = 0;
 
@@ -213,8 +213,8 @@ class cISC4City : public cIGZUnknown
 		virtual int32_t DisableSave(void) = 0;
 		virtual bool IsSaveDisabled(void) = 0;
 
-		virtual cISC4City* UIIncreaseLockCount(void) = 0;
-		virtual int32_t UIDecreaseLockCount(void) = 0;
+		virtual void UIIncreaseLockCount(void) = 0;
+		virtual void UIDecreaseLockCount(void) = 0;
 		virtual int32_t UIGetLockCount(void) = 0;
 
 		virtual bool SaveObliterated(cIGZPersistDBSegment* pSegment) = 0;
