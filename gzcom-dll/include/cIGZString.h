@@ -4,7 +4,7 @@
  * cIGZString.h
  *
  * Copyright (C) 2016 Nelson Gomez
- * Copyright (C) 2023 Nicholas Hayes
+ * Copyright (C) 2023, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -37,31 +37,31 @@ class cIGZString : public cIGZUnknown
 		virtual char const* Data(void) const = 0;
 
 		virtual uint32_t Strlen(void) const = 0;
-		virtual bool IsEqual(cIGZString const* szOther, bool bCaseSensitive) const = 0;
-		virtual bool IsEqual(cIGZString const& szOther, bool bCaseSensitive) const = 0;
 		virtual bool IsEqual(char const* pszOther, uint32_t dwLength, bool bCaseSensitive) const = 0;
+		virtual bool IsEqual(cIGZString const& szOther, bool bCaseSensitive) const = 0;
+		virtual bool IsEqual(cIGZString const* szOther, bool bCaseSensitive) const = 0;		
 
-		virtual int32_t CompareTo(cIGZString const& szOther, bool bCaseSensitive) const = 0;
 		virtual int32_t CompareTo(char const* pszOther, uint32_t dwLength, bool bCaseSensitive) const = 0;
+		virtual int32_t CompareTo(cIGZString const& szOther, bool bCaseSensitive) const = 0;
 
 		virtual cIGZString& operator=(cIGZString const& szOther) = 0;
 		
 		virtual int32_t Copy(cIGZString const& szOther) = 0;
 		virtual int32_t Resize(uint32_t dwNewSize) = 0;
-		
-		virtual cIGZString* Append(char const* pszOther, uint32_t dwLength) = 0;
+				
 		virtual cIGZString* Append(cIGZString const& szOther) = 0;
-		virtual cIGZString* Insert(uint32_t dwPos, char const* pszOther, uint32_t dwLength) = 0;
+		virtual cIGZString* Append(char const* pszOther, uint32_t dwLength) = 0;
 		virtual cIGZString* Insert(uint32_t dwPos, cIGZString const& szOther) = 0;
-		virtual cIGZString* Replace(uint32_t dwStartPos, char const* pszOther, uint32_t dwLength) = 0;
+		virtual cIGZString* Insert(uint32_t dwPos, char const* pszOther, uint32_t dwLength) = 0;		
 		virtual cIGZString* Replace(uint32_t dwStartPos, cIGZString const& szOther) = 0;
+		virtual cIGZString* Replace(uint32_t dwStartPos, char const* pszOther, uint32_t dwLength) = 0;
 		virtual cIGZString* Erase(uint32_t dwStartPos, uint32_t dwEndPos) = 0;
 
-		virtual int32_t Find(char const* pszOther, uint32_t dwPos, bool bCaseSensitive) const = 0;
 		virtual int32_t Find(cIGZString const& szOther, uint32_t dwPos, bool bCaseSensitive) const = 0;
-		
-		virtual int32_t RFind(char const* pszOther, uint32_t dwPos, bool bCaseSensitive) const = 0;
+		virtual int32_t Find(char const* pszOther, uint32_t dwPos, bool bCaseSensitive) const = 0;
+
 		virtual int32_t RFind(cIGZString const& szOther, uint32_t dwPos, bool bCaseSensitive) const = 0;
+		virtual int32_t RFind(char const* pszOther, uint32_t dwPos, bool bCaseSensitive) const = 0;
 
 		virtual cIGZString* Sprintf(char const* pszFormat, ...) = 0;
 };
