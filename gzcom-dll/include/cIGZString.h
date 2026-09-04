@@ -31,8 +31,8 @@ static const uint32_t GZIID_cIGZString = 0x89b7dc8;
 class cIGZString : public cIGZUnknown
 {
 	public:
-		virtual uint32_t FromChar(char const* pszSource) = 0;
 		virtual uint32_t FromChar(char const* pszSource, uint32_t dwLength) = 0;
+		virtual uint32_t FromChar(char const* pszSource) = 0;
 		virtual char const* ToChar(void) const = 0;
 		virtual char const* Data(void) const = 0;
 
