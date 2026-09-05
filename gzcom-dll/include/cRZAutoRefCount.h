@@ -60,7 +60,7 @@ class cRZAutoRefCount
 			other.pObject = nullptr;
 		}
 
-		virtual ~cRZAutoRefCount() {
+		~cRZAutoRefCount() {
 			Reset();
 		}
 
