@@ -864,6 +864,9 @@
     <ClInclude Include="include\cIGZWinTextEdit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\SC4NewCitySpecification.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">

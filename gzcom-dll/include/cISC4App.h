@@ -4,7 +4,7 @@
  * cISC4App.h
  *
  * Copyright (C) 2016 Nelson Gomez
- * Copyright (C) 2023, 2024, 2025 Nicholas Hayes
+ * Copyright (C) 2023, 2024, 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -39,6 +39,7 @@ class cISC4RenderProperties;
 class cISCLua;
 class cISCStringDetokenizer;
 class cISLWinLocationSaver;
+class SC4NewCitySpecification;
 class SC4Preferences;
 class SC4String;
 class SC4VideoPreferences;
@@ -97,7 +98,7 @@ class cISC4App : public cIGZUnknown
 		virtual cISC4RegionalCity* GetRegionalCity(void) = 0;
 		virtual cISC4City* GetCity(void) = 0;
 		virtual SC4Preferences* GetPreferences(void) = 0;
-		virtual intptr_t GetNewCitySpecification(void) = 0; // Returns a SC4NewCitySpecification*
+		virtual SC4NewCitySpecification* GetNewCitySpecification(void) = 0;
 		virtual intptr_t GetDebugConsole(void) = 0;
 		virtual cIGZGimexFactory* GetGimexFactory(void) = 0;
 		virtual cISCStringDetokenizer* GetStringDetokenizer(void) = 0;

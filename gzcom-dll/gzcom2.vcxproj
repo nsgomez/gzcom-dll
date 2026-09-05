@@ -339,6 +339,7 @@
     <ClInclude Include="include\SC4GameOptionPreferences.h" />
     <ClInclude Include="include\SC4List.h" />
     <ClInclude Include="include\SC4NewCityPreferences.h" />
+    <ClInclude Include="include\SC4NewCitySpecification.h" />
     <ClInclude Include="include\SC4Percentage.h" />
     <ClInclude Include="include\SC4Point.h" />
     <ClInclude Include="include\SC4Preferences.h" />
