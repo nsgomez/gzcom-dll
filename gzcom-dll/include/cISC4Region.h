@@ -70,7 +70,7 @@ class cISC4Region : public cIGZUnknown
 		virtual bool DeleteCity(cRZAutoRefCount<cISC4RegionalCity>*& pCity) = 0;
 		virtual bool ReloadCity(cRZAutoRefCount<cISC4RegionalCity>*& pCity) = 0;
 		virtual bool MoveCity(cISC4Region* pRegion, cISC4RegionalCity* pCity, int32_t x, int32_t y) = 0;
-		virtual bool GetAllCities(SC4List<cISC4RegionalCity*>& pList) = 0;
+		virtual bool GetAllCities(SC4List<cRZAutoRefCount<cISC4RegionalCity>>& list) = 0;
 
 		virtual int GetBaseTerrainType(void) = 0;
 		virtual cISC4Region* SetBaseTerrainType(int nType) = 0;
