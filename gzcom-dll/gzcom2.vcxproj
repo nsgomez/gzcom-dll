@@ -384,6 +384,7 @@
     <ClCompile Include="src\PersistResourceKeyFilterBase.cpp" />
     <ClCompile Include="src\PersistResourceKeyFilterByType.cpp" />
     <ClCompile Include="src\PersistResourceKeyFilterByTypeAndGroup.cpp" />
+    <ClCompile Include="src\SC4String.cpp" />
     <ClCompile Include="src\SC4UI.cpp" />
     <ClCompile Include="src\SCLuaUtil.cpp" />
     <ClCompile Include="src\SCPropertyUtil.cpp" />

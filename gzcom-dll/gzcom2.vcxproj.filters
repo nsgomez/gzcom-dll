@@ -950,5 +950,8 @@
     <ClCompile Include="src\cSC4BaseLotConfigurationFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\SC4String.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
