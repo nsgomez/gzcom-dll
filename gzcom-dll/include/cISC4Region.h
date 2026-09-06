@@ -27,6 +27,7 @@ class cIGZString;
 class cISC4RegionalCity;
 class SC4String;
 
+template <typename T> class cRZAutoRefCount;
 template <typename T> class SC4List;
 template <typename T> class SC4Vector;
 
@@ -63,11 +64,11 @@ class cISC4Region : public cIGZUnknown
 		virtual bool Shutdown(void) = 0;
 		virtual bool Delete(void) = 0;
 
-		virtual cISC4RegionalCity** GetCity(uint32_t x, uint32_t y) = 0;
-		virtual cISC4RegionalCity**& InsertCity(cISC4RegionalCity* pCity) = 0;
-		virtual bool RemoveCity(cISC4RegionalCity*& pCity) = 0;
-		virtual bool DeleteCity(cISC4RegionalCity*& pCity) = 0;
-		virtual bool ReloadCity(cISC4RegionalCity*& pCity) = 0;
+		virtual cRZAutoRefCount<cISC4RegionalCity>* GetCity(uint32_t x, uint32_t y) = 0;
+		virtual void InsertCity(cISC4RegionalCity* pCity) = 0;
+		virtual bool RemoveCity(cRZAutoRefCount<cISC4RegionalCity>*& pCity) = 0;
+		virtual bool DeleteCity(cRZAutoRefCount<cISC4RegionalCity>*& pCity) = 0;
+		virtual bool ReloadCity(cRZAutoRefCount<cISC4RegionalCity>*& pCity) = 0;
 		virtual bool MoveCity(cISC4Region* pRegion, cISC4RegionalCity* pCity, int32_t x, int32_t y) = 0;
 		virtual bool GetAllCities(SC4List<cISC4RegionalCity*>& pList) = 0;
 

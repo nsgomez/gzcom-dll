@@ -44,6 +44,8 @@ class SC4Preferences;
 class SC4String;
 class SC4VideoPreferences;
 
+template <typename T> class cRZAutoRefCount;
+
 static const uint32_t GZIID_cISC4App = 0x26CE01C0;
 
 // Taken from the Mac vtable
@@ -55,7 +57,7 @@ class cISC4App : public cIGZUnknown
 		virtual bool RunMessageServerPump(uint32_t dwMinMessages, uint32_t dwMaxMessages, uint32_t dwMaxTime) = 0;
 		virtual bool RunMessageServer2Pump(uint32_t dwMinMessages, uint32_t dwMaxMessages, uint32_t dwMaxTime) = 0;
 
-		virtual bool RequestNewCity(intptr_t pCity) = 0; // Actually an AutoRefCount<cISC4RegionalCity>
+		virtual bool RequestNewCity(cRZAutoRefCount<cISC4RegionalCity>* pCity) = 0;
 		virtual bool RequestLoadCity(void) = 0;
 		virtual bool RequestCloseCity(bool bShowConfirmPrompt) = 0;
 		virtual bool RequestSaveCity(bool bShowNotif, bool bFastSave) = 0;
@@ -63,7 +65,7 @@ class cISC4App : public cIGZUnknown
 		virtual bool RequestQuitFromRegion(bool bShowDialog) = 0;
 		virtual bool RequestGoToRegionView(bool bShowDialog) = 0;
 
-		virtual bool LoadCity(cIGZString& szString, intptr_t pCityOut) = 0; // Actually an AutoRefCount<cISC4RegionalCity>
+		virtual bool LoadCity(SC4String const& szSaveFilePath, cRZAutoRefCount<cISC4RegionalCity>* pRegionalCity) = 0;
 		virtual bool CloseCity(void) = 0;
 		virtual bool SaveCity(bool bFastSave) = 0;
 		virtual bool SaveCity(cIGZString const& szSaveFilePath, bool bFastSave) = 0;
