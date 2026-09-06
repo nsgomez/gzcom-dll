@@ -4,7 +4,7 @@
  * cRZBaseString.h
  *
  * Copyright (C) 2016 Nelson Gomez
- * Copyright (C) 2023, 2025 Nicholas Hayes
+ * Copyright (C) 2023, 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -51,8 +51,8 @@ class cRZBaseString : public cIGZString
 		uint32_t AddRef(void);
 		uint32_t Release(void);
 
-		uint32_t FromChar(char const* pszSource);
-		uint32_t FromChar(char const* pszSource, uint32_t dwLength);
+		void FromChar(char const* pszSource);
+		void FromChar(char const* pszSource, uint32_t dwLength);
 		char const* ToChar(void) const;
 		char const* Data(void) const;
 		char* Data(void);
@@ -67,8 +67,8 @@ class cRZBaseString : public cIGZString
 
 		cIGZString& operator=(cIGZString const& szOther);
 
-		int32_t Copy(cIGZString const& szOther);
-		int32_t Resize(uint32_t dwNewSize);
+		void Copy(cIGZString const& szOther);
+		void Resize(uint32_t dwNewSize);
 
 		cIGZString* Append(char const* pszOther, uint32_t dwLength);
 		cIGZString* Append(cIGZString const& szOther);

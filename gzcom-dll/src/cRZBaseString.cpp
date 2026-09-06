@@ -4,7 +4,7 @@
  * cRZBaseString.cpp
  *
  * Copyright (C) 2016, 2017 Nelson Gomez
- * Copyright (C) 2023, 2025 Nicholas Hayes
+ * Copyright (C) 2023, 2025, 2026 Nicholas Hayes
  * Copyright (C) 2026 Casper Van Gheluwe
  *
  * This library is free software; you can redistribute it and/or
@@ -140,26 +140,22 @@ uint32_t cRZBaseString::Release(void) {
 	return mnRefCount;
 }
 
-uint32_t cRZBaseString::FromChar(char const* pszSource) {
+void cRZBaseString::FromChar(char const* pszSource) {
 	if (pszSource == nullptr) {
 		szData.erase();
 	}
 	else {
 		szData.assign(pszSource);
 	}
-
-	return true;
 }
 
-uint32_t cRZBaseString::FromChar(char const* pszSource, uint32_t dwLength) {
+void cRZBaseString::FromChar(char const* pszSource, uint32_t dwLength) {
 	if (pszSource == nullptr) {
 		szData.erase();
 	}
 	else {
 		szData.assign(pszSource, dwLength);
 	}
-
-	return true;
 }
 
 char const* cRZBaseString::ToChar(void) const {
@@ -225,14 +221,12 @@ cIGZString& cRZBaseString::operator=(cIGZString const& szOther) {
 	return *this;
 }
 
-int32_t cRZBaseString::Copy(cIGZString const& szOther) {
+void cRZBaseString::Copy(cIGZString const& szOther) {
 	szData = std::string(szOther.ToChar());
-	return true;
 }
 
-int32_t cRZBaseString::Resize(uint32_t dwNewSize) {
+void cRZBaseString::Resize(uint32_t dwNewSize) {
 	szData.resize(dwNewSize);
-	return true;
 }
 
 cIGZString* cRZBaseString::Append(char const* pszOther, uint32_t dwLength) {
