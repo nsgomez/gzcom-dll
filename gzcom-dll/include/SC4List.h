@@ -352,7 +352,7 @@ private:
 		{
 			try
 			{
-				new (ptr->value) T();
+				new (&ptr->value) T();
 			}
 			catch (...)
 			{
