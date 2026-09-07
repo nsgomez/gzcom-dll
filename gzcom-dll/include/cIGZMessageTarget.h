@@ -4,6 +4,7 @@
  * cIGZMessageTarget.h
  *
  * Copyright (C) 2016 Nelson Gomez
+ * Copyright (C) 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -23,6 +24,8 @@
 #include "cIGZUnknown.h"
 
 class cGZMessage;
+
+static const uint32_t GZIID_cIGZMessageTarget = 0xe98b2f57;
 
 /**
 * @brief A message target that accepts cGZMessage messages
