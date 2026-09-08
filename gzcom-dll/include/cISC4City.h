@@ -91,26 +91,26 @@ class cISC4City : public cIGZUnknown
 		virtual bool GetOriginalLanguageAndCountry(uint32_t& dwLanguage, uint32_t& dwCountry) = 0;
 		virtual bool GetLastLanguageAndCountry(uint32_t& dwLanguage, uint32_t& dwCountry) = 0;
 
-		virtual bool GetCitySaveFilePath(cIGZString& szPath) = 0;
-		virtual bool SetCitySaveFilePath(cIGZString const& szPath) = 0;
+		virtual void GetCitySaveFilePath(cIGZString& szPath) = 0;
+		virtual void SetCitySaveFilePath(cIGZString const& szPath) = 0;
 
-		virtual bool GetCityName(cIGZString& szPath) = 0;
-		virtual bool SetCityName(cIGZString const& szPath) = 0;
+		virtual void GetCityName(cIGZString& szName) = 0;
+		virtual void SetCityName(cIGZString const& szName) = 0;
 
 		virtual bool GetCityNameChanged(void) = 0;
 		virtual void SetCityNameChanged(bool bToggle) = 0;
 
-		virtual bool GetMayorName(cIGZString& szName) = 0;
-		virtual bool SetMayorName(cIGZString const& szName) = 0;
+		virtual void GetMayorName(cIGZString& szName) = 0;
+		virtual void SetMayorName(cIGZString const& szName) = 0;
 
-		virtual bool GetCityDescription(cIGZString& szDescription) = 0;
-		virtual bool SetCityDescription(cIGZString const& szDescription) = 0;
+		virtual void GetCityDescription(cIGZString& szDescription) = 0;
+		virtual void SetCityDescription(cIGZString const& szDescription) = 0;
 
 		virtual uint32_t GetBirthDate(void) = 0;
 		virtual void SetBirthDate(uint32_t dwDate) = 0;
 
 		virtual bool GetEstablished(void) = 0;
-		virtual bool SetEstablished(bool bEstablished) = 0;
+		virtual void SetEstablished(bool bEstablished) = 0;
 
 		virtual int32_t GetDifficultyLevel(void) = 0;
 		virtual void SetDifficultyLevel(int32_t dwLevel) = 0;
@@ -198,9 +198,9 @@ class cISC4City : public cIGZUnknown
 		virtual uint32_t CellCountX(void) = 0;
 		virtual uint32_t CellCountZ(void) = 0;
 
-		virtual int32_t PositionToCell(float fX, float fZ, int& cX, int& cZ) = 0;
-		virtual int32_t CellCornerToPosition(int cX, int cZ, float& fX, float& fZ) = 0;
-		virtual int32_t CellCenterToPosition(int cX, int cZ, float& fX, float& fZ) = 0;
+		virtual void PositionToCell(float fX, float fZ, int& cX, int& cZ) = 0;
+		virtual void CellCornerToPosition(int cX, int cZ, float& fX, float& fZ) = 0;
+		virtual void CellCenterToPosition(int cX, int cZ, float& fX, float& fZ) = 0;
 
 		virtual bool LocationIsInBounds(float fX, float fZ) = 0;
 		virtual bool CellIsInBounds(int cX, int cZ) = 0;
@@ -209,8 +209,8 @@ class cISC4City : public cIGZUnknown
 		virtual void ToggleSimulationMode(void) = 0;
 		virtual bool IsInCityTimeSimulationMode(void) = 0;
 
-		virtual int32_t EnableSave(void) = 0;
-		virtual int32_t DisableSave(void) = 0;
+		virtual void EnableSave(void) = 0;
+		virtual void DisableSave(void) = 0;
 		virtual bool IsSaveDisabled(void) = 0;
 
 		virtual void UIIncreaseLockCount(void) = 0;
