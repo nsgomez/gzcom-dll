@@ -81,6 +81,26 @@ class cISTESurfaceWater;
 class cISC4City : public cIGZUnknown
 {
 	public:
+		enum class CitySizeType : int32_t
+		{
+			Small = 0,
+			Medium = 1,
+			Large = 2
+		};
+
+		enum class DifficultyLevel : int32_t
+		{
+			Easy = 0,
+			Medium = 1,
+			Hard = 2
+		};
+
+		enum class WorldHemisphere : int32_t
+		{
+			Northern = 1,
+			Southern = 2
+		};
+
 		virtual bool Init(void) = 0;
 		virtual bool Shutdown(void) = 0;
 
@@ -112,8 +132,8 @@ class cISC4City : public cIGZUnknown
 		virtual bool GetEstablished(void) = 0;
 		virtual void SetEstablished(bool bEstablished) = 0;
 
-		virtual int32_t GetDifficultyLevel(void) = 0;
-		virtual void SetDifficultyLevel(int32_t dwLevel) = 0;
+		virtual DifficultyLevel GetDifficultyLevel(void) = 0;
+		virtual void SetDifficultyLevel(DifficultyLevel dwLevel) = 0;
 
 		virtual void GetWorldPosition(float& fLongitude, float& fLatitude) = 0;
 		virtual void SetWorldPosition(float fLongitude, float fLatitude) = 0;
@@ -121,7 +141,7 @@ class cISC4City : public cIGZUnknown
 		virtual float GetWorldBaseElevation(void) = 0;
 		virtual void SetWorldBaseElevation(float fElevation) = 0;
 
-		virtual int32_t GetWorldHemisphere(void) = 0;
+		virtual WorldHemisphere GetWorldHemisphere(void) = 0;
 
 		// intptr_t's are class instances that have yet to be discerned
 		virtual cISC4Demolition* GetDemolitionUtility(void) = 0;
@@ -187,7 +207,7 @@ class cISC4City : public cIGZUnknown
 
 		virtual cISC424HourClock* Get24HourClock(void) = 0;
 
-		virtual uint32_t GetCitySizeType(void) = 0;
+		virtual CitySizeType GetCitySizeType(void) = 0;
 		virtual bool SetSize(float fX, float fZ) = 0;
 		virtual float SizeX(void) = 0;
 		virtual float SizeZ(void) = 0;
