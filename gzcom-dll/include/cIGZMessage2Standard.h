@@ -26,6 +26,9 @@
 class cIGZSerializable;
 class cIGZString;
 
+static const uint32_t GZCLSID_cRZMessage2Standard = 0x46df45e7;
+static const uint32_t GZIID_cIGZMessage2Standard = 0x65297976;
+
 /**
  * @brief A standardized interface for simple messages
  *
