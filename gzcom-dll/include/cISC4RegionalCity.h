@@ -38,11 +38,11 @@ class cISC4RegionalCity : public cIGZUnknown
 		virtual bool Init(void) = 0;
 		virtual bool Shutdown(void) = 0;
 
-		virtual bool GetPosition(int32_t& nX, int32_t& nZ) const = 0;
-		virtual bool SetPosition(int32_t nX, int32_t nZ, bool bDoRearrange) = 0;
+		virtual void GetPosition(int32_t& nX, int32_t& nZ) const = 0;
+		virtual void SetPosition(int32_t nX, int32_t nZ, bool bDoRearrange) = 0;
 
-		virtual bool GetCitySize(int32_t& nX, int32_t& nZ) const = 0;
-		virtual bool SetCitySize(int32_t nX, int32_t nZ) = 0;
+		virtual void GetCitySize(int32_t& nX, int32_t& nZ) const = 0;
+		virtual void SetCitySize(int32_t nX, int32_t nZ) = 0;
 
 		virtual int32_t GetPopulation(void) const = 0;
 		virtual int32_t GetCommercialJobs(void) const = 0;
@@ -56,78 +56,78 @@ class cISC4RegionalCity : public cIGZUnknown
 		virtual int32_t GetPopulation(uint32_t dwPopulationType) const = 0;
 		virtual int32_t GetExtrapolatedPopulation(uint32_t dwPopulationType) const = 0;
 		virtual int32_t GetAllowableExtrapolation(uint32_t dwPopulationType) const = 0;
-		virtual int32_t ExtrapolateGrowth(uint32_t dwPopulationType, float fAddedPop) = 0;
+		virtual void ExtrapolateGrowth(uint32_t dwPopulationType, float fAddedPop) = 0;
 
 		virtual cISC4RegionalCity* FindConnection(int32_t nUnknown1, int32_t nUnknown2, int32_t nUnknown3) const = 0;
-		virtual bool GetAllConnections(SC4List<cISC4NeighborConnection*>& sList) const = 0;
-		virtual bool ChangeSymmetricConnection(cISC4NeighborConnection* pConnection, bool bUnknown) = 0;
+		virtual void GetAllConnections(SC4List<cISC4NeighborConnection*>& sList) const = 0;
+		virtual void ChangeSymmetricConnection(cISC4NeighborConnection* pConnection, bool bUnknown) = 0;
 
-		virtual bool SetupPreferences(SC4NewCityPreferences* pPreferences) = 0;
-		virtual bool UpdateCityCache(SC4NewCityPreferences* pPreferences) = 0;
+		virtual void SetupPreferences(SC4NewCityPreferences* pPreferences) = 0;
+		virtual void UpdateCityCache(SC4NewCityPreferences* pPreferences) = 0;
 
-		virtual bool SetupCity(cISC4City* pCity) = 0;
-		virtual bool UpdateCityCache(cISC4City* pCity) = 0;
+		virtual void SetupCity(cISC4City* pCity) = 0;
+		virtual void UpdateCityCache(cISC4City* pCity) = 0;
 
 		virtual uint32_t GetCitySerialNumber(void) const = 0;
-		virtual bool SetCitySerialNumber(uint32_t dwSerialNumber) = 0;
+		virtual void SetCitySerialNumber(uint32_t dwSerialNumber) = 0;
 
 		virtual bool GetOriginalLanguageAndCountry(int32_t& nLanguage, int32_t& nCountry) const = 0;
 		virtual bool GetLastLanguageAndCountry(int32_t& nLanguage, int32_t& nCountry) = 0;
 
-		virtual bool GetCitySaveFilePath(cIGZString& sPath) const = 0;
-		virtual bool SetCitySaveFilePath(cIGZString const& sPath) = 0;
+		virtual void GetCitySaveFilePath(cIGZString& sPath) const = 0;
+		virtual void SetCitySaveFilePath(cIGZString const& sPath) = 0;
 
-		virtual bool GetCityName(cIGZString& sName) const = 0;
-		virtual bool SetCityName(cIGZString const& sName) = 0;
+		virtual void GetCityName(cIGZString& sName) const = 0;
+		virtual void SetCityName(cIGZString const& sName) = 0;
 
-		virtual bool GetMayorName(cIGZString& sName) const = 0;
-		virtual bool SetMayorName(cIGZString const& sName) = 0;
+		virtual void GetMayorName(cIGZString& sName) const = 0;
+		virtual void SetMayorName(cIGZString const& sName) = 0;
 
-		virtual bool GetUtilityAdvisorName(cIGZString& sName) const = 0;
-		virtual bool SetUtilityAdvisorName(cIGZString const& sName) = 0;
+		virtual void GetUtilityAdvisorName(cIGZString& sName) const = 0;
+		virtual void SetUtilityAdvisorName(cIGZString const& sName) = 0;
 
-		virtual bool GetCityDescription(cIGZString& sDescription) const = 0;
-		virtual bool SetCityDescription(cIGZString const& sDescription) = 0;
+		virtual void GetCityDescription(cIGZString& sDescription) const = 0;
+		virtual void SetCityDescription(cIGZString const& sDescription) = 0;
 
 		virtual uint32_t GetBirthDate(void) const = 0;
-		virtual bool SetBirthDate(uint32_t dwBirthDate) = 0;
+		virtual void SetBirthDate(uint32_t dwBirthDate) = 0;
 
 		virtual bool GetEstablished(void) const = 0;
-		virtual bool SetEstablished(bool bEstablished) = 0;
+		virtual void SetEstablished(bool bEstablished) = 0;
 
-		virtual bool GetWorldPosition(float& fX, float& fZ) const = 0;
-		virtual bool SetWorldPosition(float fX, float fZ) = 0;
+		virtual void GetWorldPosition(float& fLongitude, float& fLatitude) const = 0;
+		virtual void SetWorldPosition(float fLongitude, float fLatitude) = 0;
 
 		virtual float GetWorldBaseElevation(void) const = 0;
-		virtual bool GetWorldBaseElevation(float fElevation) = 0;
+		virtual void GetWorldBaseElevation(float fElevation) = 0;
 
 		virtual int32_t GetWorldHemisphere(void) const = 0;
 
 		virtual float GetBudget(void) const = 0;
-		virtual bool SetBudget(float fBudget) = 0;
+		virtual void SetBudget(float fBudget) = 0;
 
 		virtual float GetIncome(void) const = 0;
-		virtual bool SetIncome(float fIncome) = 0;
+		virtual void SetIncome(float fIncome) = 0;
 
 		virtual float GetExported(int32_t nCommodity) const = 0;
-		virtual bool SetExported(int32_t nCommodity, float fExports) = 0;
+		virtual void SetExported(int32_t nCommodity, float fExports) = 0;
 
 		virtual float GetImported(int32_t nCommodity) const = 0;
-		virtual bool SetImported(int32_t nCommodity, float fImports) = 0;
+		virtual void SetImported(int32_t nCommodity, float fImports) = 0;
 
 		virtual float GetProduced(int32_t nCommodity) const = 0;
-		virtual bool SetProduced(int32_t nCommodity, float fProduced) = 0;
+		virtual void SetProduced(int32_t nCommodity, float fProduced) = 0;
 
 		virtual float GetDemanded(int32_t nCommodity) const = 0;
-		virtual bool SetDemanded(int32_t nCommodity, float fDemanded) = 0;
+		virtual void SetDemanded(int32_t nCommodity, float fDemanded) = 0;
 
 		virtual float GetCostPerUnit(int32_t nCommodity) const = 0;
-		virtual bool SetCostPerUnit(int32_t nCommodity, float fCostPerUnit) = 0;
+		virtual void SetCostPerUnit(int32_t nCommodity, float fCostPerUnit) = 0;
 
 		virtual float GetCommodityBalance(int32_t nCommodity) const = 0;
 
 		virtual uint32_t GetTutorialGUID(void) const = 0;
-		virtual bool SetTutorialGUID(uint32_t dwGUID) = 0;
+		virtual void SetTutorialGUID(uint32_t dwGUID) = 0;
 		virtual bool IsTutorial(void) const = 0;
 
 		virtual bool UpdateLocalDeals(void) = 0;
@@ -136,5 +136,5 @@ class cISC4RegionalCity : public cIGZUnknown
 
 		virtual bool UpdateImportExport(void) = 0;
 
-		virtual bool GetPointsOfInterest(uint32_t dwPointOfInterestType, SC4Vector<uint32_t>& sList) = 0;
+		virtual void GetPointsOfInterest(uint32_t dwPointOfInterestType, SC4Vector<uint32_t>& sList) = 0;
 };
