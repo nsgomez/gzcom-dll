@@ -104,35 +104,35 @@ class cISC4City : public cIGZUnknown
 		virtual bool Init(void) = 0;
 		virtual bool Shutdown(void) = 0;
 
-		virtual uint32_t GetCitySerialNumber(void) = 0;
+		virtual uint32_t GetCitySerialNumber(void) const = 0;
 		virtual void SetCitySerialNumber(uint32_t dwSerial) = 0;
 		virtual uint32_t GetNewOccupantSerialNumber(void) = 0;
 
-		virtual bool GetOriginalLanguageAndCountry(uint32_t& dwLanguage, uint32_t& dwCountry) = 0;
+		virtual bool GetOriginalLanguageAndCountry(uint32_t& dwLanguage, uint32_t& dwCountry) const = 0;
 		virtual bool GetLastLanguageAndCountry(uint32_t& dwLanguage, uint32_t& dwCountry) = 0;
 
-		virtual void GetCitySaveFilePath(cIGZString& szPath) = 0;
+		virtual void GetCitySaveFilePath(cIGZString& szPath) const = 0;
 		virtual void SetCitySaveFilePath(cIGZString const& szPath) = 0;
 
-		virtual void GetCityName(cIGZString& szName) = 0;
+		virtual void GetCityName(cIGZString& szName) const = 0;
 		virtual void SetCityName(cIGZString const& szName) = 0;
 
-		virtual bool GetCityNameChanged(void) = 0;
+		virtual bool GetCityNameChanged(void) const = 0;
 		virtual void SetCityNameChanged(bool bToggle) = 0;
 
-		virtual void GetMayorName(cIGZString& szName) = 0;
+		virtual void GetMayorName(cIGZString& szName) const = 0;
 		virtual void SetMayorName(cIGZString const& szName) = 0;
 
-		virtual void GetCityDescription(cIGZString& szDescription) = 0;
+		virtual void GetCityDescription(cIGZString& szDescription) const = 0;
 		virtual void SetCityDescription(cIGZString const& szDescription) = 0;
 
-		virtual uint32_t GetBirthDate(void) = 0;
+		virtual uint32_t GetBirthDate(void) const = 0;
 		virtual void SetBirthDate(uint32_t dwDate) = 0;
 
-		virtual bool GetEstablished(void) = 0;
+		virtual bool GetEstablished(void) const = 0;
 		virtual void SetEstablished(bool bEstablished) = 0;
 
-		virtual DifficultyLevel GetDifficultyLevel(void) = 0;
+		virtual DifficultyLevel GetDifficultyLevel(void) const = 0;
 		virtual void SetDifficultyLevel(DifficultyLevel dwLevel) = 0;
 
 		virtual void GetWorldPosition(float& fLongitude, float& fLatitude) = 0;
@@ -144,87 +144,87 @@ class cISC4City : public cIGZUnknown
 		virtual WorldHemisphere GetWorldHemisphere(void) = 0;
 
 		// intptr_t's are class instances that have yet to be discerned
-		virtual cISC4Demolition* GetDemolitionUtility(void) = 0;
-		virtual cISC4HistoryWarehouse* GetHistoryWarehouse(void) = 0;
-		virtual cISC4LotManager* GetLotManager(void) = 0;
-		virtual cISC4OccupantManager* GetOccupantManager(void) = 0;
-		virtual cISC4PropManager* GetPropManager(void) = 0;
-		virtual cISC4ZoneManager* GetZoneManager(void) = 0;
-		virtual cISC4LotConfigurationManager* GetLotConfigurationManager(void) = 0;
-		virtual cISC4NetworkManager* GetNetworkManager(void) = 0;
-		virtual cISC4DispatchManager* GetDispatchManager(void) = 0;
-		virtual intptr_t GetTrafficNetwork(void) = 0;
-		virtual cISC4PropDeveloper* GetPropDeveloper(void) = 0;
-		virtual cISC4NetworkLotManager* GetNetworkLotManager(void) = 0;
-		virtual cISC4AutomataManager* GetVehicleManager(void) = 0;
-		virtual cISC4AutomataManager* GetPedestrianManager(void) = 0;
-		virtual cISC4AutomataManager* GetAircraftManager(void) = 0;
-		virtual cISC4AutomataManager* GetWatercraftManager(void) = 0;
-		virtual cISC4AutomataControllerManager* GetAutomataControllerManager(void) = 0;
-		virtual cISC4AutomataScriptSystem* GetAutomataScriptSystem(void) = 0;
-		virtual cISC4CitySituationManager* GetCitySituationManager(void) = 0;
+		virtual cISC4Demolition* GetDemolitionUtility(void) const = 0;
+		virtual cISC4HistoryWarehouse* GetHistoryWarehouse(void) const = 0;
+		virtual cISC4LotManager* GetLotManager(void) const = 0;
+		virtual cISC4OccupantManager* GetOccupantManager(void) const = 0;
+		virtual cISC4PropManager* GetPropManager(void) const = 0;
+		virtual cISC4ZoneManager* GetZoneManager(void) const = 0;
+		virtual cISC4LotConfigurationManager* GetLotConfigurationManager(void) const = 0;
+		virtual cISC4NetworkManager* GetNetworkManager(void) const = 0;
+		virtual cISC4DispatchManager* GetDispatchManager(void) const = 0;
+		virtual intptr_t GetTrafficNetwork(void) const = 0;
+		virtual cISC4PropDeveloper* GetPropDeveloper(void) const = 0;
+		virtual cISC4NetworkLotManager* GetNetworkLotManager(void) const = 0;
+		virtual cISC4AutomataManager* GetVehicleManager(void) const = 0;
+		virtual cISC4AutomataManager* GetPedestrianManager(void) const = 0;
+		virtual cISC4AutomataManager* GetAircraftManager(void) const = 0;
+		virtual cISC4AutomataManager* GetWatercraftManager(void) const = 0;
+		virtual cISC4AutomataControllerManager* GetAutomataControllerManager(void) const = 0;
+		virtual cISC4AutomataScriptSystem* GetAutomataScriptSystem(void) const = 0;
+		virtual cISC4CitySituationManager* GetCitySituationManager(void) const = 0;
 
-		virtual cISC4Simulator* GetSimulator(void) = 0;
-		virtual cISC4AuraSimulator* GetAuraSimulator(void) = 0;
-		virtual cISC4BudgetSimulator* GetBudgetSimulator(void) = 0;
-		virtual cISC4BuildingDevelopmentSimulator* GetBuildingDevelopmentSimulator(void) = 0;
-		virtual cISC4CommercialSimulator* GetCommercialSimulator(void) = 0;
-		virtual cISC4CrimeSimulator* GetCrimeSimulator(void) = 0;
-		virtual cISC4DemandSimulator* GetDemandSimulator(void) = 0;
-		virtual cISC4FireProtectionSimulator* GetFireProtectionSimulator(void) = 0;
-		virtual cISC4FlammabilitySimulator* GetFlammabilitySimulator(void) = 0;
-		virtual cISC4FloraSimulator* GetFloraSimulator(void) = 0;
-		virtual cISC4IndustrialSimulator* GetIndustrialSimulator(void) = 0;
-		virtual cISC4LandValueSimulator* GetLandValueSimulator(void) = 0;
-		virtual cISC4NeighborsSimulator* GetNeighborsSimulator(void) = 0;
-		virtual cISC4OrdinanceSimulator* GetOrdinanceSimulator(void) = 0;
-		virtual cISC4PlumbingSimulator* GetPlumbingSimulator(void) = 0;
-		virtual cISC4PoliceSimulator* GetPoliceSimulator(void) = 0;
-		virtual cISC4PollutionSimulator* GetPollutionSimulator(void) = 0;
-		virtual cISC4PowerSimulator* GetPowerSimulator(void) = 0;
-		virtual cISC4ResidentialSimulator* GetResidentialSimulator(void) = 0;
-		virtual cISC4TrafficSimulator* GetTrafficSimulator(void) = 0;
-		virtual cISC4WeatherSimulator* GetWeatherSimulator(void) = 0;
-		virtual cISC4MySimAgentSimulator* GetMySimAgentSimulator(void) = 0;
+		virtual cISC4Simulator* GetSimulator(void) const = 0;
+		virtual cISC4AuraSimulator* GetAuraSimulator(void) const = 0;
+		virtual cISC4BudgetSimulator* GetBudgetSimulator(void) const = 0;
+		virtual cISC4BuildingDevelopmentSimulator* GetBuildingDevelopmentSimulator(void) const = 0;
+		virtual cISC4CommercialSimulator* GetCommercialSimulator(void) const = 0;
+		virtual cISC4CrimeSimulator* GetCrimeSimulator(void) const = 0;
+		virtual cISC4DemandSimulator* GetDemandSimulator(void) const = 0;
+		virtual cISC4FireProtectionSimulator* GetFireProtectionSimulator(void) const = 0;
+		virtual cISC4FlammabilitySimulator* GetFlammabilitySimulator(void) const = 0;
+		virtual cISC4FloraSimulator* GetFloraSimulator(void) const = 0;
+		virtual cISC4IndustrialSimulator* GetIndustrialSimulator(void) const = 0;
+		virtual cISC4LandValueSimulator* GetLandValueSimulator(void) const = 0;
+		virtual cISC4NeighborsSimulator* GetNeighborsSimulator(void) const = 0;
+		virtual cISC4OrdinanceSimulator* GetOrdinanceSimulator(void) const = 0;
+		virtual cISC4PlumbingSimulator* GetPlumbingSimulator(void) const = 0;
+		virtual cISC4PoliceSimulator* GetPoliceSimulator(void) const = 0;
+		virtual cISC4PollutionSimulator* GetPollutionSimulator(void) const = 0;
+		virtual cISC4PowerSimulator* GetPowerSimulator(void) const = 0;
+		virtual cISC4ResidentialSimulator* GetResidentialSimulator(void) const = 0;
+		virtual cISC4TrafficSimulator* GetTrafficSimulator(void) const = 0;
+		virtual cISC4WeatherSimulator* GetWeatherSimulator(void) const = 0;
+		virtual cISC4MySimAgentSimulator* GetMySimAgentSimulator(void) const = 0;
 
-		virtual cISC4DisasterLayer* GetDisasterLayer(void) = 0;
-		virtual cISC4CivicBuildingSimulator* GetCivicBuildingSimulator(void) = 0;
-		virtual cISC4ParkManager* GetParkManager(void) = 0;
-		virtual cISC4ZoneDeveloper* GetZoneDeveloper(void) = 0;
-		virtual cISC4SeaportDeveloper* GetSeaportDeveloper(void) = 0;
-		virtual cISC4AirportDeveloper* GetAirportDeveloper(void) = 0;
-		virtual cISC4LandfillDeveloper* GetLandfillDeveloper(void) = 0;
-		virtual cISC4LotDeveloper* GetLotDeveloper(void) = 0;
-		virtual cISC4TractDeveloper* GetTractDeveloper(void) = 0;
+		virtual cISC4DisasterLayer* GetDisasterLayer(void) const = 0;
+		virtual cISC4CivicBuildingSimulator* GetCivicBuildingSimulator(void) const = 0;
+		virtual cISC4ParkManager* GetParkManager(void) const = 0;
+		virtual cISC4ZoneDeveloper* GetZoneDeveloper(void) const = 0;
+		virtual cISC4SeaportDeveloper* GetSeaportDeveloper(void) const = 0;
+		virtual cISC4AirportDeveloper* GetAirportDeveloper(void) const = 0;
+		virtual cISC4LandfillDeveloper* GetLandfillDeveloper(void) const = 0;
+		virtual cISC4LotDeveloper* GetLotDeveloper(void) const = 0;
+		virtual cISC4TractDeveloper* GetTractDeveloper(void) const = 0;
 
-		virtual cISC4AdvisorSystem* GetAdvisorSystem(void) = 0;
-		virtual cISC4TutorialSystem* GetTutorialSystem(void) = 0;
+		virtual cISC4AdvisorSystem* GetAdvisorSystem(void) const = 0;
+		virtual cISC4TutorialSystem* GetTutorialSystem(void) const = 0;
 
-		virtual cISTESurfaceWater* GetSurfaceWater(void) = 0;
-		virtual cISTETerrain* GetTerrain(void) = 0;
+		virtual cISTESurfaceWater* GetSurfaceWater(void) const = 0;
+		virtual cISTETerrain* GetTerrain(void) const = 0;
 
-		virtual cISC4EffectsManager* GetEffectsManager(void) = 0;
+		virtual cISC4EffectsManager* GetEffectsManager(void) const = 0;
 
-		virtual cISC424HourClock* Get24HourClock(void) = 0;
+		virtual cISC424HourClock* Get24HourClock(void) const = 0;
 
-		virtual CitySizeType GetCitySizeType(void) = 0;
+		virtual CitySizeType GetCitySizeType(void) const = 0;
 		virtual bool SetSize(float fX, float fZ) = 0;
-		virtual float SizeX(void) = 0;
-		virtual float SizeZ(void) = 0;
+		virtual float SizeX(void) const = 0;
+		virtual float SizeZ(void) const = 0;
 
-		virtual float CellWidthX(void) = 0;
-		virtual float CellWidthZ(void) = 0;
+		virtual float CellWidthX(void) const = 0;
+		virtual float CellWidthZ(void) const = 0;
 
-		virtual uint32_t CellCountX(void) = 0;
-		virtual uint32_t CellCountZ(void) = 0;
+		virtual uint32_t CellCountX(void) const = 0;
+		virtual uint32_t CellCountZ(void) const = 0;
 
-		virtual void PositionToCell(float fX, float fZ, int& cX, int& cZ) = 0;
-		virtual void CellCornerToPosition(int cX, int cZ, float& fX, float& fZ) = 0;
-		virtual void CellCenterToPosition(int cX, int cZ, float& fX, float& fZ) = 0;
+		virtual void PositionToCell(float fX, float fZ, int& cX, int& cZ) const = 0;
+		virtual void CellCornerToPosition(int cX, int cZ, float& fX, float& fZ) const = 0;
+		virtual void CellCenterToPosition(int cX, int cZ, float& fX, float& fZ) const = 0;
 
-		virtual bool LocationIsInBounds(float fX, float fZ) = 0;
-		virtual bool CellIsInBounds(int cX, int cZ) = 0;
-		virtual bool CellCornerIsInBounds(int cX, int cZ) = 0;
+		virtual bool LocationIsInBounds(float fX, float fZ) const = 0;
+		virtual bool CellIsInBounds(int cX, int cZ) const = 0;
+		virtual bool CellCornerIsInBounds(int cX, int cZ) const = 0;
 
 		virtual void ToggleSimulationMode(void) = 0;
 		virtual bool IsInCityTimeSimulationMode(void) = 0;
