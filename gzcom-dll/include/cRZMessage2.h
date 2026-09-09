@@ -4,6 +4,7 @@
  * cRZMessage2.h
  *
  * Copyright (C) 2016 Nelson Gomez
+ * Copyright (C) 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -36,7 +37,7 @@ class cRZMessage2 : public cIGZMessage2, public cRZUnknown
 		bool Create(uint32_t dwType, void** ppUnknown) const override;
 
 		uint32_t GetType(void) const override;
-		uint32_t SetType(uint32_t dwType) override;
+		void SetType(uint32_t dwType) override;
 
 		bool operator==(cIGZMessage2 const& msgOther) const override;
 		bool operator<(cIGZMessage2 const& msgOther) const override;

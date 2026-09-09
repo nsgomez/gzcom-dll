@@ -4,6 +4,7 @@
  * cRZMessage2.cpp
  *
  * Copyright (C) 2016 Nelson Gomez
+ * Copyright (C) 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -54,9 +55,8 @@ uint32_t cRZMessage2::GetType(void) const {
 	return m_dwType;
 }
 
-uint32_t cRZMessage2::SetType(uint32_t dwType) {
+void cRZMessage2::SetType(uint32_t dwType) {
 	m_dwType = dwType;
-	return m_dwType;
 }
 
 bool cRZMessage2::operator==(cIGZMessage2 const& msgOther) const {

@@ -4,6 +4,7 @@
  * cIGZMessage2.h
  *
  * Copyright (C) 2016 Nelson Gomez
+ * Copyright (C) 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -35,7 +36,7 @@ class cIGZMessage2 : public cIGZUnknown
 		virtual bool Create(uint32_t dwTypeIID, void** ppUnknown) const = 0;
 
 		virtual uint32_t GetType(void) const = 0;
-		virtual uint32_t SetType(uint32_t dwType) = 0;
+		virtual void SetType(uint32_t dwType) = 0;
 
 		/**
 		 * @brief Compares messages by their assigned type

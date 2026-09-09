@@ -4,7 +4,7 @@
  * cRZMessage2Standard.cpp
  *
  * Copyright (C) 2016, 2017 Nelson Gomez
- * Copyright (C) 2024 Nicholas Hayes
+ * Copyright (C) 2024, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -49,14 +49,13 @@ void* cRZMessage2Standard::GetVoid1(void) const {
 	return (void*)GetData1();
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetData1(intptr_t ulData) {
+void cRZMessage2Standard::SetData1(intptr_t ulData) {
 	m_dwData[0] = ulData;
 	m_uDataFlags |= FIELD_DATA1;
-	return this;
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetVoid1(void* pData) {
-	return SetData1((intptr_t)pData);
+void cRZMessage2Standard::SetVoid1(void* pData) {
+	SetData1((intptr_t)pData);
 }
 
 bool cRZMessage2Standard::GetHasData2(void) const {
@@ -71,14 +70,13 @@ void* cRZMessage2Standard::GetVoid2(void) const {
 	return (void*)GetData2();
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetData2(intptr_t ulData) {
+void cRZMessage2Standard::SetData2(intptr_t ulData) {
 	m_dwData[1] = ulData;
 	m_uDataFlags |= FIELD_DATA2;
-	return this;
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetVoid2(void* pData) {
-	return SetData2((intptr_t)pData);
+void cRZMessage2Standard::SetVoid2(void* pData) {
+	SetData2((intptr_t)pData);
 }
 
 bool cRZMessage2Standard::GetHasData3(void) const {
@@ -93,14 +91,13 @@ void* cRZMessage2Standard::GetVoid3(void) const {
 	return (void*)GetData3();
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetData3(intptr_t ulData) {
+void cRZMessage2Standard::SetData3(intptr_t ulData) {
 	m_dwData[2] = ulData;
 	m_uDataFlags |= FIELD_DATA3;
-	return this;
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetVoid3(void* pData) {
-	return SetData3((intptr_t)pData);
+void cRZMessage2Standard::SetVoid3(void* pData) {
+	SetData3((intptr_t)pData);
 }
 
 bool cRZMessage2Standard::GetHasData4(void) const {
@@ -115,13 +112,12 @@ void* cRZMessage2Standard::GetVoid4(void) const {
 	return (void*)GetData4();
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetData4(intptr_t ulData) {
+void cRZMessage2Standard::SetData4(intptr_t ulData) {
 	m_dwData[3] = ulData;
 	m_uDataFlags |= FIELD_DATA4;
-	return this;
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetVoid4(void* pData) {
+void cRZMessage2Standard::SetVoid4(void* pData) {
 	return SetData4((intptr_t)pData);
 }
 
@@ -138,10 +134,9 @@ bool cRZMessage2Standard::GetString(uint32_t dwMaxLen, void** ppStringOut) const
 	return true;
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetString(cIGZString* pString) {
+void cRZMessage2Standard::SetString(cIGZString* pString) {
 	m_szDataString.Copy(*pString);
 	m_uDataFlags |= FIELD_STRING;
-	return this;
 }
 
 bool cRZMessage2Standard::GetHasIGZUnknown(void) const {
@@ -152,14 +147,13 @@ cIGZUnknown* cRZMessage2Standard::GetIGZUnknown(void) const {
 	return m_pUnknown;
 }
 
-cIGZMessage2Standard* cRZMessage2Standard::SetIGZUnknown(cIGZUnknown* pObj) {
+void cRZMessage2Standard::SetIGZUnknown(cIGZUnknown* pObj) {
 	if (pObj == NULL)
 		m_uDataFlags &= ~(FIELD_UNKNOWN);
 	else
 		m_uDataFlags |= FIELD_UNKNOWN;
 
 	m_pUnknown = pObj;
-	return this;
 }
 
 bool cRZMessage2Standard::GetHasExtra(void) const {
@@ -171,7 +165,6 @@ uint32_t cRZMessage2Standard::GetExtra(uint32_t dwLen, void** ppOut) const {
 	return (~0);
 }
 
-bool cRZMessage2Standard::SetExtra(cIGZSerializable* pSerializable) {
+void cRZMessage2Standard::SetExtra(cIGZSerializable* pSerializable) {
 	throw std::string("UNIMPLEMENTED");
-	return false;
 }
