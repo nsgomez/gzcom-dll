@@ -3,7 +3,7 @@
  *
  * cIGZBuffer.h
  *
- * Copyright (C) 2024 Nicholas Hayes
+ * Copyright (C) 2024, 2026 Nicholas Hayes
  * Copyright (C) 2025 Nelson Gomez (nsgomez) <nelson@ngomez.me>
  *
  * This library is free software; you can redistribute it and/or
@@ -97,7 +97,7 @@ public:
 	virtual uint32_t ConvertRGBAValueToNative(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha) = 0;
 	virtual bool ConvertNativeValueToRGBA(uint32_t color, uint8_t& red, uint8_t& green, uint8_t& blue, uint8_t& alpha) = 0;
 
-	virtual uint32_t GetColorSurfaceBits() = 0;
+	virtual void* GetColorSurfaceBits() = 0;
 	virtual uint32_t GetColorSurfaceStride() = 0;
 	virtual uint32_t GetChangeCounter() = 0;
 
