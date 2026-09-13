@@ -61,6 +61,11 @@ cRZBaseString::cRZBaseString(std::string const& szSource)
 	// Empty
 }
 
+cRZBaseString::cRZBaseString(std::string_view const& szSource)
+	: szData(szSource), mnRefCount(0) {
+	// Empty
+}
+
 cRZBaseString::cRZBaseString(size_t dwStartSize)
 	: szData(dwStartSize, '\0'), mnRefCount(0) {
 	// Empty
