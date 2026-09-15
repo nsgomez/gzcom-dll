@@ -4,6 +4,7 @@
  * cIGZMouseMessage.h
  *
  * Copyright (C) 2016 Nelson Gomez
+ * Copyright (C) 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -23,6 +24,8 @@
 #include "cIGZMessage2.h"
 
 class cRZPoint;
+
+static const uint32_t GZIID_cIGZMouseMessage = 0x1a0c615f;
 
 /**
  * @brief A type of message sent upon mouse events (i.e. movement)

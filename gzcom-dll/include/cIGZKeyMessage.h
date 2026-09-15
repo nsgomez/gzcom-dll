@@ -4,6 +4,7 @@
  * cIGZKeyMessage.h
  *
  * Copyright (C) 2016 Nelson Gomez
+ * Copyright (C) 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -21,6 +22,8 @@
 
 #pragma once
 #include "cIGZMessage2.h"
+
+static const uint32_t GZIID_cIGZKeyMessage = 0x1a104742;
 
 /**
  * @brief A type of message sent upon a keyboard event (i.e. typing)
