@@ -31,9 +31,17 @@ static const uint32_t GZIID_cIGZKeyMessage = 0x1a104742;
 class cIGZKeyMessage : public cIGZMessage2
 {
 	public:
-		virtual uint32_t Initialize(uint32_t dwKeyEventID, uint32_t dwKey, uint32_t dwKeyFlags, uint32_t dwRepeatCount) = 0;
+		enum class KeyEvent : uint32_t
+		{
+			Invalid = 0,
+			Char = 4,
+			Down = 5,
+			Up = 6
+		};
 
-		virtual uint32_t EventType(void) = 0;
+		virtual uint32_t Initialize(KeyEvent dwKeyEventID, uint32_t dwKey, uint32_t dwKeyFlags, uint32_t dwRepeatCount) = 0;
+
+		virtual KeyEvent EventType(void) = 0;
 		virtual uint32_t Key(void) = 0;
 		virtual uint32_t KeyFlags(void) = 0;
 		virtual uint32_t RepeatCount(void) = 0;
