@@ -24,6 +24,7 @@
 #include "cIGZMessage2.h"
 
 static const uint32_t GZIID_cIGZKeyMessage = 0x1a104742;
+static const uint32_t kKeyMessageType = 0x7a104750;
 
 /**
  * @brief A type of message sent upon a keyboard event (i.e. typing)

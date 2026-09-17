@@ -24,6 +24,7 @@
 #include "cIGZMessage2.h"
 
 static const uint32_t GZIID_cIGZCanvasMessage = 0xda1062fa;
+static const uint32_t kCanvasMessageType = 0x1a10630a;
 
 class cIGZCanvasMessage : public cIGZMessage2
 {

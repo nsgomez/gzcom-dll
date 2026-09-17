@@ -26,6 +26,7 @@
 class cRZPoint;
 
 static const uint32_t GZIID_cIGZMouseMessage = 0x1a0c615f;
+static const uint32_t kMouseMessageType = 0xfa0c6390;
 
 /**
  * @brief A type of message sent upon mouse events (i.e. movement)
