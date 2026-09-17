@@ -33,9 +33,22 @@ static const uint32_t GZIID_cIGZMouseMessage = 0x1a0c615f;
 class cIGZMouseMessage : public cIGZMessage2
 {
 	public:
-		virtual uint32_t Initialize(uint32_t dwMouseEventID, cRZPoint const& sPosition, uint32_t dwKeyFlags, int32_t lWheelDelta) = 0;
+		enum class MouseEvent : uint32_t
+		{
+			Invalid = 0,
+			LeftButtonDown = 7,
+			RightButtonDown = 8,
+			MiddleButtonDown = 9,
+			LeftButtonUp = 10,
+			RightButtonUp = 11,
+			MiddleButtonUp = 12,
+			Move = 13,
+			Wheel = 14
+		};
 
-		virtual uint32_t EventType(void) const = 0;
+		virtual uint32_t Initialize(MouseEvent dwMouseEventID, cRZPoint const& sPosition, uint32_t dwKeyFlags, int32_t lWheelDelta) = 0;
+
+		virtual MouseEvent EventType(void) const = 0;
 		virtual cRZPoint Position(void) const = 0;
 		virtual int32_t WheelDelta(void) const = 0;
 		virtual uint32_t KeyFlags(void) const = 0;
