@@ -28,6 +28,21 @@ static const uint32_t GZIID_cIGZCanvasMessage = 0xda1062fa;
 class cIGZCanvasMessage : public cIGZMessage2
 {
 	public:
-		virtual cIGZCanvasMessage* Initialize(uint32_t dwCanvasEventID) = 0;
-		virtual uint32_t EventType(void) = 0;
+		enum class CanvasEvent : uint32_t
+		{
+			CanvasInit = 0,
+			CanvasShutdown = 1,
+			WindowActivate = 2,
+			WindowDeactivate = 3,
+			WindowPaint = 4,
+			WindowMove = 5,
+			CanvasUninitialize = 6,
+			CanvasReinitialize = 7,
+			WindowInit = 8,
+			WindowShutdown = 9,
+			WindowEnableDisable = 10
+		};
+
+		virtual void Initialize(CanvasEvent dwCanvasEventID) = 0;
+		virtual CanvasEvent EventType(void) const = 0;
 };
