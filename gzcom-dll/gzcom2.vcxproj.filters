@@ -870,6 +870,24 @@
     <ClInclude Include="include\cIGZCanvasMessaging.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cSC4LotConfigurationObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PersistResourceKeyFilterByInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PersistResourceKeyFilterByTypeAndInstance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SC4HashSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4LightingManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cIGZPersistDBSegmentDirectoryFiles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
@@ -954,6 +972,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\SC4String.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PersistResourceKeyFilterByInstance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PersistResourceKeyFilterByTypeAndInstance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

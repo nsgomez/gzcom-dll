@@ -136,6 +136,7 @@
     <ClInclude Include="include\cIGZOStream.h" />
     <ClInclude Include="include\cIGZPersistDBRecord.h" />
     <ClInclude Include="include\cIGZPersistDBSegment.h" />
+    <ClInclude Include="include\cIGZPersistDBSegmentDirectoryFiles.h" />
     <ClInclude Include="include\cIGZPersistDBSegmentMultiPackedFiles.h" />
     <ClInclude Include="include\cIGZPersistDBSerialRecord.h" />
     <ClInclude Include="include\cIGZPersistResource.h" />
@@ -228,6 +229,7 @@
     <ClInclude Include="include\cISC4LandfillDeveloper.h" />
     <ClInclude Include="include\cISC4LandfillOccupant.h" />
     <ClInclude Include="include\cISC4LandValueSimulator.h" />
+    <ClInclude Include="include\cISC4LightingManager.h" />
     <ClInclude Include="include\cISC4LineItem.h" />
     <ClInclude Include="include\cISC4Lot.h" />
     <ClInclude Include="include\cISC4LotBaseTextureOccupant.h" />
@@ -320,6 +322,7 @@
     <ClInclude Include="include\cSC4BaseOccupantFilter.h" />
     <ClInclude Include="include\cSC4BaseViewInputControl.h" />
     <ClInclude Include="include\cSC4EdgeConnectionStore.h" />
+    <ClInclude Include="include\cSC4LotConfigurationObject.h" />
     <ClInclude Include="include\cSC4NetworkTool.h" />
     <ClInclude Include="include\cSC4OccupantTypeFilter.h" />
     <ClInclude Include="include\cSC4TripData.h" />
@@ -331,13 +334,16 @@
     <ClInclude Include="include\GZWinKeyAcceleratorUtil.h" />
     <ClInclude Include="include\ilist.h" />
     <ClInclude Include="include\PersistResourceKeyFilterBase.h" />
+    <ClInclude Include="include\PersistResourceKeyFilterByInstance.h" />
     <ClInclude Include="include\PersistResourceKeyFilterByType.h" />
     <ClInclude Include="include\PersistResourceKeyFilterByTypeAndGroup.h" />
+    <ClInclude Include="include\PersistResourceKeyFilterByTypeAndInstance.h" />
     <ClInclude Include="include\SC4AppPreferences.h" />
     <ClInclude Include="include\SC4AudioPreferences.h" />
     <ClInclude Include="include\SC4CellRegion.h" />
     <ClInclude Include="include\SC4DebugPreferences.h" />
     <ClInclude Include="include\SC4GameOptionPreferences.h" />
+    <ClInclude Include="include\SC4HashSet.h" />
     <ClInclude Include="include\SC4List.h" />
     <ClInclude Include="include\SC4NewCityPreferences.h" />
     <ClInclude Include="include\SC4NewCitySpecification.h" />
@@ -382,9 +388,12 @@
     <ClCompile Include="src\cSC4BaseOccupantFilter.cpp" />
     <ClCompile Include="src\cSC4BaseViewInputControl.cpp" />
     <ClCompile Include="src\cSCBaseProperty.cpp" />
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\PersistResourceKeyFilterBase.cpp" />
+    <ClCompile Include="src\PersistResourceKeyFilterByInstance.cpp" />
     <ClCompile Include="src\PersistResourceKeyFilterByType.cpp" />
     <ClCompile Include="src\PersistResourceKeyFilterByTypeAndGroup.cpp" />
+    <ClCompile Include="src\PersistResourceKeyFilterByTypeAndInstance.cpp" />
     <ClCompile Include="src\SC4String.cpp" />
     <ClCompile Include="src\SC4UI.cpp" />
     <ClCompile Include="src\SCLuaUtil.cpp" />
