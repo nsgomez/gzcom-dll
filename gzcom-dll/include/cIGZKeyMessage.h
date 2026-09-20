@@ -40,7 +40,7 @@ class cIGZKeyMessage : public cIGZMessage2
 			Up = 6
 		};
 
-		virtual uint32_t Initialize(KeyEvent dwKeyEventID, uint32_t dwKey, uint32_t dwKeyFlags, uint32_t dwRepeatCount) = 0;
+		virtual void Initialize(KeyEvent dwKeyEventID, uint32_t dwKey, uint32_t dwKeyFlags, uint32_t dwRepeatCount) = 0;
 
 		virtual KeyEvent EventType(void) = 0;
 		virtual uint32_t Key(void) = 0;

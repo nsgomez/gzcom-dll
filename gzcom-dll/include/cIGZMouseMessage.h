@@ -47,7 +47,7 @@ class cIGZMouseMessage : public cIGZMessage2
 			Wheel = 14
 		};
 
-		virtual uint32_t Initialize(MouseEvent dwMouseEventID, cRZPoint const& sPosition, uint32_t dwKeyFlags, int32_t lWheelDelta) = 0;
+		virtual void Initialize(MouseEvent dwMouseEventID, cRZPoint const& sPosition, uint32_t dwKeyFlags, int32_t lWheelDelta) = 0;
 
 		virtual MouseEvent EventType(void) const = 0;
 		virtual cRZPoint Position(void) const = 0;
