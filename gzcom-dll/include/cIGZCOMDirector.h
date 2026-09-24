@@ -98,12 +98,13 @@ class cIGZCOMDirector : public cIGZUnknown
 		virtual cIGZCOM* GZCOM(void) = 0;
 
 		/**
-		 * @brief Adds a child director to this director
+		 * @return This director's unique ID
 		 *
-		 * Child directors should be added prior to initialization to ensure
-		 * that the child directors are also properly initialized.
+		 * Slot 13 in every one of the game's directors, each returning its
+		 * own constant. Adding a child director is cRZCOMDllDirector::AddDirector,
+		 * which is not part of this interface.
 		 */
-		virtual void AddDirector(cIGZCOMDirector* pCOMDirector) = 0;
+		virtual uint32_t GetDirectorID(void) const = 0;
 
 		/**
 		 * @brief Stores the path to this library in the given parameter
