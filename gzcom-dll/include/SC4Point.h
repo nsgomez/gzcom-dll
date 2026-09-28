@@ -21,51 +21,21 @@
  */
 
 #pragma once
+#include <type_traits>
 
 template<typename T>
 class SC4Point
 {
 	public:
-		SC4Point() : x(0), y(0)
-		{
-		}
+		SC4Point() = default;
 
 		SC4Point(T x, T y) : x(x), y(y)
 		{
 		}
 
-		SC4Point(SC4Point const& other)
-		{
-			this->x = other.x;
-			this->y = other.y;
-		}
-
-		SC4Point(SC4Point&& other) noexcept
-		{
-			this->x = other.x;
-			this->y = other.y;
-			other.x = 0;
-			other.y = 0;
-		}
-
-		SC4Point& operator=(SC4Point const& other)
-		{
-			this->x = other.x;
-			this->y = other.y;
-
-			return *this;
-		}
-
-		SC4Point& operator=(SC4Point&& other)
-		{
-			this->x = other.x;
-			this->y = other.y;
-			other.x = 0;
-			other.y = 0;
-
-			return *this;
-		}
-
-		T x;
-		T y;
+		T x{};
+		T y{};
 };
+static_assert(std::is_trivially_copyable_v<SC4Point<float>>);
+static_assert(!std::is_trivially_default_constructible_v<SC4Point<float>>);  // x and y are initialized to 0
+static_assert(std::is_standard_layout_v<SC4Point<float>>);
