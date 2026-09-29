@@ -21,6 +21,7 @@
 
 #pragma once
 #include "stdint.h"
+#include <type_traits>
 
 class cGZPersistResourceKey
 {
@@ -35,8 +36,10 @@ public:
 	{
 	}
 
-
 	uint32_t type;
 	uint32_t group;
 	uint32_t instance;
 };
+static_assert(std::is_trivially_copyable_v<cGZPersistResourceKey>);
+static_assert(!std::is_trivially_default_constructible_v<cGZPersistResourceKey>);  // members are initialized to 0
+static_assert(std::is_standard_layout_v<cGZPersistResourceKey>);
