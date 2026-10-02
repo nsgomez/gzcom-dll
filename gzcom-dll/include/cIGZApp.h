@@ -36,26 +36,26 @@ class cIGZSystemService;
 class cIGZApp : public cIGZUnknown
 {
 	public:
+		// Declared in the game's vtable order: slots 3 to 14.
 		virtual cIGZSystemService* AsIGZSystemService(void) = 0;
-		virtual char const* ModuleName(void) = 0;
-		virtual cIGZFrameWork* FrameWork(void) = 0;
 
 		virtual bool AddApplicationService(cIGZSystemService* pService) = 0;
+		virtual char const* ModuleName(void) = 0;
 
 		virtual bool PreFrameWorkInit(void) = 0;
 		virtual bool PostFrameWorkInit(void) = 0;
-		virtual bool PreFrameWorkShutdown(void) = 0;
 
 		/**
 		 * In cIGZApp, this is a no-op and always returns false.
 		 */
 		virtual bool GZRun(void) = 0;
 
-		/**
-		 * In cIGZApp, this is a no-op and always returns false.
-		 * @see cISC4App::LoadRegistry(void)
-		 */
-		virtual bool LoadRegistry(void) = 0;
+		virtual bool PreFrameWorkShutdown(void) = 0;
+		virtual cIGZFrameWork* FrameWork(void) = 0;
+
+		// SimCity 4 implements the three hooks below (slots 11-13) as one
+		// shared empty function, so the game cannot show their order among
+		// themselves. This order is from the Mac build's debug symbols.
 
 		/**
 		 * A hardcoded point for EA/Maxis to load any dynamic libraries used
@@ -76,4 +76,10 @@ class cIGZApp : public cIGZUnknown
 		 * Not used by our directors.
 		 */
 		virtual void AddApplicationServicesHere(void) = 0;
+
+		/**
+		 * In cIGZApp, this is a no-op and always returns true.
+		 * @see cISC4App::LoadRegistry(void)
+		 */
+		virtual bool LoadRegistry(void) = 0;
 };
