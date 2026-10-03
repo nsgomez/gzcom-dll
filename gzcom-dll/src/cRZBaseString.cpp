@@ -322,11 +322,13 @@ cIGZString* cRZBaseString::Sprintf(char const* pszFormat, ...) {
 
 	if (nBufferSize > 0)
 	{
-		char* pszResult = (char*)malloc(nBufferSize + 1);
+		size_t bufferSizeWithTerminator = static_cast<size_t>(nBufferSize) + 1;
+
+		char* pszResult = (char*)malloc(bufferSizeWithTerminator);
 
 		if (pszResult)
 		{
-			if (vsnprintf(pszResult, nBufferSize, pszFormat, args) > 0)
+			if (vsnprintf(pszResult, bufferSizeWithTerminator, pszFormat, args) > 0)
 			{
 				szData.assign(pszResult);
 			}
