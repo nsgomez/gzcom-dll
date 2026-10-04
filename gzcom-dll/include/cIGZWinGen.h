@@ -27,6 +27,7 @@ class cIGZWin;
 class cIGZWinProc;
 class cRZRect;
 
+static const uint32_t GZCLSID_cGZWinGen = 0x4386d516;
 static const uint32_t GZIID_cIGZWinGen = 0x5386D516;
 
 class cIGZWinGen : public cIGZUnknown
