@@ -134,6 +134,7 @@
     <ClInclude Include="include\cIGZMessageTarget2.h" />
     <ClInclude Include="include\cIGZMouseMessage.h" />
     <ClInclude Include="include\cIGZOStream.h" />
+    <ClInclude Include="include\cIGZPersistBufferResource.h" />
     <ClInclude Include="include\cIGZPersistDBRecord.h" />
     <ClInclude Include="include\cIGZPersistDBSegment.h" />
     <ClInclude Include="include\cIGZPersistDBSegmentDirectoryFiles.h" />
