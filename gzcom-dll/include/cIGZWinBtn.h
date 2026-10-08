@@ -63,6 +63,13 @@ public:
 		RadioCheck = 4
 	};
 
+	enum class SoundType : int32_t
+	{
+		Down = 0,
+		Up = 1,
+		Toggle = 2
+	};
+
 	virtual cIGZWin* AsIGZWin() = 0;
 
 	virtual bool GetBtnFlag(BtnFlag flag) const = 0;
@@ -121,8 +128,8 @@ public:
 	virtual bool GetTipColor(int32_t unknown1, uint8_t& unknown2, uint8_t& unknown3, uint8_t& unknown4) const = 0;
 
 	virtual void Flash(uint32_t unknown1, uint32_t unknown2) = 0;
-	virtual bool SetSoundID(int32_t unknown1, uint32_t unknown2) = 0;
-	virtual uint32_t GetSoundID(int32_t unknown1) const = 0;
+	virtual bool SetSoundID(SoundType type, uint32_t soundID) = 0;
+	virtual uint32_t GetSoundID(SoundType type) const = 0;
 
 	virtual bool SetID(uint32_t unknown1) = 0;
 	virtual uint32_t GetID() const = 0;
