@@ -5,6 +5,7 @@
  *
  * Copyright (C) 2016 Nelson Gomez
  * Copyright (C) 2024 memo
+ * Copyright (C) 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -108,3 +109,4 @@ class cRZCOMDllDirector : public cIGZCOMDirector, public cIGZFrameWorkHooks
 cRZCOMDllDirector* RZGetCOMDllDirector();
 inline cIGZFrameWork* RZGetFrameWork() { return RZGetCOMDllDirector()->FrameWork(); }
 inline cIGZFrameWork* RZGetFramework() { return RZGetCOMDllDirector()->FrameWork(); }
+inline cIGZCOM* GZCOM() { return RZGetCOMDllDirector()->GZCOM(); }
