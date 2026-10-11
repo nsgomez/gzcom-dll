@@ -22,9 +22,9 @@
 
 #pragma once
 #include "cIGZUnknown.h"
+#include "cISC4City.h"
 
 class cIGZString;
-class cISC4City;
 class cISC4NeighborConnection;
 class cISC4NeighborDeal;
 class SC4NewCityPreferences;
@@ -49,8 +49,8 @@ class cISC4RegionalCity : public cIGZUnknown
 		virtual int32_t GetIndustrialJobs(void) const = 0;
 		virtual float GetWorkforcePercentage(void) const = 0;
 
-		virtual int32_t GetMayorRating(void) const = 0;
-		virtual int32_t GetDifficultyLevel(void) const = 0;
+		virtual int8_t GetMayorRating(void) const = 0;
+		virtual cISC4City::DifficultyLevel GetDifficultyLevel(void) const = 0;
 		virtual float GetTaxRate(uint32_t dwTaxType) const = 0;
 
 		virtual int32_t GetPopulation(uint32_t dwPopulationType) const = 0;
@@ -101,7 +101,7 @@ class cISC4RegionalCity : public cIGZUnknown
 		virtual float GetWorldBaseElevation(void) const = 0;
 		virtual void GetWorldBaseElevation(float fElevation) = 0;
 
-		virtual int32_t GetWorldHemisphere(void) const = 0;
+		virtual cISC4City::WorldHemisphere GetWorldHemisphere(void) const = 0;
 
 		virtual float GetBudget(void) const = 0;
 		virtual void SetBudget(float fBudget) = 0;
