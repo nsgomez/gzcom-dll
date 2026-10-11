@@ -3,7 +3,7 @@
  *
  * StringResourceKey.h
  *
- * Copyright (C) 2023 Nicholas Hayes
+ * Copyright (C) 2023, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -33,7 +33,7 @@ struct StringResourceKey
 	 * @param defaultLanguageGroupID The group ID of the language resource.
 	 * @param instanceID The instance ID of the language resource.
 	*/
-	StringResourceKey(uint32_t groupID, uint32_t instanceID)
+	constexpr StringResourceKey(uint32_t groupID, uint32_t instanceID)
 		: groupID(groupID), instanceID(instanceID)
 	{
 	}
