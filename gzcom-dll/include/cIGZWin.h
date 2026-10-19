@@ -52,6 +52,7 @@ class cIGZWin : public cIGZUnknown
 			WinFlag_Moveable =				0x100,
 			WinFlag_Sizeable =				0x200,
 			WinFlag_Sortable =				0x800,
+			WinFlag_Modal =					0x1000,
 			WinFlag_AcceptFocus =			0x8000,
 			WinFlag_PrivateBuffer =			0x10000,
 			WinFlag_PrivateBufferTrans =	0x20000,
