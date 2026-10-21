@@ -3,7 +3,7 @@
  *
  * SC4AppPreferences.h
  *
- * Copyright (C) 2024 Nicholas Hayes
+ * Copyright (C) 2024, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -25,6 +25,13 @@
 class SC4AppPreferences
 {
 public:
+    struct WindowLocation
+    {
+        uint32_t id;
+        int32_t left;
+        int32_t top;
+    };
+
     uint32_t enableFullGamePauseOnAppFocusLoss;
     uint32_t languageID;
     int8_t languageName[64];
@@ -32,6 +39,6 @@ public:
     uint8_t field4_0x49;
     uint8_t field5_0x4a;
     uint8_t bIME;
-    uint8_t field7_0x4c[2400];
+    WindowLocation savedWindowLocations[200];
 };
 
