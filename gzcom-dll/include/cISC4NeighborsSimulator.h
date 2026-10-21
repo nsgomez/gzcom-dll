@@ -3,7 +3,7 @@
  *
  * cISC4NeighborsSimulator.h
  *
- * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -29,6 +29,7 @@ class cISC4Occupant;
 class cISC4RegionalCity;
 class cISCResExemplar;
 
+template <typename T> class cRZAutoRefCount;
 template <typename T> class SC4List;
 
 class cISC4NeighborsSimulator : public cIGZUnknown
@@ -67,28 +68,28 @@ public:
 	virtual cISC4NeighborConnection* FindConnectionOnOtherSide(cISC4NeighborConnection* pConnection) = 0;
 	virtual cISC4NeighborConnection* FindUnvisitedConnection(ConnectionType type, cISC4RegionalCity const* pRegionalCity) = 0;
 
-	virtual void GetAllConnections(SC4List<cISC4NeighborConnection*>& list) const = 0;
-	virtual void GetConnectionsOfType(ConnectionType type, SC4List<cISC4NeighborConnection*>& list) const = 0;
-	virtual void GetConnectionsOfTypeToCity(ConnectionType type, cISC4RegionalCity const* pRegionalCity, SC4List<cISC4NeighborConnection*>& list) const = 0;
-	virtual void GetConnectionsToCity(cISC4RegionalCity const* pRegionalCity, SC4List<cISC4NeighborConnection*>& list) = 0;
-	virtual void GetAdjacentCities(SC4List<cISC4RegionalCity*>& list, bool includeUnestablished) = 0;
-	virtual void GetConnectedCities(SC4List<cISC4RegionalCity*>& list, bool includeUnestablished) = 0;
-	virtual void GetAllConnectedCities(SC4List<cISC4RegionalCity*>& list, bool includeUnestablished) = 0;
+	virtual void GetAllConnections(SC4List<cRZAutoRefCount<cISC4NeighborConnection>>& list) const = 0;
+	virtual void GetConnectionsOfType(ConnectionType type, SC4List<cRZAutoRefCount<cISC4NeighborConnection>>& list) const = 0;
+	virtual void GetConnectionsOfTypeToCity(ConnectionType type, cISC4RegionalCity const* pRegionalCity, SC4List<cRZAutoRefCount<cISC4NeighborConnection>>& list) const = 0;
+	virtual void GetConnectionsToCity(cISC4RegionalCity const* pRegionalCity, SC4List<cRZAutoRefCount<cISC4NeighborConnection>>& list) = 0;
+	virtual void GetAdjacentCities(SC4List<cRZAutoRefCount<cISC4RegionalCity>>& list, bool includeUnestablished) = 0;
+	virtual void GetConnectedCities(SC4List<cRZAutoRefCount<cISC4RegionalCity>>& list, bool includeUnestablished) = 0;
+	virtual void GetAllConnectedCities(SC4List<cRZAutoRefCount<cISC4RegionalCity>>& list, bool includeUnestablished) = 0;
 	virtual cISC4NeighborConnection* FindConnectionSuitableForDeal(int32_t dealType, cISC4RegionalCity const* pRegionalCity) = 0;
 	virtual bool ProposeDeal(int32_t dealType, cISC4RegionalCity* otherCity, cISC4NeighborDeal** outDeal) = 0;
-	virtual bool ProposeDeals(SC4List<cISC4NeighborConnection*>& deals, bool unknown2) = 0;
+	virtual bool ProposeDeals(SC4List<cRZAutoRefCount<cISC4NeighborDeal>>& deals, bool addToSim) = 0;
 	virtual bool AddDeal(cISC4NeighborDeal* pDeal) = 0;
 	virtual void SetUIDisableFlag(bool flag) = 0;
-	virtual void FindDealsAll(SC4List<cISC4NeighborConnection*>& deals) = 0;
-	virtual void FindDeals(int32_t dealType, SC4List<cISC4NeighborConnection*>& deals) = 0;
-	virtual void FindDeals(int32_t dealType, cISC4RegionalCity* pRegionalCity, SC4List<cISC4NeighborConnection*>& deals) = 0;
+	virtual void FindDealsAll(SC4List<cRZAutoRefCount<cISC4NeighborDeal>>& deals) = 0;
+	virtual void FindDeals(int32_t dealType, SC4List<cRZAutoRefCount<cISC4NeighborDeal>>& deals) = 0;
+	virtual void FindDeals(int32_t dealType, cISC4RegionalCity* pRegionalCity, SC4List<cRZAutoRefCount<cISC4NeighborDeal>>& deals) = 0;
 	virtual void MarkDealsDirty() = 0;
 
 	virtual int64_t GetTotalMonthlyNeighborDealIncome() = 0;
 	virtual int64_t GetTotalMonthlyNeighborDealExpense() = 0;
 	virtual void UpdateCommodityStats(cISC4City* pCity) = 0;
 
-	virtual int64_t GetDealCost(int32_t dealType, double unknown2, cISC4RegionalCity const* pRegionalCity) = 0;
-	virtual int64_t GetDealMaxAmount(int32_t dealType, cISC4RegionalCity const* pRegionalCity) = 0;
+	virtual double GetDealCost(int32_t dealType, double amount, cISC4RegionalCity const* pRegionalCity) = 0;
+	virtual double GetDealMaxAmount(int32_t dealType, cISC4RegionalCity const* pRegionalCity) = 0;
 	virtual cISCResExemplar* GetTuningExemplar() = 0;
 };
