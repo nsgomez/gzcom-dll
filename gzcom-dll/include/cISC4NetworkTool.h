@@ -25,6 +25,7 @@
 #include "cISC4NetworkManager.h"
 #include "cISC4NetworkOccupant.h"
 #include "SC4Point.h"
+#include "SC4Rect.h"
 #include "SC4Vector.h"
 
 class cISC4Lot;
@@ -137,7 +138,7 @@ public:
 	 */
 	virtual uint32_t OccupantExists(uint32_t x, uint32_t z, unsigned long networkMask, unsigned long& outOccupantId) = 0;
 
-	virtual void UpdateOnZoneChange() = 0; // no-op
+	virtual void UpdateOnZoneChange(SC4Rect<int32_t> rect, uint32_t unknown2) = 0; // no-op
 
 	/**
 	 * Forces the tool to reload its internal data on the next update.
