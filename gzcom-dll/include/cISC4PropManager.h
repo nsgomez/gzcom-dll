@@ -58,8 +58,11 @@ public:
 	virtual bool GetCityProps(SC4List<cISC4Occupant*>& list, SC4Rect<float> const& rect) = 0;
 	virtual bool AddCityProp(uint32_t propID, cS3DVector3 const& position, int32_t orientation) = 0;
 	virtual bool AddCityProp(cISC4Occupant* pOccupant) = 0;
-	virtual bool RemoveCityProps(SC4Rect<float> const& rect) = 0;
+	// MSVC puts every virtual overload of a name at the vtable slot of the first
+	// one declared, in REVERSE declaration order. Game slots: 21 RemoveCityProps(SC4Rect<float> const&),
+	// 22 RemoveCityProps(SC4Rect<int32_t> const&).
 	virtual bool RemoveCityProps(SC4Rect<int32_t> const& rect) = 0;
+	virtual bool RemoveCityProps(SC4Rect<float> const& rect) = 0;
 
 	virtual bool GetLotProps(SC4List<cISC4Occupant*>& list, cISC4Lot* pLot) = 0;
 	virtual bool GetLotProps(SC4List<cISC4Occupant*>& list, int x, int z) = 0;
