@@ -45,20 +45,20 @@ class cISCPropertyHolder : public cIGZUnknown
 		virtual bool AddProperty(cISCProperty* pProperty, bool bUnknown) = 0;
 		virtual bool AddProperty(uint32_t dwProperty, cIGZVariant const* pVariant, bool bUnknown) = 0;
 		virtual bool AddProperty(uint32_t dwProperty, uint32_t dwValue, bool bUnknown) = 0;
-		virtual bool AddProperty(uint32_t dwProperty, cIGZString const& szValue) = 0;
-		virtual bool AddProperty(uint32_t dwProperty, int32_t lValue, bool bUnknown) = 0;
+		virtual bool AddProperty(uint32_t dwProperty, cIGZString const& szValue, bool bUnknown) = 0;
+		virtual bool AddProperty(uint32_t dwProperty, cIGZUnknown* pUnknown, bool bUnknown) = 0;
 		virtual bool AddProperty(uint32_t dwProperty, void* pUnknown, uint32_t dwUnknown, bool bUnknown) = 0;
 
 		virtual bool CopyAddProperty(cISCProperty* pProperty, bool bUnknown) = 0;
 
-		virtual bool RemoveProperty(uint32_t dwProperty) = 0;
-		virtual bool RemoveAllProperties(void) = 0;
+		virtual bool RemoveProperty(uint32_t dwProperty, bool bUnknown) = 0;
+		virtual bool RemoveAllProperties(bool bUnknown) = 0;
 
 		typedef void (*FunctionPtr1)(cISCProperty*, void*);
 		typedef bool (*FunctionPtr2)(cISCProperty*, void*);
 
 		virtual bool EnumProperties(FunctionPtr1 pFunction1, void* pData) const = 0;
-		virtual bool EnumProperties(FunctionPtr2 pFunction2, FunctionPtr1 pFunctionPipe) const = 0;
+		virtual bool EnumProperties(FunctionPtr2 pFunction2, FunctionPtr1 pFunctionPipe, void* pData) const = 0;
 
 		virtual bool CompactProperties(void) = 0;
 };
