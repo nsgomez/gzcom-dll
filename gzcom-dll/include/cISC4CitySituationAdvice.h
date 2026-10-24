@@ -99,7 +99,7 @@ public:
 
 	virtual uint32_t GetSituationImageId() const = 0;
 	virtual uint32_t GetSuccessImageId() const = 0;
-	virtual uint32_t GetSuccessMood() const const = 0;
+	virtual uint32_t GetSuccessMood() const = 0;
 	virtual uint32_t GetFailureImageId() const = 0;
 	virtual uint32_t GetFailureMood() const = 0;
 

@@ -22,10 +22,10 @@
 
 #pragma once
 #include "cIGZUnknown.h"
+#include "cS3DVector3.h"
 
 class cISC4Lot;
 template<typename T> class cISC4SimGrid;
-class cS3DVector3;
 
 class cISTESurfaceWater : public cIGZUnknown
 {
@@ -36,14 +36,9 @@ public:
 	virtual float GetWaterDepthAtVertex(int32_t index) const = 0;
 	virtual float GetWaterDepthForCell(int32_t x, int32_t z) const = 0;
 
-	/**
-	 * @param position World-space 3D position, uses the X and Z position, ignoring Y
-	 * @param radius Search radius around the position, in cells
-	 * @param lot Lot to exclude from conflict checks (nullptr = no lot excluded)
-	 * @return true if the area is navigable. In other words, there are no obstructions
-	 *		   within the radius around the position
-	 */
-	virtual bool IsNavigable(cS3DVector3* position, int32_t radius, cISC4Lot* lot) const = 0;
+	// MSVC puts every virtual overload of a name at the vtable slot of the first
+	// one declared, in REVERSE declaration order. So the pair is declared in the
+	// reverse of the game's order: 7 IsNavigable(cS3DVector3, ...), 8 IsNavigable(cellX, cellZ, ...).
 
 	/**
 	 * @param cellX Terrain cell X coordinate
@@ -54,6 +49,15 @@ public:
 	 *		   within the radius around the position
 	 */
 	virtual bool IsNavigable(int32_t cellX, int32_t cellZ, int32_t radius, cISC4Lot* lot) const = 0;
+
+	/**
+	 * @param position World-space 3D position, uses the X and Z position, ignoring Y
+	 * @param radius Search radius around the position, in cells
+	 * @param lot Lot to exclude from conflict checks (nullptr = no lot excluded)
+	 * @return true if the area is navigable. In other words, there are no obstructions
+	 *		   within the radius around the position
+	 */
+	virtual bool IsNavigable(cS3DVector3 position, int32_t radius, cISC4Lot* lot) const = 0;
 
 	virtual cISC4SimGrid<uint16_t>* GetBodyOfWaterMap() const = 0;
 	virtual float AltitudeAtWhichFloodingWillOccur(int32_t x, int32_t z) = 0;

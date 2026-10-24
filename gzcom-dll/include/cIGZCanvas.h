@@ -24,6 +24,7 @@
 
 class cIGZString;
 class cIGZVariant;
+class cRZRect;
 template <typename T> class SC4Rect;
 
 static const uint32_t GZIID_cIGZCanvas = 0x66b217a1;
@@ -31,8 +32,11 @@ static const uint32_t GZIID_cIGZCanvas = 0x66b217a1;
 class cIGZCanvas : public cIGZUnknown
 {
 public:
+	// MSVC puts every virtual overload of a name at the vtable slot of the first
+	// one declared, in REVERSE declaration order. Game slots: 3 Init(uint32_t, uint32_t, uint32_t),
+	// 4 Init(cRZRect const&).
+	virtual bool Init(cRZRect const& area) = 0;
 	virtual bool Init(uint32_t unknown1, uint32_t width, uint32_t height) = 0;
-	virtual bool Init(SC4Rect<int32_t> const& area) = 0;
 
 	virtual bool IsInitialized() = 0;
 	virtual bool Shutdown() = 0;

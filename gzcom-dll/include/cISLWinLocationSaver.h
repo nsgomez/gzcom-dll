@@ -30,10 +30,14 @@ public:
 	virtual bool Init() = 0;
 	virtual bool Shutdown() = 0;
 
-	virtual bool SaveWindowLocation(uint32_t id, int32_t left, int32_t top) = 0;
+	// MSVC puts every virtual overload of a name at the vtable slot of the first
+	// one declared, in REVERSE declaration order. So each pair is declared in the
+	// reverse of the game's order, which has the uint32_t id overload first:
+	// 5/6 SaveWindowLocation, 7/8 GetWindowRestoreLocation, 9/10 RestoreWindowLocation.
 	virtual bool SaveWindowLocation(cIGZWin* pWin) = 0;
-	virtual bool GetWindowRestoreLocation(uint32_t& id, int32_t& left, int32_t& top, bool unknown4) = 0;
+	virtual bool SaveWindowLocation(uint32_t id, int32_t left, int32_t top) = 0;
 	virtual bool GetWindowRestoreLocation(cIGZWin* pWin, int32_t& left, int32_t& top, bool unknown4) = 0;
-	virtual bool RestoreWindowLocation(uint32_t id, bool unknown2) = 0;
+	virtual bool GetWindowRestoreLocation(uint32_t id, int32_t& left, int32_t& top, bool unknown4) = 0;
 	virtual bool RestoreWindowLocation(cIGZWin* pWin, bool unknown2) = 0;
+	virtual bool RestoreWindowLocation(uint32_t id, bool unknown2) = 0;
 };

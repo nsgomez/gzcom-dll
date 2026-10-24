@@ -99,7 +99,7 @@ class cISC4RegionalCity : public cIGZUnknown
 		virtual void SetWorldPosition(float fLongitude, float fLatitude) = 0;
 
 		virtual float GetWorldBaseElevation(void) const = 0;
-		virtual void GetWorldBaseElevation(float fElevation) = 0;
+		virtual void SetWorldBaseElevation(float fElevation) = 0;
 
 		virtual cISC4City::WorldHemisphere GetWorldHemisphere(void) const = 0;
 

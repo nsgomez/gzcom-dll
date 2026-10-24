@@ -51,7 +51,6 @@ class cISC4NetworkManager : public cIGZUnknown
 		virtual bool FindPipeConnectionOccupant(intptr_t pPipeTool, int32_t nUnknown, intptr_t ppPipeConnOccupant) = 0; // nUnknown probably a cell
 
 		virtual bool GetAllIntersectionPieces(cISC4NetworkOccupant* pOccupant, SC4List<cISC4Occupant*>& sList, cISC4OccupantManager* pManager, cISC4NetworkOccupant* pUnknown) = 0;
-		virtual bool GetAllIntersectionPieces2(cISC4NetworkOccupant* pOccupant, SC4List<cISC4Occupant*>& sList, cISC4OccupantManager* pManager, cISC4NetworkOccupant* pUnknown, cISC4OccupantFilter* pFilter) = 0;
 
 		virtual uint32_t MapPreviewTexture(uint32_t dwUnknown1, uint8_t& cUnknown) = 0;
 		virtual uint32_t MapShadowTexture(uint32_t dwUnknown1, uint8_t& cUnknown, uint32_t dwUnknown2, uint32_t dwUnknown3) = 0;

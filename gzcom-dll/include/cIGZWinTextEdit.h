@@ -74,8 +74,12 @@ public:
 	virtual bool SetFontStyle(uint32_t style) = 0;
 	virtual bool GetFontStyle(uint32_t& style) = 0;
 
-	virtual bool SetFontColor(ColorIndex index, uint32_t color) = 0;
+	// MSVC puts every virtual overload of a name at the vtable slot of the first
+	// one declared, in REVERSE declaration order. So each overload group in this
+	// class is declared in the reverse of the game's order.
+	// Game slots: 12 SetFontColor(ColorIndex, uint32_t), 13 SetFontColor(uint32_t).
 	virtual bool SetFontColor(uint32_t color) = 0;
+	virtual bool SetFontColor(ColorIndex index, uint32_t color) = 0;
 	virtual bool GetFontColor(ColorIndex index, uint32_t& color) = 0;
 	virtual bool SetColor(ColorIndex index, cRZColor color) = 0;
 	virtual bool GetColor(ColorIndex index, cRZColor& color) = 0;
@@ -108,19 +112,24 @@ public:
 	virtual void SetTextGutterY(uint32_t value) = 0;
 	virtual bool ResizeWindowForExactLineHeights() = 0;
 
-	virtual void GetText(char* textBuffer, uint32_t* param_2) = 0;
-	virtual void GetText(cIGZString& text) = 0;
+	// Game slots: 44 GetText(char*, uint32_t*), 45 GetText(cIGZString&), 46 GetText().
 	virtual const char* GetText() = 0;
+	virtual void GetText(cIGZString& text) = 0;
+	virtual void GetText(char* textBuffer, uint32_t* param_2) = 0;
 	virtual uint32_t GetTextLength() = 0;
-	virtual void SetText(cIGZString const& text, bool sendTextChangedMessage) = 0;
+	// Game slots: 48 SetText(cIGZString const&, bool), 49 SetText(char*, uint32_t, bool).
 	virtual bool SetText(char* text, uint32_t textLength, bool sendTextChangedMessage) = 0;
-	virtual void InsertText(char* text, uint32_t textLength, uint32_t line, uint32_t column) = 0;
+	virtual void SetText(cIGZString const& text, bool sendTextChangedMessage) = 0;
+	// Game slots: 50 InsertText(text, length, line, column), 51 InsertText(text, length, index).
 	virtual void InsertText(char* text, uint32_t textLength, uint32_t index) = 0;
+	virtual void InsertText(char* text, uint32_t textLength, uint32_t line, uint32_t column) = 0;
 	virtual bool RemoveChar(uint32_t param_1, bool param_2, cIGZString* param_3) = 0;
 
-	virtual uint32_t RemoveText(uint32_t fromLine, uint32_t fromColumn, uint32_t toLine, uint32_t toColumn, cIGZString* removedText) = 0;
-	virtual uint32_t RemoveText(uint32_t line, uint32_t column, uint32_t length, cIGZString* removedText) = 0;
+	// Game slots: 53 RemoveText(fromLine, fromColumn, toLine, toColumn, ...), 54 RemoveText(line, column, length, ...),
+	// 55 RemoveText(index, length, ...).
 	virtual uint32_t RemoveText(uint32_t index, uint32_t length, cIGZString* removedText) = 0;
+	virtual uint32_t RemoveText(uint32_t line, uint32_t column, uint32_t length, cIGZString* removedText) = 0;
+	virtual uint32_t RemoveText(uint32_t fromLine, uint32_t fromColumn, uint32_t toLine, uint32_t toColumn, cIGZString* removedText) = 0;
 	virtual size_t FindText(const char* text, size_t position, size_t count, bool fromStart) = 0;
 
 	virtual void GetIndexFromPosition(uint32_t& index, int32_t param_2, int32_t param_3) = 0;
