@@ -112,8 +112,8 @@ class cISC4ResidentialSimulator : public cIGZUnknown
 		virtual bool GetGlobalAutoBudgetForHospitals(void) = 0;
 		virtual bool SetGlobalAutoBudgetForHospitals(bool bEnable) = 0;
 
-		virtual bool GetAutoBudget(void) = 0;
-		virtual bool SetAutoBudget(bool bEnable) = 0;
+		virtual bool GetAutoBudget(cISC4Occupant* pOccupant) const = 0;
+		virtual bool SetAutoBudget(cISC4Occupant* pOccupant, bool bEnable) = 0;
 
 		virtual bool EstimateIdealFunding(cISC4Occupant* pOccupant, SC4Percentage& sFunding) = 0;
 
