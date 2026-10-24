@@ -40,7 +40,9 @@ class cISC4LotConfigurationManager : public cIGZUnknown
 		virtual bool Shutdown(void) = 0;
 
 		virtual bool AddLotConfiguration(cISC4LotConfiguration* pConfig, bool bUnknown) = 0;
-		virtual bool AddLotConfiguration(cGZPersistResourceKey const& sUnknown, void* pUnknown) = 0;
+		virtual bool AddLotConfiguration(cGZPersistResourceKey const& sUnknown) = 0;
+		// The game's AddLotConfiguration(key) has no second parameter. Kept so existing callers compile.
+		bool AddLotConfiguration(cGZPersistResourceKey const& sUnknown, void* pUnknown) { return AddLotConfiguration(sUnknown); }
 		virtual bool RemoveLotConfiguration(uint32_t dwConfigID) = 0;
 
 		virtual cISC4LotConfiguration* GetLotConfiguration(uint32_t dwConfigID) = 0;

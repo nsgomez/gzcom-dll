@@ -141,7 +141,7 @@ public:
 	virtual uint8_t GetPriority() = 0;
 	virtual void SetPriority(uint8_t priority) = 0;
 
-	virtual bool HandleCollision(cS3DVector3 const& param_2) = 0;
+	virtual bool HandleCollision(cISC4Automaton* param_1, cS3DVector3 const& param_2) = 0;
 	virtual void GetCollidePosition(cS3DVector3& param_1) = 0;
 	virtual uint32_t GetAutomataGroup() = 0;
 

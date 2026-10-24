@@ -33,7 +33,9 @@ static const uint32_t GZIID_cISC4DBSegmentIStream = 0x4999a8f5;
 class cISC4DBSegmentIStream : public cIGZIStream
 {
 	public:
-		virtual bool Open(cISC4DBSegment* pSegment, cGZPersistResourceKey const& sKey, bool bUnknown) = 0;
+		virtual bool Open(cISC4DBSegment* pSegment, cGZPersistResourceKey const& sKey) = 0;
+		// The game's Open has no third parameter. Kept so existing callers compile.
+		bool Open(cISC4DBSegment* pSegment, cGZPersistResourceKey const& sKey, bool bUnknown) { return Open(pSegment, sKey); }
 		virtual bool Close(void) = 0;
 
 		virtual bool IsOpen(void) = 0;
@@ -41,7 +43,7 @@ class cISC4DBSegmentIStream : public cIGZIStream
 		virtual int32_t GetRecord(void) = 0;
 		virtual int32_t GetSegment(void) = 0;
 		
-		virtual bool ReadGZSerializable(cIGZSerializable** ppSegmentOut) = 0;
+		virtual bool ReadGZSerializable(cIGZSerializable** ppSegmentOut, bool bUnknown) = 0;
 		virtual bool ReadResKey(cGZPersistResourceKey& sKeyOut) = 0;
 		virtual bool ReadVariant(cIGZVariant& sVariantOut) = 0;
 };

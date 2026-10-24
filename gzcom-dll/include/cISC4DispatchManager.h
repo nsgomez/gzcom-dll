@@ -59,7 +59,7 @@ public:
 
 	virtual bool RevokeDispatchByID(uint32_t id) = 0;
 	virtual bool RevokeDispatchByPylon(cISC4PylonOccupant* pPylon) = 0;
-	virtual bool RevokeAllDispatches() = 0;
+	virtual bool RevokeAllDispatches(tDispatchType type) = 0;
 
 	virtual bool GetDispatchInfo(tDispatchType type, DispatchInfo& param_2) = 0;
 	virtual uint32_t GetDispatchCount(tDispatchType type) = 0;

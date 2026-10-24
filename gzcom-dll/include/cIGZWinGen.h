@@ -92,5 +92,5 @@ public:
 	// TODO: Check that these methods have the correct parameters
 	virtual bool AddColorBar(int32_t unknown1, int32_t unknown2, int32_t unknown3, cRZRect const& unknown4) = 0;
 	virtual bool AddDividerH(int32_t unknown1, int32_t unknown2) = 0;
-	virtual bool RemoveColorBar() = 0;
+	virtual bool RemoveColorBar(int32_t unknown1) = 0;
 };

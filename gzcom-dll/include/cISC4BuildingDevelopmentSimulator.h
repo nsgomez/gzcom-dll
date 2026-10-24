@@ -111,7 +111,7 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 		virtual bool AddNewFoundationOccupant(cISC4FoundationOccupant* pOccupant) = 0;
 		virtual bool AddNewFoundationOccupant(uint32_t, int32_t, float*, float, float, int, float) = 0;
 		virtual bool DemolishFoundationOccupant(cISC4FoundationOccupant* pOccupant, uint32_t) = 0;
-		virtual int64_t GetCostOfOccupantDemolition(void) = 0;
+		virtual int64_t GetCostOfOccupantDemolition(cISC4FoundationOccupant* pOccupant, uint32_t dwUnknown) = 0;
 		virtual bool LoadFoundationProperties(cISC4FoundationOccupant* pOccupant, uint32_t) = 0;
 
 		virtual bool GetAllLotRetainingWallTypes(SC4Vector<uint32_t>& sList) = 0;
