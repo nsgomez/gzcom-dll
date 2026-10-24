@@ -47,8 +47,12 @@ public:
 	virtual cIGZBuffer* SystemBMP(int32_t id) = 0;
 	virtual void SetSystemBMP(int32_t id, cIGZBuffer* pBuffer) = 0;
 
-	virtual cIGZWinBtn* CreateButton(uint32_t id, cIGZString const& caption, cIGZBuffer* imageBuffer, cRZRect const* imageArea, uint32_t keyEquivalent) = 0;
+	// MSVC puts every virtual overload of a name at the vtable slot of the first
+	// one declared, in REVERSE declaration order. So each overload pair in this
+	// class is declared in the reverse of the game's order.
+	// Game slots: 9 CreateButton(id, ...), 10 CreateButton(style, id, ...).
 	virtual cIGZWinBtn* CreateButton(uint32_t style, uint32_t id, cIGZString const& caption, cIGZBuffer* imageBuffer, cRZRect const* imageArea, uint32_t keyEquivalent) = 0;
+	virtual cIGZWinBtn* CreateButton(uint32_t id, cIGZString const& caption, cIGZBuffer* imageBuffer, cRZRect const* imageArea, uint32_t keyEquivalent) = 0;
 	virtual cIGZWinBtn* CreateToggleButton(uint32_t id, cIGZString const& caption, cIGZBuffer* imageBuffer, cRZRect const* imageArea, uint32_t keyEquivalent) = 0;
 	virtual cIGZWinBtn* CreateRadioCheck(uint32_t id, cIGZString const& caption, cIGZBuffer* imageBuffer, cRZRect const* imageArea, uint32_t keyEquivalent) = 0;
 	virtual cIGZWinText* CreateLabel(uint32_t id, cIGZString const& caption) = 0;
@@ -72,10 +76,12 @@ public:
 	virtual uint32_t SystemSndID(int32_t id) = 0;
 	virtual void SetSystemSndID(int32_t id, uint32_t value) = 0;
 
-	virtual void DefaultColor(int32_t id, uint8_t& unknown2, uint8_t& unknown3, uint8_t& unknown4) = 0;
+	// Game slots: 31 DefaultColor(id, uint8_t&, uint8_t&, uint8_t&), 32 DefaultColor(id).
 	virtual uint32_t DefaultColor(int32_t id) = 0;
-	virtual void SetDefaultColor(int32_t id, uint8_t unknown2, uint8_t unknown3, uint8_t unknown4) = 0;
+	virtual void DefaultColor(int32_t id, uint8_t& unknown2, uint8_t& unknown3, uint8_t& unknown4) = 0;
+	// Game slots: 33 SetDefaultColor(id, uint8_t, uint8_t, uint8_t), 34 SetDefaultColor(id, color).
 	virtual void SetDefaultColor(int32_t id, uint32_t color) = 0;
+	virtual void SetDefaultColor(int32_t id, uint8_t unknown2, uint8_t unknown3, uint8_t unknown4) = 0;
 
 	virtual cIGZString* DefaultText(int32_t id) = 0;
 	virtual void SetDefaultText(int32_t id, cIGZString* pText) = 0;
