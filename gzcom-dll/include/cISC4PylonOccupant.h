@@ -30,6 +30,9 @@ class cISC4PylonOccupant : public cIGZUnknown
 public:
 	typedef uint32_t tUIState;
 
+	// Slot 3. The game's function is the same code as cISC4PropOccupant::AsOccupant.
+	virtual cISC4Occupant* AsOccupant() = 0;
+
 	virtual bool Init() = 0;
 	virtual bool Shutdown() = 0;
 
