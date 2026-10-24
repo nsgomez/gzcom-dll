@@ -38,7 +38,7 @@ class cISC4DisasterLayer : public cIGZUnknown
 		virtual cISC4DisasterManager* GetDisasterManager(uint32_t dwDisasterType) = 0;
 
 		virtual bool DisasterHasBegun(cISC4DisasterInstance* pDisaster) = 0;
-		virtual bool DisasterHasEnded(cISC4DisasterInstance* pDisaster) = 0;
+		virtual bool DisasterHasEnded(void) = 0;
 		virtual bool IsADisasterOngoing(void) = 0;
 		virtual bool GoToNextDisaster(void) = 0;
 
