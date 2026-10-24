@@ -80,6 +80,6 @@ public:
 	virtual bool SetExchangeRateForLocale(float exchangeRate, uint32_t locale) = 0;
 	virtual bool ConvertMoneyFromBaseToLocale(int32_t unknown1, int32_t* unknown2, uint32_t unknown3) = 0;
 	virtual bool ConvertMoneyFromBaseToLocale(int64_t unknown1, int64_t* unknown2, uint32_t unknown3) = 0;
-	virtual bool ConvertMoneyFromLocaleToLocale(uint32_t unknown2, int32_t* unknown3, uint32_t unknown4) = 0;
+	virtual bool ConvertMoneyFromLocaleToLocale(int32_t unknown1, uint32_t unknown2, int32_t& unknown3, uint32_t unknown4) = 0;
 	virtual bool ConvertMoneyFromLocaleToLocale(int64_t unknown1, uint32_t unknown2, int64_t* unknown3, uint32_t unknown4) = 0;
 };
