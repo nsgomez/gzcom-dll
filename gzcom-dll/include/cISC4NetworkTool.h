@@ -175,21 +175,19 @@ public:
 	virtual void GetFailureReasonString(cIGZString& outStr) const = 0;
 
 	/**
-	 * Clears all highlight markers applied to network occupants and disposes any
-	 * temporary highlight grid data.
-	 * @note The method order is reversed compared to the Mac binaries.
-	 * In the Windows binary, ClearOccupantHighlights is defined before ClearCellPreviews.
-	 */
-	virtual void ClearOccupantHighlights() = 0;
-
-	/**
 	 * Clears all cell preview visuals and tracked preview occupants.
 	 *
-	 * @note The method order is reversed compared to the Mac binaries.
-	 * In the Windows binary, ClearOccupantHighlights is defined before ClearCellPreviews.
+	 * @note Slot 16 in the Windows binary, as in the Mac binaries.
 	 * @return void
 	 */
 	virtual void ClearCellPreviews() = 0;
+
+	/**
+	 * Clears all highlight markers applied to network occupants and disposes any
+	 * temporary highlight grid data.
+	 * @note Slot 17 in the Windows binary, as in the Mac binaries.
+	 */
+	virtual void ClearOccupantHighlights() = 0;
 
 	/**
 	 * Computes a drawable network line between two points and validates bounds.
