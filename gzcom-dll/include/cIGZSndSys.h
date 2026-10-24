@@ -42,12 +42,12 @@ public:
 	virtual bool DoEvent(cIGZSndEventStd* pEvent) = 0;
 	virtual bool DoEvent(uint32_t unknown1, uint32_t unknown2, uint32_t unknown3, uint32_t unknown4, uint32_t unknown5) = 0;
 	virtual bool DoEvent(uint32_t unknown1, cIGZUnknown* unknown2, uint32_t unknown3, uint32_t unknown4, uint32_t unknown5, uint32_t unknown6) = 0;
-	virtual bool DoEvent(cIGZString* unknown2, uint32_t unknown3, uint32_t unknown4, uint32_t unknown5, uint32_t unknown6) = 0;
+	virtual bool DoEvent(uint32_t unknown1, cIGZString* unknown2, uint32_t unknown3, uint32_t unknown4, uint32_t unknown5, uint32_t unknown6) = 0;
 
 	virtual bool PostEvent(cIGZSndEventStd* pEvent) = 0;
 	virtual bool PostEvent(uint32_t unknown1, uint32_t unknown2, uint32_t unknown3, uint32_t unknown4, uint32_t unknown5) = 0;
 	virtual bool PostEvent(uint32_t unknown1, cIGZUnknown* unknown2, uint32_t unknown3, uint32_t unknown4, uint32_t unknown5, uint32_t unknown6) = 0;
-	virtual bool PostEvent(cIGZString* unknown2, uint32_t unknown3, uint32_t unknown4, uint32_t unknown5, uint32_t unknown6) = 0;
+	virtual bool PostEvent(uint32_t unknown1, cIGZString* unknown2, uint32_t unknown3, uint32_t unknown4, uint32_t unknown5, uint32_t unknown6) = 0;
 
 	virtual bool EventCreate(uint32_t riid, void** ppvObj) = 0;
 	virtual bool EventCreate(uint32_t eventID, uint32_t riid, void** ppvObj, uint32_t data1, uint32_t data2, uint32_t data3, uint32_t data4) = 0;
