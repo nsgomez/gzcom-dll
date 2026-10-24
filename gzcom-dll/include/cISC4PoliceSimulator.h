@@ -82,11 +82,11 @@ class cISC4PoliceSimulator : public cIGZUnknown
 		virtual uint32_t GetJailCount(void) = 0;
 		virtual uint32_t GetJailCapacity(cISC4Occupant* pJail) = 0;
 		virtual uint32_t GetJailedPercentage(void) = 0;
-		virtual int64_t GetJailCurrentUpkeepCost(void) = 0;
+		virtual int64_t GetJailCurrentUpkeepCost(cISC4Occupant* pJail) = 0;
 
 		virtual bool ProcessMonthlyCrimeStats(void) = 0;
 
-		virtual bool IsInJailbreak(void) = 0;
+		virtual bool IsInJailbreak(cISC4Occupant* pJail) = 0;
 		virtual float BeginJailbreak(cISC4Occupant* pJail) = 0;
 		virtual bool EndJailbreak(cISC4Occupant* pJail) = 0;
 		virtual bool GetJailbreakBuildings(SC4List<cISC4Occupant*>& sList) = 0;

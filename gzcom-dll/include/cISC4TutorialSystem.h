@@ -22,6 +22,7 @@
 #pragma once
 #include "cIGZUnknown.h"
 
+class cGZMessage;
 class cISCLua;
 class cISC4TutorialTask;
 class cISC4WinCatalogView;
@@ -44,7 +45,7 @@ class cISC4TutorialSystem : public cIGZUnknown
 		virtual int32_t GetTutorialTaskNumber(void) = 0;
 		virtual int32_t GetTutorialGUID(void) = 0;
 
-		virtual bool FilterMessage(uint32_t dwMessageID) = 0;
+		virtual bool FilterMessage(cGZMessage& message) = 0;
 
 		virtual cISC4TutorialSystem* ShowUIHintsForUsers(void) = 0;
 

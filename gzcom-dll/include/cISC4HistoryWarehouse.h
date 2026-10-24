@@ -35,7 +35,7 @@ class cISC4HistoryWarehouse : public cIGZUnknown
 		virtual bool GetMinMaxAverage(uint32_t dwHistoryType, cIGZDate const& sStartDate, cIGZDate const& sEndDate, float& fMin, float& fMax, float& fAvg) = 0;
 		virtual bool GetPoint(uint32_t dwHistoryType, cIGZDate const& sDate, float& fValue) = 0;
 
-		virtual bool Coalesce(uint32_t dwHistoryType, cIGZDate const& sDate, int32_t lUnknown) = 0;
+		virtual bool Coalesce(uint32_t dwHistoryType, cIGZDate const& sDate1, cIGZDate const& sDate2, int32_t lUnknown) = 0;
 		virtual bool Dispose(uint32_t dwHistoryType, cIGZDate const& sStartDate, cIGZDate const& sEndDate) = 0;
 		virtual bool Dispose(uint32_t dwHistoryType) = 0;
 

@@ -22,6 +22,7 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "cS3DVector2.h"
+#include "cS3DVector3.h"
 
 class cGZPersistResourceKey;
 class cIGZString;
@@ -29,7 +30,6 @@ class cISC4CachedStringTexture;
 class cS3DBoundingBox;
 class cS3DTextureBinding;
 class cS3DTransform;
-class cS3DVector3;
 
 class cISTEOverlayManager : public cIGZUnknown
 {
@@ -98,7 +98,7 @@ public:
 
 	virtual bool OverlayIsEnabled(uint32_t id) const = 0;
 	virtual float OverlayAlpha(uint32_t id) const = 0;
-	virtual bool OverlayColor(uint32_t id, cS3DVector3& color) const = 0;
+	virtual cS3DVector3 OverlayColor(uint32_t id) const = 0;
 	virtual uint8_t OverlayDrawMode(uint32_t id) const = 0;
 	virtual uint32_t OverlayFlags(uint32_t id) const = 0;
 
