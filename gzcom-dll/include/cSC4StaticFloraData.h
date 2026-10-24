@@ -54,7 +54,7 @@ public:
 	SC4Vector<uint32_t> families;               // 0x154
 	int64_t plopCost;                           // 0x160
 	cRZAutoRefCount<cISCResExemplar> exemplar;	// 0x168
-	tFloraFlags::eFloraFlags flags;             // 0x16c
+	uint8_t flags;								// 0x16c
 	uint32_t refCount;                          // 0x170
 };
 
