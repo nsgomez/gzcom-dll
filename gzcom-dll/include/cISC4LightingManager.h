@@ -88,14 +88,17 @@ public:
 	 */
 	virtual bool CalcShadowTerrainRect(int pointCount, cS3DVector3 const* points, cS3DBoundingBox const& shadowBox, cRZRect& outRect) = 0;
 
-	// NOTE: The ordering of these overloaded methods is reversed in the Windows v641 binary compared to the MacOS x86 binary.
-	// This header follows the Windows v641 vtable.
-	virtual void GetColor(cS3DVector3 const& position, cS3DVector3 const& normal, unsigned char& outR, unsigned char& outG, unsigned char& outB) const = 0;
-	virtual void GetColor(cS3DVector3 const& normal, unsigned char& outR, unsigned char& outG, unsigned char& outB) const = 0;
-	virtual void GetColor(unsigned char& outR, unsigned char& outG, unsigned char& outB) const = 0;
-	virtual cS3DVector3 GetColor(cS3DVector3 const& normal, cS3DVector3 const& position) const = 0;
-	virtual cS3DVector3 GetColor(cS3DVector3 const& normal) const = 0;
+	// MSVC puts every virtual overload of a name at the vtable slot of the first
+	// one declared, in REVERSE declaration order. So these are declared in the
+	// reverse of the Windows v641 order, which is:
+	// 19 GetColor(position, normal, outR, outG, outB), 20 GetColor(normal, outR, outG, outB),
+	// 21 GetColor(outR, outG, outB), 22 GetColor(normal, position), 23 GetColor(normal), 24 GetColor().
 	virtual cS3DVector3 GetColor() const = 0;
+	virtual cS3DVector3 GetColor(cS3DVector3 const& normal) const = 0;
+	virtual cS3DVector3 GetColor(cS3DVector3 const& normal, cS3DVector3 const& position) const = 0;
+	virtual void GetColor(unsigned char& outR, unsigned char& outG, unsigned char& outB) const = 0;
+	virtual void GetColor(cS3DVector3 const& normal, unsigned char& outR, unsigned char& outG, unsigned char& outB) const = 0;
+	virtual void GetColor(cS3DVector3 const& position, cS3DVector3 const& normal, unsigned char& outR, unsigned char& outG, unsigned char& outB) const = 0;
 
 	virtual void GetTerrainColor(cS3DVector3 const& position, cS3DVector3 const& normal, unsigned char& outR, unsigned char& outG, unsigned char& outB) const = 0;
 	virtual void GetTerrainColorFloor(cS3DVector3 const& position, cS3DVector3 const& normal, unsigned char& outR, unsigned char& outG, unsigned char& outB) const = 0;
