@@ -107,7 +107,7 @@ class cISC4LotDeveloper : public cIGZUnknown
 		virtual intptr_t GetLotFoundation(cISC4Lot* pLot) = 0;
 		
 		virtual bool RemoveFoundation(int32_t, float, float) = 0;
-		virtual bool RemoveLotFoundation(cISC4Lot* pLot) = 0;
+		virtual bool RemoveLotFoundation(int32_t cellX, int32_t cellZ) = 0;
 		
 		virtual bool AddLotFoundation(cISC4Lot* pLot, uint32_t, bool, bool, bool) = 0;
 		virtual bool AddLotFoundation(cISC4Lot* pLot, cISC4LotConfiguration* pConfig, bool, bool, bool) = 0;
