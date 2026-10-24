@@ -54,8 +54,11 @@ public:
 	virtual cIGZFont* FontAcquire(cIGZString const& name, int32_t unknown2, uint32_t size, cIGZFont::Style style, bool addToCache) = 0;
 	virtual int32_t FontRelease(cIGZFont* pFont) = 0;
 
-	virtual bool AddFont(cIGZFont* pFont) = 0;
+	// MSVC puts every virtual overload of a name at the vtable slot of the first
+	// one declared, in REVERSE declaration order. Game slots: 13 AddFont(cIGZFont*),
+	// 14 AddFont(cIGZString const&).
 	virtual bool AddFont(cIGZString const& path) = 0;
+	virtual bool AddFont(cIGZFont* pFont) = 0;
 	virtual int32_t AddAllFontsFromDirectory(cIGZString const& directory) = 0;
 	virtual bool RemoveFontByFile(cIGZString const& file) = 0; // No-op
 	virtual bool RemoveFontByName(cIGZString const& name) = 0;
