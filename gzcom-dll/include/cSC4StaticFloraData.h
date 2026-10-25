@@ -52,6 +52,7 @@ public:
 			SeedScatterRadius = 4,
 			LifeSpan = 5,            // At this age (growth state 3) the plant restarts as a sapling.
 			MinPropagationScore = 8, // Below this propagation score the plant is removed.
+			SeedSuccessFactor = 9,
 			FootprintRadius = 11,    // Read by the lot editor.
 		};
 	};
