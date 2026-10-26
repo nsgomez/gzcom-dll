@@ -51,6 +51,35 @@ public:
 		WinGenFlag_Sidebar = 0x10000,
 	};
 
+	struct tWinProcMessageTypes
+	{
+		enum eWinProcMessageTypes : uint32_t
+		{
+			// unusable for scripted windows because the game calls cIGZWin::Init before user code can set the WinProc.
+			GZWinInit = 0xa2bf8ad0, 
+			GZWinShutdown = 0xa2bf8ad1,
+			// data1 = adjusted rect pointer, data2 = user area rect pointer.
+			LayoutAdjustUserRect = 0xa2bf8ad2,
+			// data1 = user area rect pointer, data2 = window bounds rect pointer.
+			Layout = 0xa2bf8ad3,
+			// data1 = packed mouse position with x in high 16 bits and y in low 16 bits,
+			// data2 = pointer to a one - byte Boolean result.
+			PointInWindowCoordinates = 0xa2bf8ad4,
+			// fires when the winproc is set to non - null and can be used for initialization.
+			Attach = 0xa2bf8ad5,
+			// fires when the winproc is set to null and can be used for shutdown.
+			Detach = 0xa2bf8ad6,
+			// fires when the winproc is set to non - null and can be used for initialization.
+			PostAttach = 0xa2bf8ad8,
+			// data1 = draw area rect pointer
+			BeginPaint = 0xa2bf8acd,
+			// data1 = draw area rect pointer
+			Paint = 0xa2bf8ace,
+			// data1 = draw area rect pointer
+			EndPaint = 0xa2bf8acf,
+		};
+	};
+
 	virtual cIGZWin* AsIGZWin() = 0;
 
 	virtual uint32_t GetCLSID() = 0;

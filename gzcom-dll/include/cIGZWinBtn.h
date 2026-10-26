@@ -48,6 +48,20 @@ public:
 		BtnFlagTipsTimeOut = 0x400,
 	};
 
+	struct tBtnWinProcCommands
+	{
+		// All commands are received through a window procedure
+		// "Command" message, see tWinProcMessageTypes in cIGZWin.h.
+		// Both messages put the button command type in data1 with
+		// the button id in data2.
+
+		enum eBtnWinProcCommands : uint32_t
+		{
+			Activated = 0x287259f6,
+			RightClicked = 0x287259f0,
+		};
+	};
+
 	enum class CaptionStyle : int32_t
 	{
 		AlignCenter = 0,

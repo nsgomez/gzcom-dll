@@ -63,6 +63,50 @@ class cIGZWin : public cIGZUnknown
 			WinFlag_DelayedPlot =			0x8000000,
 		};
 
+		struct tWinProcMessageTypes
+		{
+			enum eWinProcMessageTypes : uint32_t
+			{
+				ChildDelete = 1,
+				ChildRemove = 2,
+				// generic control command with the data fields having control-specific values.
+				Command = 3,
+				// data1 = virtual key code, data2 = framework modifier keys, data3 = repeat count
+				Character = 4,
+				// data1 = virtual key code, data2 = framework modifier keys, data3 = repeat count
+				KeyDown = 5,
+				// data1 = virtual key code, data2 = framework modifier keys, data3 = repeat count
+				KeyUp = 6,
+				// data1 = x, data2 = y, data 3 = packed value with framework modifier key flags in the upper 16 bits and wheel delta in the lower 16 bits.
+				MouseDownL = 7,
+				// data1 = x, data2 = y, data 3 = packed value with framework modifier key flags in the upper 16 bits and wheel delta in the lower 16 bits.
+				MouseDownR = 8,
+				// not implemented in the game's OS window procedure, or the base game UI APIs.
+				MouseDownM = 9,
+				// data1 = x, data2 = y, data 3 = packed value with framework modifier key flags in the upper 16 bits and wheel delta in the lower 16 bits.
+				MouseUpL = 10,
+				// data1 = x, data2 = y, data 3 = packed value with framework modifier key flags in the upper 16 bits and wheel delta in the lower 16 bits.
+				MouseUpR = 11,
+				// not implemented in the game's OS window procedure, or the base game UI APIs.
+				MouseUpM = 12,
+				// data1 = x, data2 = y, data 3 = packed value with framework modifier key flags in the upper 16 bits and wheel delta in the lower 16 bits.
+				MouseMove = 13,
+				// data1 = x, data2 = y, data 3 = packed value with framework modifier key flags in the upper 16 bits and wheel delta in the lower 16 bits.
+				MouseWheel = 14,
+				// used primarily as the first parameter to cIGZWinMgr::PostWinMsg when ending a dialog.
+				// in this use case, the second PostWinMsg parameter is the window pointer and the third parameter ins the result code.
+				DialogEnd = 15,
+				KillFocus = 16,
+				SetFocus = 17,
+				CaptureChanged = 18,
+				MouseEnter = 19,
+				MouseExit = 20,
+				WinMoving = 23,
+				WinMoveStart = 24,
+				WinMoveEnd = 25,
+			};
+		};
+
 		virtual bool DoMessage(cGZMessage& sMessage) = 0;
 
 		virtual bool Init(void) = 0;
