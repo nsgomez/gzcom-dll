@@ -31,9 +31,9 @@ class cISC424HourClock : public cIGZUnknown
 		virtual int32_t SetVisualTimeMode(int32_t nTimeMode) = 0;
 		virtual int32_t GetVisualTimeMode(void) = 0;
 
-		virtual float GetTimePercentage(void) = 0;
+		virtual void GetTimePercentage(float& fPercentageOut) = 0;
 		virtual int32_t SetTimePercentage(float& fPercentage) = 0;
-		virtual float GetVisualTimePercentage(void) = 0;
+		virtual void GetVisualTimePercentage(float& fPercentageOut) = 0;
 		
 		virtual uint32_t GetHour(void) = 0;
 		virtual uint32_t SetHour(uint32_t dwHour) = 0;
