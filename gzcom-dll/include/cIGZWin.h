@@ -197,7 +197,7 @@ class cIGZWin : public cIGZUnknown
 		virtual bool IsPointInWindowScreenCoordinates(int32_t unknown1, int32_t unknown2) const = 0;
 
 		virtual uint32_t GetID() const = 0;
-		virtual bool SetID(uint32_t id) = 0;
+		virtual void SetID(uint32_t id) = 0;
 
 		virtual uint32_t GetInstanceID() const = 0;
 		virtual bool SetInstanceID(uint32_t id) = 0;
@@ -215,13 +215,13 @@ class cIGZWin : public cIGZUnknown
 		virtual bool SetCaption(cIGZString const& caption) = 0;
 
 		virtual cIGZWinKeyAccelerator* GetKeyboardAccelerator() = 0;
-		virtual bool SetKeyboardAccelerator(cIGZWinKeyAccelerator* pWinKeyAccelerator) = 0;
+		virtual void SetKeyboardAccelerator(cIGZWinKeyAccelerator* pWinKeyAccelerator) = 0;
 
 		// Passes the message to the keyboard accelerator's ProcessAccelerator.
 		virtual bool AccelerateKeyboardMsg(cGZMessage const& msg) = 0;
 
 		virtual uint32_t GetKeyEquivalent() = 0;
-		virtual bool SetKeyEquivalent(uint32_t value) = 0;
+		virtual void SetKeyEquivalent(uint32_t value) = 0;
 		// Compares MakeKeyEquivalent(key, modifiers) with GetKeyEquivalent().
 		virtual bool CheckKeyEquivalent(uint32_t key, uint32_t modifiers) = 0;
 		virtual uint32_t MakeKeyEquivalent(uint32_t unknown1, uint32_t unknown2) = 0;
@@ -229,9 +229,9 @@ class cIGZWin : public cIGZUnknown
 
 		virtual bool ProcessCursorMessage(cGZMessage& msg) = 0;
 		virtual bool UpdateCursor() = 0;
-		virtual bool SetCursor(cIGZCursor* pCursor, bool updateCursor) = 0;
+		virtual void SetCursor(cIGZCursor* pCursor, bool updateCursor) = 0;
 
-		virtual bool SetNotificationTarget(cIGZWin* pTarget) = 0;
+		virtual void SetNotificationTarget(cIGZWin* pTarget) = 0;
 		virtual cIGZWin* GetNotificationTarget() = 0;
 
 		virtual bool GZPaint() = 0;
