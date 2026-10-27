@@ -327,7 +327,8 @@ class cIGZWin : public cIGZUnknown
 
 		// Sent to the window the mouse entered, with the window it left.
 		virtual bool GZOnMouseEnter(cIGZWin* pPreviousWin) = 0;
-		virtual bool GZOnMouseExit(uint32_t data1) = 0;
+		// Sent to the window the mouse left, with the window it entered (may be null).
+		virtual bool GZOnMouseExit(cIGZWin* pNextWin) = 0;
 
 		virtual bool GZOnCommand(uint32_t command, uint32_t data) = 0;
 
