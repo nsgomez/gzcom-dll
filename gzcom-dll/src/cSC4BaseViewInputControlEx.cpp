@@ -118,6 +118,11 @@ bool cSC4BaseViewInputControlEx::OnMouseUpX(int32_t x, int32_t z, uint32_t modif
 	return false;
 }
 
+bool cSC4BaseViewInputControlEx::ShouldReceiveExtraButtons()
+{
+	return IsOnTop();
+}
+
 bool cSC4BaseViewInputControlEx::IsMiddleMouseDown() const
 {
 	return (buttonsDown & MK_MBUTTON) != 0;
@@ -189,7 +194,7 @@ bool cSC4BaseViewInputControlEx::ButtonDown(uint32_t button, LPARAM lParam)
 	if (button == 0
 		|| (buttonsDown & button) != 0
 		|| !initialized
-		|| !IsOnTop()
+		|| !ShouldReceiveExtraButtons()
 		|| !IsOverView(lParam))
 	{
 		return false;

@@ -84,8 +84,9 @@ public:
 	 * @param z The mouse z position.
 	 * @param modifiers The framework modifier flags.
 	 * @return True if the control handled the event; otherwise, false.
-	 * @remarks Only called when the control is at the top of the view input control stack,
-	 * and the cursor is over the view (not over a UI window covering it).
+	 * @remarks Only called when ShouldReceiveExtraButtons returns true (by default, when the
+	 * control is at the top of the view input control stack), and the cursor is over the view
+	 * (not over a UI window covering it).
 	 */
 	virtual bool OnMouseDownM(int32_t x, int32_t z, uint32_t modifiers);
 
@@ -125,6 +126,16 @@ public:
 	virtual bool OnMouseUpX(int32_t x, int32_t z, uint32_t modifiers, uint32_t button);
 
 protected:
+	/**
+	 * @brief Gets a value indicating if middle and X button down events should be sent now.
+	 * @return True to send them; otherwise, false.
+	 * @remarks Defaults to IsOnTop(). Override it to return true for a control that was added
+	 * with cISC4View3DWin::AddPersistentViewInputControl: the game gives persistent controls
+	 * the left and right mouse buttons whatever control is at the top of the stack, so they
+	 * should get the extra buttons the same way.
+	 */
+	virtual bool ShouldReceiveExtraButtons();
+
 	/**
 	 * @brief Gets a value indicating if the middle mouse button is down.
 	 * @return True if the control received OnMouseDownM and the matching
