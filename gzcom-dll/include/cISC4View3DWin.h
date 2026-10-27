@@ -56,9 +56,36 @@ class cISC4View3DWin : public cIGZUnknown
 
 		virtual bool ProcessCommand(uint32_t dwCommandID, cIGZCommandParameterSet&, cIGZCommandParameterSet&) = 0;
 
+		/**
+		 * @brief Sets the zoom level.
+		 * @remarks The level is clamped to the limits set with SetZoomLimits.
+		 */
 		virtual int32_t SetZoom(int32_t nZoomLevel) = 0;
+
+		/**
+		 * @brief Zooms in one level, unless the view is already at the upper zoom limit.
+		 * @remarks The city view calls this when the mouse wheel is scrolled up and no view
+		 * input control on the stack handled it.
+		 */
 		virtual int32_t ZoomIn(void) = 0;
+
+		/**
+		 * @brief Zooms out one level, unless the view is already at the lower zoom limit.
+		 * @remarks The city view calls this when the mouse wheel is scrolled down and no view
+		 * input control on the stack handled it.
+		 */
 		virtual int32_t ZoomOut(void) = 0;
+
+		/**
+		 * @brief Sets the zoom levels that SetZoom, ZoomIn and ZoomOut stay within.
+		 * @param nLower The lowest allowed zoom level.
+		 * @param nUpper The highest allowed zoom level. Values above 4 are lowered to 4 or 5,
+		 * depending on the game settings.
+		 * @return Always true.
+		 * @remarks The current zoom level is moved inside the new limits if needed. Setting
+		 * both limits to the current level stops the player from zooming the view, while
+		 * the renderer's own zoom functions keep working.
+		 */
 		virtual bool SetZoomLimits(int32_t nLower, int32_t nUpper) = 0;
 		virtual bool CanZoomIn(void) = 0;
 		virtual bool CanZoomOut(void) = 0;
@@ -78,6 +105,15 @@ class cISC4View3DWin : public cIGZUnknown
 		virtual bool SetCurrentViewLevel(uint32_t nLevel) = 0;
 
 		virtual cISC4ViewInputControl* GetCurrentViewInputControl(void) = 0;
+
+		/**
+		 * @brief Puts a view input control on top of the control stack.
+		 * @param pControl The control.
+		 * @param sOperation What to do with the controls that are already on the stack.
+		 * @return True if successful, or false if it failed.
+		 * @remarks The game calls SetWindow and then Init on the control. See
+		 * cISC4ViewInputControl for how input is passed to the controls.
+		 */
 		virtual bool SetCurrentViewInputControl(cISC4ViewInputControl* pControl, ViewInputControlStackOperation sOperation) = 0;
 
 		/**
@@ -97,6 +133,14 @@ class cISC4View3DWin : public cIGZUnknown
 		 */
 		virtual bool RemoveAllViewInputControls(bool suppressPreviousControlRestore) = 0;
 
+		/**
+		 * @brief Adds a view input control that stays active when the player switches tools.
+		 * @param pControl The control.
+		 * @return Always true.
+		 * @remarks The game calls Init, SetWindow and Activate on the control, and keeps a
+		 * reference to it. Persistent controls get some events before the control stack and
+		 * others after it, see cISC4ViewInputControl.
+		 */
 		virtual bool AddPersistentViewInputControl(cISC4ViewInputControl* pControl) = 0;
 		virtual bool RemovePersistentViewInputControl(cISC4ViewInputControl* pControl) = 0;
 		virtual bool RemoveAllPersistentViewInputControls(void) = 0;
