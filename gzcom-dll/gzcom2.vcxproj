@@ -322,6 +322,7 @@
     <ClInclude Include="include\cSC4BaseLotConfigurationFilter.h" />
     <ClInclude Include="include\cSC4BaseOccupantFilter.h" />
     <ClInclude Include="include\cSC4BaseViewInputControl.h" />
+    <ClInclude Include="include\cSC4BaseViewInputControlEx.h" />
     <ClInclude Include="include\cSC4EdgeConnectionStore.h" />
     <ClInclude Include="include\cSC4LotConfigurationObject.h" />
     <ClInclude Include="include\cSC4NetworkTool.h" />
@@ -389,6 +390,7 @@
     <ClCompile Include="src\cSC4BaseLotConfigurationFilter.cpp" />
     <ClCompile Include="src\cSC4BaseOccupantFilter.cpp" />
     <ClCompile Include="src\cSC4BaseViewInputControl.cpp" />
+    <ClCompile Include="src\cSC4BaseViewInputControlEx.cpp" />
     <ClCompile Include="src\cSCBaseProperty.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\PersistResourceKeyFilterBase.cpp" />
