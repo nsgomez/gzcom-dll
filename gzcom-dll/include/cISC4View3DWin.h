@@ -148,7 +148,13 @@ class cISC4View3DWin : public cIGZUnknown
 		virtual cIGZWinKeyAccelerator* GetKeyAccelerator(void) = 0;
 		virtual bool SetKeyAccelerator(cIGZWinKeyAccelerator* pAccelerator) = 0;
 
-		virtual bool SetScrolling(bool bScrolling, float fX, float fZ) = 0;
+		/**
+		 * @brief Starts or stops scrolling the view in a direction.
+		 * @param bScrolling True to start scrolling, false to stop.
+		 * @param angle The scroll direction, as an angle in radians.
+		 * @param speed The scroll speed.
+		 */
+		virtual bool SetScrolling(bool bScrolling, float angle, float speed) = 0;
 		virtual bool ScrollStop(void) = 0;
 		virtual bool KillKeyboardScrolling(void) = 0;
 
