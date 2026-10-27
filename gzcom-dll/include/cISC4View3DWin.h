@@ -154,7 +154,7 @@ class cISC4View3DWin : public cIGZUnknown
 		 * @param angle The scroll direction, as an angle in radians.
 		 * @param speed The scroll speed.
 		 */
-		virtual bool SetScrolling(bool bScrolling, float angle, float speed) = 0;
+		virtual void SetScrolling(bool bScrolling, float angle, float speed) = 0;
 		virtual bool ScrollStop(void) = 0;
 		virtual bool KillKeyboardScrolling(void) = 0;
 
