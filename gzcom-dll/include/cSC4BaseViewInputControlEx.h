@@ -32,6 +32,13 @@
  * cIGZWinProcFilterW32 on the game canvas, and forwards them to OnMouseDownM/OnMouseUpM
  * and OnMouseDownX/OnMouseUpX.
  *
+ * Because these buttons come from a canvas filter and not from the city view, they do not
+ * follow the order the city view uses for the other events (see cISC4ViewInputControl).
+ * Each control gets them on its own, as long as ShouldReceiveExtraButtons returns true and
+ * the click lands on the city view. When several controls want them, the control that was
+ * initialized last goes first, and returning true from a handler hides the click from the
+ * other controls and from the game.
+ *
  * Use cSC4BaseViewInputControl instead if you only need the base game functionality,
  * this class registers a window procedure filter for every initialized control.
  */
