@@ -205,8 +205,8 @@ class cIGZWin : public cIGZUnknown
 		virtual bool GetFlag(tWinFlag flag) const = 0;
 		virtual tWinFlag SetFlag(tWinFlag flag, bool value) = 0;
 
-		virtual bool ShowWindow() = 0;
-		virtual bool HideWindow() = 0;
+		virtual void ShowWindow() = 0;
+		virtual void HideWindow() = 0;
 
 		virtual bool IsVisible() const = 0;
 		virtual bool IsEnabled() const = 0;
@@ -228,7 +228,7 @@ class cIGZWin : public cIGZUnknown
 		virtual bool IsChildKeyEquivalent(uint32_t unknown1, uint32_t unknown2) = 0;
 
 		virtual bool ProcessCursorMessage(cGZMessage& msg) = 0;
-		virtual bool UpdateCursor() = 0;
+		virtual void UpdateCursor() = 0;
 		virtual void SetCursor(cIGZCursor* pCursor, bool updateCursor) = 0;
 
 		virtual void SetNotificationTarget(cIGZWin* pTarget) = 0;
