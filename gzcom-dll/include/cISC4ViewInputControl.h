@@ -27,6 +27,36 @@ class cIGZWin;
 
 static const uint32_t GZIID_cISC4ViewInputControl = 0xC6BB8345;
 
+/**
+ * @brief A tool that handles mouse and keyboard input in the city view.
+ *
+ * The city view (cISC4View3DWin) keeps two lists of these controls:
+ *
+ * - The control stack, managed with SetCurrentViewInputControl and friends. The control
+ *   on top is the tool the player picked, e.g. the bulldozer or a zoning tool.
+ * - Persistent controls, added with AddPersistentViewInputControl. They stay in place
+ *   when the player switches tools.
+ *
+ * Every event type is passed through those lists in its own order. "The stack" means
+ * from the top down, and returning true only stops an event where that is mentioned.
+ *
+ * - Mouse move: every persistent control first, whatever they return. Then the stack,
+ *   until a control returns true.
+ * - Left and right button down: persistent controls first, then the stack. The first
+ *   control that returns true gets the click, nobody after it sees it.
+ * - Mouse wheel: the stack, until a control returns true. If none of them does, every
+ *   persistent control is called, whatever they return, and the game zooms the view in
+ *   or out anyway. Only a control on the stack can prevent that zoom.
+ * - Key down and key up: the stack, until a control returns true, and then every
+ *   persistent control, whatever they return. The key goes on to the game's keyboard
+ *   shortcuts unless a control on the stack handled it, so a persistent control cannot
+ *   keep a key away from the shortcuts.
+ *
+ * The middle and X mouse buttons are never sent to view input controls.
+ *
+ * This was checked against the Windows 1.1.641 version of the game. The Mac version is
+ * the same, except that persistent controls can handle keys there.
+ */
 class cISC4ViewInputControl : public cIGZUnknown
 {
 public:
