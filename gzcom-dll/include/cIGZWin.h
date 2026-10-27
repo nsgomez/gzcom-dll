@@ -191,8 +191,8 @@ class cIGZWin : public cIGZUnknown
 		virtual bool GZWinOffset(int32_t dx, int32_t dy) = 0;
 
 		virtual bool FitRectToWindow(cRZRect& unknown1, int32_t unknown2) = 0;
-		virtual bool ScreenToWindowCoordinates(int32_t& unknown1, int32_t& unknown2) const = 0;
-		virtual bool WindowToScreenCoordinates(int32_t& unknown1, int32_t& unknown2) const = 0;
+		virtual void ScreenToWindowCoordinates(int32_t& unknown1, int32_t& unknown2) const = 0;
+		virtual void WindowToScreenCoordinates(int32_t& unknown1, int32_t& unknown2) const = 0;
 		virtual bool WindowToWindowCoordinates(cIGZWin* unknown1, int32_t& unknown2, int32_t& unknown3) const = 0;
 		virtual bool IsPointInWindowScreenCoordinates(int32_t unknown1, int32_t unknown2) const = 0;
 
