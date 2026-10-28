@@ -750,6 +750,9 @@
     <ClInclude Include="include\cISC4ParkManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4PathFinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\cISC4AutomataScriptSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>

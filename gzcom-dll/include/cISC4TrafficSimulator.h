@@ -53,6 +53,23 @@ public:
 		Monorail = 8
 	};
 
+	// A set of travel types, one bit per TravelType (bit = 1 << TravelType).
+	// cISC4PathFinder::SetTravelTypeFlag takes this mask. The game sets up
+	// passenger trips with 0x1cf (everything but the two freight types) and
+	// freight trips with 0x30.
+	enum TravelTypeFlag : uint32_t
+	{
+		TravelTypeFlag_Walk = 1 << 0,
+		TravelTypeFlag_Car = 1 << 1,
+		TravelTypeFlag_Bus = 1 << 2,
+		TravelTypeFlag_PassengerTrain = 1 << 3,
+		TravelTypeFlag_FreightTruck = 1 << 4,
+		TravelTypeFlag_FreightTrain = 1 << 5,
+		TravelTypeFlag_Subway = 1 << 6,
+		TravelTypeFlag_ElevatedTrain = 1 << 7,
+		TravelTypeFlag_Monorail = 1 << 8,
+	};
+
 	class TrafficEdgeDensity
 	{
 	public:
