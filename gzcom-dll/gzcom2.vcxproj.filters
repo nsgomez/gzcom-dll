@@ -411,6 +411,9 @@
     <ClInclude Include="include\SC4TipOfTheDayPreferences.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\SC4Tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\SC4TutorialPreferences.h">
       <Filter>Header Files</Filter>
     </ClInclude>
