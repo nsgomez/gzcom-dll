@@ -175,7 +175,10 @@
     <ClInclude Include="include\cISC4AdviceSubject.h" />
     <ClInclude Include="include\cISC4Advisor.h" />
     <ClInclude Include="include\cISC4AdvisorSystem.h" />
+    <ClInclude Include="include\cISC4AEMSEvents.h" />
     <ClInclude Include="include\cISC4AirportDeveloper.h" />
+    <ClInclude Include="include\cISC4AnimationTickManager.h" />
+    <ClInclude Include="include\cISC4AudioScapeManager.h" />
     <ClInclude Include="include\cISC4AuraSimulator.h" />
     <ClInclude Include="include\cISC4AutomataControllerManager.h" />
     <ClInclude Include="include\cISC4AutomataManager.h" />
@@ -189,6 +192,7 @@
     <ClInclude Include="include\cISC4CitySituationManager.h" />
     <ClInclude Include="include\cISC4CivicBuildingSimulator.h" />
     <ClInclude Include="include\cISC4CommercialSimulator.h" />
+    <ClInclude Include="include\cISC4COMSerializer.h" />
     <ClInclude Include="include\cISC4ConstructionOccupant.h" />
     <ClInclude Include="include\cISC4CrimeSimulator.h" />
     <ClInclude Include="include\cISC4DBSegment.h" />
@@ -252,6 +256,7 @@
     <ClInclude Include="include\cISC4NetworkManager.h" />
     <ClInclude Include="include\cISC4NetworkOccupant.h" />
     <ClInclude Include="include\cISC4NetworkTool.h" />
+    <ClInclude Include="include\cISC4NetworkToolUI.h" />
     <ClInclude Include="include\cISC4Occupant.h" />
     <ClInclude Include="include\cISC4OccupantFilter.h" />
     <ClInclude Include="include\cISC4OccupantManager.h" />
@@ -269,6 +274,7 @@
     <ClInclude Include="include\cISC4PropOccupant.h" />
     <ClInclude Include="include\cISC4PropOccupantTerrainDecal.h" />
     <ClInclude Include="include\cISC4PropOccupantVisualEffect.h" />
+    <ClInclude Include="include\cISC4PropRequester.h" />
     <ClInclude Include="include\cISC4PylonOccupant.h" />
     <ClInclude Include="include\cISC4Region.h" />
     <ClInclude Include="include\cISC4RegionalCity.h" />
@@ -283,10 +289,12 @@
     <ClInclude Include="include\cISC4TutorialSystem.h" />
     <ClInclude Include="include\cISC4View3DWin.h" />
     <ClInclude Include="include\cISC4ViewInputControl.h" />
+    <ClInclude Include="include\cISC4ViewManager.h" />
     <ClInclude Include="include\cISC4VisualEffect.h" />
     <ClInclude Include="include\cISC4WeatherSimulator.h" />
     <ClInclude Include="include\cISC4ZoneDeveloper.h" />
     <ClInclude Include="include\cISC4ZoneManager.h" />
+    <ClInclude Include="include\cISCExemplarCache.h" />
     <ClInclude Include="include\cISCExemplarPropertyHolder.h" />
     <ClInclude Include="include\cISCLua.h" />
     <ClInclude Include="include\cISCProperty.h" />
