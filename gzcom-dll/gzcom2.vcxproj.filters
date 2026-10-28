@@ -54,6 +54,9 @@
     <ClInclude Include="include\cISC4App.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4AudioScapeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\cIGZCheatCodeManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -244,6 +247,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cISC4AdvisorSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4AEMSEvents.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cISC4Advice.h">
@@ -495,6 +501,9 @@
     <ClInclude Include="include\cISC4ViewInputControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4ViewManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\SC4String.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -520,6 +529,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cISC4ZoneManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISCExemplarCache.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cIGZBuffer.h">
@@ -675,6 +687,9 @@
     <ClInclude Include="include\cISC4AirportDeveloper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4AnimationTickManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\cISC4PortDeveloper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -721,6 +736,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cISC4CommercialSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4COMSerializer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cISC4CrimeSimulator.h">
@@ -792,6 +810,9 @@
     <ClInclude Include="include\cISC4NetworkTool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cISC4NetworkToolUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\cIGZWinCombo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -835,6 +856,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cISC4PropOccupantVisualEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4PropRequester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cIGZFont.h">
