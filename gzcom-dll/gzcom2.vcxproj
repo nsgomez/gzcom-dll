@@ -93,6 +93,7 @@
     <ClInclude Include="include\cIGZCanvasMessaging.h" />
     <ClInclude Include="include\cIGZCanvasW32.h" />
     <ClInclude Include="include\cIGZCheatCodeManager.h" />
+    <ClInclude Include="include\cIGZClipboardManager.h" />
     <ClInclude Include="include\cIGZCmdLine.h" />
     <ClInclude Include="include\cIGZCOM.h" />
     <ClInclude Include="include\cIGZCOMDirector.h" />
@@ -106,6 +107,7 @@
     <ClInclude Include="include\cIGZDate.h" />
     <ClInclude Include="include\cIGZDBSegmentPackedFile.h" />
     <ClInclude Include="include\cIGZDBSerialRecordAsIGZFile.h" />
+    <ClInclude Include="include\cIGZDrawSystem.h" />
     <ClInclude Include="include\cIGZExceptionNotification.h" />
     <ClInclude Include="include\cIGZFile.h" />
     <ClInclude Include="include\cIGZFileSystem.h" />
@@ -146,6 +148,7 @@
     <ClInclude Include="include\cIGZPersistResourceKeyList.h" />
     <ClInclude Include="include\cIGZPersistResourceManager.h" />
     <ClInclude Include="include\cIGZRadio.h" />
+    <ClInclude Include="include\cIGZRegistry.h" />
     <ClInclude Include="include\cIGZSndMgr.h" />
     <ClInclude Include="include\cIGZSndSys.h" />
     <ClInclude Include="include\cIGZUIScriptService.h" />
@@ -156,6 +159,7 @@
     <ClInclude Include="include\cIGZWinCombo.h" />
     <ClInclude Include="include\cIGZWinCtrlMgr.h" />
     <ClInclude Include="include\cIGZWinGen.h" />
+    <ClInclude Include="include\cIGZWinIMEServer.h" />
     <ClInclude Include="include\cIGZWinKeyAccelerator.h" />
     <ClInclude Include="include\cIGZWinKeyAcceleratorRes.h" />
     <ClInclude Include="include\cIGZWinMessageFilter.h" />
@@ -168,6 +172,10 @@
     <ClInclude Include="include\cIGZWinSpinner.h" />
     <ClInclude Include="include\cIGZWinText.h" />
     <ClInclude Include="include\cIGZWinTextEdit.h" />
+    <ClInclude Include="include\cIGZWWWSystem.h" />
+    <ClInclude Include="include\cIHitDebugInfo.h" />
+    <ClInclude Include="include\cIHitMan.h" />
+    <ClInclude Include="include\cIS3DMaterialManager.h" />
     <ClInclude Include="include\cIS3DModelInstance.h" />
     <ClInclude Include="include\cIS3DTextureBindingFactory.h" />
     <ClInclude Include="include\cISC43DRender.h" />
