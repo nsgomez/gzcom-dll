@@ -177,6 +177,7 @@
     <ClInclude Include="include\cISC4AdvisorSystem.h" />
     <ClInclude Include="include\cISC4AirportDeveloper.h" />
     <ClInclude Include="include\cISC4AuraSimulator.h" />
+    <ClInclude Include="include\cISC4AutomataController.h" />
     <ClInclude Include="include\cISC4AutomataControllerManager.h" />
     <ClInclude Include="include\cISC4AutomataManager.h" />
     <ClInclude Include="include\cISC4AutomataScriptSystem.h" />
@@ -343,6 +344,7 @@
     <ClInclude Include="include\PersistResourceKeyFilterByTypeAndInstance.h" />
     <ClInclude Include="include\SC4AppPreferences.h" />
     <ClInclude Include="include\SC4AudioPreferences.h" />
+    <ClInclude Include="include\SC4AutomataTemplates.h" />
     <ClInclude Include="include\SC4CellRegion.h" />
     <ClInclude Include="include\SC4DebugPreferences.h" />
     <ClInclude Include="include\SC4GameOptionPreferences.h" />

@@ -390,6 +390,9 @@
     <ClInclude Include="include\SC4AudioPreferences.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\SC4AutomataTemplates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\SC4DebugPreferences.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -481,6 +484,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cISC4AuraSimulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cISC4AutomataController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cISC4PowerSimulator.h">
