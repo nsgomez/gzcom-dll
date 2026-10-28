@@ -21,7 +21,7 @@
 
 #pragma once
 #include "cIGZUnknown.h"
-#include "ilist.h"
+#include "SC4List.h"
 
 class cISC4Occupant;
 class SC4Percentage;
@@ -74,6 +74,6 @@ class cISC4PlumbingSimulator : public cIGZUnknown
 		virtual bool GetOccupantMonthlyUpkeepCost(cISC4Occupant* occupant, int64_t& monthlyUpkeepCost) = 0;
 
 		virtual bool FindWaterBuildings(cISC4Occupant** unknown1, SC4Percentage& unknown2, cISC4Occupant** unknown3, long& unknown4) = 0;
-		virtual bool GetWaterProducers(ilist<cISC4Occupant*>& list) = 0;
+		virtual void GetWaterProducers(SC4List<cISC4Occupant*>& list) = 0;
 };
 

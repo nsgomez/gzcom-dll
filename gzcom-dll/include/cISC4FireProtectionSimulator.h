@@ -21,7 +21,7 @@
 
 #pragma once
 #include "cIGZUnknown.h"
-#include "ilist.h"
+#include "SC4List.h"
 
 class cISC4DepartmentBudget;
 class cISC4Occupant;
@@ -61,7 +61,7 @@ public:
 	virtual float GetPercentCoverage() = 0;
 	virtual bool GetOccupantCoverage(cISC4Occupant* pStation, SC4Percentage const& sPercentage, float& fRadiusX, float& fRadiusZ) = 0;
 
-	virtual int32_t GetFireStations(ilist<cISC4Occupant*>& list) = 0;
+	virtual int32_t GetFireStations(SC4List<cISC4Occupant*>& list) = 0;
 	virtual uint32_t GetFireStationCount() = 0;
 	virtual float GetStationDispatchRadius(cISC4Occupant* pStation) = 0;
 	virtual uint32_t GetTotalDispatchCount() = 0;

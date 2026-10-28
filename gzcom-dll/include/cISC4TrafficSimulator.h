@@ -20,8 +20,8 @@
  */
 
 #pragma once
+#include <cstddef>
 #include "cIGZUnknown.h"
-#include "ilist.h"
 #include "SC4Rect.h"
 
 class cISCPropertyHolder;
@@ -120,7 +120,7 @@ public:
 	virtual uint32_t GetConnectionCount(uint32_t networkType, int unknown2, int unknown3) = 0;
 	virtual bool GetTravelStrategyPercentages(uint32_t wealthType, SC4Vector<SC4Percentage> unknown2) = 0;
 	virtual float GetFreightScalingFactor() = 0;
-	virtual bool GetTransitSwitches(ilist<cISC4Occupant*>& unknown1) = 0;
+	virtual void GetTransitSwitches(SC4List<cISC4Occupant*>& list) = 0;
 
 	virtual int32_t GetFerryRouteBetweenTiles(long unknown1, long unknown2, long unknown3, long unknown4) = 0;
 	virtual bool GetAllFerryRoutes(SC4List<SC4Vector<uint8_t>>& unknown1) = 0;

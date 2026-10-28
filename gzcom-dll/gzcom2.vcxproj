@@ -377,6 +377,7 @@
     <ClInclude Include="include\SC4SimulatorPreferences.h" />
     <ClInclude Include="include\SC4String.h" />
     <ClInclude Include="include\SC4TipOfTheDayPreferences.h" />
+    <ClInclude Include="include\SC4Tree.h" />
     <ClInclude Include="include\SC4TutorialPreferences.h" />
     <ClInclude Include="include\SC4TutorialPreferences2.h" />
     <ClInclude Include="include\SC4UI.h" />

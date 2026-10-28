@@ -23,5 +23,8 @@
 #include "cGZAllocatorServiceSTLAllocator.h"
 #include <list>
 
+// A plugin-side list that allocates through the game's allocator service.
+// Its layout is the compiler's std::list, not the STLport list the game was
+// built with, so never pass one to a game function. Use SC4List for that.
 template<typename T>
 using ilist = std::list<T, cGZAllocatorServiceSTLAllocator<T>>;

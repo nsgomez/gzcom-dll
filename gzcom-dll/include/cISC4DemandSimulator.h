@@ -21,7 +21,7 @@
 
 #pragma once
 #include "cIGZUnknown.h"
-#include <map>
+#include "SC4Tree.h"
 
 class cISC4Demand;
 class SC4Percentage;
@@ -62,5 +62,5 @@ public:
      * @return The neutral tax rate.
     */
     virtual float GetNeutralTaxRate() = 0;
-    virtual void GetLocalPopulationSummary(std::map<uint32_t, int32_t>& map) const = 0;
+    virtual void GetLocalPopulationSummary(SC4Map<uint32_t, int32_t>& map) const = 0;
 };
