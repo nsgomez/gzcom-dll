@@ -35,9 +35,28 @@ struct SC4HashNode {
 static_assert(sizeof(SC4HashNode<uint32_t>) == 8);
 static_assert(sizeof(SC4HashNode<void*>) == 8);
 
-// Binary-compatible hash table
-template<typename Key>
-class SC4HashSet {
+// Frees through the game's allocator service.
+struct SC4HashSetGameAllocator
+{
+    static void Deallocate(void* ptr)
+    {
+        cIGZAllocatorServicePtr allocator;
+
+        allocator->Deallocate(ptr);
+    }
+};
+
+// Binary-compatible view of the game's STLport hash_set.
+//
+// The game owns the bucket array and the nodes and fills them in. This class
+// only reads them and frees them when it goes away. The game hashes integral
+// keys as key % buckets and pointer keys as (key >> 2) % buckets, and bucketIndex
+// does the same. The allocator is a parameter so the self-check can count blocks.
+template<typename Key, typename Allocator>
+class SC4HashSetImpl {
+    static_assert(std::is_integral_v<Key> || std::is_pointer_v<Key>,
+                  "the game's hash is only known for integral and pointer keys");
+
     SC4HashNode<Key>** mpStart;    // +0x04
     SC4HashNode<Key>** mpEnd;      // +0x08
     void* reserved;                // +0x0C (capacity)
@@ -49,48 +68,36 @@ class SC4HashSet {
         static constexpr bool value = std::is_pointer_v<T> && std::is_base_of_v<cIGZUnknown, std::remove_pointer_t<T>>;
     };
 
-    static void DeleteBucketNodes(SC4HashNode<Key>** const pStart, size_t bucketCount)
+    // Same order as the game's hashtable clear and destructor: every node of
+    // every bucket first, then the bucket array.
+    static void DeleteBuckets(SC4HashNode<Key>** const pStart, size_t bucketCount)
     {
-        cIGZAllocatorServicePtr as;
-
         for (size_t i = 0; i < bucketCount; i++)
         {
-            SC4HashNode<Key>* bucket = pStart[i];
+            SC4HashNode<Key>* node = pStart[i];
 
-            if (bucket != nullptr)
+            while (node != nullptr)
             {
-                // Cleanup the key values in each bucket.
-                // This can be skipped for types that are trivially destructable.
-                if constexpr (IsIGZUnknownPointer<Key>::value || !std::is_trivially_destructible_v<Key>)
+                SC4HashNode<Key>* next = node->next;
+
+                if constexpr (IsIGZUnknownPointer<Key>::value)
                 {
-                    SC4HashNode<Key>* node = bucket;
-
-                    while (node != nullptr)
+                    // The game hands these out with a reference held, in case
+                    // the user forgets to call the clear method its API provides.
+                    if (node->key)
                     {
-                        SC4HashNode<Key>* next = node->next;
-
-                        if constexpr (IsIGZUnknownPointer<Key>::value)
-                        {
-                            // Handle the cleanup of cIGZUnknown-derived types in case the user forgets to
-                            // call the clear method the game's API provides.
-                            if (node->key)
-                            {
-                                node->key->Release();
-                            }
-                        }
-                        else
-                        {
-                            node->key.~Key();
-                        }
-
-                        node = next;
+                        node->key->Release();
                     }
                 }
-                
-                as->Deallocate(bucket);
-                bucket = nullptr;
+
+                Allocator::Deallocate(node);
+                node = next;
             }
+
+            pStart[i] = nullptr;
         }
+
+        Allocator::Deallocate(pStart);
     }
 
 public:
@@ -130,16 +137,20 @@ public:
         }
     };
 
-    SC4HashSet()
+    SC4HashSetImpl()
         : mpStart(nullptr), mpEnd(nullptr), reserved(nullptr), mSize(0)
     {
     }
 
-    virtual ~SC4HashSet() {
+    // The nodes belong to this set, so a copy would free them twice.
+    SC4HashSetImpl(const SC4HashSetImpl&) = delete;
+    SC4HashSetImpl& operator=(const SC4HashSetImpl&) = delete;
+
+    virtual ~SC4HashSetImpl() {
         if (mpStart) {
-            DeleteBucketNodes(mpStart, bucketCount());
+            DeleteBuckets(mpStart, bucketCount());
             mpStart = mpEnd = nullptr;
-            reserved = 0;
+            reserved = nullptr;
             mSize = 0;
         }
     }
@@ -147,21 +158,26 @@ public:
     // Compute bucket count
     size_t bucketCount() const {
         if (!mpStart || !mpEnd) return 0;
-        return (reinterpret_cast<uintptr_t>(mpEnd) - reinterpret_cast<uintptr_t>(mpStart)) / sizeof(SC4HashNode<Key>*);
+        return static_cast<size_t>(mpEnd - mpStart);
     }
 
-    // Hash function: (key >> 2) % bucket_count
+    // The bucket the game puts a key in
     size_t bucketIndex(const Key& key) const {
-        return (reinterpret_cast<uintptr_t>(key) >> 2) % bucketCount();
+        if constexpr (std::is_pointer_v<Key>) {
+            return (reinterpret_cast<uintptr_t>(key) >> 2) % bucketCount();
+        }
+        else {
+            return static_cast<uint32_t>(key) % bucketCount();
+        }
     }
 
     // Find node by key
-   iterator find(const Key& key) const {
-        if (!mpStart || mpStart == mpEnd) return nullptr;
-        auto idx = bucketIndex(key);
-        auto bucket = mpStart[idx];
+    iterator find(const Key& key) const {
+        if (!mpStart || mpStart == mpEnd) return end();
 
-        for (auto n = bucket; n; n = n->next)
+        SC4HashNode<Key>** bucket = mpStart + bucketIndex(key);
+
+        for (auto n = *bucket; n; n = n->next)
             if (n->key == key) return iterator(bucket, mpEnd, n);
 
         return end();
@@ -180,5 +196,12 @@ public:
         return iterator(mpEnd, mpEnd, nullptr);
     }
 };
+
+// The hash set the game's interfaces take, freed through the allocator service.
+template<typename Key>
+class SC4HashSet : public SC4HashSetImpl<Key, SC4HashSetGameAllocator> {
+};
+
+static_assert(sizeof(SC4HashSet<uint32_t>) == 0x14);
 
 #pragma pack(pop)
