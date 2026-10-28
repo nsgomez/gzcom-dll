@@ -30,7 +30,7 @@ class cISC4AutomataController;
 class cS3DTransform;
 class SC4String;
 class tAutomataState;
-class tBehaviorTemplate;
+struct tBehaviorTemplate;
 
 static const uint32_t GZIID_cISC4Automaton = 0xa9b40f05;
 

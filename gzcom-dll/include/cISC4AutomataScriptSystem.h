@@ -24,7 +24,7 @@
 
 class cSC4OccupantGroupTemplate;
 class SC4String;
-class tControllerTemplate;
+struct tControllerTemplate;
 
 template <typename T> class SC4List;
 
