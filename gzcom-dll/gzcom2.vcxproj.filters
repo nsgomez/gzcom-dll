@@ -57,6 +57,9 @@
     <ClInclude Include="include\cIGZCheatCodeManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cIGZClipboardManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\cISC4City.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -564,6 +567,9 @@
     <ClInclude Include="include\cIGZDBSerialRecordAsIGZFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cIGZDrawSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\cIGZPersistDBSerialRecord.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -622,6 +628,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cIGZRadio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cIGZRegistry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cISCResExemplarCohort.h">
@@ -789,6 +798,9 @@
     <ClInclude Include="include\cIGZWinGen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\cIGZWinIMEServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="include\cIGZWinText.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -865,6 +877,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\cIGZWinTextEdit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cIGZWWWSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cIHitDebugInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cIHitMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cIS3DMaterialManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\SC4NewCitySpecification.h">
