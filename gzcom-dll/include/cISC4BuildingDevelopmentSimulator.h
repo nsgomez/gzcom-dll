@@ -24,7 +24,7 @@
 #include "cIGZUnknown.h"
 #include "cISC4BuildingOccupant.h"
 #include "cISC4ZoneManager.h"
-#include <unordered_set>
+#include "SC4HashSet.h"
 
 class cGZPersistResourceKey;
 class cIGZString;
@@ -100,8 +100,8 @@ class cISC4BuildingDevelopmentSimulator : public cIGZUnknown
 		virtual bool IsBuildingTypeValid(uint32_t dwType) = 0;
 		virtual bool IsBuildingFamilyTypeValid(uint32_t dwFamilyType) = 0;
 
-		virtual bool GetBuildingTypesByFilter(std::unordered_set<uint32_t>& sList, cISC4BuildingTypeFilter* pFilter) = 0;
-		virtual bool GetBuildingTypesByFamily(std::unordered_set<uint32_t>& sList, uint32_t dwFamily) = 0;
+		virtual bool GetBuildingTypesByFilter(SC4HashSet<uint32_t>& sList, cISC4BuildingTypeFilter* pFilter) = 0;
+		virtual bool GetBuildingTypesByFamily(SC4HashSet<uint32_t>& sList, uint32_t dwFamily) = 0;
 		virtual bool GetBuildingTypesByFamily(SC4Vector<uint32_t>& sList, uint32_t dwFamily) = 0;
 
 		virtual bool IsBuildingInFamily(uint32_t dwBuilding, uint32_t dwFamily) = 0;

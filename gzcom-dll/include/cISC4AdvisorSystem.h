@@ -23,7 +23,7 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "cRZAutoRefCount.h"
-#include <map>
+#include "SC4Tree.h"
 
 class cIGZString;
 class cISC4Advice;
@@ -40,7 +40,7 @@ class cISC4AdvisorSystem : public cIGZUnknown
 		virtual bool AddAdvisor(cISC4Advisor* pAdvisor) = 0;
 		virtual bool RemoveAdivsor(int32_t dwAdvisorID) = 0;
 		virtual cISC4Advisor* GetAdvisor(int32_t dwAdvisorID) = 0;
-		virtual std::map<int32_t, cRZAutoRefCount<cISC4Advisor>>& GetAdvisors(void) = 0;
+		virtual SC4Map<int32_t, cRZAutoRefCount<cISC4Advisor>>& GetAdvisors(void) = 0;
 
 		virtual intptr_t GetRandom(void) = 0; // This points to an RZRandom that we can't recreate yet
 		virtual cISCLua* GetScriptingContext(void) = 0;

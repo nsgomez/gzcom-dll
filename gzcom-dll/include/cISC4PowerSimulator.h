@@ -21,7 +21,7 @@
 
 #pragma once
 #include "cIGZUnknown.h"
-#include "ilist.h"
+#include "SC4List.h"
 
 class cISC4Occupant;
 class SC4Percentage;
@@ -63,7 +63,7 @@ public:
 	virtual int32_t GetPowerPlantCount() = 0;
 	virtual int32_t GetPowerPlantCount(int32_t powerType) = 0;
 
-	virtual void GetPowerPlants(ilist<cISC4Occupant*>& list) = 0;
+	virtual void GetPowerPlants(SC4List<cISC4Occupant*>& list) = 0;
 	virtual uint32_t GetPowerPoleCount() = 0;
 
 	virtual int32_t GetOverworkedPowerPlantCount() = 0;

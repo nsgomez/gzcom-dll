@@ -26,7 +26,7 @@
 #include "cISC4BuildingDevelopmentSimulator.h"
 #include "cISC4ZoneManager.h"
 
-#include <map>
+#include "SC4Tree.h"
 
 class cISCPropertyHolder;
 class cISC4BusinessUnit;
@@ -151,7 +151,7 @@ class cISC4Lot : public cIGZUnknown
 		virtual bool SetTravelDesignate(cISC4Lot* pDesignate) = 0;
 
 		virtual float GetOccupancy(void) const = 0;
-		virtual bool GetOccupancyByType(std::map<uint32_t, SC4Percentage>& sOccupancies) const = 0;
+		virtual void GetOccupancyByType(SC4Map<uint32_t, SC4Percentage>& sOccupancies) const = 0;
 
 		virtual float GetTravelJobs(cISC4BuildingOccupant::WealthType eWealthType) const = 0;
 		virtual bool GetJobs(float fJobs[]) const = 0; // An array of four floats it seems

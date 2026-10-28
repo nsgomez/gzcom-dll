@@ -23,7 +23,7 @@
 #pragma once
 #include "cIGZUnknown.h"
 #include "SC4Rect.h"
-#include <set>
+#include "SC4Tree.h"
 
 class cISCPropertyHolder;
 class cISC43DPlaceableObject;
@@ -65,7 +65,7 @@ class cISC4Occupant : public cIGZUnknown
 
 		virtual bool IsOccupantGroup(uint32_t dwGroup) = 0;
 		virtual bool AddOccupantGroup(uint32_t dwGroup) = 0;
-		virtual bool GetOccupantGroups(std::set<uint32_t>& sGroups) = 0;
+		virtual bool GetOccupantGroups(SC4Set<uint32_t>& sGroups) = 0;
 		virtual bool GetOccupantManagerBBox(uint8_t* cBoxArray) = 0;
 		virtual bool SetOccupantManagerBBox(uint8_t* cBoxArray) = 0; // array has 5 elements
 
