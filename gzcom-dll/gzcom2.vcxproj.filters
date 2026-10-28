@@ -957,6 +957,9 @@
     <ClInclude Include="include\cSC4StaticFloraData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\STLPORTCharString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cRZBaseString.cpp">
@@ -1053,6 +1056,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\PersistResourceKeyFilterByTypeAndInstance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\STLPORTCharString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

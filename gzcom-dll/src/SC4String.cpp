@@ -20,36 +20,12 @@
  */
 
 #include "SC4String.h"
-#include "cIGZAllocatorService.h"
-#include "GZServPtrs.h"
 #include <algorithm>
-#include <stdexcept>
 #include <string>
 #include <stdarg.h>
 
 namespace
 {
-	char* allocate(size_t length)
-	{
-		cIGZAllocatorServicePtr pAllocator;
-
-		char* ptr = static_cast<char*>(pAllocator->Allocate(length));
-
-		if (!ptr)
-		{
-			throw std::bad_alloc();
-		}
-
-		return ptr;
-	}
-
-	void deallocate(char* ptr)
-	{
-		cIGZAllocatorServicePtr pAllocator;
-
-		pAllocator->Deallocate(ptr);
-	}
-
 	void MakeLowerCase(std::string& asLowerCase)
 	{
 		std::transform(
@@ -109,59 +85,40 @@ namespace
 	}
 }
 
-SC4String::SC4String() : mpStart(nullptr), mpEnd(nullptr), mpCapacity(nullptr), mnRefCount(0)
+SC4String::SC4String() : mString(), mnRefCount(0)
 {
-	construct_empty_string();
 }
 
-SC4String::SC4String(SC4String const& other) : mpStart(nullptr), mpEnd(nullptr), mpCapacity(nullptr), mnRefCount(0)
+SC4String::SC4String(SC4String const& other) : mString(other.mString), mnRefCount(0)
 {
-	operator=(other);
 }
 
-SC4String::SC4String(SC4String&& other) noexcept : mpStart(nullptr), mpEnd(nullptr), mpCapacity(nullptr), mnRefCount(0)
+SC4String::SC4String(SC4String&& other) noexcept : mString(std::move(other.mString)), mnRefCount(other.mnRefCount)
 {
-	operator=(std::move(other));
+	other.mnRefCount = 0;
 }
 
-SC4String::SC4String(cIGZString const& other) : mpStart(nullptr), mpEnd(nullptr), mpCapacity(nullptr), mnRefCount(0)
+SC4String::SC4String(cIGZString const& other) : mString(other.ToChar(), other.Strlen()), mnRefCount(0)
 {
-	Copy(other);
 }
 
-SC4String::SC4String(std::string_view const& view) : mpStart(nullptr), mpEnd(nullptr), mpCapacity(nullptr), mnRefCount(0)
+SC4String::SC4String(std::string_view const& view) : mString(view), mnRefCount(0)
 {
-	FromChar(view.data(), view.size());
 }
 
-SC4String::SC4String(char const* pszSource) : mpStart(nullptr), mpEnd(nullptr), mpCapacity(nullptr), mnRefCount(0)
+SC4String::SC4String(char const* pszSource) : mString(pszSource), mnRefCount(0)
 {
-	FromChar(pszSource);
 }
 
-SC4String::SC4String(char const* pszSource, uint32_t dwLength) : mpStart(nullptr), mpEnd(nullptr), mpCapacity(nullptr), mnRefCount(0)
+SC4String::SC4String(char const* pszSource, uint32_t dwLength) : mString(pszSource, dwLength), mnRefCount(0)
 {
-	FromChar(pszSource, dwLength);
-}
-
-SC4String::~SC4String()
-{
-	if (mpStart)
-	{
-		deallocate(mpStart);
-	}
-
-	mpStart = nullptr;
-	mpEnd = nullptr;
-	mpCapacity = nullptr;
-	mnRefCount = 0;
 }
 
 SC4String& SC4String::operator=(SC4String const& other)
 {
 	if (this != &other)
 	{
-		FromChar(other.ToChar(), other.Strlen());
+		mString = other.mString;
 	}
 	return *this;
 }
@@ -170,9 +127,7 @@ SC4String& SC4String::operator=(SC4String&& other) noexcept
 {
 	if (this != &other)
 	{
-		mpStart = std::exchange(other.mpStart, nullptr);
-		mpEnd = std::exchange(other.mpEnd, nullptr);
-		mpCapacity = std::exchange(other.mpCapacity, nullptr);
+		mString = std::move(other.mString);
 		mnRefCount = std::exchange(other.mnRefCount, 0);
 	}
 	return *this;
@@ -227,47 +182,27 @@ uint32_t SC4String::Release()
 
 void SC4String::FromChar(char const* pszSource)
 {
-	if (!pszSource || *pszSource == 0)
-	{
-		this->construct_empty_string();
-	}
-	else
-	{
-		const size_t dwLength = std::char_traits<char>::length(pszSource);
-
-		allocate_string_buffer(dwLength);
-
-		std::char_traits<char>::move(mpStart, pszSource, dwLength);
-	}
+	mString.assign(pszSource);
 }
 
 void SC4String::FromChar(char const* pszSource, uint32_t dwLength)
 {
-	if (!pszSource || dwLength == 0)
-	{
-		this->construct_empty_string();
-	}
-	else
-	{
-		allocate_string_buffer(dwLength);
-
-		std::char_traits<char>::move(mpStart, pszSource, dwLength);
-	}
+	mString.assign(pszSource, dwLength);
 }
 
 char const* SC4String::ToChar(void) const
 {
-	return mpStart;
+	return mString.data();
 }
 
 char const* SC4String::Data(void) const
 {
-	return mpStart;
+	return mString.data();
 }
 
 uint32_t SC4String::Strlen(void) const
 {
-	return mpEnd - mpStart;
+	return mString.length();
 }
 
 bool SC4String::IsEqual(cIGZString const* szOther, bool bCaseSensitive) const
@@ -322,28 +257,15 @@ int32_t SC4String::CompareTo(char const* pszOther, uint32_t dwLength, bool bCase
 		dwLength = std::char_traits<char>::length(pszOther);
 	}
 
-	const uint32_t thisStringLength = this->Strlen();
 	int32_t result = 0;
 
 	if (bCaseSensitive)
 	{	
-		result = memcmp(this->ToChar(), pszOther, (std::min)(thisStringLength, dwLength));
-
-		if (result == 0)
-		{
-			if (thisStringLength < dwLength)
-			{
-				result = -1;
-			}
-			else if (thisStringLength > dwLength)
-			{
-				result = 1;
-			}
-		}
+		result = mString.compare(pszOther, dwLength);
 	}
 	else
 	{
-		std::string thisLowerCase = MakeLowerCase(this->ToChar(), thisStringLength);
+		std::string thisLowerCase = MakeLowerCase(this->ToChar(), this->Strlen());
 		std::string otherLowerCase = MakeLowerCase(pszOther, dwLength);
 
 		result = thisLowerCase.compare(otherLowerCase);
@@ -365,40 +287,12 @@ void SC4String::Copy(cIGZString const& szOther)
 
 void SC4String::Resize(uint32_t dwNewSize)
 {
-	if (dwNewSize == 0)
-	{
-		this->construct_empty_string();
-	}
-	else if (this->Strlen() == 0)
-	{
-		this->allocate_string_buffer(dwNewSize);
-		std::char_traits<char>::assign(mpStart, dwNewSize, '\0');
-	}
-	else
-	{
-		std::string temp(this->ToChar(), this->Strlen());
-		temp.resize(dwNewSize);
-
-		this->FromChar(temp.c_str(), temp.size());
-	}
+	mString.resize(dwNewSize);
 }
 
 cIGZString* SC4String::Append(char const* pszOther, uint32_t dwLength)
 {
-	if (dwLength != 0)
-	{
-		if (this->Strlen() == 0)
-		{
-			this->FromChar(pszOther, dwLength);
-		}
-		else
-		{
-			std::string temp(this->ToChar(), this->Strlen());
-			temp.append(pszOther, dwLength);
-
-			this->FromChar(temp.c_str(), temp.size());
-		}
-	}
+	mString.append(pszOther, dwLength);
 	return this;
 }
 
@@ -409,10 +303,7 @@ cIGZString* SC4String::Append(cIGZString const& szOther)
 
 cIGZString* SC4String::Insert(uint32_t dwPos, char const* pszOther, uint32_t dwLength)
 {
-	std::string temp(this->ToChar(), this->Strlen());
-	temp.insert(dwPos, pszOther, dwLength);
-
-	this->FromChar(temp.c_str(), temp.size());
+	mString.insert(dwPos, pszOther, dwLength);
 	return this;
 }
 
@@ -423,10 +314,7 @@ cIGZString* SC4String::Insert(uint32_t dwPos, cIGZString const& szOther)
 
 cIGZString* SC4String::Replace(uint32_t dwStartPos, char const* pszOther, uint32_t dwLength)
 {
-	std::string temp(this->ToChar(), this->Strlen());
-	temp.replace(dwStartPos, dwLength, pszOther);
-
-	this->FromChar(temp.c_str(), temp.size());
+	mString.replace(dwStartPos, pszOther, dwLength);
 	return this;
 }
 
@@ -437,10 +325,7 @@ cIGZString* SC4String::Replace(uint32_t dwStartPos, cIGZString const& szOther)
 
 cIGZString* SC4String::Erase(uint32_t dwStartPos, uint32_t dwEndPos)
 {
-	std::string temp(this->ToChar(), this->Strlen());
-	temp.erase(dwStartPos, dwEndPos);
-
-	this->FromChar(temp.c_str(), temp.size());
+	mString.erase(dwStartPos, dwEndPos);
 	return this;
 }
 
@@ -502,9 +387,9 @@ cIGZString* SC4String::Sprintf(char const* pszFormat, ...)
 
 	if (nBufferSize > 0)
 	{
-		allocate_string_buffer(nBufferSize);
+		mString.resize(nBufferSize);
 
-		vsnprintf(mpStart, nBufferSize, pszFormat, args);
+		vsnprintf(mString.data(), nBufferSize, pszFormat, args);
 	}
 
 	va_end(args);
@@ -512,61 +397,3 @@ cIGZString* SC4String::Sprintf(char const* pszFormat, ...)
 	return this;
 }
 
-void SC4String::allocate_string_buffer(size_t stringLength)
-{
-	if (stringLength == UINT_MAX)
-	{
-		throw std::out_of_range("SC4String");
-	}
-
-	const size_t lengthWithTerminator = stringLength + 1;
-
-	if (lengthWithTerminator < capacity())
-	{
-		mpEnd = mpStart + stringLength;
-		*mpEnd = 0;
-	}
-	else
-	{
-		if (mpStart)
-		{
-			deallocate(mpStart);
-			mpStart = nullptr;
-			mpEnd = nullptr;
-			mpCapacity = nullptr;
-		}
-
-		char* newStart = allocate(lengthWithTerminator);
-
-		mpStart = newStart;
-		mpEnd = newStart + stringLength;
-		mpCapacity = mpEnd;
-		*mpEnd = 0;
-	}
-}
-
-size_t SC4String::capacity()
-{
-	return mpCapacity - mpStart;
-}
-
-void SC4String::construct_empty_string()
-{
-	if (mpStart)
-	{
-		if (mpStart != mpEnd)
-		{
-			*mpStart = 0;
-			mpEnd = mpStart;
-		}
-	}
-	else
-	{
-		constexpr size_t emptyStringSize = 1;
-
-		mpStart = allocate(emptyStringSize);
-		mpEnd = mpStart;
-		mpCapacity = mpStart + emptyStringSize;
-		*mpStart = 0;
-	}
-}

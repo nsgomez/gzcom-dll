@@ -21,7 +21,7 @@
 
 #pragma once
 #include "cIGZString.h"
-#include <string_view>
+#include "STLPORTCharString.h"
 
 /**
  * @brief A class that provides binary compatibility with internal cRZString class used by
@@ -42,8 +42,6 @@ public:
 	SC4String(std::string_view const& view);
 	SC4String(char const* pszSource);
 	SC4String(char const* pszSource, uint32_t dwLength);
-
-	~SC4String();
 
 	SC4String& operator=(SC4String const& other);
 	SC4String& operator=(SC4String&& other) noexcept;
@@ -91,16 +89,7 @@ public:
 	cIGZString* Sprintf(char const* pszFormat, ...) override;
 
 private:
-	void allocate_string_buffer(size_t stringLength);
-	size_t capacity();
-	void construct_empty_string();
-
-	// The 3 pointer fields are from the STLPORT 4.6 std::string class.
-	// The mnRefCount field is from cRZString.
-
-	char* mpStart;
-	char* mpEnd;
-	char* mpCapacity;
+	STLPORT::CharString mString;
 	uint32_t mnRefCount;
 };
 
