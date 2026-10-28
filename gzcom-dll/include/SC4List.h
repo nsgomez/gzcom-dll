@@ -138,7 +138,7 @@ struct SC4ListConstIterator
 	// Postfix increment
 	SC4ListConstIterator operator++(int)
 	{
-		SC4ListIterator tmp = *this;
+		SC4ListConstIterator tmp = *this;
 		++(*this);
 		return tmp;
 	}
