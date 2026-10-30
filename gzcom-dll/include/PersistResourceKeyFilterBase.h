@@ -3,7 +3,7 @@
  *
  * PersistResourceKeyFilterBase.h
  *
- * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,11 +20,11 @@
  */
 
 #pragma once
-#include "cRZBaseUnknown.h"
+#include "cRZUnknown.h"
 #include "cGZPersistResourceKey.h"
 #include "cIGZPersistResourceKeyFilter.h"
 
-class PersistResourceKeyFilterBase : public cRZBaseUnknown, public cIGZPersistResourceKeyFilter
+class PersistResourceKeyFilterBase : public cRZUnknown, public cIGZPersistResourceKeyFilter
 {
 protected:
 	PersistResourceKeyFilterBase();

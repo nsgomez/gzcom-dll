@@ -1001,9 +1001,6 @@
     <ClCompile Include="src\SC4UI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\cRZBaseUnknown.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\cRZBaseSystemService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

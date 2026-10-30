@@ -3,7 +3,7 @@
  *
  * cSC4BaseLotConfigurationFilter.h
  *
- * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,16 +20,16 @@
  */
 
 #pragma once
-#include "cRZBaseUnknown.h"
+#include "cRZUnknown.h"
 #include "cISC4LotConfigurationFilter.h"
 
-class cSC4BaseLotConfigurationFilter : public cRZBaseUnknown, public cISC4LotConfigurationFilter
+class cSC4BaseLotConfigurationFilter : public cRZUnknown, public cISC4LotConfigurationFilter
 {
 protected:
 	cSC4BaseLotConfigurationFilter();
 
 public:
-	// cRZBaseUnknown
+	// cIGZUnknown
 
 	bool QueryInterface(uint32_t riid, void** ppvObj) override;
 	uint32_t AddRef() override;

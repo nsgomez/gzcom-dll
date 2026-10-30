@@ -3,7 +3,7 @@
  *
  * cSC4BaseOccupantFilter.h
  *
- * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -21,9 +21,9 @@
 
 #pragma once
 #include "cISC4OccupantFilter.h"
-#include "cRZBaseUnknown.h"
+#include "cRZUnknown.h"
 
-class cSC4BaseOccupantFilter : public cRZBaseUnknown, public cISC4OccupantFilter
+class cSC4BaseOccupantFilter : public cRZUnknown, public cISC4OccupantFilter
 {
 public:
 	// cIGZUnknown

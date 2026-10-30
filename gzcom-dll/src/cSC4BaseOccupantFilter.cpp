@@ -3,7 +3,7 @@
  *
  * cSC4BaseOccupantFilter.cpp
  *
- * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -32,17 +32,17 @@ bool cSC4BaseOccupantFilter::QueryInterface(uint32_t riid, void** ppvObj)
 		return true;
 	}
 
-	return cRZBaseUnknown::QueryInterface(riid, ppvObj);
+	return cRZUnknown::QueryInterface(riid, ppvObj);
 }
 
 uint32_t cSC4BaseOccupantFilter::AddRef()
 {
-	return cRZBaseUnknown::AddRef();
+	return cRZUnknown::AddRef();
 }
 
 uint32_t cSC4BaseOccupantFilter::Release()
 {
-	return cRZBaseUnknown::Release();
+	return cRZUnknown::Release();
 }
 
 bool cSC4BaseOccupantFilter::IsOccupantIncluded(cISC4Occupant* pOccupant)

@@ -3,7 +3,7 @@
  *
  * cSC4BaseViewInputControl.cpp
  *
- * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025, 2026 Nicholas Hayes
  * Copyright (C) 2026 Casper Van Gheluwe
  *
  * This library is free software; you can redistribute it and/or
@@ -42,17 +42,17 @@ bool cSC4BaseViewInputControl::QueryInterface(uint32_t riid, void** ppvObj)
 		return true;
 	}
 
-	return cRZBaseUnknown::QueryInterface(riid, ppvObj);
+	return cRZUnknown::QueryInterface(riid, ppvObj);
 }
 
 uint32_t cSC4BaseViewInputControl::AddRef()
 {
-	return cRZBaseUnknown::AddRef();
+	return cRZUnknown::AddRef();
 }
 
 uint32_t cSC4BaseViewInputControl::Release()
 {
-	return cRZBaseUnknown::Release();
+	return cRZUnknown::Release();
 }
 
 bool cSC4BaseViewInputControl::Init()

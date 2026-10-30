@@ -398,7 +398,6 @@
     <ClCompile Include="src\cGZExtraExtraCheatsDllDirector.cpp" />
     <ClCompile Include="src\cRZBaseString.cpp" />
     <ClCompile Include="src\cRZBaseSystemService.cpp" />
-    <ClCompile Include="src\cRZBaseUnknown.cpp" />
     <ClCompile Include="src\cRZBaseVariant.cpp" />
     <ClCompile Include="src\cRZBaseWinProc.cpp" />
     <ClCompile Include="src\cRZCellMap.cpp" />
