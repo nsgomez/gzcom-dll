@@ -3,7 +3,7 @@
  *
  * cRZBaseWinProc.cpp
  *
- * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -58,11 +58,6 @@ uint32_t cRZBaseWinProc::Release()
     }
 
     return refCount;
-}
-
-bool cRZBaseWinProc::DoWinProcMessage(cIGZWin* pWin, cGZMessage& pMsg)
-{
-    return false;
 }
 
 bool cRZBaseWinProc::DoWinMsg(cIGZWin* pWin, uint32_t dwMessageID, uint32_t data1, uint32_t data2, uint32_t data3)
