@@ -37,6 +37,27 @@ cRZMessage2Standard::cRZMessage2Standard() {
 	memset(m_dwData, 0, sizeof(m_dwData));
 }
 
+bool cRZMessage2Standard::QueryInterface(uint32_t riid, void** ppvObj) {
+	if (riid == 0x65297976) {
+		*ppvObj = static_cast<cIGZMessage2Standard*>(this);
+		AddRef();
+		return true;
+	}
+
+	return cRZMessage2::QueryInterface(riid, ppvObj);
+}
+
+bool cRZMessage2Standard::Create(uint32_t dwType, void** ppUnknown) const {
+	cRZMessage2Standard* pMessage = new cRZMessage2Standard();
+	if (!pMessage->QueryInterface(dwType, ppUnknown)) {
+		delete pMessage;
+		return false;
+	}
+
+	pMessage->SetType(GetType());
+	return true;
+}
+
 bool cRZMessage2Standard::GetHasData1(void) const {
 	return IsDataFieldSet(FIELD_DATA1);
 }

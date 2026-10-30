@@ -31,21 +31,11 @@
 class cRZMessage2Standard : public cIGZMessage2Standard, public cRZMessage2
 {
 	public:
-		bool QueryInterface(uint32_t riid, void** ppvObj) {
-			if (riid == 0x65297976) {
-				*ppvObj = static_cast<cIGZMessage2Standard*>(this);
-				AddRef();
-				return true;
-			}
-
-			return cRZMessage2::QueryInterface(riid, ppvObj);
-		}
+		bool QueryInterface(uint32_t riid, void** ppvObj);
 		uint32_t AddRef(void) { return cRZMessage2::AddRef(); }
 		uint32_t Release(void) { return cRZMessage2::Release(); }
 
-		bool Create(uint32_t dwType, void** ppUnknown) const {
-			return cRZMessage2::Create(dwType, ppUnknown);
-		}
+		bool Create(uint32_t dwType, void** ppUnknown) const;
 
 		uint32_t GetType(void) const { return cRZMessage2::GetType(); }
 		void SetType(uint32_t dwType) { cRZMessage2::SetType(dwType); }
