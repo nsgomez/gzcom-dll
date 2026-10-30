@@ -39,8 +39,10 @@ bool cRZMessage2::QueryInterface(uint32_t riid, void** ppvObj) {
 
 bool cRZMessage2::Create(uint32_t dwType, void** ppUnknown) const {
 	cRZMessage2* pMessage = new cRZMessage2();
-	if (pMessage == NULL || !pMessage->QueryInterface(dwType, ppUnknown))
+	if (!pMessage->QueryInterface(dwType, ppUnknown)) {
+		delete pMessage;
 		return false;
+	}
 
 	pMessage->SetType(GetType());
 	return true;
