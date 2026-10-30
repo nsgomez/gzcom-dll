@@ -27,12 +27,7 @@ cRZMessage2::cRZMessage2() {
 }
 
 bool cRZMessage2::QueryInterface(uint32_t riid, void** ppvObj) {
-	if (riid == 0x65297976) {
-		*ppvObj = this;
-		AddRef();
-		return true;
-	}
-	else if (riid == 0xa52294b4) {
+	if (riid == 0xa52294b4) {
 		*ppvObj = static_cast<cIGZMessage2*>(this);
 		AddRef();
 		return true;
