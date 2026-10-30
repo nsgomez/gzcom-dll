@@ -3,7 +3,7 @@
  *
  * cRZBaseWinProc.h
  *
- * Copyright (C) 2025 Nicholas Hayes
+ * Copyright (C) 2025, 2026 Nicholas Hayes
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -25,22 +25,25 @@
 class cRZBaseWinProc : public cIGZWinProc
 {
 protected:
-
 	cRZBaseWinProc();
 
 public:
+	// cIGZUnknown
 
 	bool QueryInterface(uint32_t riid, void** ppvObj);
-
 	uint32_t AddRef();
-
 	uint32_t Release();
 
-	bool DoWinProcMessage(cIGZWin* pWin, cGZMessage& pMsg);
+	// cIGZWinProc
+	// DoWinMessage is left as a pure virtual function to force derived classes to implement it.
+	// This is more discoverable than having a default implementation that derived classes would
+	// need to remember to override.
 
+	// This is an obsolete window procedure method that appears to be a SC3K UI porting leftover.
+	// It will be called if DoWinProcMessage returns false, our implementation follows the pattern
+	// used by SC4's window procedures in treating this override as function that always returns false.
 	bool DoWinMsg(cIGZWin* pWin, uint32_t dwMessageID, uint32_t data1, uint32_t data2, uint32_t data3) override;
 
 private:
-
 	uint32_t refCount;
 };
